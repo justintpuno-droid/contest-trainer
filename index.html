@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contest Math Trainer — Free AMC & AIME Practice</title>
+<meta name="description" content="Free, unlimited AI-generated AMC 8/10/12 and AIME practice problems with full solutions. Democratizing access to competition math training.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+  :root {
+    --paper: #FBFAF6;
+    --ink: #17264A;
+    --ink-soft: #4A5878;
+    --grid: #DFE6F0;
+    --gold: #C9A227;
+    --gold-deep: #9A7B1B;
+    --correct: #2F7D4F;
+    --wrong: #B0402A;
+    --card: #FFFFFF;
+    --serif: 'STIX Two Text', Georgia, serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--serif);
+    color: var(--ink);
+    background-color: var(--paper);
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 28px 28px;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+  /* ---------- Hero / landing ---------- */
+  .hero {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 64px 0 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    right: -60px; top: -60px;
+    width: 280px; height: 280px;
+    border: 2px solid rgba(201,162,39,.28);
+    border-radius: 50%;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    right: 10px; top: 14px;
+    width: 130px; height: 130px;
+    border: 2px solid rgba(201,162,39,.5);
+    border-radius: 50%;
+  }
+  .hero .kicker {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -.015em;
+    max-width: 620px;
+  }
+  .hero p.lede {
+    margin-top: 18px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #C4CCDD;
+    max-width: 560px;
+  }
+  .hero .cta {
+    display: inline-block;
+    margin-top: 28px;
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: .06em;
+    padding: 13px 30px;
+    background: var(--gold);
+    color: var(--ink);
+    border: 1.5px solid var(--gold);
+    border-radius: 7px;
+    text-decoration: none;
+    box-shadow: 3px 3px 0 rgba(201,162,39,.35);
+  }
+  /* ---------- Why section ---------- */
+  .why { padding: 44px 0 8px; }
+  .why-grid { display: flex; gap: 14px; flex-wrap: wrap; }
+  .why-card {
+    flex: 1 1 220px;
+    background: var(--card);
+    border: 1.5px solid var(--ink);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .why-card h3 {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 8px;
+  }
+  .why-card p { font-size: 15px; line-height: 1.55; }
+  /* ---------- Trainer section ---------- */
+  .trainer { padding: 40px 0 72px; }
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+  }
+  header.tool-head {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 10px 10px 0 0;
+    padding: 18px 26px 15px;
+  }
+  .tool-head .kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .controls {
+    background: var(--card);
+    border: 1.5px solid var(--ink);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    padding: 18px 26px 22px;
+  }
+  .row { display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end; }
+  .field { flex: 1 1 160px; }
+  label {
+    display: block;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+  .seg { display: flex; border: 1.5px solid var(--ink); border-radius: 7px; overflow: hidden; }
+  .seg button {
+    flex: 1;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    font-weight: 500;
+    padding: 9px 4px;
+    background: var(--card);
+    color: var(--ink);
+    border: none;
+    border-right: 1.5px solid var(--ink);
+    cursor: pointer;
+  }
+  .seg button:last-child { border-right: none; }
+  .seg button.on { background: var(--ink); color: var(--paper); }
+  select {
+    width: 100%;
+    font-family: var(--mono);
+    font-size: 13px;
+    padding: 9px 10px;
+    border: 1.5px solid var(--ink);
+    border-radius: 7px;
+    background: var(--card);
+    color: var(--ink);
+  }
+  .go {
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: .06em;
+    padding: 11px 26px;
+    background: var(--gold);
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+    border-radius: 7px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 var(--ink);
+    transition: transform .08s ease, box-shadow .08s ease;
+  }
+  .go:hover { transform: translate(-1px,-1px); box-shadow: 4px 4px 0 var(--ink); }
+  .go:active { transform: translate(2px,2px); box-shadow: 1px 1px 0 var(--ink); }
+  .go:disabled { opacity: .55; cursor: wait; transform: none; box-shadow: 3px 3px 0 var(--ink); }
+  .scorebar { display: flex; gap: 10px; margin: 16px 0; font-family: var(--mono); }
+  .stat {
+    flex: 1;
+    background: var(--card);
+    border: 1.5px solid var(--ink);
+    border-radius: 8px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+  .stat .num { font-size: 20px; font-weight: 600; }
+  .stat .lab { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); margin-top: 2px; }
+  .stat .num.gold { color: var(--gold-deep); }
+  .problem-card {
+    background: var(--card);
+    border: 1.5px solid var(--ink);
+    border-radius: 10px;
+    padding: 26px 28px 30px;
+    display: none;
+  }
+  .problem-card.show { display: block; }
+  .p-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+  }
+  .p-tag { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+  .p-tag b { color: var(--ink); }
+  .timer { font-family: var(--mono); font-size: 15px; font-weight: 600; color: var(--gold-deep); }
+  .p-text { font-size: 17.5px; line-height: 1.65; }
+  .p-text .katex { font-size: 1.02em; }
+  .bubbles { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px; }
+  .bubble {
+    flex: 1 1 110px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1.5px solid var(--ink);
+    border-radius: 8px;
+    padding: 10px 12px;
+    background: var(--card);
+    cursor: pointer;
+    font-size: 15.5px;
+    transition: background .1s ease;
+    text-align: left;
+  }
+  .bubble:hover:not(:disabled) { background: #F2F0E6; }
+  .bubble .dot {
+    flex-shrink: 0;
+    width: 26px; height: 26px;
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono);
+    font-size: 12px; font-weight: 600;
+  }
+  .bubble.picked .dot { background: var(--ink); color: var(--paper); }
+  .bubble.right { border-color: var(--correct); background: #EDF6F0; }
+  .bubble.right .dot { background: var(--correct); border-color: var(--correct); color: #fff; }
+  .bubble.miss { border-color: var(--wrong); background: #FAEFEB; }
+  .bubble.miss .dot { background: var(--wrong); border-color: var(--wrong); color: #fff; }
+  .bubble:disabled { cursor: default; }
+  .aime-entry { display: flex; align-items: center; gap: 14px; margin-top: 24px; flex-wrap: wrap; }
+  .digits { display: flex; gap: 8px; }
+  .digits input {
+    width: 54px; height: 62px;
+    font-family: var(--mono);
+    font-size: 26px;
+    text-align: center;
+    border: 1.5px solid var(--ink);
+    border-radius: 8px;
+    background: var(--card);
+    color: var(--ink);
+  }
+  .digits input:focus { outline: 2.5px solid var(--gold); outline-offset: 1px; }
+  .mc-entry { display: flex; align-items: center; gap: 14px; margin-top: 24px; flex-wrap: wrap; }
+  .mc-input {
+    width: 200px;
+    height: 48px;
+    font-family: var(--mono);
+    font-size: 18px;
+    text-align: center;
+    border: 1.5px solid var(--ink);
+    border-radius: 8px;
+    background: var(--card);
+    color: var(--ink);
+    padding: 0 10px;
+  }
+  .mc-input:focus { outline: 2.5px solid var(--gold); outline-offset: 1px; }
+  .aime-note { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); }
+  .submit {
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 13px;
+    padding: 12px 24px;
+    background: var(--ink);
+    color: var(--paper);
+    border: 1.5px solid var(--ink);
+    border-radius: 7px;
+    cursor: pointer;
+  }
+  .submit:disabled { opacity: .5; cursor: default; }
+  .verdict {
+    margin-top: 22px;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 16px;
+    border-radius: 8px;
+    display: none;
+  }
+  .verdict.show { display: block; }
+  .verdict.ok { background: #EDF6F0; border: 1.5px solid var(--correct); color: var(--correct); }
+  .verdict.no { background: #FAEFEB; border: 1.5px solid var(--wrong); color: var(--wrong); }
+  .solution {
+    margin-top: 16px;
+    border-top: 1.5px dashed var(--ink);
+    padding-top: 16px;
+    display: none;
+  }
+  .solution.show { display: block; }
+  .solution h3 {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 10px;
+  }
+  .solution .s-text { font-size: 16px; line-height: 1.7; }
+  .after { display: none; margin-top: 20px; gap: 12px; }
+  .after.show { display: flex; }
+  .loading {
+    display: none;
+    background: var(--card);
+    border: 1.5px dashed var(--ink);
+    border-radius: 10px;
+    padding: 34px;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .loading.show { display: block; }
+  .pencil { display: inline-block; animation: scribble 1s ease-in-out infinite; font-size: 22px; }
+  @keyframes scribble { 0%,100% { transform: rotate(-8deg); } 50% { transform: rotate(10deg) translateX(4px); } }
+  @media (prefers-reduced-motion: reduce) { .pencil { animation: none; } .go, .go:hover { transition: none; transform: none; } }
+  .err {
+    display: none;
+    margin-top: 14px;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--wrong);
+    background: #FAEFEB;
+    border: 1.5px solid var(--wrong);
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+  .err.show { display: block; }
+  footer {
+    background: var(--ink);
+    color: #B9C2D6;
+    padding: 28px 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+  @media (max-width: 560px) {
+    .bubbles { flex-direction: column; }
+    .bubble { flex: 1 1 auto; }
+    .hero h1 { font-size: 30px; }
+    .seg button { font-size: 10.5px; padding: 8px 2px; }
+  }
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Free &middot; Unlimited &middot; AMC 8 / 10 / 12 &middot; AIME</div>
+    <h1>Competition math training shouldn't depend on your zip code.</h1>
+    <p class="lede">The students who excel at the AMC and AIME usually have coaches, prep programs, and shelves of books. Most students have none of those. This tool generates unlimited contest-level practice problems with full step-by-step solutions, free for any student, any school.</p>
+    <a class="cta" href="#train">Start Training →</a>
+  </div>
+</section>
+<section class="why">
+  <div class="wrap">
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>Unlimited problems</h3>
+        <p>AI generates fresh, original problems calibrated to real contest difficulty, from AMC 8 warm-ups to late AIME. You never run out of practice material.</p>
+      </div>
+      <div class="why-card">
+        <h3>Built like the real thing</h3>
+        <p>Answer on A&ndash;E bubbles or AIME three-digit entry, with a running timer, so practice builds real contest pacing and instincts.</p>
+      </div>
+      <div class="why-card">
+        <h3>Every problem teaches</h3>
+        <p>Full worked solutions after every attempt, plus difficulty that adapts to your recent results. It's a coach, not just a question bank.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="trainer" id="train">
+  <div class="wrap">
+    <div class="section-label">Try it now — no signup</div>
+    <header class="tool-head">
+      <div class="kicker">Problem Generator</div>
+    </header>
+    <div class="controls">
+      <div class="row">
+        <div class="field" style="flex:2 1 260px;">
+          <label>Contest</label>
+          <div class="seg" id="levelSeg">
+            <button data-v="AMC 8">AMC 8</button>
+            <button data-v="AMC 10" class="on">AMC 10</button>
+            <button data-v="AMC 12">AMC 12</button>
+            <button data-v="AIME">AIME</button>
+            <button data-v="MATHCOUNTS">MATHCOUNTS</button>
+          </div>
+        </div>
+        <div class="field" id="roundField" style="display:none;">
+          <label>Round</label>
+          <div class="seg" id="roundSeg">
+            <button data-v="Sprint" class="on">Sprint</button>
+            <button data-v="Target">Target</button>
+          </div>
+        </div>
+        <div class="field">
+          <label>Topic</label>
+          <select id="topic">
+            <option>Mixed</option>
+            <option>Algebra</option>
+            <option>Geometry</option>
+            <option>Number Theory</option>
+            <option>Combinatorics</option>
+            <option>Probability</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Difficulty</label>
+          <select id="diff">
+            <option value="early">Early (#1–10)</option>
+            <option value="mid" selected>Middle (#11–20)</option>
+            <option value="late">Late (#21–25)</option>
+          </select>
+        </div>
+        <div class="field" style="flex:0 0 auto;">
+          <button class="go" id="goBtn">New Problem →</button>
+        </div>
+      </div>
+      <div class="err" id="errBox"></div>
+    </div>
+    <div class="scorebar">
+      <div class="stat"><div class="num" id="stSolved">0</div><div class="lab">Correct</div></div>
+      <div class="stat"><div class="num" id="stTotal">0</div><div class="lab">Attempted</div></div>
+      <div class="stat"><div class="num gold" id="stStreak">0</div><div class="lab">Streak</div></div>
+      <div class="stat"><div class="num" id="stAcc">—</div><div class="lab">Accuracy</div></div>
+    </div>
+    <div class="loading" id="loadBox">
+      <span class="pencil">✏️</span><br><br>
+      Writing a fresh problem…
+    </div>
+    <div class="problem-card" id="card">
+      <div class="p-head">
+        <div class="p-tag" id="pTag"></div>
+        <div class="timer" id="timer">0:00</div>
+      </div>
+      <div class="p-text" id="pText"></div>
+      <div class="bubbles" id="bubbles"></div>
+      <div class="aime-entry" id="aimeEntry" style="display:none;">
+        <div class="digits">
+          <input inputmode="numeric" maxlength="1" id="d0" aria-label="hundreds digit">
+          <input inputmode="numeric" maxlength="1" id="d1" aria-label="tens digit">
+          <input inputmode="numeric" maxlength="1" id="d2" aria-label="ones digit">
+        </div>
+        <button class="submit" id="aimeSubmit">Submit</button>
+        <div class="aime-note">Integer answer, 000–999</div>
+      </div>
+      <div class="mc-entry" id="mcEntry" style="display:none;">
+        <input type="text" class="mc-input" id="mcAnswer" inputmode="text" placeholder="e.g. 3/7 or 12.5" aria-label="answer">
+        <button class="submit" id="mcSubmit">Submit</button>
+        <div class="aime-note" id="mcNote">Integer, decimal, or reduced fraction (e.g. 3/7). No units or mixed numbers.</div>
+      </div>
+      <div class="verdict" id="verdict"></div>
+      <div class="solution" id="solution">
+        <h3>Solution</h3>
+        <div class="s-text" id="sText"></div>
+      </div>
+      <div class="after" id="after">
+        <button class="go" id="nextBtn">Next Problem →</button>
+        <button class="submit" id="revealBtn" style="display:none;">Show Solution</button>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    Built by Justin Puno &middot; Democratizing access to competition math prep.<br>
+    Questions or want this at your school? <a href="mailto:justintpuno@gmail.com">justintpuno@gmail.com</a>
+  </div>
+</footer>
+<script>
+  // ---------- state ----------
+  let level = "AMC 10";
+  let round = "Sprint";
+  let current = null;
+  let answered = false;
+  let timerInt = null, seconds = 0;
+  const stats = { correct: 0, total: 0, streak: 0 };
+  const recent = [];
+  // Bank-sourced problems carry a stable id; tracking the ones already shown
+  // this session lets the server avoid repeating them before falling back
+  // to live generation. Live-generated problems have no id and are never
+  // pushed here — each one is already fresh, nothing to dedupe against.
+  const seenIds = [];
+  const $ = id => document.getElementById(id);
+  // ---------- difficulty-dropdown relabeling ----------
+  // The three option *values* always stay early/mid/late — only the visible
+  // text changes per contest, so the server's band param stays uniform.
+  function updateDiffLabels(lvl) {
+    const d = $('diff');
+    if (lvl === 'AIME') {
+      d.options[0].text = 'Early (#1–5)';
+      d.options[1].text = 'Middle (#6–10)';
+      d.options[2].text = 'Late (#11–15)';
+    } else if (lvl === 'MATHCOUNTS') {
+      d.options[0].text = 'Chapter';
+      d.options[1].text = 'State';
+      d.options[2].text = 'National';
+    } else {
+      d.options[0].text = 'Early (#1–10)';
+      d.options[1].text = 'Middle (#11–20)';
+      d.options[2].text = 'Late (#21–25)';
+    }
+  }
+  // ---------- level segment ----------
+  document.querySelectorAll('#levelSeg button').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('#levelSeg button').forEach(x => x.classList.remove('on'));
+      b.classList.add('on');
+      level = b.dataset.v;
+      updateDiffLabels(level);
+      $('roundField').style.display = (level === 'MATHCOUNTS') ? 'flex' : 'none';
+    });
+  });
+  // ---------- round segment (MATHCOUNTS only) ----------
+  document.querySelectorAll('#roundSeg button').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('#roundSeg button').forEach(x => x.classList.remove('on'));
+      b.classList.add('on');
+      round = b.dataset.v;
+      $('mcNote').textContent = (round === 'Target' ? 'Calculator allowed. ' : 'No calculator. ')
+        + 'Integer, decimal, or reduced fraction (e.g. 3/7). No units or mixed numbers.';
+    });
+  });
+  // ---------- timer ----------
+  function startTimer() {
+    clearInterval(timerInt);
+    seconds = 0;
+    $('timer').textContent = '0:00';
+    timerInt = setInterval(() => {
+      seconds++;
+      const m = Math.floor(seconds / 60), s = String(seconds % 60).padStart(2, '0');
+      $('timer').textContent = m + ':' + s;
+    }, 1000);
+  }
+  // ---------- rendering ----------
+  function renderMath(el) {
+    if (window.renderMathInElement) {
+      renderMathInElement(el, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false },
+          { left: '\\(', right: '\\)', display: false },
+          { left: '\\[', right: '\\]', display: true }
+        ],
+        throwOnError: false
+      });
+    }
+  }
+  // ---------- API (server-side proxy) ----------
+  async function fetchProblem() {
+    const resp = await fetch('/api/generate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        level: level,
+        topic: $('topic').value,
+        band: $('diff').value,
+        recent: recent,
+        round: round,
+        seenIds: seenIds.slice(-200)
+      })
+    });
+    const data = await resp.json();
+    if (!resp.ok || data.error) throw new Error(data.error || 'server error');
+    return data;
+  }
+  // ---------- flow ----------
+  async function newProblem() {
+    $('goBtn').disabled = true;
+    $('errBox').classList.remove('show');
+    $('card').classList.remove('show');
+    $('loadBox').classList.add('show');
+    try {
+      current = await fetchProblem();
+      if (current.id) seenIds.push(current.id);
+      showProblem();
+    } catch (e) {
+      $('errBox').textContent = 'Could not generate a problem (' + e.message + '). Try again.';
+      $('errBox').classList.add('show');
+    } finally {
+      $('loadBox').classList.remove('show');
+      $('goBtn').disabled = false;
+    }
+  }
+  function showProblem() {
+    answered = false;
+    $('verdict').className = 'verdict';
+    $('solution').className = 'solution';
+    $('after').className = 'after';
+    $('pTag').innerHTML = '<b>' + level + (level === 'MATHCOUNTS' ? ' · ' + round : '') + '</b> &nbsp;·&nbsp; ' + $('topic').value + ' &nbsp;·&nbsp; ' + $('diff').selectedOptions[0].text;
+    $('pText').textContent = current.problem;
+    const bubbles = $('bubbles');
+    bubbles.innerHTML = '';
+    if (level === 'AIME') {
+      bubbles.style.display = 'none';
+      $('mcEntry').style.display = 'none';
+      $('aimeEntry').style.display = 'flex';
+      ['d0','d1','d2'].forEach(id => { $(id).value = ''; $(id).disabled = false; });
+      $('aimeSubmit').disabled = false;
+      setTimeout(() => $('d0').focus(), 50);
+    } else if (level === 'MATHCOUNTS') {
+      bubbles.style.display = 'none';
+      $('aimeEntry').style.display = 'none';
+      $('mcEntry').style.display = 'flex';
+      $('mcAnswer').value = '';
+      $('mcAnswer').disabled = false;
+      $('mcSubmit').disabled = false;
+      setTimeout(() => $('mcAnswer').focus(), 50);
+    } else {
+      $('aimeEntry').style.display = 'none';
+      $('mcEntry').style.display = 'none';
+      bubbles.style.display = 'flex';
+      for (const letter of ['A','B','C','D','E']) {
+        const btn = document.createElement('button');
+        btn.className = 'bubble';
+        btn.dataset.letter = letter;
+        const val = (current.choices && current.choices[letter]) || '';
+        btn.innerHTML = '<span class="dot">' + letter + '</span><span class="val">' + escapeHtml(val) + '</span>';
+        btn.addEventListener('click', () => pick(letter, btn));
+        bubbles.appendChild(btn);
+      }
+    }
+    $('card').classList.add('show');
+    renderMath($('pText'));
+    renderMath($('bubbles'));
+    startTimer();
+    $('card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  function escapeHtml(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+  function pick(letter, btn) {
+    if (answered) return;
+    answered = true;
+    clearInterval(timerInt);
+    btn.classList.add('picked');
+    const correct = letter === current.answer;
+    document.querySelectorAll('.bubble').forEach(b => {
+      b.disabled = true;
+      if (b.dataset.letter === current.answer) b.classList.add('right');
+      else if (b.dataset.letter === letter && !correct) b.classList.add('miss');
+    });
+    finish(correct, 'Answer: ' + current.answer);
+  }
+  ['d0','d1','d2'].forEach((id, i) => {
+    $(id).addEventListener('input', e => {
+      e.target.value = e.target.value.replace(/\D/g, '').slice(0, 1);
+      if (e.target.value && i < 2) $('d' + (i + 1)).focus();
+    });
+    $(id).addEventListener('keydown', e => {
+      if (e.key === 'Backspace' && !e.target.value && i > 0) $('d' + (i - 1)).focus();
+      if (e.key === 'Enter') submitAime();
+    });
+  });
+  $('aimeSubmit').addEventListener('click', submitAime);
+  function submitAime() {
+    if (answered) return;
+    const s = $('d0').value + $('d1').value + $('d2').value;
+    if (s.length !== 3) {
+      $('errBox').textContent = 'Enter all three digits (use leading zeros, e.g. 042).';
+      $('errBox').classList.add('show');
+      return;
+    }
+    $('errBox').classList.remove('show');
+    answered = true;
+    clearInterval(timerInt);
+    ['d0','d1','d2'].forEach(id => $(id).disabled = true);
+    $('aimeSubmit').disabled = true;
+    const guess = parseInt(s, 10);
+    const correct = guess === Number(current.answer);
+    finish(correct, 'Answer: ' + String(current.answer).padStart(3, '0'));
+  }
+  // ---------- MATHCOUNTS answer entry (integer / decimal / fraction) ----------
+  // Parses "3/7", "12.5", "-8", "42" into a plain number. Returns null on
+  // anything else (mixed numbers, units, stray characters, etc.) so the
+  // caller can reject the submission instead of silently mis-grading it.
+  function parseAnswer(str) {
+    const s = String(str).trim();
+    if (!s) return null;
+    const frac = s.match(/^(-?\d+)\s*\/\s*(-?\d+)$/);
+    if (frac) {
+      const num = parseInt(frac[1], 10);
+      const den = parseInt(frac[2], 10);
+      if (den === 0) return null;
+      return num / den;
+    }
+    if (/^-?\d+(\.\d+)?$/.test(s)) return parseFloat(s);
+    return null;
+  }
+  // Repeating decimals (e.g. 3/7 = 0.428571...) never compare exactly equal
+  // across two different input formats, so both sides are rounded to 4
+  // decimal places before comparing — matches MATHCOUNTS's own rounding
+  // convention for non-terminating answers.
+  function round4(x) { return Math.round((x + Number.EPSILON) * 10000) / 10000; }
+  function answersMatch(a, b) { return round4(a) === round4(b); }
+  $('mcAnswer').addEventListener('keydown', e => { if (e.key === 'Enter') submitMc(); });
+  $('mcSubmit').addEventListener('click', submitMc);
+  function submitMc() {
+    if (answered) return;
+    const raw = $('mcAnswer').value;
+    const guess = parseAnswer(raw);
+    if (guess === null) {
+      $('errBox').textContent = 'Enter a number, decimal, or fraction like 3/7 — no units, mixed numbers, or extra symbols.';
+      $('errBox').classList.add('show');
+      return;
+    }
+    const target = parseAnswer(current.answer);
+    $('errBox').classList.remove('show');
+    answered = true;
+    clearInterval(timerInt);
+    $('mcAnswer').disabled = true;
+    $('mcSubmit').disabled = true;
+    const correct = target !== null && answersMatch(guess, target);
+    finish(correct, 'Answer: ' + current.answer);
+  }
+  function finish(correct, answerLabel) {
+    stats.total++;
+    if (correct) { stats.correct++; stats.streak++; } else { stats.streak = 0; }
+    recent.push(correct ? 'correct' : 'wrong');
+    if (recent.length > 6) recent.shift();
+    updateStats();
+    const v = $('verdict');
+    const time = $('timer').textContent;
+    v.textContent = (correct ? '✓ Correct — ' : '✗ Not quite — ') + answerLabel + '  ·  ' + time;
+    v.className = 'verdict show ' + (correct ? 'ok' : 'no');
+    $('sText').textContent = current.solution || '';
+    if (correct) {
+      $('revealBtn').style.display = '';
+      $('revealBtn').onclick = () => {
+        $('solution').classList.add('show');
+        renderMath($('sText'));
+        $('revealBtn').style.display = 'none';
+      };
+    } else {
+      $('revealBtn').style.display = 'none';
+      $('solution').classList.add('show');
+      renderMath($('sText'));
+    }
+    $('after').classList.add('show');
+  }
+  function updateStats() {
+    $('stSolved').textContent = stats.correct;
+    $('stTotal').textContent = stats.total;
+    $('stStreak').textContent = stats.streak;
+    $('stAcc').textContent = stats.total ? Math.round(100 * stats.correct / stats.total) + '%' : '—';
+  }
+  $('goBtn').addEventListener('click', newProblem);
+  $('nextBtn').addEventListener('click', newProblem);
+</script>
+</body>
+</html>
