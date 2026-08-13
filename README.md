@@ -22,3 +22,4 @@ Each problem is one API call capped at 1,000 output tokens (roughly a fraction o
 ## Local test
 
 `npx vercel dev` runs both the static page and the API function locally (set the env var in `.env.local` as `ANTHROPIC_API_KEY=...`)
+
