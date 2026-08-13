@@ -32,8 +32,8 @@ const PER_BUCKET = parseInt(process.env.BANK_PER_BUCKET || '6', 10);
 // Verify current pricing at https://anthropic.com/pricing before trusting
 // this — these are the figures used to produce the running cost estimate
 // below, not a guarantee of what you'll actually be billed.
-const PRICE_PER_M_INPUT = 3;
-const PRICE_PER_M_OUTPUT = 15;
+const PRICE_PER_M_INPUT = 2;
+const PRICE_PER_M_OUTPUT = 10;
 
 const apiKey = process.env.ANTHROPIC_API_KEY;
 if (!apiKey) {
