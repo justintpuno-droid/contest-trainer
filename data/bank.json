@@ -2733,32 +2733,496 @@
       "answer": "60",
       "solution": "A number divisible by 10 must include the primes 2 and 5. To get exactly 12 divisors, we want $(e_1+1)(e_2+1)\\cdots=12$ using the smallest possible base primes with the largest exponents on the smallest primes. Using exponent pattern $\\{2,1,1\\}$ with primes $2,3,5$ gives $N=2^2\\cdot 3\\cdot5=60$, and $(2+1)(1+1)(1+1)=12$ divisors. Checking smaller multiples of 10 (10,20,30,40,50) shows they have only 4, 6, 8, 8, and 6 divisors respectively, so none work. Thus the smallest such number is $60$.",
       "id": "MATHCOUNTS|Sprint|Number Theory|early#1786643018912#kjddsl"
+    },
+    {
+      "problem": "Find the sum of all positive integers less than $100$ that are multiples of $4$ and have exactly $6$ positive divisors.",
+      "answer": "424",
+      "solution": "A number has exactly $6$ divisors if it has the form $p^5$ or $p^2q$ for distinct primes $p,q$. To be a multiple of $4=2^2$, either $p=2$ with exponent $5$ (giving $32$), or the number is $2^2\\cdot q=4q$ for an odd prime $q$ (since $2\\cdot q^2$ only contributes one factor of $2$, it fails to be a multiple of $4$). We need $4q<100$, so $q<25$, giving primes $q=3,5,7,11,13,17,19,23$. Summing these primes: $3+5+7+11+13+17+19+23=98$, so these terms contribute $4\\times 98=392$. Adding the term $32$ from $2^5$ gives a total of $392+32=424$.",
+      "id": "MATHCOUNTS|Sprint|Number Theory|early#1786644073143#uor5ce"
     }
   ],
-  "MATHCOUNTS|Sprint|Number Theory|mid": [],
-  "MATHCOUNTS|Sprint|Number Theory|late": [],
-  "MATHCOUNTS|Sprint|Combinatorics|early": [],
-  "MATHCOUNTS|Sprint|Combinatorics|mid": [],
-  "MATHCOUNTS|Sprint|Combinatorics|late": [],
-  "MATHCOUNTS|Sprint|Probability|early": [],
-  "MATHCOUNTS|Sprint|Probability|mid": [],
-  "MATHCOUNTS|Sprint|Probability|late": [],
-  "MATHCOUNTS|Target|Mixed|early": [],
-  "MATHCOUNTS|Target|Mixed|mid": [],
-  "MATHCOUNTS|Target|Mixed|late": [],
-  "MATHCOUNTS|Target|Algebra|early": [],
-  "MATHCOUNTS|Target|Algebra|mid": [],
-  "MATHCOUNTS|Target|Algebra|late": [],
-  "MATHCOUNTS|Target|Geometry|early": [],
-  "MATHCOUNTS|Target|Geometry|mid": [],
-  "MATHCOUNTS|Target|Geometry|late": [],
-  "MATHCOUNTS|Target|Number Theory|early": [],
-  "MATHCOUNTS|Target|Number Theory|mid": [],
-  "MATHCOUNTS|Target|Number Theory|late": [],
-  "MATHCOUNTS|Target|Combinatorics|early": [],
-  "MATHCOUNTS|Target|Combinatorics|mid": [],
-  "MATHCOUNTS|Target|Combinatorics|late": [],
-  "MATHCOUNTS|Target|Probability|early": [],
-  "MATHCOUNTS|Target|Probability|mid": [],
-  "MATHCOUNTS|Target|Probability|late": []
+  "MATHCOUNTS|Sprint|Number Theory|mid": [
+    {
+      "problem": "What is the smallest positive integer that has exactly 12 positive divisors and is divisible by 15?",
+      "answer": "60",
+      "solution": "If $n = p_1^{a_1}p_2^{a_2}\\cdots$, the number of divisors is $(a_1+1)(a_2+1)\\cdots = 12$. Since $n$ must be divisible by 15, it needs at least the primes $3$ and $5$; to minimize $n$ we also allow a factor of $2$. Writing $12 = 3\\cdot 2\\cdot 2$, assign the largest exponent to the smallest prime: $n = 2^2\\cdot 3^1\\cdot 5^1 = 60$. Checking, $60$ has divisors $1,2,3,4,5,6,10,12,15,20,30,60$, exactly 12 of them, and $60$ is divisible by $15$. Testing other exponent assignments (like $2\\cdot3^2\\cdot5=90$) or omitting the factor of 2 (like $3^2\\cdot5^3=1125$) gives larger values, so $60$ is indeed the smallest.",
+      "id": "MATHCOUNTS|Sprint|Number Theory|mid#1786644128362#6ulp1o"
+    }
+  ],
+  "MATHCOUNTS|Sprint|Number Theory|late": [
+    {
+      "problem": "What is the smallest positive integer that is divisible by 20 and has exactly 12 positive divisors?",
+      "answer": "60",
+      "solution": "Since $20=2^2\\cdot5$, any such number must include at least $2^2$ and $5^1$ in its prime factorization. If $n=2^a\\cdot5^b\\cdot3^c\\cdots$, the number of divisors is $(a+1)(b+1)(c+1)\\cdots=12$, and to minimize $n$ we want the largest exponents on the smallest primes. Taking $a=2,b=1,c=1$ gives $(3)(2)(2)=12$ divisors and $n=2^2\\cdot5\\cdot3=60$. Checking smaller combinations (like using only primes 2 and 5, or a different prime split) all give larger values, such as $160, 200,$ or $500$. Listing the divisors of $60$: $1,2,3,4,5,6,10,12,15,20,30,60$ confirms exactly 12 divisors, so the smallest such integer is $60$.",
+      "id": "MATHCOUNTS|Sprint|Number Theory|late#1786644294840#gvb98z"
+    }
+  ],
+  "MATHCOUNTS|Sprint|Combinatorics|early": [
+    {
+      "problem": "How many distinct arrangements of the letters in the word MISSISSIPPI have no two S's adjacent?",
+      "answer": "7350",
+      "solution": "The word MISSISSIPPI has letters M(1), I(4), S(4), P(2), totaling 11 letters. First arrange the non-S letters M, I, I, I, I, P, P: there are $\\frac{7!}{4!\\,2!}=105$ ways. This creates 8 gaps (including ends) where the 4 identical S's can be placed, one per gap, giving $\\binom{8}{4}=70$ ways to choose which gaps get an S. Multiplying, the total number of arrangements with no two S's adjacent is $105\\times 70 = 7350$.",
+      "id": "MATHCOUNTS|Sprint|Combinatorics|early#1786644459555#tg1kev"
+    },
+    {
+      "problem": "Using the digits $1, 2, 3, 4, 5, 6$, each digit used at most once, how many 4-digit even numbers can be formed?",
+      "answer": "180",
+      "solution": "For the number to be even, the units digit must be one of $2, 4, 6$, giving $3$ choices. After choosing the units digit, $5$ digits remain to fill the thousands, hundreds, and tens places, with order mattering and no repeats, giving $5 \\times 4 \\times 3 = 60$ ways. Multiplying, the total count is $3 \\times 60 = 180$.",
+      "id": "MATHCOUNTS|Sprint|Combinatorics|early#1786644465660#5q078g"
+    },
+    {
+      "problem": "A bag contains 4 red, 3 blue, and 2 green marbles, all distinguishable from one another. Ryan randomly selects 3 marbles from the bag without replacement. What is the probability that his selection includes at least one marble of each color? Express your answer as a common fraction.",
+      "answer": "2/7",
+      "solution": "The total number of ways to choose 3 marbles from the 9 in the bag is $\\binom{9}{3}=84$. Since there are only 3 colors, having at least one marble of each color among 3 chosen marbles means Ryan picked exactly one of each color. The number of ways to do this is $4\\times 3\\times 2=24$ (choosing one red, one blue, one green). So the probability is $\\frac{24}{84}=\\frac{2}{7}$.",
+      "id": "MATHCOUNTS|Sprint|Combinatorics|early#1786644482756#v19erf"
+    }
+  ],
+  "MATHCOUNTS|Sprint|Combinatorics|mid": [
+    {
+      "problem": "A club has 5 boys and 4 girls. A committee of 4 people is selected at random from the club. What is the probability that the committee consists of exactly 2 boys and 2 girls? Express your answer as a common fraction.",
+      "answer": "10/21",
+      "solution": "The total number of ways to choose 4 people from 9 is $\\binom{9}{4}=126$. The number of ways to choose exactly 2 boys from 5 and 2 girls from 4 is $\\binom{5}{2}\\cdot\\binom{4}{2}=10\\cdot6=60$. So the probability is $\\frac{60}{126}$, which simplifies by dividing both by 6 to get $\\frac{10}{21}$.",
+      "id": "MATHCOUNTS|Sprint|Combinatorics|mid#1786644489520#15quf1"
+    },
+    {
+      "problem": "A club has 6 boys and 4 girls. A committee of 4 people is chosen at random from the club. How many different committees include at least 2 girls?",
+      "answer": "115",
+      "solution": "We count committees with exactly 2, 3, or 4 girls. With 2 girls and 2 boys: $\\binom{4}{2}\\binom{6}{2}=6\\cdot15=90$. With 3 girls and 1 boy: $\\binom{4}{3}\\binom{6}{1}=4\\cdot6=24$. With 4 girls and 0 boys: $\\binom{4}{4}\\binom{6}{0}=1$. Adding these cases gives $90+24+1=115$.",
+      "id": "MATHCOUNTS|Sprint|Combinatorics|mid#1786644496430#357un9"
+    },
+    {
+      "problem": "A club has 10 members, including Alice and Bob. In how many ways can a 4-person committee be selected from the 10 members if Alice and Bob refuse to serve on the committee together?",
+      "answer": "182",
+      "solution": "The total number of 4-person committees from 10 people is $\\binom{10}{4}=210$. The number of committees that include both Alice and Bob is found by choosing the remaining 2 members from the other 8 people: $\\binom{8}{2}=28$. Subtracting these unwanted committees gives $210-28=182$ valid committees.",
+      "id": "MATHCOUNTS|Sprint|Combinatorics|mid#1786644514232#rco7p2"
+    }
+  ],
+  "MATHCOUNTS|Sprint|Combinatorics|late": [
+    {
+      "problem": "A book club consists of 6 married couples, for a total of 12 people. A steering committee of 5 people is to be chosen so that no two people from the same couple both serve on the committee. How many different committees are possible?",
+      "answer": "192",
+      "solution": "Since the committee has 5 people and no couple can contribute two members, exactly 5 of the 6 couples must each contribute exactly one member, and 1 couple contributes none. First choose which 5 of the 6 couples are represented: $\\binom{6}{5}=6$ ways. Then, for each of those 5 chosen couples, pick which of its 2 members joins the committee: $2^5=32$ ways. Multiplying gives $6\\times 32 = 192$ possible committees.",
+      "id": "MATHCOUNTS|Sprint|Combinatorics|late#1786644523393#vh2o1z"
+    },
+    {
+      "problem": "A committee of 5 people is to be chosen from a group of 8 men and 6 women. In how many ways can the committee be formed if it must include at least 3 women?",
+      "answer": "686",
+      "solution": "Split into cases based on the number of women: 3 women and 2 men, 4 women and 1 man, or 5 women and 0 men. For 3 women, 2 men: $\\binom{6}{3}\\binom{8}{2} = 20 \\cdot 28 = 560$. For 4 women, 1 man: $\\binom{6}{4}\\binom{8}{1} = 15 \\cdot 8 = 120$. For 5 women, 0 men: $\\binom{6}{5}\\binom{8}{0} = 6 \\cdot 1 = 6$. Adding these cases gives $560 + 120 + 6 = 686$.",
+      "id": "MATHCOUNTS|Sprint|Combinatorics|late#1786644533022#8gt164"
+    },
+    {
+      "problem": "A committee of 5 people is to be chosen from a group of 4 men and 5 women, with the requirement that at least 2 men are on the committee. How many different committees can be formed?",
+      "answer": "105",
+      "solution": "The total number of ways to choose any 5 people from the 9 is $\\binom{9}{5}=126$. Subtract the cases with fewer than 2 men: with 0 men, $\\binom{4}{0}\\binom{5}{5}=1$; with 1 man, $\\binom{4}{1}\\binom{5}{4}=4\\cdot5=20$. So the number of invalid committees is $1+20=21$. Thus the number of valid committees is $126-21=105$.",
+      "id": "MATHCOUNTS|Sprint|Combinatorics|late#1786644538618#a84bmi"
+    }
+  ],
+  "MATHCOUNTS|Sprint|Probability|early": [
+    {
+      "problem": "A bag contains 5 red marbles, 4 blue marbles, and 3 green marbles. Two marbles are drawn at random without replacement. What is the probability that both marbles are the same color? Express your answer as a common fraction.",
+      "answer": "19/66",
+      "solution": "There are $\\binom{12}{2}=66$ ways to choose 2 marbles from the 12 total. The number of ways to choose 2 of the same color is $\\binom{5}{2}+\\binom{4}{2}+\\binom{3}{2}=10+6+3=19$. So the probability both marbles match in color is $\\frac{19}{66}$, which is already in simplest form since $19$ is prime and does not divide $66$.",
+      "id": "MATHCOUNTS|Sprint|Probability|early#1786644543246#1ac818"
+    }
+  ],
+  "MATHCOUNTS|Sprint|Probability|mid": [
+    {
+      "problem": "A committee of 4 people is selected at random from a group of 6 men and 4 women. What is the probability that the committee includes more women than men?",
+      "answer": "5/42",
+      "solution": "The total number of ways to choose 4 people from 10 is $\\binom{10}{4}=210$. \"More women than men\" on a 4-person committee means either 3 women and 1 man, or 4 women and 0 men. For 3 women and 1 man: $\\binom{4}{3}\\binom{6}{1}=4\\cdot6=24$. For 4 women and 0 men: $\\binom{4}{4}\\binom{6}{0}=1\\cdot1=1$. So favorable outcomes total $24+1=25$, giving probability $\\frac{25}{210}=\\frac{5}{42}$.",
+      "id": "MATHCOUNTS|Sprint|Probability|mid#1786644594787#229xms"
+    },
+    {
+      "problem": "A bag contains 5 red marbles, 4 blue marbles, and 3 green marbles. Two marbles are drawn at random without replacement. What is the probability that both marbles drawn are the same color? Express your answer as a common fraction.",
+      "answer": "19/66",
+      "solution": "There are $12$ marbles total, so the number of ways to choose $2$ is $\\binom{12}{2}=66$. Same-color pairs: red pairs $\\binom{5}{2}=10$, blue pairs $\\binom{4}{2}=6$, green pairs $\\binom{3}{2}=3$, giving $10+6+3=19$ favorable outcomes. The probability is $\\frac{19}{66}$, which is already in simplest form.",
+      "id": "MATHCOUNTS|Sprint|Probability|mid#1786644599701#9q3u7n"
+    },
+    {
+      "problem": "A box contains 6 red pens, 4 blue pens, and 2 black pens. Three pens are selected at random without replacement. What is the probability that all three selected pens are the same color?",
+      "answer": "6/55",
+      "solution": "The total number of ways to choose 3 pens from 12 is $\\binom{12}{3}=220$. The number of ways to choose 3 pens of the same color is $\\binom{6}{3}+\\binom{4}{3}+\\binom{2}{3}=20+4+0=24$ (there aren't enough black pens to choose 3). So the probability is $\\frac{24}{220}=\\frac{6}{55}$.",
+      "id": "MATHCOUNTS|Sprint|Probability|mid#1786644608019#84zjyh"
+    }
+  ],
+  "MATHCOUNTS|Sprint|Probability|late": [
+    {
+      "problem": "A bag contains 4 red marbles, 5 blue marbles, and 3 green marbles. Two marbles are drawn at random from the bag without replacement. What is the probability that both marbles drawn are the same color? Express your answer as a common fraction.",
+      "answer": "19/66",
+      "solution": "There are $4+5+3=12$ marbles total, so the total number of ways to choose 2 is $\\binom{12}{2}=66$. The number of ways to choose 2 of the same color is $\\binom{4}{2}+\\binom{5}{2}+\\binom{3}{2}=6+10+3=19$. So the probability both marbles are the same color is $\\frac{19}{66}$, which is already in lowest terms.",
+      "id": "MATHCOUNTS|Sprint|Probability|late#1786644612807#orrfh1"
+    },
+    {
+      "problem": "A fair six-sided die is rolled three times. What is the probability that the three results, in the order they are rolled, form a strictly increasing sequence (each roll is strictly greater than the one before it)?",
+      "answer": "5/54",
+      "solution": "There are $6^3 = 216$ equally likely outcomes for the three rolls. A strictly increasing sequence corresponds to choosing 3 distinct values from $\\{1,2,3,4,5,6\\}$, since any set of 3 distinct numbers can be arranged in exactly one strictly increasing order. The number of ways to choose 3 distinct values is $\\binom{6}{3} = 20$. So the probability is $\\frac{20}{216} = \\frac{5}{54}$.",
+      "id": "MATHCOUNTS|Sprint|Probability|late#1786644624670#rt4wg5"
+    },
+    {
+      "problem": "A bag contains 4 red marbles, 3 blue marbles, and 2 green marbles. Three marbles are drawn at random without replacement. What is the probability that the three marbles drawn are all different colors?",
+      "answer": "2/7",
+      "solution": "The total number of ways to choose 3 marbles from the 9 in the bag is $\\binom{9}{3}=84$. To get one of each color, choose 1 red from 4, 1 blue from 3, and 1 green from 2, giving $4\\cdot3\\cdot2=24$ favorable outcomes. The probability is $\\frac{24}{84}$, which simplifies by dividing numerator and denominator by 12 to $\\frac{2}{7}$.",
+      "id": "MATHCOUNTS|Sprint|Probability|late#1786644629289#1obnvi"
+    }
+  ],
+  "MATHCOUNTS|Target|Mixed|early": [
+    {
+      "problem": "The side lengths of a triangle are consecutive integers, and the triangle's area is exactly twice its perimeter. Find the perimeter of the triangle.",
+      "answer": "42",
+      "solution": "Let the sides be $n-1, n, n+1$, so the perimeter is $3n$ and the semiperimeter is $s=\\frac{3n}{2}$. By Heron's formula, the area is $\\sqrt{s(s-n+1)(s-n)(s-n-1)}=\\sqrt{\\frac{3n}{2}\\cdot\\left(\\frac{n}{2}+1\\right)\\cdot\\frac{n}{2}\\cdot\\left(\\frac{n}{2}-1\\right)}=\\frac{n}{4}\\sqrt{3(n^2-4)}$. Setting this equal to twice the perimeter, $\\frac{n}{4}\\sqrt{3(n^2-4)}=6n$, so $\\sqrt{3(n^2-4)}=24$, giving $3(n^2-4)=576$, so $n^2=196$ and $n=14$. The sides are $13,14,15$, giving perimeter $3(14)=42$; checking, $s=21$ and area $=\\sqrt{21\\cdot 8\\cdot 7\\cdot 6}=\\sqrt{7056}=84=2(42)$, confirming the answer.",
+      "id": "MATHCOUNTS|Target|Mixed|early#1786644675731#cvkxch"
+    },
+    {
+      "problem": "Find the number of ordered pairs of positive integers $(x, y)$ such that $x^2 - y^2 = 2024$.",
+      "answer": "4",
+      "solution": "Factor $x^2-y^2=(x-y)(x+y)=2024$. Since $2024$ is even, $x-y$ and $x+y$ must have the same parity; if both were odd their product would be odd, so both must be even. Write $x-y=2a$ and $x+y=2b$ with $a<b$ positive integers, giving $4ab=2024$, so $ab=506=2\\cdot 11\\cdot 23$. The divisors of $506$ are $1,2,11,22,23,46,253,506$, which pair up as $(1,506),(2,253),(11,46),(22,23)$ with $a<b$ in each case — 4 valid pairs. Each pair $(a,b)$ gives a unique solution $x=a+b,\\ y=b-a$, both positive, so there are $4$ ordered pairs $(x,y)$.",
+      "id": "MATHCOUNTS|Target|Mixed|early#1786644709374#zt41gv"
+    },
+    {
+      "problem": "Two vertical poles stand on level ground $25$ feet apart. One pole is $12$ feet tall and the other is $18$ feet tall. A wire runs from the top of each pole to the base of the other pole, and the two wires cross at some point above the ground. How many feet above the ground do the wires cross?",
+      "answer": "7.2",
+      "solution": "Place the $12$-foot pole's base at $(0,0)$ and the $18$-foot pole's base at $(25,0)$. The wire from the top of the first pole to the base of the second goes from $(0,12)$ to $(25,0)$, giving the line $y = 12 - \\frac{12}{25}x$. The wire from the top of the second pole to the base of the first goes from $(25,18)$ to $(0,0)$, giving the line $y = \\frac{18}{25}x$. Setting these equal: $12 - \\frac{12}{25}x = \\frac{18}{25}x$, so $12 = \\frac{30}{25}x$, giving $x = 10$. Substituting back, $y = \\frac{18}{25}(10) = 7.2$, so the wires cross $7.2$ feet above the ground.",
+      "id": "MATHCOUNTS|Target|Mixed|early#1786644727005#p5ysam"
+    }
+  ],
+  "MATHCOUNTS|Target|Mixed|mid": [
+    {
+      "problem": "In triangle $ABC$, $AB = 13$, $BC = 14$, and $CA = 15$. Point $D$ is the foot of the altitude from $A$ to $\\overline{BC}$, and point $M$ is the midpoint of $\\overline{BC}$. Find the area of triangle $AMD$.",
+      "answer": "12",
+      "solution": "First use Heron's formula with $s = 21$: area $=\\sqrt{21\\cdot 8\\cdot 7\\cdot 6}=\\sqrt{7056}=84$. Since area $=\\frac12\\cdot BC\\cdot AD$, we get $84=\\frac12(14)(AD)$, so $AD=12$. Let $BD=x$; then $AB^2-BD^2=AC^2-DC^2$ gives $169-x^2=225-(14-x)^2$, which simplifies to $169=29+28x$, so $x=5$, meaning $BD=5$. Since $M$ is the midpoint of $BC$, $BM=7$, so $DM=BM-BD=2$. Since $AD\\perp BC$, triangle $AMD$ has legs $AD=12$ and $DM=2$, so its area is $\\frac12(12)(2)=12$.",
+      "id": "MATHCOUNTS|Target|Mixed|mid#1786644770635#hxbyxv"
+    },
+    {
+      "problem": "A rectangular box has edge lengths $x$, $x+3$, and $2x-1$, where $x$ is a positive number. The total surface area of the box is $314$ square units. Find the volume of the box.",
+      "answer": "360",
+      "solution": "The surface area is $2[x(x+3)+x(2x-1)+(x+3)(2x-1)]=314$. Expanding, $x(x+3)=x^2+3x$, $x(2x-1)=2x^2-x$, and $(x+3)(2x-1)=2x^2+5x-3$, which sum to $5x^2+7x-3$. So $2(5x^2+7x-3)=314$, giving $5x^2+7x-160=0$. The discriminant is $7^2+4\\cdot5\\cdot160=3249=57^2$, so $x=\\frac{-7+57}{10}=5$ (the other root is negative and rejected). The edges are $5$, $8$, and $9$, so the volume is $5\\cdot8\\cdot9=360$.",
+      "id": "MATHCOUNTS|Target|Mixed|mid#1786644791723#ojlfnj"
+    },
+    {
+      "problem": "Triangle $ABC$ has side lengths that are consecutive integers. The largest angle of the triangle measures twice the smallest angle. Find the perimeter of the triangle.",
+      "answer": "15",
+      "solution": "Let the sides be $n, n+1, n+2$, opposite angles $A$ (smallest), $B$, $C$ (largest), so $C = 2A$. By the Law of Sines, $c = 2a\\cos A$, and combining this with the Law of Cosines expression for $\\cos A$ gives the identity $c^2 = a(a+b)$ whenever $C = 2A$. Substituting $a=n$, $b=n+1$, $c=n+2$ gives $(n+2)^2 = n(2n+1)$, which simplifies to $n^2 - 3n - 4 = 0$, or $(n-4)(n+1)=0$. Since $n$ must be positive, $n=4$, so the sides are $4, 5, 6$. The perimeter is $4+5+6 = 15$.",
+      "id": "MATHCOUNTS|Target|Mixed|mid#1786644813885#7ls7kt"
+    }
+  ],
+  "MATHCOUNTS|Target|Mixed|late": [
+    {
+      "problem": "A right triangle has integer side lengths. Its area (in square units) equals twice its perimeter (in units). Find the sum of all possible values of the hypotenuse.",
+      "answer": "87",
+      "solution": "Let the legs be $a,b$ and hypotenuse $c$. The condition gives $\\frac{ab}{2}=2(a+b+c)$, so $ab=4(a+b+c)$. Since a right triangle's inradius satisfies $r=\\frac{a+b-c}{2}$ and $\\text{Area}=r\\cdot s$ where $s=\\frac{a+b+c}{2}$, we get $ab=r(a+b+c)$, so $r=4$, meaning $a+b-c=8$, i.e. $c=a+b-8$. Substituting into $a^2+b^2=c^2$ and simplifying gives $(a-8)(b-8)=32$. Checking factor pairs of 32 (with $a,b>8$): $(1,32)\\to(9,40,41)$, $(2,16)\\to(10,24,26)$, $(4,8)\\to(12,16,20)$ — each verified to satisfy the original area/perimeter condition. Summing the distinct hypotenuses: $41+26+20=87$.",
+      "id": "MATHCOUNTS|Target|Mixed|late#1786644838527#1ngk89"
+    },
+    {
+      "problem": "A rectangular box has edge lengths that are three consecutive integers. The total surface area of the box is 484 square units. What is the volume of the box, in cubic units?",
+      "answer": "720",
+      "solution": "Let the edges be $n$, $n+1$, and $n+2$. The surface area is $2(n(n+1)+(n+1)(n+2)+n(n+2)) = 2(3n^2+6n+2) = 6n^2+12n+4$. Setting this equal to $484$ gives $6n^2+12n-480=0$, which simplifies to $n^2+2n-80=0$. Factoring gives $(n-8)(n+10)=0$, so $n=8$ (taking the positive root). The edges are $8$, $9$, and $10$, so the volume is $8\\cdot 9\\cdot 10 = 720$.",
+      "id": "MATHCOUNTS|Target|Mixed|late#1786644865465#brpjfm"
+    },
+    {
+      "problem": "The sum of the lengths of all 12 edges of a rectangular box is 76 units, and the total surface area of the box is 192 square units. What is the length of the space diagonal of the box?",
+      "answer": "13",
+      "solution": "Let the box have dimensions $l, w, h$. The sum of all edges is $4(l+w+h)=76$, so $l+w+h=19$. The surface area is $2(lw+wh+hl)=192$, so $lw+wh+hl=96$. The space diagonal $d$ satisfies $d^2=l^2+w^2+h^2=(l+w+h)^2-2(lw+wh+hl)$. Substituting, $d^2=19^2-2(96)=361-192=169$. Thus $d=\\sqrt{169}=13$.",
+      "id": "MATHCOUNTS|Target|Mixed|late#1786644886497#h92f9b"
+    }
+  ],
+  "MATHCOUNTS|Target|Algebra|early": [
+    {
+      "problem": "Real numbers $a$, $b$, and $c$ satisfy $a+b+c=6$, $ab+bc+ca=11$, and $abc=6$. Find $a^3+b^3+c^3$.",
+      "answer": "36",
+      "solution": "First find $a^2+b^2+c^2$ using $(a+b+c)^2 = a^2+b^2+c^2 + 2(ab+bc+ca)$: $36 = a^2+b^2+c^2 + 22$, so $a^2+b^2+c^2 = 14$. Next use the identity $a^3+b^3+c^3 - 3abc = (a+b+c)(a^2+b^2+c^2-ab-bc-ca)$. Substituting known values: $a^2+b^2+c^2-ab-bc-ca = 14-11=3$, so $a^3+b^3+c^3 - 18 = 6\\cdot 3 = 18$. Thus $a^3+b^3+c^3 = 18+18 = 36$. (As a check, $t^3-6t^2+11t-6=(t-1)(t-2)(t-3)$, so $a,b,c$ are $1,2,3$ in some order, and $1^3+2^3+3^3 = 36$.)",
+      "id": "MATHCOUNTS|Target|Algebra|early#1786644918442#kvkcxk"
+    },
+    {
+      "problem": "Two positive integers differ by 5. Their product is 23 more than their sum. What is the sum of the cubes of the two integers?",
+      "answer": "793",
+      "solution": "Let the integers be $x$ and $y$ with $x>y$ and $x-y=5$, so $x=y+5$. The condition that the product exceeds the sum by 23 gives $xy-(x+y)=23$. Substituting $x=y+5$: $(y+5)y-(2y+5)=23$, which simplifies to $y^2+3y-28=0$. Factoring gives $(y+7)(y-4)=0$, so $y=4$ (rejecting the negative root), giving $x=9$. Then $x^3+y^3=9^3+4^3=729+64=793$.",
+      "id": "MATHCOUNTS|Target|Algebra|early#1786644941147#65n8qm"
+    },
+    {
+      "problem": "Two hoses, A and B, are used to fill a pool. Working together, they fill the pool in $T$ hours. Hose A working alone would take 5 hours longer than $T$, and Hose B working alone would take 20 hours longer than $T$. If Hose A alone takes $a$ hours and Hose B alone takes $b$ hours to fill the pool, find $a+b+T$.",
+      "answer": "55",
+      "solution": "Since the rates add, $\\frac{1}{a}+\\frac{1}{b}=\\frac{1}{T}$, where $a=T+5$ and $b=T+20$. So $\\frac{1}{T+5}+\\frac{1}{T+20}=\\frac{1}{T}$. Multiplying both sides by $T(T+5)(T+20)$ gives $T(T+20)+T(T+5)=(T+5)(T+20)$. Expanding: $2T^2+25T = T^2+25T+100$, so $T^2=100$, giving $T=10$ (taking the positive root). Then $a=T+5=15$ and $b=T+20=30$, so $a+b+T=15+30+10=55$.",
+      "id": "MATHCOUNTS|Target|Algebra|early#1786645002104#imbkh2"
+    }
+  ],
+  "MATHCOUNTS|Target|Algebra|mid": [
+    {
+      "problem": "Suppose $x$ is a real number satisfying $x + \\dfrac{1}{x} = \\dfrac{29}{10}$. Find the value of $x^3 + \\dfrac{1}{x^3}$, expressed as a decimal.",
+      "answer": "15.689",
+      "solution": "Square both sides of $x+\\frac{1}{x}=\\frac{29}{10}$ to get $x^2+2+\\frac{1}{x^2}=\\left(\\frac{29}{10}\\right)^2=8.41$, so $x^2+\\frac{1}{x^2}=6.41$. Use the identity $x^3+\\frac{1}{x^3}=\\left(x+\\frac{1}{x}\\right)\\left(x^2+\\frac{1}{x^2}\\right)-\\left(x+\\frac{1}{x}\\right)$. Substitute the known values: $x^3+\\frac{1}{x^3}=2.9(6.41)-2.9=2.9(6.41-1)=2.9(5.41)$. Multiplying gives $2.9\\times5.41=15.689$. Thus $x^3+\\dfrac{1}{x^3}=15.689$.",
+      "id": "MATHCOUNTS|Target|Algebra|mid#1786645013125#j2mt3p"
+    },
+    {
+      "problem": "Let $a$ and $b$ be positive real numbers such that $a+b=14$ and $a^3+b^3=1064$. Find the positive difference between $a$ and $b$.",
+      "answer": "6",
+      "solution": "Use the identity $a^3+b^3=(a+b)^3-3ab(a+b)$. Substituting $a+b=14$ gives $1064 = 14^3 - 3ab(14) = 2744 - 42ab$, so $42ab = 1680$ and $ab = 40$. Now use $(a-b)^2 = (a+b)^2 - 4ab = 196 - 160 = 36$. Taking the positive square root, $a-b = 6$.",
+      "id": "MATHCOUNTS|Target|Algebra|mid#1786645021608#sgo4jo"
+    },
+    {
+      "problem": "A biologist models the size of a bacteria colony, in thousands, using the quadratic function $P(t) = at^2 + bt + c$, where $t$ is the number of hours after the experiment begins. She measures $P(1) = 4$, $P(2) = 7$, and $P(4) = 25$. Assuming this model holds for all $t$, find $P(3)$.",
+      "answer": "14",
+      "solution": "Substitute the three data points into $P(t)=at^2+bt+c$ to get the system $a+b+c=4$, $4a+2b+c=7$, and $16a+4b+c=25$. Subtracting the first from the second gives $3a+b=3$, and subtracting the second from the third gives $12a+2b=18$, or $6a+b=9$. Subtracting these two new equations gives $3a=6$, so $a=2$, then $b=3-3(2)=-3$, and $c=4-2-(-3)=5$. Thus $P(t)=2t^2-3t+5$, and $P(3)=2(9)-3(3)+5=18-9+5=14$.",
+      "id": "MATHCOUNTS|Target|Algebra|mid#1786645041789#8u4nia"
+    }
+  ],
+  "MATHCOUNTS|Target|Algebra|late": [
+    {
+      "problem": "Real numbers $x$ and $y$ satisfy $x+y=10$ and $x^3+y^3=520$. Find the value of $x^4+y^4$.",
+      "answer": "4112",
+      "solution": "Using the identity $x^3+y^3=(x+y)^3-3xy(x+y)$, substitute $x+y=10$: $520 = 1000 - 30xy$, so $xy=16$. Then $x^2+y^2=(x+y)^2-2xy=100-32=68$. Finally, $x^4+y^4=(x^2+y^2)^2-2(xy)^2=68^2-2(16)^2=4624-512=4112$. (Check: $x=8,y=2$ satisfy both original equations, and $8^4+2^4=4096+16=4112$.)",
+      "id": "MATHCOUNTS|Target|Algebra|late#1786645054317#y8ojuo"
+    },
+    {
+      "problem": "The quadratic equation $x^2-(k+3)x+(3k+1)=0$ has two real roots whose difference is $5$. Compute the sum of all possible values of $k$.",
+      "answer": "6",
+      "solution": "Let the roots be $r$ and $s$. By Vieta's formulas, $r+s=k+3$ and $rs=3k+1$. Since $(r-s)^2=(r+s)^2-4rs$, we have $(r-s)^2=(k+3)^2-4(3k+1)=k^2-6k+5$. Setting this equal to $25$ (since the roots differ by $5$) gives $k^2-6k+5=25$, so $k^2-6k-20=0$. By Vieta's formulas applied to this quadratic in $k$, the sum of its roots is $6$, which is the sum of all possible values of $k$.",
+      "id": "MATHCOUNTS|Target|Algebra|late#1786645100187#uuxdho"
+    },
+    {
+      "problem": "Ana, Beto, and Cara can each paint a fence at a constant rate. Working together, Ana and Beto can paint the fence in 4 hours. Working together, Beto and Cara can paint the fence in 5 hours. Working together, Ana and Cara can paint the fence in 6 hours. If all three work together, how many hours will it take them to paint the fence? Express your answer as a common fraction.",
+      "answer": "120/37",
+      "solution": "Let $a$, $b$, $c$ be the fraction of the fence each person paints per hour. Then $a+b=\\frac{1}{4}$, $b+c=\\frac{1}{5}$, and $a+c=\\frac{1}{6}$. Adding all three equations gives $2(a+b+c)=\\frac{1}{4}+\\frac{1}{5}+\\frac{1}{6}=\\frac{15}{60}+\\frac{12}{60}+\\frac{10}{60}=\\frac{37}{60}$. So $a+b+c=\\frac{37}{120}$, meaning together they paint $\\frac{37}{120}$ of the fence per hour. The time to paint the whole fence together is the reciprocal, $\\frac{120}{37}$ hours.",
+      "id": "MATHCOUNTS|Target|Algebra|late#1786645158113#sj2svw"
+    }
+  ],
+  "MATHCOUNTS|Target|Geometry|early": [
+    {
+      "problem": "A right triangle has legs of length $9$ and $12$. A square is inscribed in the triangle so that one vertex of the square coincides with the right-angle vertex of the triangle, two sides of the square lie along the two legs, and the fourth vertex of the square lies on the hypotenuse. Find the area of the part of the triangle that lies outside the square. Express your answer as a common fraction.",
+      "answer": "1350/49",
+      "solution": "Place the right angle at the origin with the legs along the axes, the leg of length $12$ on the $x$-axis and the leg of length $9$ on the $y$-axis; the hypotenuse then satisfies $\\frac{x}{12}+\\frac{y}{9}=1$. The square has vertices $(0,0),(s,0),(s,s),(0,s)$, and its far vertex $(s,s)$ must lie on the hypotenuse, so $\\frac{s}{12}+\\frac{s}{9}=1$. Solving, $s\\left(\\frac{3+4}{36}\\right)=1$, so $s=\\frac{36}{7}$, giving square area $\\left(\\frac{36}{7}\\right)^2=\\frac{1296}{49}$. The triangle's area is $\\frac{1}{2}(9)(12)=54=\\frac{2646}{49}$, so the area outside the square is $\\frac{2646}{49}-\\frac{1296}{49}=\\frac{1350}{49}$.",
+      "id": "MATHCOUNTS|Target|Geometry|early#1786645215820#irafem"
+    },
+    {
+      "problem": "In triangle $ABC$, $AB=13$, $BC=14$, and $CA=15$. The incircle of triangle $ABC$ touches side $BC$ at point $D$. What is the area of triangle $ABD$?",
+      "answer": "36",
+      "solution": "First find the area of $\\triangle ABC$ using Heron's formula: with $s=\\frac{13+14+15}{2}=21$, the area is $\\sqrt{21\\cdot8\\cdot7\\cdot6}=\\sqrt{7056}=84$. The tangent length from vertex $B$ to the incircle equals $s-b=21-15=6$ (where $b=CA=15$), so $BD=6$; since $BC=14$, $DC=8$. Triangles $ABD$ and $ABC$ share the same height from $A$ to line $BC$, so their areas are proportional to their bases: $\\frac{[ABD]}{[ABC]}=\\frac{BD}{BC}=\\frac{6}{14}=\\frac{3}{7}$. Thus $[ABD]=84\\cdot\\frac{3}{7}=36$.",
+      "id": "MATHCOUNTS|Target|Geometry|early#1786645232974#22r8iw"
+    },
+    {
+      "problem": "Rectangle $ABCD$ has $AB = 9$ and $BC = 8$. Point $E$ lies on $\\overline{BC}$ with $BE = 4$, and point $F$ lies on $\\overline{CD}$ with $CF = 2$. Segments $\\overline{AE}$ and $\\overline{BF}$ intersect at point $P$. Find the area of $\\triangle ABP$.",
+      "answer": "81/5",
+      "solution": "Place $A=(0,0)$, $B=(9,0)$, $C=(9,8)$, $D=(0,8)$. Then $E$ is on $\\overline{BC}$ with $BE=4$, so $E=(9,4)$, and $F$ is on $\\overline{CD}$ with $CF=2$, so $F=(7,8)$. Line $AE$ has equation $y=\\frac{4}{9}x$, and line $BF$ has slope $\\frac{8-0}{7-9}=-4$, giving $y=-4x+36$. Setting them equal: $\\frac{4}{9}x=-4x+36 \\Rightarrow 4x=-36x+324 \\Rightarrow 40x=324 \\Rightarrow x=\\frac{81}{10}$, so $y=\\frac{4}{9}\\cdot\\frac{81}{10}=\\frac{18}{5}$, giving $P=\\left(\\frac{81}{10},\\frac{18}{5}\\right)$. Since $\\overline{AB}$ lies on the x-axis with length $9$, the height of $\\triangle ABP$ is the $y$-coordinate of $P$, namely $\\frac{18}{5}$. Thus the area is $\\frac{1}{2}\\cdot 9\\cdot \\frac{18}{5} = \\frac{81}{5}$.",
+      "id": "MATHCOUNTS|Target|Geometry|early#1786645276917#i4aboa"
+    }
+  ],
+  "MATHCOUNTS|Target|Geometry|mid": [
+    {
+      "problem": "Circles $A$ and $B$ each have radius $6$, and the distance between their centers is $6$, so the two circles overlap. A rectangle is drawn so that its left and right sides are tangent to circle $A$ and circle $B$, respectively (each side perpendicular to segment $AB$), and its top and bottom sides are each tangent to both circles. Find the area of the region inside the rectangle but outside both circles, rounded to the nearest hundredth.",
+      "answer": "34.03",
+      "solution": "The rectangle's width is $AB + 2(6) = 6+12=18$ and its height equals the diameter $12$, so its area is $18\\times 12=216$. For two circles of radius $r=6$ with centers $d=6$ apart, the overlapping lens area is $2r^2\\cos^{-1}\\left(\\frac{d}{2r}\\right)-\\frac{d}{2}\\sqrt{4r^2-d^2}=72\\cos^{-1}(0.5)-3\\sqrt{108}=24\\pi-18\\sqrt3$. The union of the two circles is $2(36\\pi) - (24\\pi-18\\sqrt3) = 48\\pi+18\\sqrt3$. Subtracting this union from the rectangle's area gives $216-(48\\pi+18\\sqrt3)\\approx 216-181.9734=34.0266$. Rounded to the nearest hundredth, the answer is $34.03$.",
+      "id": "MATHCOUNTS|Target|Geometry|mid#1786645356612#j4cm6t"
+    },
+    {
+      "problem": "In the coordinate plane, triangle $ABC$ has vertices $A(0,0)$, $B(12,0)$, and $C(4,9)$. Point $D$ lies on $\\overline{BC}$ so that $BD:DC = 2:3$, and point $E$ lies on $\\overline{AC}$ so that $AE:EC = 1:4$. Segments $\\overline{AD}$ and $\\overline{BE}$ intersect at point $P$. What is the area of triangle $ABP$?",
+      "answer": "108/13",
+      "solution": "First find $D = B + \\frac{2}{5}(C-B) = \\left(\\frac{44}{5}, \\frac{18}{5}\\right)$ and $E = A + \\frac{1}{5}(C-A) = \\left(\\frac{4}{5}, \\frac{9}{5}\\right)$. Line $AD$ has equation $y = \\frac{9}{22}x$, and line $BE$ has equation $y = -\\frac{9}{56}x + \\frac{27}{14}$. Setting these equal and solving gives $x = \\frac{44}{13}$, so $y = \\frac{18}{13}$, meaning $P = \\left(\\frac{44}{13}, \\frac{18}{13}\\right)$. Since $A$ and $B$ both lie on the x-axis, the area of $\\triangle ABP$ is $\\frac{1}{2}\\cdot AB \\cdot y_P = \\frac{1}{2}\\cdot 12 \\cdot \\frac{18}{13} = \\frac{108}{13}$. Thus the area of triangle $ABP$ is $\\frac{108}{13}$.",
+      "id": "MATHCOUNTS|Target|Geometry|mid#1786645386386#o7s3u9"
+    },
+    {
+      "problem": "Square $ABCD$ has side length $12$. Point $E$ is the midpoint of $\\overline{AB}$, and point $F$ is the midpoint of $\\overline{BC}$. Segments $\\overline{DE}$ and $\\overline{AF}$ intersect at point $P$. What is the area of triangle $APD$?",
+      "answer": "144/5",
+      "solution": "Place the square on coordinates with $A=(0,0)$, $B=(12,0)$, $C=(12,12)$, $D=(0,12)$. Then $E=(6,0)$ and $F=(12,6)$. Line $DE$ has slope $\\frac{0-12}{6-0}=-2$, so $y=-2x+12$; line $AF$ has slope $\\frac{6-0}{12-0}=\\frac12$, so $y=\\frac12x$. Setting them equal: $\\frac12x=-2x+12$ gives $\\frac52x=12$, so $x=\\frac{24}{5}$ and $y=\\frac{12}{5}$, giving $P=\\left(\\frac{24}{5},\\frac{12}{5}\\right)$. Triangle $APD$ has base $\\overline{AD}$ along the $y$-axis with length $12$, and the height is the horizontal distance from $P$ to this line, which is $\\frac{24}{5}$. The area is $\\frac12\\cdot 12\\cdot\\frac{24}{5}=\\frac{144}{5}$.",
+      "id": "MATHCOUNTS|Target|Geometry|mid#1786645417635#599xhb"
+    }
+  ],
+  "MATHCOUNTS|Target|Geometry|late": [
+    {
+      "problem": "An isosceles trapezoid has parallel sides of length $4$ and $16$, and legs of length $10$ each. A circle is inscribed in the trapezoid so that it is tangent to all four sides. What is the area of the region inside the trapezoid but outside the circle? Express your answer as a decimal to the nearest hundredth.",
+      "answer": "29.73",
+      "solution": "First check that an inscribed circle can exist: for a tangential quadrilateral, sums of opposite sides must be equal, and indeed $4+16=20=10+10$. To find the height, drop perpendiculars from the endpoints of the shorter base to the longer base; the horizontal offset on each side is $(16-4)/2=6$, so the leg, offset, and height form a right triangle with leg $10$ and horizontal leg $6$, giving height $h=\\sqrt{10^2-6^2}=8$. The trapezoid's area is $\\frac{1}{2}(4+16)(8)=80$. Since the inscribed circle is tangent to both parallel sides, its diameter equals the height, so its radius is $4$ and its area is $16\\pi\\approx50.27$. Subtracting, the area inside the trapezoid but outside the circle is $80-16\\pi\\approx29.73$.",
+      "id": "MATHCOUNTS|Target|Geometry|late#1786645459685#y6dekd"
+    },
+    {
+      "problem": "Two buildings stand on opposite sides of an alley that is exactly 12 feet wide. A 15-foot ladder has its base at the bottom of one building and its top resting against a window on the other building. A 20-foot ladder has its base at the bottom of the second building and its top resting against a window on the first building. The two ladders cross at a single point above the alley floor. What is the height, in feet, of this crossing point above the ground?",
+      "answer": "144/25",
+      "solution": "Place the building bases at $(0,0)$ and $(12,0)$. The 15-ft ladder forms a 9-12-15 right triangle (since $9^2+12^2=15^2$), so it runs from $(0,0)$ to $(12,9)$, giving line $y=\\frac{3}{4}x$. The 20-ft ladder forms a 12-16-20 right triangle (since $12^2+16^2=20^2$), so it runs from $(12,0)$ to $(0,16)$, giving line $y=16-\\frac{4}{3}x$. Setting $\\frac{3}{4}x=16-\\frac{4}{3}x$ and multiplying by 12 gives $9x=192-16x$, so $x=\\frac{192}{25}$. Substituting back, $y=\\frac{3}{4}\\cdot\\frac{192}{25}=\\frac{144}{25}$, so the ladders cross at height $\\frac{144}{25}$ feet.",
+      "id": "MATHCOUNTS|Target|Geometry|late#1786645504498#fkzg5g"
+    },
+    {
+      "problem": "Triangle $ABC$ has area $84$. Points $D$, $E$, $F$ lie on sides $BC$, $CA$, $AB$ respectively so that $BD=\\frac{1}{3}BC$, $CE=\\frac{1}{3}CA$, and $AF=\\frac{1}{3}AB$. Segments $AD$, $BE$, and $CF$ are drawn, and their pairwise intersections form a small triangle inside $\\triangle ABC$. What is the area of that small triangle?",
+      "answer": "12",
+      "solution": "Place $A=(0,0)$, $B=(1,0)$, $C=(0,1)$, so $\\triangle ABC$ has area $\\frac12$. Then $D=(2/3,1/3)$, $E=(0,2/3)$, $F=(1/3,0)$, giving lines $AD:y=x/2$, $BE:y=-\\frac23x+\\frac23$, $CF:y=1-3x$. Solving these pairwise gives intersection points $(4/7,2/7)$, $(1/7,4/7)$, and $(2/7,1/7)$. Using the shoelace formula, the area of this inner triangle is $\\frac{1}{14}$, which is $\\frac{1}{7}$ of $\\triangle ABC$'s area of $\\frac12$. Since this ratio $1/7$ holds for any triangle with these side divisions, the small triangle's area is $\\frac{1}{7}\\times 84 = 12$.",
+      "id": "MATHCOUNTS|Target|Geometry|late#1786645550515#c6ctx0"
+    }
+  ],
+  "MATHCOUNTS|Target|Number Theory|early": [
+    {
+      "problem": "How many ordered pairs of positive integers $(a,b)$ satisfy $\\text{lcm}(a,b) = 360$ and $\\gcd(a,b) = 6$?",
+      "answer": "8",
+      "solution": "Factor both numbers: $360 = 2^3\\cdot 3^2\\cdot 5$ and $6 = 2^1\\cdot 3^1\\cdot 5^0$. For each prime $p$, if $a=2^{x_1}3^{y_1}5^{z_1}$ and $b=2^{x_2}3^{y_2}5^{z_2}$, then $\\max(x_1,x_2)$ must equal the exponent of $p$ in 360 and $\\min(x_1,x_2)$ must equal the exponent of $p$ in 6, for each prime separately. For $p=2$: exponents must be $\\{1,3\\}$ in some order (2 ways). For $p=3$: exponents must be $\\{1,2\\}$ in some order (2 ways). For $p=5$: exponents must be $\\{0,1\\}$ in some order (2 ways). Since the choices for each prime are independent, the total number of ordered pairs is $2\\cdot 2\\cdot 2 = 8$.",
+      "id": "MATHCOUNTS|Target|Number Theory|early#1786645566904#jexedq"
+    },
+    {
+      "problem": "Find the smallest integer $N > 1000$ that satisfies all three conditions: $N \\equiv 3 \\pmod{7}$, $N \\equiv 5 \\pmod{9}$, and $N \\equiv 2 \\pmod{11}$. What is the sum of the digits of $N$?",
+      "answer": "14",
+      "solution": "Since $7, 9, 11$ are pairwise coprime, there is a unique solution modulo $7\\cdot9\\cdot11=693$. Write $N=9k+5$; then $9k+5\\equiv3\\pmod7$ gives $2k\\equiv5\\pmod7$, and since $4$ is the inverse of $2$ mod $7$, $k\\equiv6\\pmod7$, so $N=63m+59$ for some integer $m$ (using $k=7m+6$). Substituting into $N\\equiv2\\pmod{11}$: $63m+59\\equiv2\\pmod{11}$ simplifies to $8m\\equiv9\\pmod{11}$, and since $7$ is the inverse of $8$ mod $11$, $m\\equiv8\\pmod{11}$, giving $N=693n+563$. The smallest such $N$ exceeding $1000$ is $N=693+563=1256$, which checks out: $1256=7\\cdot179+3$, $9\\cdot139+5$, $11\\cdot114+2$. The digit sum of $1256$ is $1+2+5+6=14$.",
+      "id": "MATHCOUNTS|Target|Number Theory|early#1786645579588#9jlz6t"
+    },
+    {
+      "problem": "Let $N$ be the smallest positive integer such that $N/2$ is a perfect square, $N/3$ is a perfect cube, and $N/5$ is a perfect fifth power. Find the number of positive divisors of $N/30$.",
+      "answer": "900",
+      "solution": "Write $N = 2^a3^b5^c$. For $N/2=2^{a-1}3^b5^c$ to be a perfect square, we need $a-1,b,c$ all even. For $N/3=2^a3^{b-1}5^c$ to be a perfect cube, we need $a,b-1,c$ all divisible by 3. For $N/5=2^a3^b5^{c-1}$ to be a perfect fifth power, we need $a,b,c-1$ all divisible by 5. Solving each variable's system: $a$ must be odd and divisible by 15, so $a=15$; $b$ must be even, divisible by 5, and $\\equiv1\\pmod3$, so $b=10$; $c$ must be even, divisible by 3, and $\\equiv1\\pmod5$, so $c=6$. Thus $N=2^{15}3^{10}5^6$, and $N/30 = 2^{14}3^9 5^5$, which has $(14+1)(9+1)(5+1)=15\\cdot10\\cdot6=900$ divisors.",
+      "id": "MATHCOUNTS|Target|Number Theory|early#1786645598027#c3016b"
+    }
+  ],
+  "MATHCOUNTS|Target|Number Theory|mid": [
+    {
+      "problem": "Let $N$ be the smallest positive integer such that $\\frac{N}{2}$ is a perfect square, $\\frac{N}{3}$ is a perfect cube, and $\\frac{N}{5}$ is a perfect fifth power. Find the number of positive divisors of $N$.",
+      "answer": "1232",
+      "solution": "Since $N$ must be built only from primes $2,3,5$, write $N=2^a3^b5^c$. From $N/2$ being a square: $a\\equiv1,\\,b\\equiv0,\\,c\\equiv0 \\pmod 2$. From $N/3$ being a cube: $a\\equiv0,\\,b\\equiv1,\\,c\\equiv0\\pmod3$. From $N/5$ being a fifth power: $a\\equiv0,\\,b\\equiv0,\\,c\\equiv1\\pmod5$. Solving each variable's system with CRT gives the smallest nonnegative solutions $a=15$, $b=10$, $c=6$. So $N=2^{15}3^{10}5^6$, and the number of divisors is $(15+1)(10+1)(6+1)=16\\cdot11\\cdot7=1232$.",
+      "id": "MATHCOUNTS|Target|Number Theory|mid#1786645614611#ivlo3t"
+    },
+    {
+      "problem": "Find the smallest positive integer $n$ that is divisible by both $18$ and $20$ and has exactly $24$ positive divisors.",
+      "answer": "360",
+      "solution": "Since $18=2\\cdot3^2$ and $20=2^2\\cdot5$, any such $n$ must be divisible by $\\text{lcm}(18,20)=2^2\\cdot3^2\\cdot5$, so if $n=2^a3^b5^c\\cdots$ we need $a\\ge2$, $b\\ge2$, $c\\ge1$. The number of divisors is $(a+1)(b+1)(c+1)\\cdots=24$, and we want to minimize $n$, so we should avoid extra prime factors and keep exponents on larger primes small. With only primes $2,3,5$, we need $(a+1)(b+1)(c+1)=24$ with $a+1\\ge3$, $b+1\\ge3$, $c+1\\ge2$; the valid factorizations are $(4,3,2)$ giving $a=3,b=2,c=1$, or $(3,4,2)$ giving $a=2,b=3,c=1$. Checking all other factor arrangements (including introducing a fourth prime) shows no smaller value works, so we compare $2^3\\cdot3^2\\cdot5=360$ and $2^2\\cdot3^3\\cdot5=540$. The smaller value is $n=360$, which indeed has $(3+1)(2+1)(1+1)=24$ divisors and is divisible by both $18$ and $20$.",
+      "id": "MATHCOUNTS|Target|Number Theory|mid#1786645649430#ctmohg"
+    },
+    {
+      "problem": "Find the number of ordered pairs of positive integers $(a,b)$ such that $\\text{lcm}(a,b) = 360$ and $\\gcd(a,b) = 6$.",
+      "answer": "8",
+      "solution": "Since $\\gcd(a,b)=6$, write $a=6a'$ and $b=6b'$ where $\\gcd(a',b')=1$. Then $\\text{lcm}(a,b)=6\\cdot\\text{lcm}(a',b')=6a'b'$ (since $a',b'$ are coprime), so $6a'b'=360$, giving $a'b'=60$. We need ordered pairs $(a',b')$ of coprime positive integers with product $60=2^2\\cdot3\\cdot5$. Since $a'$ and $b'$ must be coprime, each of the three distinct primes $2,3,5$ must go entirely to $a'$ or entirely to $b'$, giving $2^3=8$ ordered pairs $(a',b')$. Each corresponds to a unique pair $(a,b)=(6a',6b')$, so there are $8$ ordered pairs $(a,b)$.",
+      "id": "MATHCOUNTS|Target|Number Theory|mid#1786645662641#ldbq7c"
+    }
+  ],
+  "MATHCOUNTS|Target|Number Theory|late": [
+    {
+      "problem": "How many ordered pairs of positive integers $(m,n)$ with $m > n$ satisfy $m^2 - n^2 = 2024$?",
+      "answer": "4",
+      "solution": "Factor the difference of squares: $m^2-n^2=(m-n)(m+n)=2024$. Since $2024$ is even but not divisible by $4$'s complement issue, $m-n$ and $m+n$ must have the same parity; since their product is even, both must be even. Write $m-n=2a$ and $m+n=2b$ with $a<b$, so $4ab=2024$, giving $ab=506=2\\cdot11\\cdot23$. The number $506$ has $(1+1)(1+1)(1+1)=8$ positive divisors, giving $8/2=4$ factor pairs $(a,b)$ with $a<b$: $(1,506),(2,253),(11,46),(22,23)$. Each pair gives valid positive integers $m=a+b$, $n=b-a$, so there are $4$ ordered pairs $(m,n)$.",
+      "id": "MATHCOUNTS|Target|Number Theory|late#1786645685886#wnvbmq"
+    },
+    {
+      "problem": "Find the unique positive integer $N$ that has exactly 24 positive divisors and is divisible by both $6$ and $2023$.",
+      "answer": "12138",
+      "solution": "Since $2023 = 7 \\cdot 17^2$ and $6 = 2\\cdot 3$, $N$ must be divisible by $2,3,7,17^2$, so $N = 2^a3^b7^c17^d$ with $a,b,c\\ge 1$ and $d\\ge 2$ (no other primes can divide $N$, as shown below). The divisor count is $(a+1)(b+1)(c+1)(d+1)=24$, where each of the first three factors is at least $2$ and the last is at least $3$. Since $2\\cdot2\\cdot2\\cdot3=24$ is already the minimum possible product under these constraints, this is the only way to achieve exactly 24, forcing $a=b=c=1,\\ d=2$; any extra prime factor would multiply the divisor count by at least $2$, exceeding 24. Thus $N = 2^1\\cdot3^1\\cdot7^1\\cdot17^2 = 6\\cdot7\\cdot289 = 42\\cdot289 = 12138$.",
+      "id": "MATHCOUNTS|Target|Number Theory|late#1786645710826#9fh0gp"
+    },
+    {
+      "problem": "Find the smallest positive integer $N$ such that $N$ has exactly 8 positive divisors, $N$ leaves a remainder of 3 when divided by 7, and $N$ leaves a remainder of 2 when divided by 5.",
+      "answer": "297",
+      "solution": "Using the two remainder conditions, write $N=7k+3$; requiring $7k+3\\equiv 2 \\pmod5$ gives $2k\\equiv -1\\equiv4\\pmod5$, so $k\\equiv2\\pmod5$, meaning $N\\equiv17\\pmod{35}$. So $N$ must be of the form $35m+17$: check $m=0,1,2,\\dots$ giving $17,52,87,122,157,192,227,262,297,\\dots$. Factor each: $17$ and $157$ and $227$ are prime (2 divisors), $52=2^2\\cdot13$ (6 divisors), $87=3\\cdot29$ and $122=2\\cdot61$ and $262=2\\cdot131$ (4 divisors each), $192=2^6\\cdot3$ (14 divisors). Finally $297=3^3\\cdot11$ has $(3+1)(1+1)=8$ divisors, satisfying all conditions. Thus the smallest such $N$ is $297$.",
+      "id": "MATHCOUNTS|Target|Number Theory|late#1786645751316#15j78k"
+    }
+  ],
+  "MATHCOUNTS|Target|Combinatorics|early": [
+    {
+      "problem": "How many distinguishable ways are there to arrange all 10 letters of the word MATHCOUNTS in a row so that no two vowels are adjacent? (The letters are M, A, T, H, C, O, U, N, T, S, and the vowels are A, O, U.)",
+      "answer": "846720",
+      "solution": "The word MATHCOUNTS has 10 letters: the 7 consonants M, T, H, C, N, T, S (with T repeated twice) and the 3 distinct vowels A, O, U. First arrange the 7 consonants: since T repeats, there are $\\frac{7!}{2!}=2520$ distinguishable arrangements. Placing these 7 consonants in a row creates 8 gaps (including the two ends) where vowels could go, and we need to choose 3 of these gaps for the 3 distinct vowels, giving $8\\times7\\times6=336$ ways to place and order them. Multiplying, the total number of valid arrangements is $2520\\times336=846720$.",
+      "id": "MATHCOUNTS|Target|Combinatorics|early#1786645768623#uyezw4"
+    },
+    {
+      "problem": "A club has 10 members: 4 seniors and 6 juniors, including two juniors named Alice and Bob. A committee of 5 members is to be selected, subject to two conditions: the committee must include at least 2 seniors, and Alice and Bob may not both serve on the committee together. How many different committees are possible?",
+      "answer": "158",
+      "solution": "First count committees of 5 with at least 2 seniors, ignoring the Alice/Bob restriction: choosing $k$ seniors and $5-k$ juniors from 4 seniors and 6 juniors gives $\\binom{4}{2}\\binom{6}{3}+\\binom{4}{3}\\binom{6}{2}+\\binom{4}{4}\\binom{6}{1}=120+60+6=186$. Next count how many of these invalid committees include both Alice and Bob: if both are on the committee, the remaining 3 spots come from the other 8 people (4 seniors, 4 other juniors), and since Alice/Bob contribute no seniors, we still need at least 2 seniors among these 3 spots: $\\binom{4}{2}\\binom{4}{1}+\\binom{4}{3}\\binom{4}{0}=24+4=28$. Subtracting these forbidden committees from the total gives $186-28=158$ valid committees.",
+      "id": "MATHCOUNTS|Target|Combinatorics|early#1786645784744#o1smgf"
+    },
+    {
+      "problem": "A bag contains 10 balls numbered $1$ through $10$. Julia selects $4$ balls from the bag at random, without regard to order, such that no two of the selected numbers are consecutive integers. Additionally, the sum of the four selected numbers must be even. How many such selections are possible?",
+      "answer": "19",
+      "solution": "Let the chosen numbers in increasing order be $a_1<a_2<a_3<a_4$, with no two consecutive. Define $b_i = a_i - (i-1)$; then $b_1<b_2<b_3<b_4$ are just any 4 distinct elements of $\\{1,\\dots,7\\}$, giving a bijection between valid selections and 4-element subsets of $\\{1,\\dots,7\\}$. Since $a_1+a_2+a_3+a_4 = (b_1+b_2+b_3+b_4)+6$ and $6$ is even, the sum of the $a_i$'s is even exactly when the sum of the $b_i$'s is even. Among $\\{1,\\dots,7\\}$ there are $4$ odd numbers and $3$ even numbers, and a 4-subset has even sum iff it contains an even number (0, 2, or 4) of odd elements; since we need at least one odd element (only 3 evens exist), the possibilities are 2 or 4 odd elements. Counting these: $\\binom{4}{2}\\binom{3}{2}+\\binom{4}{4}\\binom{3}{0} = 18+1 = 19$.",
+      "id": "MATHCOUNTS|Target|Combinatorics|early#1786645816792#skyr7q"
+    }
+  ],
+  "MATHCOUNTS|Target|Combinatorics|mid": [
+    {
+      "problem": "How many distinct arrangements of the letters in MISSISSIPPI have no two I's adjacent to each other?",
+      "answer": "7350",
+      "solution": "MISSISSIPPI has 11 letters: M(1), I(4), S(4), P(2). First arrange the 7 non-I letters (M, S, S, S, S, P, P): the number of distinct arrangements is $\\frac{7!}{4!\\,2!}=105$. These 7 letters create 8 gaps (before, between, and after them) where the 4 I's can be placed so that no two I's touch. Choose 4 of these 8 gaps for the I's: $\\binom{8}{4}=70$ ways, and since the I's are identical, order within chosen gaps doesn't matter. Multiplying the two independent choices gives $105 \\times 70 = 7350$ total arrangements.",
+      "id": "MATHCOUNTS|Target|Combinatorics|mid#1786645831803#cx14e9"
+    },
+    {
+      "problem": "At a charity gala, there are 6 married couples in attendance (6 men and 6 women, each man married to exactly one of the women). A planning committee of 4 people is to be chosen consisting of exactly 2 men and 2 women. However, no married couple is allowed to serve together on the committee — that is, if a man is selected, his wife may not also be selected. How many different committees are possible?",
+      "answer": "90",
+      "solution": "First choose the 2 men for the committee: there are $\\binom{6}{2}=15$ ways to do this. Once the 2 men are chosen, their 2 wives must be excluded from the women available, leaving $6-2=4$ eligible women. Choose 2 of these 4 women: $\\binom{4}{2}=6$ ways. By the multiplication principle, the total number of valid committees is $15 \\times 6 = 90$.",
+      "id": "MATHCOUNTS|Target|Combinatorics|mid#1786645871486#p2d71i"
+    },
+    {
+      "problem": "The word MATHCOUNTS has 10 letters: M, A, T, H, C, O, U, N, T, S (note that T appears twice, and all other letters appear once). Counting only the distinct arrangements of all 10 letters (arrangements that swap the two identical T's are not counted separately), how many such arrangements have no two vowels (A, O, U) adjacent to each other?",
+      "answer": "846720",
+      "solution": "First arrange the 7 consonants M, T, H, C, N, T, S in a row; since the two T's are identical, there are $\\frac{7!}{2!} = 2520$ distinct arrangements. This row of 7 consonants creates 8 gaps (before, between, and after the consonants) where vowels can be placed. We need to choose 3 of these 8 gaps for the 3 distinct vowels A, O, U, with one vowel per gap and order mattering since the vowels are different: this gives $8 \\times 7 \\times 6 = 336$ ways. Multiplying the two independent counts gives the total number of valid arrangements: $2520 \\times 336 = 846720$.",
+      "id": "MATHCOUNTS|Target|Combinatorics|mid#1786645904115#xcq5jf"
+    }
+  ],
+  "MATHCOUNTS|Target|Combinatorics|late": [
+    {
+      "problem": "A student council of 10 members consists of 6 boys and 4 girls. A 5-person committee is to be selected from these 10 students, and the committee must include at least 2 girls. However, two of the boys, Alex and Ben, have had a falling out and refuse to serve on the committee together. How many distinct 5-person committees satisfying both conditions are possible?",
+      "answer": "158",
+      "solution": "First count committees of 5 with at least 2 girls, ignoring the Alex/Ben restriction: summing over $g=2,3,4$ girls gives $\\binom{4}{2}\\binom{6}{3}+\\binom{4}{3}\\binom{6}{2}+\\binom{4}{4}\\binom{6}{1}=120+60+6=186$. Next count how many of these 186 committees include both Alex and Ben: if both are chosen, the remaining 3 spots come from the other 8 students (4 girls, 4 boys), and since Alex/Ben are boys, the girl-count condition requires at least 2 girls among these 3. This gives $\\binom{4}{2}\\binom{4}{1}+\\binom{4}{3}\\binom{4}{0}=24+4=28$. Subtracting the invalid committees from the total: $186-28=158$. Thus there are $158$ valid committees.",
+      "id": "MATHCOUNTS|Target|Combinatorics|late#1786645921531#58zr5h"
+    },
+    {
+      "problem": "How many 5-digit positive integers have digits that are non-decreasing from left to right (each digit is greater than or equal to the digit before it), use only the digits $1$ through $9$, and have no digit appearing more than twice?",
+      "answer": "882",
+      "solution": "A non-decreasing 5-digit sequence using digits $1$–$9$ corresponds exactly to a multiset of size 5 chosen from these 9 digits, so the total count (ignoring the repeat restriction) is $\\binom{9+5-1}{5}=\\binom{13}{5}=1287$. Now subtract the multisets where some digit appears at least 3 times: choose which digit repeats (9 ways), use 3 of the 5 slots for it, and fill the remaining 2 slots with any multiset from the 9 digits, giving $\\binom{9+2-1}{2}=\\binom{10}{2}=45$ ways, for $9\\times45=405$ total. Since two different digits can't both appear at least 3 times (that would require at least 6 digits), there's no overlap to worry about. So the number of valid multisets is $1287-405=882$.",
+      "id": "MATHCOUNTS|Target|Combinatorics|late#1786645943857#ptjwuq"
+    },
+    {
+      "problem": "Two distinct positive divisors of $72$ are chosen at random. What is the probability that their product is a multiple of $72$? Express your answer as a common fraction.",
+      "answer": "14/33",
+      "solution": "Since $72 = 2^3 \\cdot 3^2$, it has $(3+1)(2+1)=12$ divisors, so there are $\\binom{12}{2}=66$ ways to choose two distinct divisors. Write each divisor as $2^a3^b$ with $0\\le a\\le 3$, $0\\le b\\le 2$; the product of two divisors $2^{a_1}3^{b_1}$ and $2^{a_2}3^{b_2}$ is a multiple of $72$ exactly when $a_1+a_2\\ge 3$ and $b_1+b_2\\ge 2$. Counting all ordered pairs $(a_1,a_2)$ from $\\{0,1,2,3\\}$ with sum $\\ge 3$ gives $10$ pairs, and counting ordered pairs $(b_1,b_2)$ from $\\{0,1,2\\}$ with sum $\\ge 2$ gives $6$ pairs, so there are $10\\cdot 6 = 60$ ordered pairs of divisors (allowing repeats) satisfying both conditions. Exactly $4$ of these come from choosing the same divisor twice (namely divisors with $a\\ge2,b\\ge1$: $12,24,36,72$), so removing those and dividing by $2$ (for unordered pairs) gives $\\frac{60-4}{2}=28$ valid unordered pairs. The probability is $\\frac{28}{66}=\\frac{14}{33}$.",
+      "id": "MATHCOUNTS|Target|Combinatorics|late#1786646000228#58mno2"
+    }
+  ],
+  "MATHCOUNTS|Target|Probability|early": [
+    {
+      "problem": "A game is played by rolling two standard six-sided dice repeatedly, ignoring any roll whose sum is not 6, 7, or 8, until one of these three sums finally appears. What is the probability that a sum of 8 is the one that appears (that is, 8 occurs before 6 and before 7 among these stopping sums)?",
+      "answer": "5/16",
+      "solution": "First find the number of ways to roll each stopping sum with two dice: a sum of $6$ has $5$ ways, a sum of $7$ has $6$ ways, and a sum of $8$ has $5$ ways, for a total of $16$ relevant outcomes (all other sums are simply re-rolled and don't affect the race). Since each of these $16$ outcomes is equally likely on any given \"relevant\" roll, the probability that the eventual stopping sum is $8$ equals the fraction of these outcomes that give a sum of $8$: $\\frac{5}{16}$. This works because ignoring irrelevant rolls doesn't change the relative likelihood among 6, 7, and 8, so the process is equivalent to repeatedly sampling from these $16$ equally likely outcomes until one occurs. Thus the probability that a sum of $8$ appears first is $\\frac{5}{16}$.",
+      "id": "MATHCOUNTS|Target|Probability|early#1786646014712#bpv64q"
+    },
+    {
+      "problem": "A jar contains 6 red marbles and 4 blue marbles. Two marbles are drawn at random from the jar without replacement. If the two marbles drawn are the same color, a fair coin is flipped. If the two marbles drawn are different colors, a fair six-sided die is rolled. A \"success\" occurs if the coin lands heads, or if the die shows a 5 or a 6. What is the probability of a success, expressed as a common fraction?",
+      "answer": "37/90",
+      "solution": "First find the probability the two marbles match: $P(\\text{same}) = \\frac{\\binom{6}{2}+\\binom{4}{2}}{\\binom{10}{2}} = \\frac{15+6}{45} = \\frac{7}{15}$, so $P(\\text{different}) = \\frac{8}{15}$. If the colors match, a coin is flipped, giving success (heads) with probability $\\frac{1}{2}$. If the colors differ, a die is rolled, giving success (5 or 6) with probability $\\frac{2}{6}=\\frac{1}{3}$. By the law of total probability, $P(\\text{success}) = \\frac{7}{15}\\cdot\\frac{1}{2} + \\frac{8}{15}\\cdot\\frac{1}{3} = \\frac{7}{30}+\\frac{8}{45}$. Converting to a common denominator of 90 gives $\\frac{21}{90}+\\frac{16}{90} = \\frac{37}{90}$, which is already in simplest form.",
+      "id": "MATHCOUNTS|Target|Probability|early#1786646031975#mgmvx3"
+    },
+    {
+      "problem": "A box contains six chips numbered 1 through 6. Three chips are drawn at random without replacement and placed in a row, in the order drawn, to form a three-digit number. What is the probability that the resulting number is divisible by 4? Express your answer as a common fraction.",
+      "answer": "4/15",
+      "solution": "There are $6\\times5\\times4=120$ equally likely ordered outcomes for the three digits $a,b,c$ (hundreds, tens, units). Since $100a$ is always divisible by $4$, the whole number is divisible by $4$ exactly when the two-digit number $10b+c$ is, which happens when $2b+c\\equiv0\\pmod4$. Checking each $b=1,\\dots,6$ for valid $c\\neq b$ in $\\{1,\\dots,6\\}$ satisfying this congruence gives $8$ valid ordered pairs $(b,c)$. For each such pair, the remaining digit $a$ can be any of the other $4$ numbers, giving $8\\times4=32$ favorable outcomes. The probability is $\\frac{32}{120}=\\frac{4}{15}$.",
+      "id": "MATHCOUNTS|Target|Probability|early#1786646066286#ec8yy4"
+    }
+  ],
+  "MATHCOUNTS|Target|Probability|mid": [
+    {
+      "problem": "A box contains 4 red balls, 5 blue balls, and 3 white balls. Three balls are drawn at random without replacement. What is the probability that the number of red balls drawn is greater than the number of blue balls drawn?",
+      "answer": "16/55",
+      "solution": "There are $\\binom{12}{3}=220$ equally likely ways to draw 3 balls. We need the number of ways where (red count) > (blue count) among the 3 drawn balls, considering all $(r,b,w)$ with $r+b+w=3$: the cases satisfying $r>b$ are $(3,0,0)$, $(2,1,0)$, $(2,0,1)$, and $(1,0,2)$. Counting each: $(3,0,0)$ gives $\\binom{4}{3}\\binom{5}{0}\\binom{3}{0}=4$; $(2,1,0)$ gives $\\binom{4}{2}\\binom{5}{1}\\binom{3}{0}=30$; $(2,0,1)$ gives $\\binom{4}{2}\\binom{5}{0}\\binom{3}{1}=18$; $(1,0,2)$ gives $\\binom{4}{1}\\binom{5}{0}\\binom{3}{2}=12$. Adding these gives $4+30+18+12=64$ favorable outcomes, so the probability is $\\frac{64}{220}=\\frac{16}{55}$.",
+      "id": "MATHCOUNTS|Target|Probability|mid#1786646081216#ylisto"
+    },
+    {
+      "problem": "A game works as follows. First, a fair six-sided die is rolled. If the result is 1 or 2, the player draws two marbles without replacement from Bag A, which contains 3 red and 5 blue marbles. If the result is 3, 4, or 5, the player draws two marbles without replacement from Bag B, which contains 4 red and 4 blue marbles. If the result is 6, the player draws two marbles without replacement from Bag C, which contains 6 red and 2 blue marbles. What is the probability that both marbles drawn are red? Express your answer as a common fraction.",
+      "answer": "13/56",
+      "solution": "Each bag has 8 marbles, so drawing 2 has $\\binom{8}{2}=28$ equally likely outcomes in every case. For Bag A, $P(\\text{both red})=\\binom{3}{2}/28=3/28$; for Bag B, $P(\\text{both red})=\\binom{4}{2}/28=6/28$; for Bag C, $P(\\text{both red})=\\binom{6}{2}/28=15/28$. The die gives $P(A)=2/6=1/3$, $P(B)=3/6=1/2$, $P(C)=1/6$, so by the law of total probability, $P(\\text{both red})=\\frac{1}{3}\\cdot\\frac{3}{28}+\\frac{1}{2}\\cdot\\frac{6}{28}+\\frac{1}{6}\\cdot\\frac{15}{28}$. Converting to a common denominator of 168 gives $\\frac{6}{168}+\\frac{18}{168}+\\frac{15}{168}=\\frac{39}{168}$. Simplifying by dividing by 3 gives $\\frac{13}{56}$.",
+      "id": "MATHCOUNTS|Target|Probability|mid#1786646095683#5jtt8h"
+    },
+    {
+      "problem": "A box contains 3 red chips and 5 blue chips. One chip is drawn at random from the box. If the chip drawn is red, two fair coins are then flipped; if the chip drawn is blue, three fair coins are then flipped. What is the probability that every coin flipped lands on heads?",
+      "answer": "11/64",
+      "solution": "The probability of drawing red is $3/8$, and if red is drawn, flipping 2 coins all heads has probability $(1/2)^2 = 1/4$, giving a combined probability of $\\frac{3}{8}\\cdot\\frac{1}{4} = \\frac{3}{32} = \\frac{6}{64}$. The probability of drawing blue is $5/8$, and if blue is drawn, flipping 3 coins all heads has probability $(1/2)^3 = 1/8$, giving a combined probability of $\\frac{5}{8}\\cdot\\frac{1}{8} = \\frac{5}{64}$. Since these two cases are mutually exclusive and cover all possibilities, add them: $\\frac{6}{64} + \\frac{5}{64} = \\frac{11}{64}$. This fraction is already in simplest form, so the final probability is $\\frac{11}{64}$.",
+      "id": "MATHCOUNTS|Target|Probability|mid#1786646118951#nmsi4d"
+    }
+  ],
+  "MATHCOUNTS|Target|Probability|late": [
+    {
+      "problem": "A fair coin is flipped to decide which of two urns to use. Urn A contains 3 red marbles and 5 blue marbles. Urn B contains 4 red marbles and 2 blue marbles. Once an urn is chosen, two marbles are drawn from it at random, without replacement. What is the probability that the two marbles drawn are the same color?",
+      "answer": "391/840",
+      "solution": "If Urn A is used, there are $\\binom{8}{2}=28$ ways to choose 2 marbles, and $\\binom{3}{2}+\\binom{5}{2}=3+10=13$ ways to get matching colors, giving $P(\\text{same}\\mid A)=\\frac{13}{28}$. If Urn B is used, there are $\\binom{6}{2}=15$ total ways, and $\\binom{4}{2}+\\binom{2}{2}=6+1=7$ matching ways, giving $P(\\text{same}\\mid B)=\\frac{7}{15}$. Since each urn is chosen with probability $\\frac{1}{2}$, the total probability is $\\frac{1}{2}\\cdot\\frac{13}{28}+\\frac{1}{2}\\cdot\\frac{7}{15}=\\frac{13}{56}+\\frac{7}{30}$. Converting to a common denominator of 840 gives $\\frac{195}{840}+\\frac{196}{840}=\\frac{391}{840}$, which is already in lowest terms since $391=17\\cdot23$ shares no factors with $840=2^3\\cdot3\\cdot5\\cdot7$.",
+      "id": "MATHCOUNTS|Target|Probability|late#1786646138820#pf2qu8"
+    },
+    {
+      "problem": "A box contains 4 red marbles, 5 blue marbles, and 3 green marbles (12 marbles total, indistinguishable except by color). Marbles are drawn one at a time at random without replacement. Drawing stops as soon as two marbles of the same color have been drawn, or after all 12 marbles have been drawn, whichever comes first. What is the probability that the drawing stops after exactly 3 draws? Express your answer as a common fraction.",
+      "answer": "29/66",
+      "solution": "Since there are only 3 colors, the process stops on draw 3 exactly when the first two marbles drawn are different colors and the third marble matches the color of one of the first two (if it matched the third, unused color, all three colors would appear and drawing would continue). For an ordered pair of distinct colors $(c_1,c_2)$ with counts $n_1,n_2$, the probability that draws 1,2 are these colors and draw 3 repeats one of them is $\\frac{n_1}{12}\\cdot\\frac{n_2}{11}\\cdot\\frac{(n_1-1)+(n_2-1)}{10}$. Using $n_R=4, n_B=5, n_G=3$, the six ordered color pairs give values $140,140,60,60,90,90$ (all over $1320$), summing to $\\frac{580}{1320}$. This simplifies to $\\frac{29}{66}$, which is the desired probability.",
+      "id": "MATHCOUNTS|Target|Probability|late#1786646173023#yfo5n6"
+    },
+    {
+      "problem": "Deb rolls two standard fair six-sided dice and finds their sum. If the sum is prime, she draws one marble at random from Bag $A$, which contains 3 red and 2 blue marbles. If the sum is not prime, she draws one marble at random from Bag $B$, which contains 1 red and 4 blue marbles. What is the probability that the marble Deb draws is red? Express your answer as a common fraction.",
+      "answer": "11/30",
+      "solution": "First find $P(\\text{sum is prime})$ for two dice: the prime sums possible are $2,3,5,7,11$, with counts $1,2,4,6,2$ out of $36$ total outcomes, giving $15/36 = 5/12$. So $P(\\text{Bag }A) = 5/12$ and $P(\\text{Bag }B) = 7/12$. In Bag $A$, $P(\\text{red}) = 3/5$, and in Bag $B$, $P(\\text{red}) = 1/5$. By the law of total probability, $P(\\text{red}) = \\frac{5}{12}\\cdot\\frac{3}{5} + \\frac{7}{12}\\cdot\\frac{1}{5} = \\frac{15}{60} + \\frac{7}{60} = \\frac{22}{60} = \\frac{11}{30}$.",
+      "id": "MATHCOUNTS|Target|Probability|late#1786646185756#e6qcdo"
+    }
+  ]
 }
