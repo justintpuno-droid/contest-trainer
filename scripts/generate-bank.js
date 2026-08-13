@@ -10,7 +10,9 @@
 // This spends real money against your Anthropic API key. Run it yourself,
 // after setting a hard spend cap in the Anthropic console (Plan & Billing),
 // so a bug here can't produce a surprise bill.
-//
+// 
+import 'dotenv/config';
+// 
 // Usage:
 //   ANTHROPIC_API_KEY=sk-ant-... node scripts/generate-bank.js
 //   ANTHROPIC_API_KEY=sk-ant-... BANK_PER_BUCKET=3 node scripts/generate-bank.js

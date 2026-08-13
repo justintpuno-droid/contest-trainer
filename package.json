@@ -1,5 +1,8 @@
 {
   "name": "contest-trainer",
   "private": true,
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
 }
