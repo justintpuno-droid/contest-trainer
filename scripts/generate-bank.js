@@ -43,7 +43,7 @@ if (!apiKey) {
   process.exit(1);
 }
 
-const topics = [...TOPICS];
+const topics = [...TOPICS].filter(t => t !== 'Mixed');
 const bands = [...BANDS];
 
 function buildBuckets() {
