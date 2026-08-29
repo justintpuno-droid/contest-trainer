@@ -105,30 +105,40 @@
   }
   /* ---------- Why section ---------- */
   .why { padding: 44px 0 8px; }
-  /* ---------- Feedback section ---------- */
-  .feedback { padding: 44px 0 56px; }
-  .feedback .kicker {
+  /* ---------- Footer / feedback ---------- */
+  footer { background: var(--ink); padding: 56px 0 40px; }
+  footer .kicker {
     font-family: var(--mono);
     font-size: 12px;
     letter-spacing: .2em;
     text-transform: uppercase;
-    color: var(--gold-deep);
+    color: var(--gold);
     margin-bottom: 14px;
   }
-  .feedback .fb-title {
+  footer .fb-title {
     font-family: var(--serif);
     font-size: 30px;
     font-weight: 700;
     letter-spacing: -.01em;
+    color: var(--paper);
     max-width: 520px;
   }
-  .feedback p.lede {
+  footer p.lede {
     margin-top: 14px;
     font-size: 16px;
     line-height: 1.6;
-    color: var(--ink-soft);
+    color: #C4CCDD;
     max-width: 520px;
   }
+  .footer-meta {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    font-family: var(--mono);
+    font-size: 13px;
+    color: #C4CCDD;
+  }
+  .footer-meta a { color: var(--gold); }
   #fbForm { margin-top: 24px; max-width: 480px; }
   #fbForm textarea {
     width: 100%;
@@ -427,12 +437,43 @@
   footer {
     background: var(--ink);
     color: #B9C2D6;
-    padding: 28px 0;
+    padding: 56px 0 40px;
     font-family: var(--mono);
     font-size: 12px;
     line-height: 1.7;
   }
   footer a { color: var(--gold); text-decoration: none; }
+  footer .kicker {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  footer .fb-title {
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    color: var(--paper);
+    max-width: 520px;
+  }
+  footer p.lede {
+    margin-top: 14px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #C4CCDD;
+    max-width: 520px;
+  }
+  .footer-meta {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    font-family: var(--mono);
+    font-size: 13px;
+    color: #C4CCDD;
+  }
   @media (max-width: 560px) {
     .bubbles { flex-direction: column; }
     .bubble { flex: 1 1 auto; }
@@ -571,7 +612,7 @@
     </div>
   </div>
 </section>
-<section class="feedback">
+<footer>
   <div class="wrap">
     <div class="kicker">Feedback</div>
     <h2 class="fb-title">Let us know what you think.</h2>
@@ -581,12 +622,10 @@
       <button type="submit" id="fbSubmit">Send feedback</button>
     </form>
     <p id="fbThanks" style="display:none;">Thanks — got it. ✓</p>
-  </div>
-</section>
-<footer>
-  <div class="wrap">
-    Built by Justin Puno &middot; Democratizing access to competition math prep.<br>
-    Questions or want this at your school? <a href="mailto:justintpuno@gmail.com">justintpuno@gmail.com</a>
+    <div class="footer-meta">
+      Built by Justin Puno &middot; Democratizing access to competition math prep.<br>
+      Questions or want this at your school? <a href="mailto:justintpuno@gmail.com">justintpuno@gmail.com</a>
+    </div>
   </div>
 </footer>
 <script>
