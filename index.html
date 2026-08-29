@@ -650,7 +650,14 @@
         const btn = document.createElement('button');
         btn.className = 'bubble';
         btn.dataset.letter = letter;
-        const val = (current.choices && current.choices[letter]) || '';
+        let val = (current.choices && current.choices[letter]) || '';
+        // Defensive: the model doesn't always wrap choice values in $...$
+        // as instructed, even though validate() doesn't currently catch
+        // this — auto-wrap anything that looks like bare LaTeX so it still
+        // renders instead of showing raw backslash source.
+        if (val.includes('\\') && !val.includes('$')) {
+          val = '$' + val + '$';
+        }
         btn.innerHTML = '<span class="dot">' + letter + '</span><span class="val">' + escapeHtml(val) + '</span>';
         btn.addEventListener('click', () => pick(letter, btn));
         bubbles.appendChild(btn);
