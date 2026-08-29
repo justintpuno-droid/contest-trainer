@@ -9,19 +9,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=JetBrains+Mono:wght@400;500;600&display=swap');
   :root {
-    --paper: #FBFAF6;
-    --ink: #17264A;
+    --paper: oklch(0.972 0.012 85);
+    --ink: oklch(0.24 0.045 260);
     --ink-soft: #4A5878;
     --grid: #DFE6F0;
-    --gold: #C9A227;
+    --gold: oklch(0.74 0.14 70);
     --gold-deep: #9A7B1B;
     --correct: #2F7D4F;
     --wrong: #B0402A;
-    --card: #FFFFFF;
-    --serif: 'STIX Two Text', Georgia, serif;
-    --mono: 'IBM Plex Mono', monospace;
+    --card: oklch(0.985 0.008 85);
+    --serif: 'Fraunces', ui-serif, Georgia, serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -35,6 +35,13 @@
     min-height: 100vh;
   }
   .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+  .topnav { background: var(--ink); border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .topnav-inner { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; padding-bottom: 14px; }
+  .brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .brand-mark { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 6px; background: var(--gold); color: var(--ink); font-family: var(--serif); font-style: italic; font-size: 15px; }
+  .brand-name { font-family: var(--serif); font-weight: 600; font-size: 18px; color: var(--paper); }
+  .topnav-back { font-family: var(--mono); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--paper); opacity: 0.75; text-decoration: none; }
+  .topnav-back:hover { opacity: 1; }
   /* ---------- Hero / landing ---------- */
   .hero {
     background: var(--ink);
@@ -98,6 +105,74 @@
   }
   /* ---------- Why section ---------- */
   .why { padding: 44px 0 8px; }
+  /* ---------- Footer / feedback ---------- */
+  footer { background: var(--ink); padding: 56px 0 40px; }
+  footer .kicker {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  footer .fb-title {
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    color: var(--paper);
+    max-width: 520px;
+  }
+  footer p.lede {
+    margin-top: 14px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #C4CCDD;
+    max-width: 520px;
+  }
+  .footer-meta {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    font-family: var(--mono);
+    font-size: 13px;
+    color: #C4CCDD;
+  }
+  .footer-meta a { color: var(--gold); }
+  #fbForm { margin-top: 24px; max-width: 480px; }
+  #fbForm textarea {
+    width: 100%;
+    font-family: var(--serif);
+    font-size: 15px;
+    padding: 12px 14px;
+    border: 1.5px solid var(--ink);
+    border-radius: 8px;
+    background: var(--card);
+    color: var(--ink);
+    resize: vertical;
+  }
+  #fbForm textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+  #fbSubmit {
+    display: inline-block;
+    margin-top: 12px;
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: .06em;
+    padding: 12px 26px;
+    background: var(--gold);
+    color: var(--ink);
+    border: 1.5px solid var(--gold);
+    border-radius: 7px;
+    cursor: pointer;
+  }
+  #fbSubmit:disabled { opacity: .5; cursor: default; }
+  #fbThanks {
+    margin-top: 16px;
+    font-family: var(--serif);
+    font-weight: 600;
+    color: var(--ink);
+  }
   .why-grid { display: flex; gap: 14px; flex-wrap: wrap; }
   .why-card {
     flex: 1 1 220px;
@@ -362,12 +437,43 @@
   footer {
     background: var(--ink);
     color: #B9C2D6;
-    padding: 28px 0;
+    padding: 56px 0 40px;
     font-family: var(--mono);
     font-size: 12px;
     line-height: 1.7;
   }
   footer a { color: var(--gold); text-decoration: none; }
+  footer .kicker {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  footer .fb-title {
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    color: var(--paper);
+    max-width: 520px;
+  }
+  footer p.lede {
+    margin-top: 14px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #C4CCDD;
+    max-width: 520px;
+  }
+  .footer-meta {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    font-family: var(--mono);
+    font-size: 13px;
+    color: #C4CCDD;
+  }
   @media (max-width: 560px) {
     .bubbles { flex-direction: column; }
     .bubble { flex: 1 1 auto; }
@@ -377,6 +483,15 @@
 </style>
 </head>
 <body>
+<nav class="topnav">
+  <div class="wrap topnav-inner">
+    <a href="/" class="brand">
+      <span class="brand-mark">ℓ</span>
+      <span class="brand-name">Lemma</span>
+    </a>
+    <a href="/" class="topnav-back">← Home</a>
+  </div>
+</nav>
 <section class="hero">
   <div class="wrap">
     <div class="kicker">Free &middot; Unlimited &middot; AMC 8 / 10 / 12 &middot; AIME</div>
@@ -390,7 +505,7 @@
     <div class="why-grid">
       <div class="why-card">
         <h3>Unlimited problems</h3>
-        <p>AI generates fresh, original problems calibrated to real contest difficulty, from AMC 8 warm-ups to late AIME. You never run out of practice material.</p>
+        <p>Fresh, original problems calibrated to real contest difficulty, from AMC 8 warm-ups to late AIME. You never run out of practice material.</p>
       </div>
       <div class="why-card">
         <h3>Built like the real thing</h3>
@@ -499,8 +614,18 @@
 </section>
 <footer>
   <div class="wrap">
-    Built by Justin Puno &middot; Democratizing access to competition math prep.<br>
-    Questions or want this at your school? <a href="mailto:justintpuno@gmail.com">justintpuno@gmail.com</a>
+    <div class="kicker">Feedback</div>
+    <h2 class="fb-title">Let us know what you think.</h2>
+    <p class="lede">Building this in public. Tell us what's confusing, what's missing, or what you'd want next.</p>
+    <form id="fbForm">
+      <textarea id="fbMessage" rows="4" placeholder="What should we build next?" required></textarea>
+      <button type="submit" id="fbSubmit">Send feedback</button>
+    </form>
+    <p id="fbThanks" style="display:none;">Thanks — got it. ✓</p>
+    <div class="footer-meta">
+      Built by Justin Puno &middot; Democratizing access to competition math prep.<br>
+      Questions or want this at your school? <a href="mailto:justintpuno@gmail.com">justintpuno@gmail.com</a>
+    </div>
   </div>
 </footer>
 <script>
@@ -650,7 +775,12 @@
         const btn = document.createElement('button');
         btn.className = 'bubble';
         btn.dataset.letter = letter;
-        const val = (current.choices && current.choices[letter]) || '';
+        let val = (current.choices && current.choices[letter]) || '';
+        // Always wrap in $...$ for KaTeX so every choice — plain numbers
+        // included — renders in the same math font, not just the ones the
+        // model happened to wrap in LaTeX delimiters itself.
+        val = val.replace(/\$/g, ''); // strip any existing $ the model may have added, avoid double-wrapping
+        val = '$' + val + '$';
         btn.innerHTML = '<span class="dot">' + letter + '</span><span class="val">' + escapeHtml(val) + '</span>';
         btn.addEventListener('click', () => pick(letter, btn));
         bubbles.appendChild(btn);
@@ -782,6 +912,36 @@
   }
   $('goBtn').addEventListener('click', newProblem);
   $('nextBtn').addEventListener('click', newProblem);
+
+  // ---------- feedback form ----------
+  $('fbForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = $('fbSubmit');
+    const msg = $('fbMessage').value;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    try {
+      const resp = await fetch('/api/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: msg })
+      });
+      if (!resp.ok) throw new Error('failed');
+      $('fbForm').style.display = 'none';
+      $('fbThanks').style.display = 'block';
+      setTimeout(() => {
+        $('fbForm').style.display = '';
+        $('fbThanks').style.display = 'none';
+        $('fbMessage').value = '';
+        btn.disabled = false;
+        btn.textContent = 'Send feedback';
+      }, 3000);
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = 'Send feedback';
+      alert('Something went wrong — try again in a moment.');
+    }
+  });
 </script>
 </body>
 </html>
