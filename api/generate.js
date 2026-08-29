@@ -42,9 +42,21 @@ export default async function handler(req, res) {
   const safeSeenIds = Array.isArray(seenIds) ? seenIds.slice(-500) : [];
 
   // 1) Try the pre-generated bank first — zero marginal cost, zero live spend.
+  //    "Mixed" has no bank entries of its own; instead it draws from the
+  //    union of every specific topic's bucket at this level/round/band, so
+  //    it benefits from the full depth of the bank rather than being its
+  //    own thin, separately-exhausted bucket.
   const bank = loadBank();
-  const key = bucketKey(level, round, topic, band);
-  const candidates = (bank[key] || []).filter(p => !safeSeenIds.includes(p.id));
+  let candidates;
+  if (topic === 'Mixed') {
+    const specificTopics = [...TOPICS].filter(t => t !== 'Mixed');
+    candidates = specificTopics
+      .flatMap(t => bank[bucketKey(level, round, t, band)] || [])
+      .filter(p => !safeSeenIds.includes(p.id));
+  } else {
+    const key = bucketKey(level, round, topic, band);
+    candidates = (bank[key] || []).filter(p => !safeSeenIds.includes(p.id));
+  }
   if (candidates.length > 0) {
     const picked = candidates[Math.floor(Math.random() * candidates.length)];
     return res.status(200).json({ ...picked, source: 'bank' });

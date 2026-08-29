@@ -591,7 +591,7 @@
         topic: $('topic').value,
         band: $('diff').value,
         recent: recent,
-        round: round,
+        round: level === 'MATHCOUNTS' ? round : null,
         seenIds: seenIds.slice(-200)
       })
     });
