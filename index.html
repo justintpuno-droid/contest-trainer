@@ -651,13 +651,11 @@
         btn.className = 'bubble';
         btn.dataset.letter = letter;
         let val = (current.choices && current.choices[letter]) || '';
-        // Defensive: the model doesn't always wrap choice values in $...$
-        // as instructed, even though validate() doesn't currently catch
-        // this — auto-wrap anything that looks like bare LaTeX so it still
-        // renders instead of showing raw backslash source.
-        if (val.includes('\\') && !val.includes('$')) {
-          val = '$' + val + '$';
-        }
+        // Always wrap in $...$ for KaTeX so every choice — plain numbers
+        // included — renders in the same math font, not just the ones the
+        // model happened to wrap in LaTeX delimiters itself.
+        val = val.replace(/\$/g, ''); // strip any existing $ the model may have added, avoid double-wrapping
+        val = '$' + val + '$';
         btn.innerHTML = '<span class="dot">' + letter + '</span><span class="val">' + escapeHtml(val) + '</span>';
         btn.addEventListener('click', () => pick(letter, btn));
         bubbles.appendChild(btn);
