@@ -47,6 +47,9 @@ export default async function handler(req, res) {
   //    it benefits from the full depth of the bank rather than being its
   //    own thin, separately-exhausted bucket.
   const bank = loadBank();
+  //    "mixed" band works the same way, pooled across all real bands
+  //    (early/mid/late) — and the two combine freely, so Mixed topic +
+  //    mixed band pools across every topic/band bucket at this level/round.
   const topicsToUse = topic === 'Mixed' ? [...TOPICS].filter(t => t !== 'Mixed') : [topic];
   const bandsToUse = band === 'mixed' ? [...BANDS] : [band];
   let candidates = topicsToUse
@@ -63,6 +66,9 @@ export default async function handler(req, res) {
   if (!apiKey) {
     return res.status(503).json({ error: 'No bank problems left for this selection, and no ANTHROPIC_API_KEY configured for live fallback.' });
   }
+  // Live generation needs one real band to build a calibrated prompt — a
+  // "mixed" request resolves to a randomly-chosen real band for this single
+  // problem, rather than asking the model for an undefined "any difficulty."
   const liveBand = band === 'mixed' ? [...BANDS][Math.floor(Math.random() * BANDS.size)] : band;
   try {
     const { problem } = await generateProblem({ level, topic, band: liveBand, round, recent: safeRecent, apiKey });
@@ -70,4 +76,3 @@ export default async function handler(req, res) {
   } catch (e) {
     return res.status(502).json({ error: e.message });
   }
-}

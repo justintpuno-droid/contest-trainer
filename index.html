@@ -442,8 +442,9 @@
         <div class="field">
           <label>Difficulty</label>
           <select id="diff">
+            <option value="mixed" selected>Mixed</option>
             <option value="early">Early (#1–10)</option>
-            <option value="mid" selected>Middle (#11–20)</option>
+            <option value="mid">Middle (#11–20)</option>
             <option value="late">Late (#21–25)</option>
           </select>
         </div>
@@ -523,17 +524,17 @@
   function updateDiffLabels(lvl) {
     const d = $('diff');
     if (lvl === 'AIME') {
-      d.options[0].text = 'Early (#1–5)';
-      d.options[1].text = 'Middle (#6–10)';
-      d.options[2].text = 'Late (#11–15)';
+      d.options[1].text = 'Early (#1–5)';
+      d.options[2].text = 'Middle (#6–10)';
+      d.options[3].text = 'Late (#11–15)';
     } else if (lvl === 'MATHCOUNTS') {
-      d.options[0].text = 'Chapter';
-      d.options[1].text = 'State';
-      d.options[2].text = 'National';
+      d.options[1].text = 'Chapter';
+      d.options[2].text = 'State';
+      d.options[3].text = 'National';
     } else {
-      d.options[0].text = 'Early (#1–10)';
-      d.options[1].text = 'Middle (#11–20)';
-      d.options[2].text = 'Late (#21–25)';
+      d.options[1].text = 'Early (#1–10)';
+      d.options[2].text = 'Middle (#11–20)';
+      d.options[3].text = 'Late (#21–25)';
     }
   }
   // ---------- level segment ----------
