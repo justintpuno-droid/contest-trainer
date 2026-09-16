@@ -713,7 +713,7 @@
   const $ = id => document.getElementById(id);
 
   // ---------- Supabase (auth + progress tracking) ----------
-  const supabase = window.supabase.createClient(
+  const sb = window.supabase.createClient(
     'https://lreivegykrfiyatughnl.supabase.co',
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxyZWl2ZWd5a3JmaXlhdHVnaG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0NzcxNjAsImV4cCI6MjEwNTA1MzE2MH0.zK2q31hk-6RIYxINY_t3WobV1ZquOu9c6162FTF4P_A'
   );
@@ -735,17 +735,17 @@
     }
   }
 
-  supabase.auth.getSession().then(({ data: { session } }) => {
+  sb.auth.getSession().then(({ data: { session } }) => {
     updateAuthUI(session ? session.user : null);
   });
-  supabase.auth.onAuthStateChange((_event, session) => {
+  sb.auth.onAuthStateChange((_event, session) => {
     updateAuthUI(session ? session.user : null);
   });
 
   $('authOpen').addEventListener('click', async (e) => {
     e.preventDefault();
     if (currentUser) {
-      await supabase.auth.signOut();
+      await sb.auth.signOut();
     } else {
       $('authModal').style.display = 'flex';
     }
@@ -773,7 +773,7 @@
   $('signInForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     $('siError').textContent = '';
-    const { error } = await supabase.auth.signInWithPassword({
+    const { error } = await sb.auth.signInWithPassword({
       email: $('siEmail').value,
       password: $('siPassword').value
     });
@@ -787,7 +787,7 @@
   $('signUpForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     $('suError').textContent = '';
-    const { error } = await supabase.auth.signUp({
+    const { error } = await sb.auth.signUp({
       email: $('suEmail').value,
       password: $('suPassword').value,
       options: { data: { username: $('suUsername').value } }
