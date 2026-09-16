@@ -726,7 +726,7 @@
     const status = $('authStatus');
     const openLink = $('authOpen');
     if (user) {
-      status.textContent = user.email;
+      status.textContent = (user.user_metadata && user.user_metadata.username) || user.email;
       status.style.display = 'inline';
       openLink.textContent = 'Sign out';
     } else {
