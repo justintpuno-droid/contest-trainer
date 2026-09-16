@@ -43,6 +43,45 @@
   .brand-name { font-family: var(--serif); font-weight: 600; font-size: 18px; color: var(--paper); }
   .topnav-back { font-family: var(--mono); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--paper); opacity: 0.75; text-decoration: none; }
   .topnav-back:hover { opacity: 1; }
+  .topnav-right { display: flex; align-items: center; gap: 18px; }
+  #authStatus { font-family: var(--mono); font-size: 12px; color: var(--paper); opacity: 0.75; }
+  .auth-modal {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+    display: flex; align-items: center; justify-content: center; z-index: 100;
+  }
+  .auth-card {
+    background: var(--card); border-radius: 12px; padding: 32px;
+    width: 340px; max-width: 90vw; position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .auth-close {
+    position: absolute; top: 12px; right: 16px; background: none; border: none;
+    font-size: 22px; color: var(--ink-soft); cursor: pointer; line-height: 1;
+  }
+  .auth-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+  .auth-tab {
+    flex: 1; padding: 10px; border: 1.5px solid var(--ink); background: var(--card);
+    color: var(--ink); font-family: var(--mono); font-size: 12px; text-transform: uppercase;
+    letter-spacing: .06em; cursor: pointer; border-radius: 6px;
+  }
+  .auth-tab.on { background: var(--ink); color: var(--paper); }
+  .auth-form { display: flex; flex-direction: column; gap: 14px; }
+  .auth-form label { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); display: flex; flex-direction: column; gap: 6px; }
+  .auth-form input {
+    font-family: var(--serif); font-size: 15px; padding: 10px 12px;
+    border: 1.5px solid var(--ink); border-radius: 7px; background: var(--paper); color: var(--ink);
+  }
+  .auth-form button[type="submit"] {
+    margin-top: 4px; font-family: var(--mono); font-weight: 600; font-size: 13px;
+    letter-spacing: .06em; padding: 11px; background: var(--gold); color: var(--ink);
+    border: 1.5px solid var(--gold); border-radius: 7px; cursor: pointer;
+  }
+  .auth-error { color: var(--wrong); font-family: var(--mono); font-size: 12px; min-height: 16px; }
+  .auth-guest {
+    width: 100%; margin-top: 16px; padding: 10px; background: none;
+    border: none; color: var(--ink-soft); font-family: var(--mono); font-size: 12px;
+    text-decoration: underline; cursor: pointer;
+  }
   /* ---------- Hero / landing ---------- */
   .hero {
     background: var(--ink);
@@ -490,9 +529,37 @@
       <span class="brand-mark">ℓ</span>
       <span class="brand-name">Lemma</span>
     </a>
-    <a href="https://lemma-wine.vercel.app/" class="topnav-back">← Home</a>
+    <div class="topnav-right">
+      <span id="authStatus" style="display:none;"></span>
+      <a href="#" id="authOpen" class="topnav-back">Sign in</a>
+      <a href="/" class="topnav-back">← Home</a>
+    </div>
   </div>
 </nav>
+
+<div id="authModal" class="auth-modal" style="display:none;">
+  <div class="auth-card">
+    <button id="authClose" class="auth-close" aria-label="Close">×</button>
+    <div class="auth-tabs">
+      <button id="tabSignIn" class="auth-tab on">Sign in</button>
+      <button id="tabSignUp" class="auth-tab">Sign up</button>
+    </div>
+    <form id="signInForm" class="auth-form">
+      <label>Email<input type="email" id="siEmail" required></label>
+      <label>Password<input type="password" id="siPassword" required></label>
+      <button type="submit">Sign in</button>
+      <p id="siError" class="auth-error"></p>
+    </form>
+    <form id="signUpForm" class="auth-form" style="display:none;">
+      <label>Username<input type="text" id="suUsername" required></label>
+      <label>Email<input type="email" id="suEmail" required></label>
+      <label>Password<input type="password" id="suPassword" required minlength="6"></label>
+      <button type="submit">Sign up</button>
+      <p id="suError" class="auth-error"></p>
+    </form>
+    <button id="authGuest" class="auth-guest">Continue as guest</button>
+  </div>
+</div>
 <section class="hero">
   <div class="wrap">
     <div class="kicker">Free &middot; Unlimited &middot; AMC 8 / 10 / 12 &middot; AIME</div>
