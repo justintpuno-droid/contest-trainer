@@ -713,6 +713,13 @@
   const $ = id => document.getElementById(id);
 
   // ---------- Supabase (auth + progress tracking) ----------
+  const supabase = window.supabase.createClient(
+    'https://lreivegykrfiyatughnl.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxyZWl2ZWd5a3JmaXlhdHVnaG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0NzcxNjAsImV4cCI6MjEwNTA1MzE2MH0.zK2q31hk-6RIYxINY_t3WobV1ZquOu9c6162FTF4P_A'
+  );
+  let currentUser = null;
+
+  // ---------- Supabase (auth + progress tracking) ----------
   // ---------- auth UI wiring ----------
   function updateAuthUI(user) {
     currentUser = user;
