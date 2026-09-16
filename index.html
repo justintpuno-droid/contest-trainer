@@ -644,6 +644,13 @@
   // pushed here — each one is already fresh, nothing to dedupe against.
   const seenIds = [];
   const $ = id => document.getElementById(id);
+
+  // ---------- Supabase (auth + progress tracking) ----------
+  const supabase = window.supabase.createClient(
+    'https://lreivegykrfiyatughnl.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxyZWl2ZWd5a3JmaXlhdHVnaG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0NzcxNjAsImV4cCI6MjEwNTA1MzE2MH0.zK2q31hk-6RIYxINY_t3WobV1ZquOu9c6162FTF4P_A'
+  );
+  let currentUser = null;
   // ---------- difficulty-dropdown relabeling ----------
   // The three option *values* always stay early/mid/late — only the visible
   // text changes per contest, so the server's band param stays uniform.
