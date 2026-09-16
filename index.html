@@ -713,11 +713,85 @@
   const $ = id => document.getElementById(id);
 
   // ---------- Supabase (auth + progress tracking) ----------
-  const supabase = window.supabase.createClient(
-    'https://lreivegykrfiyatughnl.supabase.co',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxyZWl2ZWd5a3JmaXlhdHVnaG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0NzcxNjAsImV4cCI6MjEwNTA1MzE2MH0.zK2q31hk-6RIYxINY_t3WobV1ZquOu9c6162FTF4P_A'
-  );
-  let currentUser = null;
+  // ---------- auth UI wiring ----------
+  function updateAuthUI(user) {
+    currentUser = user;
+    const status = $('authStatus');
+    const openLink = $('authOpen');
+    if (user) {
+      status.textContent = user.email;
+      status.style.display = 'inline';
+      openLink.textContent = 'Sign out';
+    } else {
+      status.style.display = 'none';
+      openLink.textContent = 'Sign in';
+    }
+  }
+
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    updateAuthUI(session ? session.user : null);
+  });
+  supabase.auth.onAuthStateChange((_event, session) => {
+    updateAuthUI(session ? session.user : null);
+  });
+
+  $('authOpen').addEventListener('click', async (e) => {
+    e.preventDefault();
+    if (currentUser) {
+      await supabase.auth.signOut();
+    } else {
+      $('authModal').style.display = 'flex';
+    }
+  });
+  $('authClose').addEventListener('click', () => {
+    $('authModal').style.display = 'none';
+  });
+  $('authGuest').addEventListener('click', () => {
+    $('authModal').style.display = 'none';
+  });
+
+  $('tabSignIn').addEventListener('click', () => {
+    $('tabSignIn').classList.add('on');
+    $('tabSignUp').classList.remove('on');
+    $('signInForm').style.display = 'flex';
+    $('signUpForm').style.display = 'none';
+  });
+  $('tabSignUp').addEventListener('click', () => {
+    $('tabSignUp').classList.add('on');
+    $('tabSignIn').classList.remove('on');
+    $('signUpForm').style.display = 'flex';
+    $('signInForm').style.display = 'none';
+  });
+
+  $('signInForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    $('siError').textContent = '';
+    const { error } = await supabase.auth.signInWithPassword({
+      email: $('siEmail').value,
+      password: $('siPassword').value
+    });
+    if (error) {
+      $('siError').textContent = error.message;
+    } else {
+      $('authModal').style.display = 'none';
+    }
+  });
+
+  $('signUpForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    $('suError').textContent = '';
+    const { error } = await supabase.auth.signUp({
+      email: $('suEmail').value,
+      password: $('suPassword').value,
+      options: { data: { username: $('suUsername').value } }
+    });
+    if (error) {
+      $('suError').textContent = error.message;
+    } else {
+      $('suError').style.color = 'var(--correct)';
+      $('suError').textContent = 'Check your email to confirm your account.';
+    }
+  });
   // ---------- difficulty-dropdown relabeling ----------
   // The three option *values* always stay early/mid/late — only the visible
   // text changes per contest, so the server's band param stays uniform.
