@@ -532,7 +532,6 @@
     <div class="topnav-right">
       <span id="authStatus" style="display:none;"></span>
       <a href="#" id="authOpen" class="topnav-back">Sign in</a>
-      <a href="https://lemmamath.net/" class="topnav-back">← Home</a>
     </div>
   </div>
 </nav>
@@ -726,7 +725,7 @@
     const status = $('authStatus');
     const openLink = $('authOpen');
     if (user) {
-      status.textContent = user.email;
+      status.textContent = (user.user_metadata && user.user_metadata.username) || user.email;
       status.style.display = 'inline';
       openLink.textContent = 'Sign out';
     } else {
