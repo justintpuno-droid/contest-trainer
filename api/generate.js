@@ -25,11 +25,36 @@ function bucketKey(level, round, topic, band) {
   return [level, round || '-', topic, band].join('|');
 }
 
+// Records one row per problem request (anonymous device id only: no IP, no user agent).
+// Awaited with a short timeout so a paused or slow database can never block serving problems.
+async function logRequest(row) {
+  const url = process.env.SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !key) return;
+  const headers = { 'Content-Type': 'application/json', apikey: key, Prefer: 'return=minimal' };
+  if (key.startsWith('eyJ')) headers.Authorization = 'Bearer ' + key;
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 1500);
+  try {
+    const resp = await fetch(url + '/rest/v1/problem_requests', {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(row),
+      signal: ctrl.signal
+    });
+    if (!resp.ok) console.error('problem_requests insert failed:', resp.status, await resp.text());
+  } catch (e) {
+    console.error('problem_requests insert error:', e.message);
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'POST only' });
   }
-  const { level, topic, band, recent, round, seenIds } = req.body || {};
+  const { level, topic, band, recent, round, seenIds, clientId } = req.body || {};
   if (!LEVELS.has(level) || !TOPICS.has(topic) || (band !== 'mixed' && !BANDS.has(band))) {
     return res.status(400).json({ error: 'Invalid parameters' });
   }
@@ -40,6 +65,7 @@ export default async function handler(req, res) {
     ? recent.slice(-6).filter(r => r === 'correct' || r === 'wrong')
     : [];
   const safeSeenIds = Array.isArray(seenIds) ? seenIds.slice(-500) : [];
+  const safeClientId = typeof clientId === 'string' ? clientId.slice(0, 64) : null;
 
   // 1) Try the pre-generated bank first — zero marginal cost, zero live spend.
   //    "Mixed" has no bank entries of its own; instead it draws from the
@@ -57,6 +83,7 @@ export default async function handler(req, res) {
     .filter(p => !safeSeenIds.includes(p.id));
   if (candidates.length > 0) {
     const picked = candidates[Math.floor(Math.random() * candidates.length)];
+    await logRequest({ client_id: safeClientId, level, topic, band, source: 'bank' });
     return res.status(200).json({ ...picked, source: 'bank' });
   }
 
@@ -72,6 +99,7 @@ export default async function handler(req, res) {
   const liveBand = band === 'mixed' ? [...BANDS][Math.floor(Math.random() * BANDS.size)] : band;
   try {
     const { problem } = await generateProblem({ level, topic, band: liveBand, round, recent: safeRecent, apiKey });
+    await logRequest({ client_id: safeClientId, level, topic, band, source: 'live' });
     return res.status(200).json({ ...problem, source: 'live' });
   } catch (e) {
     return res.status(502).json({ error: e.message });

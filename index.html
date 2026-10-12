@@ -863,6 +863,16 @@
     }
   }
   // ---------- API (server-side proxy) ----------
+  function getClientId() {
+    try {
+      let id = localStorage.getItem('lemma_cid');
+      if (!id) {
+        id = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(36).slice(2);
+        localStorage.setItem('lemma_cid', id);
+      }
+      return id;
+    } catch (e) { return null; }
+  }
   async function fetchProblem() {
     const resp = await fetch('/api/generate', {
       method: 'POST',
@@ -873,7 +883,8 @@
         band: $('diff').value,
         recent: recent,
         round: level === 'MATHCOUNTS' ? round : null,
-        seenIds: seenIds.slice(-200)
+        seenIds: seenIds.slice(-200),
+        clientId: getClientId()
       })
     });
     const data = await resp.json();
