@@ -752,7 +752,13 @@
   function givenAnswer() {
     try {
       const picked = document.querySelector('.bubble.picked .dot');
-      if (picked) return picked.textContent.trim();
+      if (picked) {
+        const letter = picked.textContent.trim();
+        const raw = (current && current.choices) ? current.choices[letter] : null;
+        if (raw === undefined || raw === null || raw === '') return letter;
+        // Same wrapping the trainer uses for choice display, so the progress panel renders it as math.
+        return letter + ') $' + String(raw).replace(/\$/g, '') + '$';
+      }
       const box = document.querySelector('input:disabled');
       if (box && box.value) return box.value.trim();
     } catch (e) {}
