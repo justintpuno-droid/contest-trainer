@@ -62,6 +62,11 @@
   .prog-prob { font-family: var(--serif); font-size: 15px; margin: 6px 0; }
   .prog-empty { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); padding: 4px 0; }
   .prog-detail { padding: 10px 6px 14px; border-bottom: 1px solid var(--grid); background: var(--paper); }
+  .prog-target { background: var(--gold); color: var(--ink); border: 1.5px solid var(--ink); border-radius: 8px; padding: 14px 16px; margin-bottom: 18px; }
+  .prog-target-label { font-family: var(--mono); font-size: 10px; letter-spacing: .15em; text-transform: uppercase; }
+  .prog-target-name { font-family: var(--serif); font-size: 20px; font-weight: 700; margin: 4px 0; }
+  .prog-target-sub { font-family: var(--mono); font-size: 12px; }
+  .prog-target-btn { margin-top: 10px; background: var(--ink); color: var(--paper); border: none; border-radius: 6px; padding: 8px 14px; font-family: var(--mono); font-size: 12px; cursor: pointer; }
   .prog-back { background: none; border: none; font-family: var(--mono); font-size: 12px; text-decoration: underline; color: var(--ink-soft); cursor: pointer; margin-bottom: 10px; padding: 0; }
   .topnav-right { display: flex; align-items: center; gap: 18px; }
   #authStatus { font-family: var(--mono); font-size: 12px; color: var(--paper); opacity: 0.75; }
@@ -765,14 +770,28 @@
     return null;
   }
   // Never awaited by the grading flow, and errors are swallowed, so a failed save can't break practice.
+  function tpResolvedCategory() {
+    // Real topic/band of the problem shown, read from its bank id (level|round|topic|band#...).
+    // Live-generated problems have no id, so the dropdown values are kept (may be Mixed).
+    let topic = $('topic').value;
+    let band = $('diff').value;
+    try {
+      if (current && typeof current.id === 'string') {
+        const p = current.id.split('#')[0].split('|');
+        if (p.length === 4) { topic = p[2]; band = p[3]; }
+      }
+    } catch (e) {}
+    return { topic: topic, band: band };
+  }
   async function saveAttempt(correct) {
     if (!currentUser) return;
     try {
+      const cat = tpResolvedCategory();
       const { error } = await sb.from('attempts').insert({
         user_id: currentUser.id,
         level: level,
-        topic: $('topic').value,
-        band: $('diff').value,
+        topic: cat.topic,
+        band: cat.band,
         round: level === 'MATHCOUNTS' ? round : null,
         correct: correct,
         time_seconds: (typeof seconds === 'number') ? seconds : null,
@@ -1204,28 +1223,140 @@
     wrap.appendChild(detail);
     return wrap;
   }
+  // ---------- Target point: suggested next focus ----------
+  // Tunable guesses: difficulty rank per level/band (higher = harder) and the cutoffs below.
+  const TP_RANK = {
+    'AMC 8': { early: 1, mid: 2, late: 3 },
+    'MATHCOUNTS': { early: 2, mid: 3, late: 4 },
+    'AMC 10': { early: 3, mid: 4, late: 5 },
+    'AMC 12': { early: 4, mid: 5, late: 6 },
+    'AIME': { early: 6, mid: 7, late: 8 }
+  };
+  const TP_WINDOW = 6;        // most recent answers counted per category
+  const TP_MIN = 4;           // answers needed before a category counts
+  const TP_STRUGGLE = 0.55;   // below this recent accuracy = still struggling
+  const TP_STRONG = 0.8;      // at or above this = handling it
+  function tpBandLabel(level, band) {
+    if (level === 'MATHCOUNTS') return { early: 'Chapter', mid: 'State', late: 'National' }[band];
+    if (level === 'AIME') return { early: 'Early (#1–5)', mid: 'Middle (#6–10)', late: 'Late (#11–15)' }[band];
+    return { early: 'Early (#1–10)', mid: 'Middle (#11–20)', late: 'Late (#21–25)' }[band];
+  }
+  function tpCatLabel(level, topic, band) {
+    const parts = [level];
+    if (topic) parts.push(topic);
+    if (band) parts.push(tpBandLabel(level, band));
+    return parts.join(' · ');
+  }
+  function tpNextStep(cat) {
+    const bands = ['early', 'mid', 'late'];
+    const levels = ['AMC 8', 'AMC 10', 'AMC 12', 'AIME'];
+    if (cat.band) {
+      const i = bands.indexOf(cat.band);
+      if (i < 2) return { level: cat.level, topic: cat.topic, band: bands[i + 1] };
+    }
+    const j = levels.indexOf(cat.level);
+    if (j >= 0 && j + 1 < levels.length) {
+      return { level: levels[j + 1], topic: cat.topic, band: cat.band ? 'early' : null };
+    }
+    return null;
+  }
+  function tpCompute(attempts) {   // attempts: newest first
+    const groups = {};
+    function add(key, meta, correct) {
+      const g = groups[key] || (groups[key] = Object.assign({ recent: [] }, meta));
+      if (g.recent.length < TP_WINDOW) g.recent.push(correct);
+    }
+    for (const a of attempts) {
+      const ranks = TP_RANK[a.level];
+      if (!ranks) continue;
+      const topicKnown = !!a.topic && a.topic !== 'Mixed';
+      const bandKnown = !!a.band && a.band !== 'mixed' && !!ranks[a.band];
+      if (topicKnown && bandKnown) add(a.level + '|' + a.topic + '|' + a.band, { level: a.level, topic: a.topic, band: a.band, rank: ranks[a.band] }, a.correct);
+      if (topicKnown) add(a.level + '|' + a.topic + '|*', { level: a.level, topic: a.topic, band: null, rank: ranks.mid }, a.correct);
+      if (bandKnown) add(a.level + '|*|' + a.band, { level: a.level, topic: null, band: a.band, rank: ranks[a.band] }, a.correct);
+    }
+    const cats = Object.values(groups)
+      .filter(g => g.recent.length >= TP_MIN)
+      .map(g => {
+        const right = g.recent.filter(Boolean).length;
+        return Object.assign({}, g, { right: right, n: g.recent.length, acc: right / g.recent.length });
+      });
+    if (!cats.length) return null;
+    const spec = c => (c.topic ? 1 : 0) + (c.band ? 1 : 0);
+    let pool = cats.filter(c => c.acc < TP_STRUGGLE);
+    if (!pool.length) {
+      const strong = cats.filter(c => c.acc >= TP_STRONG);
+      if (strong.length) {
+        strong.sort((x, y) => y.rank - x.rank || spec(y) - spec(x) || y.acc - x.acc);
+        const top = strong[0];
+        const next = tpNextStep(top);
+        return next ? { kind: 'stretch', from: top, next: next } : { kind: 'top', cat: top };
+      }
+      pool = cats;
+    }
+    pool.sort((x, y) => x.rank - y.rank || spec(y) - spec(x) || x.acc - y.acc);
+    return { kind: 'fix', cat: pool[0] };
+  }
+  function tpPractice(lvl, topic, band) {
+    const btn = document.querySelector('#levelSeg button[data-v="' + lvl + '"]');
+    if (btn) btn.click();
+    $('topic').value = topic || 'Mixed';
+    $('diff').value = band || 'mixed';
+    $('progressModal').style.display = 'none';
+    newProblem();
+  }
+  function tpBanner(t) {
+    const box = el('div', 'prog-target');
+    box.appendChild(el('div', 'prog-target-label', 'Target point'));
+    let name, sub, go = null;
+    if (!t) {
+      name = 'Not enough data yet';
+      sub = 'Answer a few more problems. I need 4+ recent answers in the same contest and topic, or contest and difficulty, before I can suggest a focus.';
+    } else if (t.kind === 'stretch') {
+      name = tpCatLabel(t.next.level, t.next.topic, t.next.band);
+      sub = "You're " + t.from.right + '/' + t.from.n + ' on ' + tpCatLabel(t.from.level, t.from.topic, t.from.band) + '. Ready for a step up.';
+      go = t.next;
+    } else {
+      const c = t.cat;
+      name = tpCatLabel(c.level, c.topic, c.band);
+      sub = c.right + '/' + c.n + ' on your last ' + c.n + ' here. ' + (t.kind === 'top'
+        ? 'Already near the top of this track, so keep sharpening it.'
+        : 'Build this up before moving to harder material.');
+      go = c;
+    }
+    box.appendChild(el('div', 'prog-target-name', name));
+    box.appendChild(el('div', 'prog-target-sub', sub));
+    if (go) {
+      const btn = el('button', 'prog-target-btn', 'Practice this');
+      btn.addEventListener('click', () => tpPractice(go.level, go.topic, go.band));
+      box.appendChild(btn);
+    }
+    return box;
+  }
   async function openProgress() {
     if (!currentUser) return;
     $('progressModal').style.display = 'flex';
     $('progressBody').replaceChildren(el('div', 'prog-empty', 'Loading…'));
     try {
       const uid = currentUser.id;
-      const [totalRes, correctRes, streakRes, last10Res, sessRes] = await Promise.all([
+      const [totalRes, correctRes, recentRes, last10Res, sessRes] = await Promise.all([
         sb.from('attempts').select('id', { count: 'exact', head: true }).eq('user_id', uid),
         sb.from('attempts').select('id', { count: 'exact', head: true }).eq('user_id', uid).eq('correct', true),
-        sb.from('attempts').select('correct').eq('user_id', uid).order('created_at', { ascending: false }).limit(200),
+        sb.from('attempts').select('correct,level,topic,band').eq('user_id', uid).order('created_at', { ascending: false }).limit(200),
         sb.from('attempts').select('correct,level,topic,band,created_at,problem_text,answer_given,time_seconds').eq('user_id', uid).order('created_at', { ascending: false }).limit(10),
         sb.from('session_summaries').select('*').eq('user_id', uid).order('started_at', { ascending: false }).limit(50)
       ]);
-      const failed = [totalRes, correctRes, streakRes, last10Res, sessRes].find(r => r.error);
+      const failed = [totalRes, correctRes, recentRes, last10Res, sessRes].find(r => r.error);
       if (failed) throw new Error(failed.error.message);
       const total = totalRes.count || 0;
       const solved = correctRes.count || 0;
+      const recent = recentRes.data || [];
       let streak = 0; // counts back through the last 200 attempts
-      for (const r of (streakRes.data || [])) { if (r.correct) streak++; else break; }
+      for (const r of recent) { if (r.correct) streak++; else break; }
       const last10 = last10Res.data || [];
       const frag = document.createDocumentFragment();
       frag.appendChild(el('div', 'prog-title', 'My progress'));
+      frag.appendChild(tpBanner(tpCompute(recent)));
       const tiles = el('div', 'prog-tiles');
       [[solved, 'Solved'], [pct(solved, total), 'Accuracy'], [streak, 'Streak']].forEach(([v, l]) => {
         const t = el('div', 'prog-tile');
