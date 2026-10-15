@@ -61,6 +61,7 @@
   .prog-attempt { padding: 12px 0; border-bottom: 1px solid var(--grid); }
   .prog-prob { font-family: var(--serif); font-size: 15px; margin: 6px 0; }
   .prog-empty { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); padding: 4px 0; }
+  .prog-detail { padding: 10px 6px 14px; border-bottom: 1px solid var(--grid); background: var(--paper); }
   .prog-back { background: none; border: none; font-family: var(--mono); font-size: 12px; text-decoration: underline; color: var(--ink-soft); cursor: pointer; margin-bottom: 10px; padding: 0; }
   .topnav-right { display: flex; align-items: center; gap: 18px; }
   #authStatus { font-family: var(--mono); font-size: 12px; color: var(--paper); opacity: 0.75; }
@@ -1174,25 +1175,49 @@
   function progressError(msg) {
     $('progressBody').replaceChildren(el('div', 'prog-empty', 'Could not load your progress (' + msg + '). Try again in a moment.'));
   }
+  function fmtTime(iso) {
+    return new Date(iso).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+  }
+  // One compact row; clicking it shows or hides the problem underneath.
+  function attemptRow(a, label, rightText) {
+    const wrap = document.createElement('div');
+    const row = el('div', 'prog-row click');
+    row.appendChild(el('span', a.correct ? 'prog-ok' : 'prog-no', (a.correct ? '✓ ' : '✗ ') + label));
+    row.appendChild(el('span', '', rightText));
+    const detail = el('div', 'prog-detail');
+    detail.style.display = 'none';
+    detail.appendChild(el('div', 'prog-prob', a.problem_text || '(problem text not saved)'));
+    if (a.answer_given) detail.appendChild(el('div', 'prog-meta', 'Your answer: ' + a.answer_given));
+    let rendered = false;
+    row.addEventListener('click', () => {
+      const opening = detail.style.display === 'none';
+      detail.style.display = opening ? 'block' : 'none';
+      if (opening && !rendered) { renderMath(detail); rendered = true; }
+    });
+    wrap.appendChild(row);
+    wrap.appendChild(detail);
+    return wrap;
+  }
   async function openProgress() {
     if (!currentUser) return;
     $('progressModal').style.display = 'flex';
     $('progressBody').replaceChildren(el('div', 'prog-empty', 'Loading…'));
     try {
       const uid = currentUser.id;
-      const [totalRes, correctRes, recentRes, sessRes] = await Promise.all([
+      const [totalRes, correctRes, streakRes, last10Res, sessRes] = await Promise.all([
         sb.from('attempts').select('id', { count: 'exact', head: true }).eq('user_id', uid),
         sb.from('attempts').select('id', { count: 'exact', head: true }).eq('user_id', uid).eq('correct', true),
-        sb.from('attempts').select('correct,level,topic,band,created_at').eq('user_id', uid).order('created_at', { ascending: false }).limit(200),
+        sb.from('attempts').select('correct').eq('user_id', uid).order('created_at', { ascending: false }).limit(200),
+        sb.from('attempts').select('correct,level,topic,band,created_at,problem_text,answer_given,time_seconds').eq('user_id', uid).order('created_at', { ascending: false }).limit(10),
         sb.from('session_summaries').select('*').eq('user_id', uid).order('started_at', { ascending: false }).limit(50)
       ]);
-      const failed = [totalRes, correctRes, recentRes, sessRes].find(r => r.error);
+      const failed = [totalRes, correctRes, streakRes, last10Res, sessRes].find(r => r.error);
       if (failed) throw new Error(failed.error.message);
       const total = totalRes.count || 0;
       const solved = correctRes.count || 0;
-      const recent = recentRes.data || [];
       let streak = 0; // counts back through the last 200 attempts
-      for (const r of recent) { if (r.correct) streak++; else break; }
+      for (const r of (streakRes.data || [])) { if (r.correct) streak++; else break; }
+      const last10 = last10Res.data || [];
       const frag = document.createDocumentFragment();
       frag.appendChild(el('div', 'prog-title', 'My progress'));
       const tiles = el('div', 'prog-tiles');
@@ -1204,12 +1229,9 @@
       });
       frag.appendChild(tiles);
       frag.appendChild(el('div', 'prog-h', 'Last 10 attempts'));
-      if (!recent.length) frag.appendChild(el('div', 'prog-empty', 'No attempts yet. Answer a problem and it will show up here.'));
-      recent.slice(0, 10).forEach(r => {
-        const row = el('div', 'prog-row');
-        row.appendChild(el('span', r.correct ? 'prog-ok' : 'prog-no', (r.correct ? '✓ ' : '✗ ') + r.level + ' · ' + r.topic));
-        row.appendChild(el('span', '', fmtWhen(r.created_at)));
-        frag.appendChild(row);
+      if (!last10.length) frag.appendChild(el('div', 'prog-empty', 'No attempts yet. Answer a problem and it will show up here.'));
+      last10.forEach(a => {
+        frag.appendChild(attemptRow(a, a.level + ' · ' + a.topic, fmtWhen(a.created_at)));
       });
       frag.appendChild(el('div', 'prog-h', 'Past sessions'));
       const sessions = sessRes.data || [];
@@ -1239,15 +1261,10 @@
       frag.appendChild(el('div', 'prog-title', fmtWhen(s.started_at)));
       frag.appendChild(el('div', 'prog-empty', s.correct + ' of ' + s.attempted + ' correct · ' + fmtDuration(s.started_at, s.ended_at)));
       (data || []).forEach((a, i) => {
-        const box = el('div', 'prog-attempt');
-        box.appendChild(el('div', (a.correct ? 'prog-ok' : 'prog-no') + ' prog-meta',
-          (a.correct ? '✓ ' : '✗ ') + (i + 1) + '. ' + a.level + ' · ' + a.topic + (a.time_seconds != null ? ' · ' + a.time_seconds + 's' : '')));
-        box.appendChild(el('div', 'prog-prob', a.problem_text || '(problem text not saved)'));
-        if (a.answer_given) box.appendChild(el('div', 'prog-meta', 'Your answer: ' + a.answer_given));
-        frag.appendChild(box);
+        const right = fmtTime(a.created_at) + (a.time_seconds != null ? ' · ' + a.time_seconds + 's' : '');
+        frag.appendChild(attemptRow(a, (i + 1) + '. ' + a.level + ' · ' + a.topic, right));
       });
       $('progressBody').replaceChildren(frag);
-      renderMath($('progressBody'));
     } catch (e) { progressError(e.message); }
   }
   function syncProgressUi(user) {
