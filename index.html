@@ -43,6 +43,8 @@
   .brand-name { font-family: var(--serif); font-weight: 600; font-size: 18px; color: var(--paper); }
   .topnav-back { font-family: var(--mono); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--paper); opacity: 0.75; text-decoration: none; }
   .topnav-back:hover { opacity: 1; }
+  .guest-note { margin-top: 10px; font-family: var(--mono); font-size: 12px; color: var(--ink-soft); }
+  .guest-note a { color: var(--gold-deep); }
   .topnav-right { display: flex; align-items: center; gap: 18px; }
   #authStatus { font-family: var(--mono); font-size: 12px; color: var(--paper); opacity: 0.75; }
   .auth-modal {
@@ -718,6 +720,58 @@
   );
   let currentUser = null;
 
+  // ---------- session + attempt saving (signed-in users only) ----------
+  // A session is one page visit: the id exists only in memory, so a refresh or new visit starts a new one.
+  const sessionId = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(36).slice(2);
+  let sessionStartedAt = null;
+  function givenAnswer() {
+    try {
+      const picked = document.querySelector('.bubble.picked .dot');
+      if (picked) return picked.textContent.trim();
+      const box = document.querySelector('input:disabled');
+      if (box && box.value) return box.value.trim();
+    } catch (e) {}
+    return null;
+  }
+  // Never awaited by the grading flow, and errors are swallowed, so a failed save can't break practice.
+  async function saveAttempt(correct) {
+    if (!currentUser) return;
+    try {
+      const { error } = await sb.from('attempts').insert({
+        user_id: currentUser.id,
+        level: level,
+        topic: $('topic').value,
+        band: $('diff').value,
+        round: level === 'MATHCOUNTS' ? round : null,
+        correct: correct,
+        time_seconds: (typeof seconds === 'number') ? seconds : null,
+        session_id: sessionId,
+        session_started_at: sessionStartedAt,
+        problem_text: (current && current.problem) ? current.problem : null,
+        answer_given: givenAnswer()
+      });
+      if (error) console.error('save attempt failed:', error.message);
+    } catch (e) {
+      console.error('save attempt error:', e.message);
+    }
+  }
+  function renderGuestNote() {
+    let n = $('guestNote');
+    if (!n) {
+      n = document.createElement('div');
+      n.id = 'guestNote';
+      n.className = 'guest-note';
+      $('verdict').insertAdjacentElement('afterend', n);
+    }
+    if (currentUser) { n.style.display = 'none'; return; }
+    n.style.display = 'block';
+    n.innerHTML = 'Playing as a guest. <a href="#" id="guestNoteLink">Sign in</a> to save your progress.';
+    $('guestNoteLink').addEventListener('click', function (e) {
+      e.preventDefault();
+      $('authModal').style.display = 'flex';
+    });
+  }
+
   // ---------- Supabase (auth + progress tracking) ----------
   // ---------- auth UI wiring ----------
   function updateAuthUI(user) {
@@ -899,6 +953,7 @@
     $('loadBox').classList.add('show');
     try {
       current = await fetchProblem();
+      if (!sessionStartedAt) sessionStartedAt = new Date().toISOString();
       if (current.id) seenIds.push(current.id);
       showProblem();
     } catch (e) {
@@ -1050,6 +1105,8 @@
     recent.push(correct ? 'correct' : 'wrong');
     if (recent.length > 6) recent.shift();
     updateStats();
+    saveAttempt(correct);
+    renderGuestNote();
     const v = $('verdict');
     const time = $('timer').textContent;
     v.textContent = (correct ? '✓ Correct — ' : '✗ Not quite — ') + answerLabel + '  ·  ' + time;
