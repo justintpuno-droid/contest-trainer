@@ -756,6 +756,7 @@
   // A session is one page visit: the id exists only in memory, so a refresh or new visit starts a new one.
   const sessionId = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(36).slice(2);
   let sessionStartedAt = null;
+  let problemLevel = null, problemRound = null;
   function givenAnswer() {
     try {
       const picked = document.querySelector('.bubble.picked .dot');
@@ -802,10 +803,10 @@
       const cat = tpResolvedCategory();
       const { error } = await sb.from('attempts').insert({
         user_id: currentUser.id,
-        level: level,
+        level: problemLevel || level,
         topic: cat.topic,
         band: cat.band,
-        round: level === 'MATHCOUNTS' ? round : null,
+        round: (problemLevel || level) === 'MATHCOUNTS' ? (problemRound || round) : null,
         correct: correct,
         time_seconds: (typeof seconds === 'number') ? seconds : null,
         session_id: sessionId,
@@ -1017,7 +1018,10 @@
     $('card').classList.remove('show');
     $('loadBox').classList.add('show');
     try {
+      const reqLevel = level, reqRound = round;
       current = await fetchProblem();
+      problemLevel = reqLevel;
+      problemRound = reqRound;
       if (!sessionStartedAt) sessionStartedAt = new Date().toISOString();
       if (current.id) seenIds.push(current.id);
       showProblem();
