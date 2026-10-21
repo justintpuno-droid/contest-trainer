@@ -213,6 +213,19 @@
       "answer": "C",
       "solution": "Let $a$ be the number of adults and $c$ be the number of children. We know $a+c=12$ and $8a+5c=75$. From the first equation, $a=12-c$, so substitute: $8(12-c)+5c=75$. This gives $96-8c+5c=75$, so $96-3c=75$, meaning $3c=21$ and $c=7$. Checking: $5$ adults and $7$ children give $8(5)+5(7)=40+35=75$, which matches, so the answer is $7$.",
       "id": "AMC 8|-|Algebra|early#1787950645564#mpmbyr"
+    },
+    {
+      "problem": "At a school supply store, a pencil costs $2$ dollars more than an eraser. If $3$ pencils and $2$ erasers together cost $21$ dollars, how much does one pencil cost?",
+      "choices": {
+        "A": "$3$",
+        "B": "$4$",
+        "C": "$5$",
+        "D": "$6$",
+        "E": "$7$"
+      },
+      "answer": "C",
+      "solution": "Let the cost of an eraser be $e$ dollars. Then a pencil costs $e+2$ dollars. The total cost equation is $3(e+2) + 2e = 21$. Expanding gives $3e + 6 + 2e = 21$, so $5e = 15$, meaning $e = 3$. Thus a pencil costs $e+2 = 5$ dollars.",
+      "id": "AMC 8|-|Algebra|early#1788011637017#mjcchf"
     }
   ],
   "AMC 8|-|Algebra|mid": [
@@ -306,6 +319,19 @@
       "answer": "C",
       "solution": "Let $x$ be the number of hours Ava works (with Ben) before leaving; Ben then works alone for the remaining $5-x$ hours. Their combined rate is $\\frac{1}{4}+\\frac{1}{6}=\\frac{5}{12}$ fence per hour, and Ben's solo rate is $\\frac{1}{6}$ fence per hour. The total work equals one fence: $\\frac{5}{12}x+\\frac{1}{6}(5-x)=1$. Multiplying by $12$: $5x+2(5-x)=12$, so $3x=2$, giving $x=\\frac{2}{3}$ hour. Converting to minutes, $x=\\frac{2}{3}\\times 60=40$ minutes.",
       "id": "AMC 8|-|Algebra|mid#1787950700424#xrbp2b"
+    },
+    {
+      "problem": "Pipe $A$ can fill an empty tank in $12$ hours, pipe $B$ can fill the same tank in $15$ hours, and pipe $C$ can drain a full tank in $20$ hours. If the tank starts empty and all three pipes are opened at the same time, how many hours will it take to fill the tank?",
+      "choices": {
+        "A": "8",
+        "B": "9",
+        "C": "10",
+        "D": "11",
+        "E": "12"
+      },
+      "answer": "C",
+      "solution": "Pipe $A$ fills $\\frac{1}{12}$ of the tank per hour, pipe $B$ fills $\\frac{1}{15}$ per hour, and pipe $C$ drains $\\frac{1}{20}$ per hour. Using a common denominator of $60$: $\\frac{1}{12}=\\frac{5}{60}$, $\\frac{1}{15}=\\frac{4}{60}$, $\\frac{1}{20}=\\frac{3}{60}$. The combined rate is $\\frac{5}{60}+\\frac{4}{60}-\\frac{3}{60}=\\frac{6}{60}=\\frac{1}{10}$ of the tank per hour. Therefore the tank fills in $10$ hours.",
+      "id": "AMC 8|-|Algebra|mid#1788011652553#rtz2ru"
     }
   ],
   "AMC 8|-|Algebra|late": [
@@ -399,6 +425,19 @@
       "answer": "C",
       "solution": "First find $a^2+b^2+c^2 = (a+b+c)^2 - 2(ab+bc+ca) = 36 - 18 = 18$. Use the identity $a^3+b^3+c^3-3abc=(a+b+c)\\left(a^2+b^2+c^2-ab-bc-ca\\right)$. Substituting gives $a^3+b^3+c^3-3abc = 6(18-9) = 54$. Since $abc=4$, we get $a^3+b^3+c^3 = 54 + 3(4) = 66$. (Indeed, the numbers $a,b,c$ are $1,1,4$ in some order, and $1^3+1^3+4^3=66$, confirming the answer.)",
       "id": "AMC 8|-|Algebra|late#1787950959966#oawbj7"
+    },
+    {
+      "problem": "Let $a$, $b$, and $c$ be positive integers such that $a+b+c=15$, $ab+bc+ca=71$, and $abc=105$. What is the value of $a^3+b^3+c^3$?",
+      "choices": {
+        "A": "405",
+        "B": "483",
+        "C": "490",
+        "D": "495",
+        "E": "500"
+      },
+      "answer": "D",
+      "solution": "The numbers $a,b,c$ are roots of $t^3-15t^2+71t-105=0$; testing small factors of $105$ shows $t=3,5,7$ all work, so $\\{a,b,c\\}=\\{3,5,7\\}$. First compute $a^2+b^2+c^2=(a+b+c)^2-2(ab+bc+ca)=225-142=83$. Using the identity $a^3+b^3+c^3-3abc=(a+b+c)(a^2+b^2+c^2-ab-bc-ca)$, we get $a^3+b^3+c^3-3(105)=15(83-71)=15\\cdot 12=180$. Thus $a^3+b^3+c^3=315+180=495$, which matches $3^3+5^3+7^3=27+125+343=495$.",
+      "id": "AMC 8|-|Algebra|late#1788011679802#0ma2ud"
     }
   ],
   "AMC 8|-|Geometry|early": [
@@ -492,6 +531,19 @@
       "answer": "B",
       "solution": "The rectangle has area $8 \\times 6 = 48$. Since $E=(4,6)$ and $F=(8,3)$, the region outside $\\triangle AEF$ consists of three right triangles: $\\triangle ADE$ with legs $AD=6, DE=4$ giving area $12$; $\\triangle ABF$ with legs $AB=8, BF=3$ giving area $12$; and $\\triangle ECF$ with legs $EC=4, CF=3$ giving area $6$. These three triangles total $12+12+6=30$. So the area of $\\triangle AEF$ is $48-30=18$. The desired fraction is $\\frac{18}{48}=\\frac{3}{8}$.",
       "id": "AMC 8|-|Geometry|early#1787951069200#swhm35"
+    },
+    {
+      "problem": "A square garden has side length $10$ meters. A triangular flower bed is cut from one corner of the square: the two legs of the triangle lie along the sides of the square, meeting at that corner, and have lengths $6$ meters and $8$ meters. What is the area, in square meters, of the remaining garden after the flower bed is removed?",
+      "choices": {
+        "A": "70",
+        "B": "74",
+        "C": "76",
+        "D": "78",
+        "E": "82"
+      },
+      "answer": "C",
+      "solution": "The area of the square garden is $10 \\times 10 = 100$ square meters. The flower bed is a right triangle with legs $6$ and $8$ meters (since they lie along the perpendicular sides of the square), so its area is $\\frac{1}{2} \\times 6 \\times 8 = 24$ square meters. The remaining garden area is $100 - 24 = 76$ square meters.",
+      "id": "AMC 8|-|Geometry|early#1788011697406#q30zhw"
     }
   ],
   "AMC 8|-|Geometry|mid": [
@@ -678,6 +730,19 @@
       "answer": "B",
       "solution": "The crease is the perpendicular bisector of segment $AP$, where $A=(0,12)$ and $P=(4,0)$; its midpoint is $(2,6)$ and its slope is $\\tfrac13$ (negative reciprocal of $AP$'s slope $-3$), giving line $x-3y+16=0$. Setting $x=0$ gives $E=(0,\\tfrac{16}{3})$ on $\\overline{AD}$, and setting $x=12$ gives $F=(12,\\tfrac{28}{3})$ on $\\overline{BC}$. Then $EF=\\sqrt{12^2+\\left(\\tfrac{12}{3}\\right)^2}=\\sqrt{144+16}=\\sqrt{160}=4\\sqrt{10}$.",
       "id": "AMC 8|-|Geometry|late#1787951968491#er54zl"
+    },
+    {
+      "problem": "Square $ABCD$ has side length $12$. Rays $AE$ and $AF$, where $E$ lies on $\\overline{BC}$ and $F$ lies on $\\overline{CD}$, divide the right angle $\\angle DAB$ into three equal $30^\\circ$ angles. What is the area of $\\triangle AEF$?",
+      "choices": {
+        "A": "40",
+        "B": "44",
+        "C": "48",
+        "D": "52",
+        "E": "56"
+      },
+      "answer": "C",
+      "solution": "Place $A=(0,0)$, $B=(12,0)$, $D=(0,12)$; since $\\angle DAB$ is trisected, ray $AE$ makes $30^\\circ$ with $AB$ and ray $AF$ makes $30^\\circ$ with $AD$. Then $E=(12,\\,12\\tan30^\\circ)=(12,4\\sqrt3)$ on $BC$, and $F=(4\\sqrt3,12)$ on $CD$. The area of $\\triangle AEF$ (with vertex $A$ at the origin) is $\\tfrac12|12\\cdot12-4\\sqrt3\\cdot4\\sqrt3|=\\tfrac12(144-48)=48$.",
+      "id": "AMC 8|-|Geometry|late#1788011934257#en6vry"
     }
   ],
   "AMC 8|-|Number Theory|early": [
@@ -864,6 +929,19 @@
       "answer": "C",
       "solution": "Factor: $a^2-b^2=(a-b)(a+b)=2023$. Since $2023=7\\cdot 17^2$, its positive divisors are $1,7,17,119,289,2023$, giving $6$ divisors. Each factorization $2023=d\\cdot e$ with $d<e$ gives $a=\\frac{d+e}{2}$, $b=\\frac{e-d}{2}$; since $2023$ is odd, both $d$ and $e$ are odd, so $d+e$ and $e-d$ are always even, giving integer solutions. The divisor pairs $(d,e)$ with $d<e$ are $(1,2023),(7,289),(17,119)$, giving $3$ valid pairs $(a,b)$: $(1012,1011),(148,141),(68,51)$. Thus there are $3$ ordered pairs.",
       "id": "AMC 8|-|Number Theory|mid#1787952176556#t0yz4f"
+    },
+    {
+      "problem": "How many positive integers less than $1000$ leave a remainder of $3$ when divided by $7$ and a remainder of $5$ when divided by $9$?",
+      "choices": {
+        "A": "13",
+        "B": "14",
+        "C": "15",
+        "D": "16",
+        "E": "17"
+      },
+      "answer": "C",
+      "solution": "We need $n \\equiv 3 \\pmod{7}$ and $n \\equiv 5 \\pmod{9}$. Write $n = 7k+3$; substituting into the second condition gives $7k+3 \\equiv 5 \\pmod{9}$, so $7k \\equiv 2 \\pmod{9}$. Since $7 \\cdot 4 = 28 \\equiv 1 \\pmod{9}$, multiplying both sides by $4$ gives $k \\equiv 8 \\pmod{9}$, so $k = 9m+8$ and $n = 7(9m+8)+3 = 63m+59$. Thus $n \\equiv 59 \\pmod{63}$, and the valid values under $1000$ are $59, 122, \\ldots, 941$ (using $m=0,1,\\ldots,14$). This gives $15$ values, so the answer is $\\textbf{(C) } 15$.",
+      "id": "AMC 8|-|Number Theory|mid#1788011976836#vk1g0q"
     }
   ],
   "AMC 8|-|Number Theory|late": [
@@ -1050,6 +1128,19 @@
       "answer": "C",
       "solution": "Without any restriction, Maria can choose any of $4$ shirts and any of $3$ pants, giving $4 \\times 3 = 12$ possible outfits. Exactly one of these outfits (red shirt with blue pants) is forbidden. So the number of allowed outfits is $12 - 1 = 11$.",
       "id": "AMC 8|-|Combinatorics|early#1787952389646#uq7fo6"
+    },
+    {
+      "problem": "Ella has $5$ different books, including her favorite mystery novel and her favorite comic book, and she wants to arrange all $5$ books in a row on a shelf. In how many ways can she arrange the books so that the mystery novel and the comic book are NOT next to each other?",
+      "choices": {
+        "A": "$72$",
+        "B": "$48$",
+        "C": "$96$",
+        "D": "$60$",
+        "E": "$24$"
+      },
+      "answer": "A",
+      "solution": "There are $5! = 120$ ways to arrange all $5$ books with no restriction. To count the arrangements where the mystery novel and comic book ARE adjacent, treat them as a single block, giving $4$ items to arrange in $4! = 24$ ways, and the two books within the block can swap in $2! = 2$ ways, for $24 \\times 2 = 48$ arrangements. Subtracting these from the total gives $120 - 48 = 72$ arrangements where the two books are not adjacent. Thus the answer is $72$.",
+      "id": "AMC 8|-|Combinatorics|early#1788012068472#rvruaz"
     }
   ],
   "AMC 8|-|Combinatorics|mid": [
@@ -1143,6 +1234,19 @@
       "answer": "D",
       "solution": "The total number of paths from $(0,0)$ to $(5,5)$ requires 5 right-steps and 5 up-steps in some order, giving $\\binom{10}{5}=252$ total paths. A path through $(2,3)$ splits into a path from $(0,0)$ to $(2,3)$, needing 2 rights and 3 ups, giving $\\binom{5}{2}=10$ ways, followed by a path from $(2,3)$ to $(5,5)$, needing 3 rights and 2 ups, giving $\\binom{5}{2}=10$ ways. So the number of paths through $(2,3)$ is $10\\times 10 = 100$. Subtracting, the number of paths avoiding $(2,3)$ is $252-100=152$.",
       "id": "AMC 8|-|Combinatorics|mid#1787952515803#661icd"
+    },
+    {
+      "problem": "Each of the six squares in a $1\\times 6$ strip is colored red, white, or blue so that no two adjacent squares have the same color, and the first and last squares have the same color. In how many ways can the strip be colored?",
+      "choices": {
+        "A": "24",
+        "B": "30",
+        "C": "36",
+        "D": "48",
+        "E": "66"
+      },
+      "answer": "B",
+      "solution": "Fix the color of square $1$ (3 ways); by symmetry we count colorings for one fixed first color and multiply by $3$ at the end. Let $m_i$ be the number of valid colorings of squares $1$ through $i$ where square $i$ matches square $1$'s color, and $n_i$ the number where it does not; then $m_1=1, n_1=0$, and since each new square must differ from the previous one, $m_{i+1}=n_i$ and $n_{i+1}=2m_i+n_i$. Computing $(m_i,n_i)$ for $i=1,\\dots,6$ gives $(1,0),(0,2),(2,2),(2,6),(6,10),(10,22)$. Thus $m_6=10$ valid colorings exist for each fixed first color, so the total is $3\\times 10 = 30$.",
+      "id": "AMC 8|-|Combinatorics|mid#1788012124762#58263f"
     }
   ],
   "AMC 8|-|Combinatorics|late": [
@@ -1236,6 +1340,19 @@
       "answer": "C",
       "solution": "Let $x_1,x_2,x_3,x_4$ be the number of stickers in each envelope, so $x_1+x_2+x_3+x_4=8$ with $1\\le x_i\\le 4$. Substitute $y_i=x_i-1$, giving $y_1+y_2+y_3+y_4=4$ with $0\\le y_i\\le 3$. Ignoring the upper bound, the number of nonnegative solutions is $\\binom{4+4-1}{4-1}=\\binom{7}{3}=35$. Now subtract cases where some $y_i\\ge 4$: setting $y_i'=y_i-4$ leaves $y_i'+\\text{others}=0$, giving exactly 1 solution for each choice of the variable exceeding the bound, so $4\\times 1=4$ invalid solutions (no overlaps are possible since two variables can't both exceed 3 when the total is only 4). Thus the answer is $35-4=31$.",
       "id": "AMC 8|-|Combinatorics|late#1787952659050#4lpamj"
+    },
+    {
+      "problem": "How many $4$-element subsets $\\{a_1,a_2,a_3,a_4\\}$ of $\\{1,2,3,\\dots,15\\}$ satisfy both of the following conditions? (i) No two elements of the subset are consecutive integers. (ii) The sum $a_1+a_2+a_3+a_4$ is even.",
+      "choices": {
+        "A": "225",
+        "B": "240",
+        "C": "255",
+        "D": "270",
+        "E": "495"
+      },
+      "answer": "C",
+      "solution": "Write the subset in increasing order $a_1<a_2<a_3<a_4$ with $a_{i+1}-a_i\\ge 2$. Let $b_i=a_i-(i-1)$; the no-consecutive condition forces $b_1<b_2<b_3<b_4$, giving a bijection with arbitrary $4$-subsets of $\\{1,2,\\dots,12\\}$. Since $\\sum a_i=\\sum b_i+(0+1+2+3)=\\sum b_i+6$, the sum of the $a_i$ is even exactly when the sum of the $b_i$ is even. Among $\\{1,\\dots,12\\}$ there are $6$ odd and $6$ even numbers, and a $4$-subset has even sum exactly when it uses an even number (0, 2, or 4) of odd elements: $\\binom{6}{4}\\binom{6}{0}+\\binom{6}{2}\\binom{6}{2}+\\binom{6}{4}\\binom{6}{0}=15+225+15=255$. Thus there are $255$ valid subsets.",
+      "id": "AMC 8|-|Combinatorics|late#1788012146694#dihb7e"
     }
   ],
   "AMC 8|-|Probability|early": [
@@ -1409,6 +1526,19 @@
       "answer": "C",
       "solution": "There are $\\binom{10}{2}=45$ ways to choose 2 balls from the box. The pairs of the same color number $\\binom{4}{2}+\\binom{6}{2}=6+15=21$, so $P(\\text{same color})=\\frac{21}{45}=\\frac{7}{15}$, and $P(\\text{different colors})=\\frac{24}{45}=\\frac{8}{15}$. If the colors match, the coin is flipped, giving heads with probability $\\frac12$; if they differ, the die is rolled, giving a 6 with probability $\\frac16$. The total probability is $\\frac{7}{15}\\cdot\\frac12+\\frac{8}{15}\\cdot\\frac16=\\frac{7}{30}+\\frac{4}{45}=\\frac{21}{90}+\\frac{8}{90}=\\frac{29}{90}$.",
       "id": "AMC 8|-|Probability|mid#1787952893471#2x9hdo"
+    },
+    {
+      "problem": "A bag contains 4 red marbles, 3 blue marbles, and 2 green marbles. Two marbles are drawn at random without replacement. Given that the two marbles drawn are different colors, what is the probability that one is red and one is blue?",
+      "choices": {
+        "A": "$\\frac{1}{2}$",
+        "B": "$\\frac{5}{13}$",
+        "C": "$\\frac{6}{13}$",
+        "D": "$\\frac{2}{3}$",
+        "E": "$\\frac{3}{13}$"
+      },
+      "answer": "C",
+      "solution": "There are $9$ marbles total, so the number of ways to choose $2$ of them is $\\binom{9}{2}=36$. The number of ways to choose $2$ marbles of the same color is $\\binom{4}{2}+\\binom{3}{2}+\\binom{2}{2}=6+3+1=10$, so the number of ways to choose $2$ marbles of different colors is $36-10=26$. The number of ways to choose one red and one blue marble is $4\\times 3=12$. Thus, given that the two marbles are different colors, the probability that one is red and one is blue is $\\frac{12}{26}=\\frac{6}{13}$.",
+      "id": "AMC 8|-|Probability|mid#1788012194373#oglxsk"
     }
   ],
   "AMC 8|-|Probability|late": [
@@ -1502,6 +1632,19 @@
       "answer": "C",
       "solution": "There are $2^5 = 32$ equally likely outcomes for the five coin flips. We count outcomes with no two adjacent heads around the circle, organized by the number of heads $k$. If $k=0$, there is $1$ valid outcome (all tails). If $k=1$, all $5$ single-head outcomes are automatically valid since one head can't be adjacent to itself, giving $5$ outcomes. If $k=2$, we need the two heads to be non-adjacent positions among the $5$ seats: there are $\\binom{5}{2}=10$ total pairs of seats, of which $5$ are adjacent pairs (the 5 edges of the circle), leaving $5$ non-adjacent pairs, giving $5$ valid outcomes. If $k \\ge 3$, it's impossible to place that many heads around a 5-seat circle with none adjacent, since the largest set of mutually non-adjacent seats in a 5-cycle has size $2$. Adding these up, there are $1+5+5=11$ valid outcomes, so the probability is $\\dfrac{11}{32}$.",
       "id": "AMC 8|-|Probability|late#1787953166201#pf5sv6"
+    },
+    {
+      "problem": "A frog starts at position $0$ on a number line. Every second, it jumps either $1$ unit or $2$ units to the right, each with probability $\\frac{1}{2}$, independently of all other jumps. What is the probability that the frog's position is ever exactly $10$?",
+      "choices": {
+        "A": "$\\frac{1}{2}$",
+        "B": "$\\frac{21}{32}$",
+        "C": "$\\frac{2}{3}$",
+        "D": "$\\frac{683}{1024}$",
+        "E": "$\\frac{341}{512}$"
+      },
+      "answer": "D",
+      "solution": "Let $p_n$ be the probability the frog's position is ever exactly $n$. Clearly $p_0=1$, and $p_1=\\frac12$ since only a first jump of $1$ reaches position $1$. For $n\\ge 2$, the frog can reach $n$ only by jumping from $n-1$ (a jump of $1$) or from $n-2$ (a jump of $2$), and these are mutually exclusive last steps, so $p_n=\\frac12p_{n-1}+\\frac12p_{n-2}$. Computing successively: $p_2=\\frac34,\\ p_3=\\frac58,\\ p_4=\\frac{11}{16},\\ p_5=\\frac{21}{32},\\ p_6=\\frac{43}{64},\\ p_7=\\frac{85}{128},\\ p_8=\\frac{171}{256},\\ p_9=\\frac{341}{512},\\ p_{10}=\\frac{683}{1024}$. Thus the probability the frog is ever at position $10$ is $\\frac{683}{1024}$.",
+      "id": "AMC 8|-|Probability|late#1788012302310#rrtuhg"
     }
   ],
   "AMC 10|-|Mixed|early": [
@@ -1718,6 +1861,19 @@
       "answer": "C",
       "solution": "Let $q$ be the cost of a pencil and $p$ be the cost of a pen, so $p = q + 2$. The total cost gives $4p + 3q = 29$. Substituting $p = q+2$: $4(q+2) + 3q = 29$, which simplifies to $7q + 8 = 29$, so $7q = 21$ and $q = 3$. Then $p = q + 2 = 5$, so one pen costs $\\$5$.",
       "id": "AMC 10|-|Algebra|early#1787953198689#xxgcpq"
+    },
+    {
+      "problem": "Machine $A$ can complete a certain job in $6$ hours, and Machine $B$ can complete the same job in $4$ hours. Machine $A$ works alone for $1$ hour, after which Machine $B$ joins it, and they work together until the job is finished. What is the total number of hours from the start until the job is completed?",
+      "choices": {
+        "A": "2",
+        "B": "2.5",
+        "C": "3",
+        "D": "3.5",
+        "E": "4"
+      },
+      "answer": "C",
+      "solution": "Machine $A$'s rate is $\\frac{1}{6}$ job per hour, so in $1$ hour it completes $\\frac{1}{6}$ of the job, leaving $\\frac{5}{6}$ remaining. Working together, the combined rate is $\\frac{1}{6}+\\frac{1}{4}=\\frac{2}{12}+\\frac{3}{12}=\\frac{5}{12}$ job per hour. The time to finish the remaining $\\frac{5}{6}$ of the job together is $\\frac{5/6}{5/12}=2$ hours. Adding the initial $1$ hour, the total time is $1+2=3$ hours.",
+      "id": "AMC 10|-|Algebra|early#1788012320218#c7dzij"
     }
   ],
   "AMC 10|-|Algebra|mid": [
@@ -1904,6 +2060,19 @@
       "answer": "C",
       "solution": "Since $a_{n+1}-1 = a_n(a_n-1)$, we have $\\frac{1}{a_n} = \\frac{1}{a_n-1} - \\frac{1}{a_{n+1}-1}$, so the sum telescopes: $\\sum_{n=1}^{N} \\frac{1}{a_n} = \\frac{1}{a_1-1} - \\frac{1}{a_{N+1}-1}$. Since $a_1=4$ and the sequence increases without bound (as $a_{n+1}=a_n^2-a_n+1$ grows quadratically), letting $N\\to\\infty$ gives $\\frac{1}{a_1-1} = \\frac{1}{3}$.",
       "id": "AMC 10|-|Algebra|late#1787953572561#gcyp2x"
+    },
+    {
+      "problem": "The polynomial $x^3 - 13x^2 + kx - 27$ has three positive real roots that form a geometric sequence, for some real number $k$. What is the sum of the squares of the roots?",
+      "choices": {
+        "A": "79",
+        "B": "85",
+        "C": "91",
+        "D": "97",
+        "E": "103"
+      },
+      "answer": "C",
+      "solution": "Let the roots be $\\frac{a}{r}, a, ar$. By Vieta's formulas, the product of the roots is $a^3 = 27$, so $a = 3$. The sum of the roots is $a\\left(\\frac{1}{r}+1+r\\right) = 13$, so $\\frac{1}{r}+r = \\frac{10}{3}$, giving $3r^2-10r+3=0$, which factors as $(3r-1)(r-3)=0$. Thus $r=3$ or $r=\\tfrac13$, yielding the same set of roots $\\{1,3,9\\}$ either way. The sum of the squares of the roots is $1^2+3^2+9^2 = 1+9+81 = 91$.",
+      "id": "AMC 10|-|Algebra|late#1788012388597#p0l3fs"
     }
   ],
   "AMC 10|-|Geometry|early": [
@@ -1997,6 +2166,19 @@
       "answer": "C",
       "solution": "Label the hexagon $ABCDEF$ with side length $s$. Cutting off the three corner triangles $ABC$, $CDE$, and $EFA$ from the hexagon leaves triangle $ACE$. Each corner triangle, such as $ABC$, has two sides of length $s$ meeting at the interior angle of $120^\\circ$, so its area is $\\frac{1}{2}s^2\\sin(120^\\circ)=\\frac{\\sqrt3}{4}s^2$. This is exactly the area of one of the six equilateral triangles (each of area $\\frac{\\sqrt3}{4}s^2$) that make up the hexagon, and since the hexagon's area is $24$, each such small triangle has area $24/6=4$. Thus each corner triangle also has area $4$, so the three corner triangles together have area $12$. Therefore the area of triangle $ACE$ is $24-12=12$.",
       "id": "AMC 10|-|Geometry|early#1787953634071#ub2h0f"
+    },
+    {
+      "problem": "Rectangle $ABCD$ has $AB = 12$ and $BC = 5$. Points $E$ and $F$ lie on side $\\overline{AB}$ such that $AE = 3$ and $BF = 3$. Segments $\\overline{CE}$ and $\\overline{DF}$ intersect at point $P$. What is the area of $\\triangle DPC$?",
+      "choices": {
+        "A": "15",
+        "B": "18",
+        "C": "20",
+        "D": "24",
+        "E": "25"
+      },
+      "answer": "C",
+      "solution": "Place $A=(0,0)$, $B=(12,0)$, $C=(12,5)$, $D=(0,5)$, so $E=(3,0)$ and $F=(9,0)$. Line $CE$ through $(12,5)$ and $(3,0)$ has slope $\\frac{5}{9}$, giving $y=\\frac{5}{9}(x-3)$. Line $DF$ through $(0,5)$ and $(9,0)$ has slope $-\\frac{5}{9}$, giving $y=5-\\frac{5}{9}x$. Setting these equal: $\\frac{5}{9}(x-3)=5-\\frac{5}{9}x$ leads to $x=6$, and then $y=\\frac{5}{3}$, so $P=(6,\\tfrac{5}{3})$. Since $\\overline{DC}$ is horizontal with length $12$ at height $5$, the distance from $P$ to line $DC$ is $5-\\frac{5}{3}=\\frac{10}{3}$. Thus the area of $\\triangle DPC$ is $\\frac{1}{2}(12)\\left(\\frac{10}{3}\\right)=20$.",
+      "id": "AMC 10|-|Geometry|early#1788012418223#qkyb9x"
     }
   ],
   "AMC 10|-|Geometry|mid": [
@@ -2090,6 +2272,19 @@
       "answer": "C",
       "solution": "Place $A=(0,0)$, $B=(12,0)$, $C=(12,12)$, $D=(0,12)$. Since $\\angle EAB = 30^\\circ$, ray $AE$ has slope $\\tan 30^\\circ = \\frac{1}{\\sqrt3}$; intersecting $x=12$ (side $BC$) gives $E=(12, 4\\sqrt3)$. Since $\\angle DAF = 30^\\circ$, ray $AF$ makes a $60^\\circ$ angle with $AB$, so its slope is $\\tan 60^\\circ = \\sqrt3$; intersecting $y=12$ (side $CD$) gives $F=(4\\sqrt3, 12)$. The area of $\\triangle AEF$ with $A$ at the origin is $\\frac12 |x_E y_F - x_F y_E| = \\frac12 |12\\cdot 12 - 4\\sqrt3\\cdot 4\\sqrt3| = \\frac12|144-48| = 48$. Thus the area is $48$.",
       "id": "AMC 10|-|Geometry|mid#1787953752728#tounap"
+    },
+    {
+      "problem": "Rectangle $ABCD$ has $AB = 4$ and $BC = 3$. The rectangle is folded along a straight crease so that vertex $A$ lands exactly on vertex $C$. The crease intersects $\\overline{AB}$ at point $P$ and $\\overline{CD}$ at point $Q$. What is the length of $\\overline{PQ}$?",
+      "choices": {
+        "A": "3",
+        "B": "\\frac{7}{2}",
+        "C": "\\frac{15}{4}",
+        "D": "4",
+        "E": "5"
+      },
+      "answer": "C",
+      "solution": "Place $A=(0,0)$, $B=(4,0)$, $C=(4,3)$, $D=(0,3)$. Since the fold maps $A$ to $C$, every point on the crease is equidistant from $A$ and $C$, so $PA = PC$ and $QA = QC$. Writing $P=(p,0)$, the condition $PA=PC$ gives $p^2 = (4-p)^2+9$, which solves to $p = \\tfrac{25}{8}$. Writing $Q=(q,3)$, the condition $QA=QC$ gives $q^2+9=(4-q)^2$, which solves to $q=\\tfrac{7}{8}$. Then $PQ = \\sqrt{(p-q)^2+3^2} = \\sqrt{\\left(\\tfrac{18}{8}\\right)^2+9} = \\sqrt{\\tfrac{225}{16}} = \\tfrac{15}{4}$.",
+      "id": "AMC 10|-|Geometry|mid#1788012464461#7cx6hk"
     }
   ],
   "AMC 10|-|Geometry|late": [
@@ -2183,6 +2378,19 @@
       "answer": "A",
       "solution": "Since $BC$ is a diameter of $\\omega$, any point on $\\omega$ sees $BC$ at a right angle, so $\\angle BDC=\\angle BEC=90^\\circ$; thus $D$ and $E$ are the feet of the altitudes from $C$ and $B$. By Heron's formula with sides $13,14,15$, the area of $\\triangle ABC$ is $84$. Using the Law of Cosines, $\\cos A=\\frac{13^2+14^2-15^2}{2\\cdot13\\cdot14}=\\frac{140}{364}=\\frac{5}{13}$. In right triangles $ADC$ and $AEB$, $AD=AC\\cos A=14\\cdot\\frac{5}{13}=\\frac{70}{13}$ and $AE=AB\\cos A=13\\cdot\\frac{5}{13}=5$, so $\\triangle ADE\\sim\\triangle ACB$ with ratio $\\cos A=\\frac{5}{13}$ (sharing angle $A$, with sides $AD/AC=AE/AB=\\cos A$). Therefore $[ADE]=[ABC]\\cdot\\cos^2A=84\\cdot\\frac{25}{169}=\\frac{2100}{169}$.",
       "id": "AMC 10|-|Geometry|late#1787953918425#0xbffw"
+    },
+    {
+      "problem": "In triangle $ABC$, $AB = 13$, $BC = 14$, and $CA = 15$. Let $D$ be the foot of the altitude from $C$ to line $AB$, and let $E$ be the foot of the altitude from $B$ to line $AC$. What is $DE$?",
+      "choices": {
+        "A": "$\\frac{33}{5}$",
+        "B": "$\\frac{99}{13}$",
+        "C": "$\\frac{462}{65}$",
+        "D": "$\\frac{84}{13}$",
+        "E": "$\\frac{546}{65}$"
+      },
+      "answer": "C",
+      "solution": "By the Law of Cosines, $\\cos A = \\frac{b^2+c^2-a^2}{2bc} = \\frac{15^2+13^2-14^2}{2\\cdot 15\\cdot 13} = \\frac{198}{390} = \\frac{33}{65}$, where $a=BC=14$, $b=CA=15$, $c=AB=13$. Since $D$ is the foot of the perpendicular from $C$ to $AB$, right triangle $ACD$ gives $AD = AC\\cos A = 15\\cdot\\frac{33}{65}=\\frac{99}{13}$; similarly $AE = AB\\cos A = 13\\cdot\\frac{33}{65}=\\frac{33}{5}$. Since $\\frac{AD}{AC}=\\frac{AE}{AB}=\\cos A$ and $\\angle DAE = \\angle CAB$, triangles $ADE$ and $ACB$ are similar (SAS) with ratio $\\cos A$, so $DE = BC\\cdot\\cos A = 14\\cdot\\frac{33}{65} = \\frac{462}{65}$. This can be confirmed by placing $A=(0,0)$, $B=(13,0)$, solving for $C=(99/13,168/13)$, and computing the projections directly to get the same distance. Thus $DE = \\frac{462}{65}$.",
+      "id": "AMC 10|-|Geometry|late#1788012566335#y3xztf"
     }
   ],
   "AMC 10|-|Number Theory|early": [
@@ -2369,6 +2577,19 @@
       "answer": "D",
       "solution": "Set $n^2-21n+126=k^2$ for some nonnegative integer $k$. Multiplying by $4$ and completing the square gives $(2n-21)^2+63=4k^2$, so with $m=2n-21$ we get $(2k-m)(2k+m)=63$. Since $63=1\\cdot 63=3\\cdot 21=7\\cdot 9$, solving each factor pair for $k$ and $m$ (and their sign reversals) gives $m=\\pm1,\\pm9,\\pm31$. Using $n=(m+21)/2$, these yield $n=11,10,15,6,26,-5$. Discarding the non-positive value $n=-5$, the remaining positive integers are $6,10,11,15,26$, whose sum is $68$.",
       "id": "AMC 10|-|Number Theory|mid#1787954226682#75ggp4"
+    },
+    {
+      "problem": "Let $n$ be the smallest positive integer that is divisible by $2023$ and has exactly $12$ positive divisors. What is the sum of the digits of $n$?",
+      "choices": {
+        "A": "11",
+        "B": "12",
+        "C": "13",
+        "D": "14",
+        "E": "15"
+      },
+      "answer": "D",
+      "solution": "First factor $2023 = 7 \\cdot 17^2$. Any multiple of $2023$ must include at least $7^1$ and $17^2$ in its prime factorization, so its divisor count is a multiple of $(1+1)(2+1)=6$ times whatever extra factor comes from additional exponents or primes. Testing multiples of $2023$ in increasing order: $2023 \\cdot 1 = 2023 = 7\\cdot 17^2$ has $(1+1)(2+1)=6$ divisors, which fails. Next, $2023\\cdot 2 = 4046 = 2\\cdot 7\\cdot 17^2$ has $(1+1)(1+1)(2+1)=12$ divisors, satisfying the condition. Since this is the smallest multiple of $2023$ achieving exactly $12$ divisors, $n=4046$, and the digit sum is $4+0+4+6=14$.",
+      "id": "AMC 10|-|Number Theory|mid#1788012644996#xqmlvz"
     }
   ],
   "AMC 10|-|Number Theory|late": [
@@ -2462,6 +2683,19 @@
       "answer": "D",
       "solution": "First factor $2023 = 7 \\cdot 17^2$. For a prime $p$, the exponent of $p$ in $n^n$ is $v_p(n^n) = n \\cdot v_p(n)$, so we need $n\\cdot v_7(n) \\ge 1$ and $n \\cdot v_{17}(n) \\ge 2$. The first condition just requires $7 \\mid n$. For the second, if $17 \\mid n$ then $n \\ge 17$, so $n \\cdot v_{17}(n) \\ge 17 \\ge 2$ automatically; thus the second condition reduces to $17 \\mid n$. So we need $7 \\mid n$ and $17 \\mid n$, i.e. $119 \\mid n$. Since $2023 = 119 \\times 17$, exactly $17$ multiples of $119$ lie between $1$ and $2023$. Hence the answer is $17$.",
       "id": "AMC 10|-|Number Theory|late#1787966571118#qea052"
+    },
+    {
+      "problem": "How many pairs of positive integers $(x,y)$ with $x < y$ satisfy $\\frac{1}{x} + \\frac{1}{y} = \\frac{1}{2023}$?",
+      "choices": {
+        "A": "6",
+        "B": "7",
+        "C": "8",
+        "D": "14",
+        "E": "15"
+      },
+      "answer": "B",
+      "solution": "Multiply both sides by $xy \\cdot 2023$ and rearrange to get $(x-2023)(y-2023) = 2023^2$. Since $2023 = 7 \\cdot 17^2$, we have $2023^2 = 7^2 \\cdot 17^4$, which has $(2+1)(4+1) = 15$ positive divisors. Each positive divisor $d$ of $2023^2$ gives a solution $x = 2023+d$, $y = 2023 + \\frac{2023^2}{d}$, so there are $15$ ordered pairs $(x,y)$ of positive integers total. Exactly one of these has $x=y$ (when $d = 2023$, giving $x=y=4046$), so the remaining $14$ solutions pair up into $(x,y)$ and $(y,x)$ swaps. Thus there are $14/2 = 7$ pairs with $x < y$.",
+      "id": "AMC 10|-|Number Theory|late#1788012702934#h16cdi"
     }
   ],
   "AMC 10|-|Combinatorics|early": [
@@ -2555,6 +2789,19 @@
       "answer": "D",
       "solution": "The total number of ways to choose any 5 members from the 9 club members is $\\binom{9}{5}=126$. We subtract the committees with fewer than 2 boys. With 0 boys: $\\binom{4}{0}\\binom{5}{5}=1$. With 1 boy: $\\binom{4}{1}\\binom{5}{4}=4\\cdot5=20$. So the committees to exclude total $1+20=21$. Thus the number of valid committees is $126-21=105$.",
       "id": "AMC 10|-|Combinatorics|early#1787966615118#yarn3m"
+    },
+    {
+      "problem": "At a dinner party there are 5 married couples (10 people total). A committee of 4 people is to be selected from these 10 people such that no two committee members are married to each other. How many such committees are possible?",
+      "choices": {
+        "A": "80",
+        "B": "100",
+        "C": "60",
+        "D": "120",
+        "E": "40"
+      },
+      "answer": "A",
+      "solution": "Since no two selected people can be a married couple, at most one person can be chosen from each couple, so exactly 4 of the 5 couples must each contribute one person. There are $\\binom{5}{4}=5$ ways to choose which couples contribute, and for each chosen couple there are $2$ ways to pick which spouse joins the committee, giving $2^4=16$ ways. Thus the total is $5\\times16=80$.",
+      "id": "AMC 10|-|Combinatorics|early#1788012717331#wpt2j7"
     }
   ],
   "AMC 10|-|Combinatorics|mid": [
@@ -2648,6 +2895,19 @@
       "solution": "Use inclusion-exclusion on the events $A_i$: couple $i$ sits together. If $k$ specific couples are forced together, glue each such couple into a block (2 internal orders each), leaving $8-k$ units to arrange, giving $2^k(8-k)!$ arrangements, and there are $\\binom{4}{k}$ ways to choose which couples are glued. So the count with at least the chosen couples together is $\\binom{4}{k}2^k(8-k)!$, and by inclusion-exclusion the number of valid seatings is $\\sum_{k=0}^{4}(-1)^k\\binom{4}{k}2^k(8-k)!$. Computing term by term: $k=0$: $40320$; $k=1$: $-40320$; $k=2$: $17280$; $k=3$: $-3840$; $k=4$: $384$. Summing gives $40320-40320+17280-3840+384 = 13824$.",
       "answer": "B",
       "id": "AMC 10|-|Combinatorics|mid#1787966737446#aie3dv"
+    },
+    {
+      "problem": "Ten chairs are arranged in a row, and four distinct people are to be seated in the chairs so that no two of these people occupy adjacent chairs. In how many ways can this be done?",
+      "choices": {
+        "A": "720",
+        "B": "840",
+        "C": "900",
+        "D": "960",
+        "E": "1050"
+      },
+      "answer": "B",
+      "solution": "First choose which 4 of the 10 chairs will be occupied so that no two chosen chairs are adjacent. Using the standard non-adjacent selection formula, the number of ways to choose $k$ non-adjacent chairs from $n$ in a row is $\\binom{n-k+1}{k}$. Here $n=10, k=4$, giving $\\binom{7}{4}=35$ valid sets of chairs. Since the 4 people are distinct, each chosen set of chairs can be filled in $4! = 24$ ways. Multiplying gives $35 \\times 24 = 840$ total arrangements.",
+      "id": "AMC 10|-|Combinatorics|mid#1788012739142#akw0xe"
     }
   ],
   "AMC 10|-|Combinatorics|late": [
@@ -2741,6 +3001,19 @@
       "answer": "D",
       "solution": "Define $g(m)$ as the number of subsets of a set of $m$ consecutive integers with no two consecutive elements chosen, so $g(0)=1$, $g(1)=2$, and $g(m)=g(m-1)+g(m-2)$, giving $g(0),\\ldots,g(9) = 1,2,3,5,8,13,21,34,55,89$. By linearity, the desired total equals $\\sum_{k=1}^{10} k\\cdot c(k)$, where $c(k)$ is the number of valid subsets containing $k$; since a valid subset containing $k$ freely chooses an independent set from the $\\max(k-2,0)$ integers before $k-1$ and the $\\max(9-k,0)$ integers after $k+1$, we get $c(k)=g(\\max(k-2,0))\\cdot g(\\max(9-k,0))$. Computing gives $c(1)=c(10)=55$, $c(2)=c(9)=34$, $c(3)=c(8)=42$, $c(4)=c(7)=39$, $c(5)=c(6)=40$, and $\\sum c(k)=420$. Since $c(k)=c(11-k)$, the sum $\\sum k\\,c(k)$ equals $\\tfrac{11}{2}\\sum c(k) = \\tfrac{11}{2}\\cdot 420 = 2310$.",
       "id": "AMC 10|-|Combinatorics|late#1787966930012#cgfhm5"
+    },
+    {
+      "problem": "How many subsets of $\\{1, 2, 3, \\ldots, 15\\}$ (including the empty set) satisfy both of the following properties? (i) No two elements of the subset are consecutive integers. (ii) The sum of the elements of the subset is a multiple of $3$.",
+      "choices": {
+        "A": "512",
+        "B": "528",
+        "C": "533",
+        "D": "535",
+        "E": "536"
+      },
+      "answer": "E",
+      "solution": "Let $a_n(x)=\\sum x^{\\text{sum}(S)}$ over subsets $S$ of $\\{1,\\dots,n\\}$ with no two consecutive elements; splitting on whether $n\\in S$ gives $a_n(x)=a_{n-1}(x)+x^n a_{n-2}(x)$, with $a_0=a_{-1}=1$. Tracking coefficients only by their exponent mod $3$ (a vector $(c_0,c_1,c_2)$ counting subsets whose sum is $\\equiv 0,1,2 \\pmod 3$), each step just adds $v_{n-1}$ to a cyclic shift of $v_{n-2}$ by $n\\bmod 3$ positions. Carrying this recursion from $n=0$ to $n=15$ yields $v_{15}=(536,533,528)$, and as a check $536+533+528=1597=F_{17}$, the correct total number of independent subsets of a $15$-element path (matching the known Fibonacci count). Thus the number of subsets with sum divisible by $3$ is $536$.",
+      "id": "AMC 10|-|Combinatorics|late#1788012804467#kbl60t"
     }
   ],
   "AMC 10|-|Probability|early": [
@@ -2795,6 +3068,19 @@
       "answer": "A",
       "solution": "There are $6 \\times 6 = 36$ equally likely outcomes for the two rolls. The possible sums range from $2$ to $12$, and the prime sums are $2, 3, 5, 7, 11$. Counting outcomes for each: sum $2$ gives $1$ way, sum $3$ gives $2$ ways, sum $5$ gives $4$ ways, sum $7$ gives $6$ ways, and sum $11$ gives $2$ ways. Adding these gives $1+2+4+6+2 = 15$ favorable outcomes. The probability is $\\frac{15}{36} = \\frac{5}{12}$.",
       "id": "AMC 10|-|Probability|early#1787967003217#nu18pp"
+    },
+    {
+      "problem": "A fair six-sided die is rolled twice. What is the probability that the sum of the two rolls is divisible by $3$?",
+      "choices": {
+        "A": "$\\frac{1}{6}$",
+        "B": "$\\frac{1}{4}$",
+        "C": "$\\frac{1}{3}$",
+        "D": "$\\frac{1}{2}$",
+        "E": "$\\frac{2}{3}$"
+      },
+      "answer": "C",
+      "solution": "There are $6 \\times 6 = 36$ equally likely outcomes for the two rolls. The sums divisible by $3$ range from $3$ to $12$: namely $3, 6, 9, 12$. Counting outcomes: sum $=3$ gives $2$ pairs, sum $=6$ gives $5$ pairs, sum $=9$ gives $4$ pairs, and sum $=12$ gives $1$ pair, for a total of $2+5+4+1=12$ favorable outcomes. Thus the probability is $\\frac{12}{36} = \\frac{1}{3}$.",
+      "id": "AMC 10|-|Probability|early#1788012834512#wgzh6q"
     }
   ],
   "AMC 10|-|Probability|mid": [
@@ -2888,6 +3174,19 @@
       "answer": "D",
       "solution": "Each bag has $\\binom{5}{2}=10$ ways to choose 2 coins. From Bag 1, the probability both are gold is $\\binom{3}{2}/10=3/10$; from Bag 2, it is $\\binom{2}{2}/10=1/10$. Since each bag is chosen with probability $1/2$, the total probability of drawing two gold coins is $\\frac{1}{2}\\cdot\\frac{3}{10}+\\frac{1}{2}\\cdot\\frac{1}{10}=\\frac{4}{20}=\\frac{1}{5}$. The probability both events (Bag 1 chosen and both gold) occur is $\\frac{1}{2}\\cdot\\frac{3}{10}=\\frac{3}{20}$. By Bayes' theorem, the desired probability is $\\frac{3/20}{4/20}=\\frac{3}{4}$.",
       "id": "AMC 10|-|Probability|mid#1787967161301#502gur"
+    },
+    {
+      "problem": "A fair six-sided die is rolled four times, and the results are recorded in order. What is the probability that the sequence of four rolls is non-decreasing (that is, each roll is greater than or equal to the previous roll)?",
+      "choices": {
+        "A": "$\\frac{7}{72}$",
+        "B": "$\\frac{5}{432}$",
+        "C": "$\\frac{1}{6}$",
+        "D": "$\\frac{7}{54}$",
+        "E": "$\\frac{1}{36}$"
+      },
+      "answer": "A",
+      "solution": "There are $6^4 = 1296$ total equally likely outcomes for the four rolls. A non-decreasing sequence of length 4 using values from $\\{1,2,3,4,5,6\\}$ corresponds to choosing a multiset of size 4 from 6 values, since once the multiset is chosen there is exactly one way to arrange it in non-decreasing order. The number of such multisets is $\\binom{6+4-1}{4} = \\binom{9}{4} = 126$. Thus the probability is $\\frac{126}{1296}$, which simplifies by dividing numerator and denominator by 18 to give $\\frac{7}{72}$.",
+      "id": "AMC 10|-|Probability|mid#1788012908584#xt8lrz"
     }
   ],
   "AMC 10|-|Probability|late": [
@@ -2981,6 +3280,19 @@
       "answer": "E",
       "solution": "Let $p_n$ be the probability that the running total is ever exactly $n$, with $p_0=1$. For $1\\le n\\le 6$, condition on the first roll $d\\in\\{1,\\dots,6\\}$: if $d=n$ the total hits $n$ immediately; if $d<n$ the process restarts needing to reach $n-d$ more, with probability $p_{n-d}$; if $d>n$ the total overshoots $n$ and can never equal it. Thus $p_n=\\frac{1}{6}\\sum_{k=0}^{n-1}p_k$. Letting $S_n=\\sum_{k=0}^{n}p_k$, this gives $S_n=S_{n-1}+p_n=S_{n-1}+\\frac{1}{6}S_{n-1}=\\frac{7}{6}S_{n-1}$, and since $S_0=1$, $S_n=(7/6)^n$. Hence $p_n=S_{n-1}/6=\\left(\\frac{7}{6}\\right)^{n-1}\\cdot\\frac{1}{6}=\\frac{7^{n-1}}{6^n}$. For $n=6$, $p_6=\\frac{7^5}{6^6}=\\frac{16807}{46656}$.",
       "id": "AMC 10|-|Probability|late#1787967400748#j8iegn"
+    },
+    {
+      "problem": "A subset of $\\{1,2,3,\\ldots,10\\}$ is chosen uniformly at random from all $2^{10}$ subsets, including the empty set. What is the probability that the sum of the elements of the chosen subset is divisible by $3$?",
+      "choices": {
+        "A": "$\\frac{341}{1024}$",
+        "B": "$\\frac{1}{3}$",
+        "C": "$\\frac{43}{128}$",
+        "D": "$\\frac{171}{512}$",
+        "E": "$\\frac{87}{256}$"
+      },
+      "answer": "C",
+      "solution": "Sort $1,\\ldots,10$ by residue mod $3$: three numbers $\\equiv 0$ ($3,6,9$), four numbers $\\equiv 1$ ($1,4,7,10$), and three numbers $\\equiv 2$ ($2,5,8$). The generating function for subset sums mod $3$ is $f(x)=(1+1)^3(1+x)^4(1+x^2)^3$. By the roots-of-unity filter with $\\omega=e^{2\\pi i/3}$, the count $N_0$ of subsets whose sum is divisible by $3$ satisfies $N_0=\\frac{1}{3}[f(1)+f(\\omega)+f(\\omega^2)]$. Here $f(1)=2^{10}=1024$, and using $1+\\omega=-\\omega^2$, $1+\\omega^2=-\\omega$, we get $f(\\omega)=8(-\\omega^2)^4(-\\omega)^3=8\\omega^2(-1)=-8\\omega^2$, and similarly $f(\\omega^2)=-8\\omega$. Thus $N_0=\\frac{1}{3}[1024-8(\\omega+\\omega^2)]=\\frac{1}{3}[1024+8]=344$, so the probability is $344/1024=\\frac{43}{128}$.",
+      "id": "AMC 10|-|Probability|late#1788012944660#g9d94m"
     }
   ],
   "AMC 12|-|Mixed|early": [
@@ -3197,6 +3509,19 @@
       "answer": "B",
       "solution": "Alice's rate is $\\frac{1}{4}$ fence per hour and Bob's rate is $\\frac{1}{6}$ fence per hour, so together their rate is $\\frac{1}{4}+\\frac{1}{6}=\\frac{5}{12}$ fence per hour. In the first hour they complete $\\frac{5}{12}$ of the fence, leaving $1-\\frac{5}{12}=\\frac{7}{12}$ of the fence. Bob alone works at rate $\\frac{1}{6}$ per hour, so the time needed is $\\frac{7/12}{1/6}=\\frac{7}{12}\\cdot 6=\\frac{7}{2}$ hours. Thus the answer is $\\frac{7}{2}$.",
       "id": "AMC 12|-|Algebra|early#1787967444412#kqlltw"
+    },
+    {
+      "problem": "At a school store, three notebooks and two pens cost $\\$7.40$, while two notebooks and three pens cost $\\$6.85$. What is the cost, in dollars, of one notebook plus one pen?",
+      "choices": {
+        "A": "$2.55$",
+        "B": "$2.65$",
+        "C": "$2.75$",
+        "D": "$2.85$",
+        "E": "$2.95$"
+      },
+      "answer": "D",
+      "solution": "Let $n$ be the cost of a notebook and $p$ the cost of a pen. We have $3n+2p=7.40$ and $2n+3p=6.85$. Multiply the first equation by $3$ and the second by $2$: $9n+6p=22.20$ and $4n+6p=13.70$. Subtracting gives $5n=8.50$, so $n=1.70$. Substituting back, $3(1.70)+2p=7.40$ gives $2p=2.30$, so $p=1.15$. Thus $n+p=1.70+1.15=2.85$.",
+      "id": "AMC 12|-|Algebra|early#1788012958272#teuden"
     }
   ],
   "AMC 12|-|Algebra|mid": [
@@ -3290,6 +3615,19 @@
       "answer": "C",
       "solution": "Let $y = \\log_2 x$, so $x = 2^y$. Then $x^{\\log_2 x} = (2^y)^y = 2^{y^2}$, and $16x^3 = 2^4\\cdot 2^{3y} = 2^{4+3y}$. Setting exponents equal gives $y^2 = 3y+4$, so $y^2-3y-4=0$, which factors as $(y-4)(y+1)=0$, giving $y=4$ or $y=-1$. These correspond to $x=2^4=16$ and $x=2^{-1}=\\frac12$. Both values satisfy the original equation, and their sum is $16+\\frac12=\\frac{33}{2}$.",
       "id": "AMC 12|-|Algebra|mid#1787967618942#aixora"
+    },
+    {
+      "problem": "For how many integer values of $k$ does the equation $x^4-8x^3+kx^2-8x+1=0$ have four positive real roots, counting multiplicity?",
+      "choices": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6",
+        "E": "7"
+      },
+      "answer": "C",
+      "solution": "Since the equation is palindromic and $x=0$ is not a root, divide by $x^2$ to get $\\left(x^2+\\frac{1}{x^2}\\right)-8\\left(x+\\frac{1}{x}\\right)+k=0$. Letting $y=x+\\frac{1}{x}$, we have $x^2+\\frac{1}{x^2}=y^2-2$, so the equation becomes $y^2-8y+(k-2)=0$. For $x>0$, the substitution $y=x+\\frac{1}{x}$ satisfies $y\\ge 2$, and every $y\\ge 2$ corresponds to two positive real $x$ values (from $x^2-yx+1=0$, which has positive product and sum). Thus we need both roots of $y^2-8y+(k-2)=0$ to be real and at least $2$; since their sum is $8$, the smaller root is $y_1=4-\\sqrt{18-k}$, and requiring $y_1\\ge 2$ and $18-k\\ge0$ gives $14\\le k\\le 18$. This yields the integers $k=14,15,16,17,18$, so there are $5$ valid values.",
+      "id": "AMC 12|-|Algebra|mid#1788012999722#0ip0up"
     }
   ],
   "AMC 12|-|Algebra|late": [
@@ -3383,6 +3721,19 @@
       "answer": "C",
       "solution": "By Vieta's formulas the sum of the roots is $8$, so their mean is $2$; write the four roots in arithmetic progression as $2-3d,\\,2-d,\\,2+d,\\,2+3d$. The polynomial equals $(x-2)^4 - 10d^2(x-2)^2 + 9d^4$, and expanding gives coefficient of $x^2$ equal to $6(2)^2-10d^2 = 24-10d^2$. Setting this equal to the given coefficient $14$ gives $10d^2 = 10$, so $d^2 = 1$. Checking the $x$-coefficient: $4(2)^3-20(2)(1) = -8$, matching $-e_3=8$ as required, confirming consistency. Finally the constant term is $a = 2^4 - 10(2)^2(1) + 9(1)^2 = 16-40+9=-15$.",
       "id": "AMC 12|-|Algebra|late#1787967859582#ecw03p"
+    },
+    {
+      "problem": "Real numbers $x$ and $y$ satisfy the system \\[x^3 - 3xy^2 = 10, \\qquad 3x^2y - y^3 = 5.\\] What is $x^2+y^2$?",
+      "choices": {
+        "A": "$\\sqrt{5}$",
+        "B": "$5$",
+        "C": "$5\\sqrt{5}$",
+        "D": "$25$",
+        "E": "$5^{2/3}$"
+      },
+      "answer": "B",
+      "solution": "Let $z = x+iy$. Expanding $z^3 = (x+iy)^3 = (x^3-3xy^2) + i(3x^2y-y^3)$, the given equations show $z^3 = 10+5i$. Taking magnitudes, $|z|^3 = |z^3| = |10+5i| = \\sqrt{10^2+5^2} = \\sqrt{125} = 5^{3/2}$. Thus $|z| = 5^{1/2}$, so $x^2+y^2 = |z|^2 = 5$.",
+      "id": "AMC 12|-|Algebra|late#1788013077536#kbj4ju"
     }
   ],
   "AMC 12|-|Geometry|early": [
@@ -3476,6 +3827,19 @@
       "answer": "B",
       "solution": "Since the circles are externally tangent, the distance between centers is $O_1O_2 = 3+5 = 8$. Draw the radii $O_1A$ and $O_2B$, both perpendicular to the common tangent line, so $O_1A \\parallel O_2B$. Translate $O_1A$ to start at $O_2$: this creates a right triangle with legs $AB$ and $r_2-r_1 = 5-3=2$, and hypotenuse $O_1O_2=8$. Then $AB = \\sqrt{8^2-2^2} = \\sqrt{64-4} = \\sqrt{60} = 2\\sqrt{15}$.",
       "id": "AMC 12|-|Geometry|early#1787967951190#3r6rhm"
+    },
+    {
+      "problem": "Square $ABCD$ has side length $10$. Point $E$ lies on side $BC$ with $BE = 4$, and point $F$ lies on side $CD$ with $CF = 3$. What is the area of triangle $AEF$?",
+      "choices": {
+        "A": "30",
+        "B": "33",
+        "C": "36",
+        "D": "40",
+        "E": "45"
+      },
+      "answer": "C",
+      "solution": "Place the square so that $A=(0,0)$, $B=(10,0)$, $C=(10,10)$, $D=(0,10)$; then $E=(10,4)$ and $F=(7,10)$. The area of triangle $AEF$ equals the area of the square minus the areas of the three right triangles $ABE$, $ECF$, and $FDA$. Triangle $ABE$ has legs $AB=10$ and $BE=4$, giving area $\\frac{1}{2}(10)(4)=20$. Triangle $ECF$ has legs $EC=10-4=6$ and $CF=3$, giving area $\\frac{1}{2}(6)(3)=9$. Triangle $FDA$ has legs $FD=10-3=7$ and $DA=10$, giving area $\\frac{1}{2}(7)(10)=35$. Thus the area of triangle $AEF$ is $100-20-9-35=36$.",
+      "id": "AMC 12|-|Geometry|early#1788013094214#rblgtb"
     }
   ],
   "AMC 12|-|Geometry|mid": [
@@ -3569,6 +3933,19 @@
       "answer": "D",
       "solution": "Place $C=(0,0)$, $A=(0,8)$, $B=(6,0)$, so $AB$ has equation $\\frac{x}{6}+\\frac{y}{8}=1$, or $4x+3y=24$. Since the circle is tangent to both legs (the axes), its center is $(r,r)$ for radius $r$, and this point lies on $AB$: $4r+3r=24$, so $r=\\frac{24}{7}$. The tangency points are $P=(0,r)$ on $CA$ and $Q=(r,0)$ on $CB$, so $CP=CQ=r$ and $\\angle PCQ=90^\\circ$. Thus the area of triangle $CPQ$ is $\\frac{1}{2}r^2=\\frac{1}{2}\\left(\\frac{24}{7}\\right)^2=\\frac{288}{49}$.",
       "id": "AMC 12|-|Geometry|mid#1787968134562#wdkebs"
+    },
+    {
+      "problem": "Square $ABCD$ has side length $12$. Points $E$ and $F$ lie on sides $BC$ and $CD$, respectively, so that rays $AE$ and $AF$ trisect angle $BAD$ (that is, $\\angle BAE = \\angle EAF = \\angle FAD = 30^\\circ$). What is the area of triangle $AEF$?",
+      "choices": {
+        "A": "36",
+        "B": "40",
+        "C": "44",
+        "D": "48",
+        "E": "52"
+      },
+      "answer": "D",
+      "solution": "Place $A=(0,0)$, $B=(12,0)$, $D=(0,12)$, $C=(12,12)$. Since $\\angle BAE=30^\\circ$, ray $AE$ has slope $\\tan 30^\\circ=\\tfrac{1}{\\sqrt3}$, and meeting $BC$ (where $x=12$) gives $E=(12,4\\sqrt3)$. Since $\\angle FAD=30^\\circ$, ray $AF$ makes a $60^\\circ$ angle with $AB$, and meeting $CD$ (where $y=12$) gives $F=(4\\sqrt3,12)$. Then $AE=AF=\\sqrt{144+48}=8\\sqrt3$, and the angle between them is $\\angle EAF=30^\\circ$. The area is $\\tfrac12\\cdot AE\\cdot AF\\cdot\\sin30^\\circ=\\tfrac12\\cdot192\\cdot\\tfrac12=48$.",
+      "id": "AMC 12|-|Geometry|mid#1788013115060#kvvedy"
     }
   ],
   "AMC 12|-|Geometry|late": [
@@ -3662,6 +4039,19 @@
       "answer": "B",
       "solution": "First find the incircle radius: the triangle has semiperimeter $s=40$ and area $\\sqrt{40\\cdot15\\cdot15\\cdot10}=300$, so $r=300/40=\\frac{15}{2}$. By the Law of Cosines, $\\cos A=\\frac{25^2+25^2-30^2}{2\\cdot25\\cdot25}=\\frac{7}{25}$, and the half-angle formula gives $\\sin(A/2)=\\sqrt{\\frac{1-7/25}{2}}=\\frac{3}{5}$. Since $r=AI\\sin(A/2)$ where $I$ is the incenter, $AI=\\frac{r}{\\sin(A/2)}=\\frac{15/2}{3/5}=\\frac{25}{2}$. If $\\omega_2$ has center at distance $d$ from $A$ on ray $AI$, its radius is $\\rho=d\\sin(A/2)=\\frac{3d}{5}$, and tangency with $\\omega_1$ (both inscribed in the same angle) gives $AI-d=\\rho+r$, i.e. $\\frac{25}{2}-d=\\frac{3d}{5}+\\frac{15}{2}$. Solving, $5=\\frac{8d}{5}$, so $d=\\frac{25}{8}$, giving $\\rho=\\frac{3}{5}\\cdot\\frac{25}{8}=\\frac{15}{8}$.",
       "id": "AMC 12|-|Geometry|late#1787968393364#6w73p7"
+    },
+    {
+      "problem": "In right triangle $ABC$, the right angle is at $A$, with $AB=20$, $AC=21$, and $BC=29$. Let $D$ be the foot of the altitude from $A$ to $BC$. Let $I_1$ and $I_2$ be the incenters of triangles $ABD$ and $ACD$, respectively. Find $I_1I_2$.",
+      "choices": {
+        "A": "5",
+        "B": "$5\\sqrt{2}$",
+        "C": "6",
+        "D": "$6\\sqrt{2}$",
+        "E": "7"
+      },
+      "answer": "D",
+      "solution": "Since $20^2+21^2=29^2$, triangle $ABC$ has a right angle at $A$, and the altitude to the hypotenuse gives $AD=\\frac{20\\cdot21}{29}=\\frac{420}{29}$, $BD=\\frac{20^2}{29}=\\frac{400}{29}$, $CD=\\frac{21^2}{29}=\\frac{441}{29}$. Triangles $ABD$ and $ACD$ are right triangles with right angles at $D$, so their inradii are $r_1=\\frac{BD+AD-AB}{2}=\\frac{120}{29}$ and $r_2=\\frac{CD+AD-AC}{2}=\\frac{126}{29}$. Placing $D=(0,0)$, $A=(0,\\tfrac{420}{29})$, $B=(-\\tfrac{400}{29},0)$, $C=(\\tfrac{441}{29},0)$, the incenters (each a distance $r_i$ from both legs at the right angle) are $I_1=(-\\tfrac{120}{29},\\tfrac{120}{29})$ and $I_2=(\\tfrac{126}{29},\\tfrac{126}{29})$. Then $I_1I_2=\\sqrt{\\left(\\tfrac{246}{29}\\right)^2+\\left(\\tfrac{6}{29}\\right)^2}=\\frac{1}{29}\\sqrt{60552}=\\frac{174\\sqrt{2}}{29}=6\\sqrt{2}$.",
+      "id": "AMC 12|-|Geometry|late#1788013141477#fql7n6"
     }
   ],
   "AMC 12|-|Number Theory|early": [
@@ -3755,6 +4145,19 @@
       "answer": "C",
       "solution": "Since $5$ and $7$ are coprime, the two congruences determine $n$ uniquely modulo $35$. Testing small values, $n=17$ satisfies $17\\equiv 2\\pmod5$ and $17\\equiv 3\\pmod7$, so all solutions are $n\\equiv 17\\pmod{35}$. These are $n = 17 + 35k$ for integers $k \\ge 0$, and we need $17+35k \\le 500$, i.e. $k \\le \\frac{483}{35} = 13.8$. Thus $k = 0,1,\\dots,13$, giving $14$ valid values of $n$.",
       "id": "AMC 12|-|Number Theory|early#1787968467445#ips9zm"
+    },
+    {
+      "problem": "What is the smallest positive integer $n$ that has exactly $12$ positive divisors and is divisible by $10$?",
+      "choices": {
+        "A": "60",
+        "B": "100",
+        "C": "120",
+        "D": "150",
+        "E": "200"
+      },
+      "answer": "A",
+      "solution": "Since $n$ is divisible by $10=2\\cdot5$, $n$ must include the primes $2$ and $5$ each to at least the first power. If $n=p_1^{e_1}p_2^{e_2}\\cdots$, the number of divisors is $(e_1+1)(e_2+1)\\cdots=12$. To minimize $n$ we want few prime factors with small primes raised to larger powers. Using three primes with exponent pattern $(2,1,1)$ gives $(2+1)(1+1)(1+1)=12$ divisors; assigning the largest exponent to the smallest prime gives $n=2^2\\cdot3^1\\cdot5^1=60$, which is divisible by $10$. Checking other factorizations of $12$ (such as $(3,2)$ giving $2^3\\cdot5^2=200$, or $(5,1)$ giving $2^5\\cdot5=160$) all yield larger values, so $60$ is indeed the smallest such $n$.",
+      "id": "AMC 12|-|Number Theory|early#1788013163868#d5qo7l"
     }
   ],
   "AMC 12|-|Number Theory|mid": [
@@ -3848,6 +4251,19 @@
       "answer": "D",
       "solution": "If $2023$ is written as $k$ consecutive integers starting at $a$, then $2023 = ka + \\frac{k(k-1)}{2}$, so $k(2a+k-1)=4046=2\\cdot 7\\cdot 17^2$. Writing $m=4046/k$, we need $2a=m-k+1>0$ with $m,k$ divisors of $4046$ of opposite parity (automatic since $4046$ has only one factor of $2$), so the only requirement is $k<m$, i.e. $k<\\sqrt{4046}\\approx63.6$. The divisors of $4046$ that are less than $63.6$ and at least $2$ are $2,7,14,17,34$, each giving a valid positive integer $a$ (namely $a=1011,286,138,111,43$). Summing these valid values of $k$ gives $2+7+14+17+34=74$.",
       "id": "AMC 12|-|Number Theory|mid#1787968645070#hfq1wq"
+    },
+    {
+      "problem": "How many positive integers $n$ satisfy $n+7 \\mid n^2+2023$?",
+      "choices": {
+        "A": "9",
+        "B": "10",
+        "C": "11",
+        "D": "12",
+        "E": "13"
+      },
+      "answer": "D",
+      "solution": "Since $n \\equiv -7 \\pmod{n+7}$, we have $n^2+2023 \\equiv (-7)^2+2023 = 2072 \\pmod{n+7}$. So $n+7$ must divide $2072 = 2^3\\cdot 7\\cdot 37$, which has $(3+1)(1+1)(1+1)=16$ positive divisors. Since $n\\ge 1$, we need $n+7\\ge 8$, so we exclude the divisors $1,2,4,7$ which are less than $8$. That leaves $16-4=12$ valid divisors for $n+7$, each giving a distinct positive integer $n$. Thus there are $\\boxed{12}$ such values of $n$.",
+      "id": "AMC 12|-|Number Theory|mid#1788013234842#0tv1oz"
     }
   ],
   "AMC 12|-|Number Theory|late": [
@@ -3941,6 +4357,19 @@
       "answer": "D",
       "solution": "Since $2^3 \\equiv 1 \\pmod 7$, the value of $2^n \\bmod 7$ depends only on $n \\bmod 3$ (giving $2,4,1$ for $n\\equiv 1,2,0$). Since $n^2 \\bmod 7$ depends only on $n \\bmod 7$ (giving $0,1,4,2,2,4,1$ for $n\\equiv 0,\\dots,6$), the whole congruence $2^n\\equiv n^2\\pmod 7$ depends only on $n \\bmod 21$. Checking all residues $r=0,1,\\dots,20$ shows the congruence holds exactly for $r=2,4,5,6,10,15$, i.e. $6$ out of every $21$ consecutive integers. Since $2023 = 21\\cdot 96 + 7$, the first $2016$ integers contribute $96\\cdot 6 = 576$ solutions, and among $n=2017,\\dots,2023$ (residues $1,2,\\dots,7$) the residues $2,4,5,6$ work, adding $4$ more. The total is $576+4 = 580$.",
       "id": "AMC 12|-|Number Theory|late#1787968854476#2qen2n"
+    },
+    {
+      "problem": "For how many positive integers $n$ with $1 \\le n \\le 100$ does the congruence $x^2 \\equiv 1 \\pmod{n}$ have exactly $4$ solutions $x$ with $0 \\le x < n$?",
+      "choices": {
+        "A": "34",
+        "B": "36",
+        "C": "38",
+        "D": "40",
+        "E": "42"
+      },
+      "solution": "Write $n = 2^a m$ with $m$ odd having $k$ distinct prime factors. By CRT, the number of square roots of $1$ mod $n$ is $2^k$ if $a=0,1$; $2^{k+1}$ if $a=2$; and $2^{k+2}$ if $a\\ge 3$ (each odd prime power factor contributes a factor of $2$, and powers of $2$ contribute $1,1,2,4$ solutions for $a=0,1,2,\\ge3$). We need this product to equal $4$, giving three cases: (i) $a=0$ or $1$ with $k=2$, (ii) $a=2$ with $k=1$, (iii) $a\\ge 3$ with $k=0$. Counting odd numbers $\\le 100$ with exactly two prime factors gives $20$ values of $n=m$ (case $a=0$), and those with $m\\le 50$ give $6$ more values $n=2m$ (case $a=1$), totaling $26$. For case (ii), odd prime powers $m\\le 25$ give $10$ values $n=4m$, and for case (iii), $n=8,16,32,64$ give $4$ values. Adding $26+10+4=40$, so the answer is $\\textbf{(D) } 40$.",
+      "answer": "D",
+      "id": "AMC 12|-|Number Theory|late#1788013300143#gh7ac3"
     }
   ],
   "AMC 12|-|Combinatorics|early": [
@@ -4034,6 +4463,19 @@
       "answer": "B",
       "solution": "Since no couple can both serve, the committee must be formed by first choosing which 4 of the 6 couples will be represented, then choosing one person from each of those couples. The number of ways to choose which 4 couples are represented is $\\binom{6}{4}=15$. For each of those 4 chosen couples, there are 2 choices (husband or wife), giving $2^4=16$ ways. Multiplying gives $15\\times16=240$ valid committees. (As a check, the total number of 4-person committees is $\\binom{12}{4}=495$, and inclusion-exclusion on 'bad' committees containing a full couple gives $270-15=255$ bad ones, so $495-255=240$ valid ones, confirming the answer.)",
       "id": "AMC 12|-|Combinatorics|early#1787968906080#rkejbf"
+    },
+    {
+      "problem": "A group of 12 people consists of 6 married couples. A committee of 5 people is to be selected from this group so that no two people who are married to each other both serve on the committee. How many such committees are possible?",
+      "choices": {
+        "A": "96",
+        "B": "160",
+        "C": "192",
+        "D": "240",
+        "E": "384"
+      },
+      "answer": "C",
+      "solution": "Since no committee can contain both members of a couple, each couple contributes at most one member, so a 5-person committee must draw exactly one member from each of 5 of the 6 couples. First choose which 5 of the 6 couples are represented: $\\binom{6}{5}=6$ ways. Then, for each chosen couple, pick one of its 2 members: $2^5=32$ ways. Multiplying gives $6\\cdot 32 = 192$ possible committees.",
+      "id": "AMC 12|-|Combinatorics|early#1788013309317#ebixkp"
     }
   ],
   "AMC 12|-|Combinatorics|mid": [
@@ -4127,6 +4569,19 @@
       "answer": "C",
       "solution": "The total number of monotonic lattice paths from $(0,0)$ to $(6,6)$ is $\\binom{12}{6}=924$, since we choose which 6 of the 12 steps are 'right' steps. Any path passing through $(3,3)$ splits into a path from $(0,0)$ to $(3,3)$, with $\\binom{6}{3}=20$ ways, followed by a path from $(3,3)$ to $(6,6)$, also with $\\binom{6}{3}=20$ ways, giving $20\\times20=400$ such paths. By complementary counting, the number of paths avoiding $(3,3)$ is $924-400=524$.",
       "id": "AMC 12|-|Combinatorics|mid#1787968995086#5w7n63"
+    },
+    {
+      "problem": "A sequence of $10$ coin flips is recorded as a string of $H$'s and $T$'s (for example, $HHTHTTTHHH$). How many such sequences of length $10$ contain no three consecutive flips that are the same, that is, no run of three consecutive $H$'s and no run of three consecutive $T$'s?",
+      "choices": {
+        "A": "144",
+        "B": "168",
+        "C": "178",
+        "D": "188",
+        "E": "210"
+      },
+      "answer": "C",
+      "solution": "Since no three consecutive flips can match, every valid string breaks into consecutive blocks of the same letter, each of length $1$ or $2$, and consecutive blocks must use different letters (H then T then H, etc.). So a valid sequence is determined by choosing the starting letter ($2$ ways) and a composition of $10$ into parts of size $1$ and $2$ (which forces the alternating letters). Let $C(n)$ be the number of such compositions of $n$; then $C(n)=C(n-1)+C(n-2)$ with $C(1)=1, C(2)=2$, giving the Fibonacci-like sequence $1,2,3,5,8,13,21,34,55,89$ for $n=1,\\dots,10$, so $C(10)=89$. Thus the total number of valid strings is $2\\cdot 89 = 178$.",
+      "id": "AMC 12|-|Combinatorics|mid#1788013343603#7dluh1"
     }
   ],
   "AMC 12|-|Combinatorics|late": [
@@ -4220,6 +4675,19 @@
       "answer": "C",
       "solution": "If $f(f(x))=f(x)$ for all $x$, then every value $f(x)$ must itself be a fixed point of $f$, so the image of $f$ equals its set of fixed points; call this set $S$ with $|S|=k$. First choose $S\\subseteq\\{1,2,3,4,5\\}$ in $\\binom{5}{k}$ ways, and each element of $S$ must map to itself. Each of the remaining $5-k$ elements can map to *any* element of $S$, giving $k^{5-k}$ choices, so the total count is $\\sum_{k=1}^{5}\\binom{5}{k}k^{5-k}$. Computing term by term: $k=1:5\\cdot1=5$; $k=2:10\\cdot8=80$; $k=3:10\\cdot9=90$; $k=4:5\\cdot4=20$; $k=5:1\\cdot1=1$. Summing gives $5+80+90+20+1=196$.",
       "id": "AMC 12|-|Combinatorics|late#1787969254139#cpizpy"
+    },
+    {
+      "problem": "Let $S$ be the collection of all $4$-element subsets $A$ of $\\{1,2,\\ldots,10\\}$ such that no two elements of $A$ are consecutive integers. For each subset $A \\in S$, let $f(A)$ denote the sum of its four elements. What is $\\sum_{A \\in S} f(A)$, the sum of $f(A)$ over all subsets $A$ in $S$?",
+      "choices": {
+        "A": "700",
+        "B": "735",
+        "C": "770",
+        "D": "805",
+        "E": "840"
+      },
+      "answer": "C",
+      "solution": "First count $|S|$: if $a_1<a_2<a_3<a_4$ have no two consecutive, setting $b_i = a_i-(i-1)$ gives a strictly increasing sequence in $\\{1,\\ldots,7\\}$, so $|S| = \\binom{7}{4} = 35$. Next consider the map $g(x) = 11-x$ on $\\{1,\\ldots,10\\}$: since $g$ is an involution reversing order, it sends any set with no two consecutive elements to another such set, so $g$ permutes the subsets in $S$. For any $A=\\{a_1,a_2,a_3,a_4\\}\\in S$, $g(A) = \\{11-a_1,\\ldots,11-a_4\\}\\in S$ and $f(A)+f(g(A)) = \\sum (a_i) + \\sum(11-a_i) = 4\\cdot 11 = 44$. Pairing each subset with its image under $g$ (allowing possible fixed points where $f(A)=22$, consistent with the sum being $44$), the total sum over all $35$ subsets is $35 \\cdot \\frac{44}{2} = 35 \\cdot 22 = 770$.",
+      "id": "AMC 12|-|Combinatorics|late#1788013372033#2j2s6i"
     }
   ],
   "AMC 12|-|Probability|early": [
@@ -4313,6 +4781,19 @@
       "answer": "A",
       "solution": "Let $a_n$ be the number of sequences of $n$ coin flips with no two consecutive heads. If the last flip is Tails, the first $n-1$ flips form any valid sequence of length $n-1$; if the last flip is Heads, the previous flip must be Tails, so the first $n-2$ flips form any valid sequence of length $n-2$. This gives the recurrence $a_n = a_{n-1} + a_{n-2}$. Checking small cases: $a_1 = 2$ (H, T) and $a_2 = 3$ (HT, TH, TT). Then $a_3 = 5$, $a_4 = 8$, and $a_5 = 13$. Since there are $2^5 = 32$ total equally likely sequences, the probability is $\\frac{13}{32}$.",
       "id": "AMC 12|-|Probability|early#1787969304110#a0apwt"
+    },
+    {
+      "problem": "A fair six-sided die is rolled four times, and the results are recorded in the order rolled. What is the probability that the sequence of four results is non-decreasing (that is, each roll is greater than or equal to the one before it)?",
+      "choices": {
+        "A": "$\\frac{1}{18}$",
+        "B": "$\\frac{7}{72}$",
+        "C": "$\\frac{1}{8}$",
+        "D": "$\\frac{5}{36}$",
+        "E": "$\\frac{7}{36}$"
+      },
+      "answer": "B",
+      "solution": "There are $6^4 = 1296$ total equally likely sequences of four rolls. A non-decreasing sequence of length $4$ using values from $\\{1,2,\\dots,6\\}$ corresponds exactly to a multiset of size $4$ chosen from $6$ types (once you know which values appear and how many times, the non-decreasing order is forced). The number of such multisets is $\\binom{6+4-1}{4} = \\binom{9}{4} = 126$. Thus the probability is $\\frac{126}{1296}$. Simplifying by dividing numerator and denominator by $18$ gives $\\frac{7}{72}$.",
+      "id": "AMC 12|-|Probability|early#1788013387647#erx6s9"
     }
   ],
   "AMC 12|-|Probability|mid": [
@@ -4406,6 +4887,19 @@
       "answer": "C",
       "solution": "Let $a_n$ be the number of length-$n$ head/tail sequences that avoid three consecutive heads. Track the number of consecutive heads ending a valid sequence using states $0,1,2$: if $f_0(n),f_1(n),f_2(n)$ count sequences of length $n$ ending in $0,1,2$ heads (never having reached $3$), then $f_0(n)=f_0(n-1)+f_1(n-1)+f_2(n-1)$, $f_1(n)=f_0(n-1)$, $f_2(n)=f_1(n-1)$, with $a_n=f_0(n)+f_1(n)+f_2(n)$. Starting from $a_0=1,a_1=2,a_2=4$, this gives the recurrence $a_n=a_{n-1}+a_{n-2}+a_{n-3}$, producing $a_3=7,a_4=13,a_5=24,a_6=44,a_7=81,a_8=149,a_9=274,a_{10}=504$. Since there are $2^{10}=1024$ total sequences, the number containing at least one run of three heads is $1024-504=520$. Thus the probability is $\\frac{520}{1024}=\\frac{65}{128}$.",
       "id": "AMC 12|-|Probability|mid#1787969426382#0pdsed"
+    },
+    {
+      "problem": "A subset of the set $\\{1,2,3,\\ldots,10\\}$ is chosen uniformly at random from all $2^{10}$ subsets (including the empty set, whose sum is $0$). What is the probability that the sum of the elements of the chosen subset is divisible by $3$?",
+      "choices": {
+        "A": "$\\frac{1}{3}$",
+        "B": "$\\frac{341}{1024}$",
+        "C": "$\\frac{43}{128}$",
+        "D": "$\\frac{337}{1024}$",
+        "E": "$\\frac{87}{256}$"
+      },
+      "answer": "C",
+      "solution": "Among $1,\\ldots,10$, the residues mod $3$ are: three numbers $\\equiv 0$ ($3,6,9$), four numbers $\\equiv 1$ ($1,4,7,10$), and three numbers $\\equiv 2$ ($2,5,8$). Using the generating function $F(x)=\\prod(1+x^{a_i})$ and the roots-of-unity filter with $\\omega=e^{2\\pi i/3}$, the number of subsets with sum $\\equiv 0 \\pmod 3$ is $N_0=\\frac{1}{3}[F(1)+F(\\omega)+F(\\omega^2)]$. Here $F(1)=2^{10}=1024$, and since $1+\\omega=-\\omega^2$, $1+\\omega^2=-\\omega$, one computes $F(\\omega)=2^3(1+\\omega)^4(1+\\omega^2)^3=-8\\omega^2$ and similarly $F(\\omega^2)=-8\\omega$. Thus $N_0=\\frac{1}{3}[1024-8(\\omega+\\omega^2)]=\\frac{1}{3}[1024+8]=344$. The probability is $\\frac{344}{1024}=\\frac{43}{128}$.",
+      "id": "AMC 12|-|Probability|mid#1788013469518#d4j95a"
     }
   ],
   "AMC 12|-|Probability|late": [
@@ -4499,6 +4993,19 @@
       "answer": "C",
       "solution": "Track the state of the process by the last two flips (before a pattern completes): states $HH, HT, TH, TT$, plus the start. Let $p_X$ be the probability $HTH$ occurs first starting from state $X$. From $HH$: flipping $T$ gives $HHT$ (loss), flipping $H$ stays in $HH$, so $p_{HH}=\\tfrac12 p_{HH}$, giving $p_{HH}=0$. From $HT$: flipping $H$ gives $HTH$ (win), flipping $T$ moves to $TT$, so $p_{HT}=\\tfrac12(1)+\\tfrac12 p_{TT}$. From $TH$: $p_{TH}=\\tfrac12 p_{HH}+\\tfrac12 p_{HT}=\\tfrac12 p_{HT}$, and from $TT$: $p_{TT}=\\tfrac12 p_{TH}+\\tfrac12 p_{TT}\\Rightarrow p_{TT}=p_{TH}$. Substituting, $p_{HT}=\\tfrac12+\\tfrac12(\\tfrac12 p_{HT})$ gives $p_{HT}=\\tfrac23$, so $p_{TH}=p_{TT}=\\tfrac13$. Starting from the empty state, after one flip we are equally likely in state $H$ or $T$ (each leading with equal probability to $HH/HT$ or $TH/TT$), and averaging gives $p_{start}=\\tfrac12(\\tfrac12\\cdot0+\\tfrac12\\cdot\\tfrac23)+\\tfrac12(\\tfrac12\\cdot\\tfrac13+\\tfrac12\\cdot\\tfrac13)=\\tfrac13$. Thus the probability $HTH$ appears first is $\\boxed{\\tfrac13}$.",
       "id": "AMC 12|-|Probability|late#1787969838055#q8vj0n"
+    },
+    {
+      "problem": "A fair coin is flipped repeatedly, generating an infinite sequence of heads ($H$) and tails ($T$). What is the probability that the consecutive pattern $HHT$ appears in the sequence before the consecutive pattern $THH$ appears?",
+      "choices": {
+        "A": "$\\frac{1}{8}$",
+        "B": "$\\frac{1}{4}$",
+        "C": "$\\frac{1}{3}$",
+        "D": "$\\frac{1}{2}$",
+        "E": "$\\frac{3}{4}$"
+      },
+      "answer": "B",
+      "solution": "Track the state of the flip sequence as the longest suffix matching a prefix of $HHT$ or $THH$: possible states are $H$, $T$, $HH$, $TH$ (plus absorption when a full pattern appears). From state $HH$: flipping $T$ gives $HHT$ (an $A$-win), flipping $H$ stays at $HH$; since these are the only options, state $HH$ leads to an $A$-win with probability $1$. From state $TH$: flipping $H$ gives $THH$ (a $B$-win), flipping $T$ moves to state $T$; from state $T$, flipping $H$ moves to $TH$ and flipping $T$ stays at $T$, which forces $p_T = p_{TH} = \\tfrac12 p_T$, giving $p_T = p_{TH} = 0$. From state $H$: flipping $H$ moves to $HH$ (win prob $1$) and flipping $T$ moves to $T$ (win prob $0$), so $p_H = \\tfrac12(1)+\\tfrac12(0)=\\tfrac12$. The first flip sends us to state $H$ or $T$ with equal probability, so the overall probability is $\\tfrac12 p_H + \\tfrac12 p_T = \\tfrac12\\cdot\\tfrac12 + \\tfrac12\\cdot 0 = \\tfrac14$.",
+      "id": "AMC 12|-|Probability|late#1788013547028#e2awjf"
     }
   ],
   "AIME|-|Mixed|early": [
@@ -4603,6 +5110,12 @@
       "answer": 31,
       "solution": "Let $e_1,e_2,e_3$ be the elementary symmetric polynomials in $x,y,z$, so $p_k=x^k+y^k+z^k$. Since $p_1=e_1$, we get $e_1=1$. Using $p_2=e_1^2-2e_2$: $2=1-2e_2$, so $e_2=-\\tfrac12$. Using Newton's identity $p_3=e_1p_2-e_2p_1+3e_3$: $3=(1)(2)-(-\\tfrac12)(1)+3e_3=2.5+3e_3$, so $e_3=\\tfrac16$. For $n=4>3$ variables, $e_4=0$, so $p_4=e_1p_3-e_2p_2+e_3p_1=(1)(3)-(-\\tfrac12)(2)+(\\tfrac16)(1)=3+1+\\tfrac16=\\tfrac{25}{6}$. Thus $m=25$, $n=6$, and $m+n=31$.",
       "id": "AIME|-|Algebra|early#1787970133346#wld31i"
+    },
+    {
+      "problem": "Let $p, q, r$ be the roots of the polynomial $x^3 - 6x^2 + 3x - 1 = 0$. Find the value of $p^4 + q^4 + r^4$.",
+      "answer": 906,
+      "solution": "By Vieta's formulas, $e_1 = p+q+r = 6$, $e_2 = pq+pr+qr = 3$, $e_3 = pqr = 1$. Using Newton's identities: $p_1 = e_1 = 6$. Then $p_2 = e_1 p_1 - 2e_2 = 6(6) - 2(3) = 30$. Next $p_3 = e_1 p_2 - e_2 p_1 + 3e_3 = 6(30) - 3(6) + 3(1) = 165$. Finally, for $k>3$, $p_k = e_1 p_{k-1} - e_2 p_{k-2} + e_3 p_{k-3}$, so $p_4 = 6(165) - 3(30) + 1(6) = 990 - 90 + 6 = 906$. Thus $p^4+q^4+r^4 = 906$.",
+      "id": "AIME|-|Algebra|early#1788013602068#wd4699"
     }
   ],
   "AIME|-|Algebra|mid": [
@@ -4647,6 +5160,12 @@
       "answer": 32,
       "solution": "Let $p_k=a^k+b^k+c^k$ and let $e_1,e_2,e_3$ be the elementary symmetric polynomials. From $e_1=p_1=2$ and $p_2=e_1p_1-2e_2$, we get $6=4-2e_2$, so $e_2=-1$. From $p_3=e_1p_2-e_2p_1+3e_3$, we get $8=12+2+3e_3$, so $e_3=-2$. These correspond to the cubic $t^3-2t^2-t+2=(t-2)(t-1)(t+1)$, confirming $a,b,c=2,1,-1$ are real, so the setup is consistent. Using the recurrence $p_k=e_1p_{k-1}-e_2p_{k-2}+e_3p_{k-3}$ for $k\\ge4$: $p_4=2(8)-(-1)(6)+(-2)(2)=18$, and $p_5=2(18)-(-1)(8)+(-2)(6)=36+8-12=32$. Thus $a^5+b^5+c^5=32$.",
       "id": "AIME|-|Algebra|mid#1787970558315#y1ljcf"
+    },
+    {
+      "problem": "The four real roots of the equation $x^4 - 20x^3 + kx^2 - 400x + m = 0$, arranged in increasing order, form an arithmetic progression, and the product of the two middle roots is $24$. Find $k+m$.",
+      "answer": 524,
+      "solution": "Write the four roots in arithmetic progression as $a-3d, a-d, a+d, a+3d$ with $d>0$. By Vieta's formulas the sum of the roots is $4a = 20$, so $a=5$. The two middle roots are $a-d$ and $a+d$, whose product is $a^2-d^2 = 25-d^2 = 24$, giving $d^2=1$, so $d=1$. Thus the roots are $2,4,6,8$. Then $k$ equals the sum of all pairwise products: $2\\cdot4+2\\cdot6+2\\cdot8+4\\cdot6+4\\cdot8+6\\cdot8 = 8+12+16+24+32+48 = 140$, and $m$ equals the product of all four roots: $2\\cdot4\\cdot6\\cdot8 = 384$ (one can check the sum of triple products is $400$, consistent with the given $-400x$ term). Therefore $k+m = 140+384 = 524$.",
+      "id": "AIME|-|Algebra|mid#1788013715660#pn9y0p"
     }
   ],
   "AIME|-|Algebra|late": [
@@ -4691,6 +5210,12 @@
       "answer": 794,
       "solution": "Let $e_1=a+b+c$, $e_2=ab+bc+ca$, $e_3=abc$, and $p_n=a^n+b^n+c^n$. From $p_1=e_1=4$. Using $p_2=e_1p_1-2e_2$: $14=16-2e_2$, so $e_2=1$. Using $p_3=e_1p_2-e_2p_1+3e_3$: $34=56-4+3e_3$, so $e_3=-6$ (indeed $a,b,c$ are $-1,2,3$). For $n\\ge4$, Newton's identities give $p_n=4p_{n-1}-p_{n-2}-6p_{n-3}$. Computing: $p_4=4(34)-14-6(4)=98$, $p_5=4(98)-34-6(14)=274$, $p_6=4(274)-98-6(34)=794$.",
       "id": "AIME|-|Algebra|late#1787970818846#z9h50n"
+    },
+    {
+      "problem": "Let $P(x)$ be the monic polynomial of degree $6$ satisfying $P(k) = \\dfrac{1}{k}$ for $k = 1, 2, 3, 4, 5, 6$. Find $P(7)$.",
+      "answer": 720,
+      "solution": "Define $Q(x) = xP(x) - 1$. Since $P$ is monic of degree $6$, $Q(x)$ is monic of degree $7$, and $Q(k) = kP(k) - 1 = 0$ for $k=1,\\dots,6$, so $Q(x) = (x-1)(x-2)(x-3)(x-4)(x-5)(x-6)(x-r)$ for some constant $r$. Plugging in $x=0$: $Q(0) = -1$, while the right side equals $(-1)^6(720)(-r) = -720r$, so $r = \\dfrac{1}{720}$. Now evaluate at $x=7$: $Q(7) = 7P(7)-1 = 6!\\,(7-r) = 720\\left(7-\\tfrac{1}{720}\\right) = 5040-1 = 5039$. Thus $7P(7) = 5040$, giving $P(7) = 720$.",
+      "id": "AIME|-|Algebra|late#1788013795360#201yzx"
     }
   ],
   "AIME|-|Geometry|early": [
@@ -4735,6 +5260,12 @@
       "answer": 349,
       "solution": "By Heron's formula with $s=21$, $[ABC]=\\sqrt{21\\cdot8\\cdot7\\cdot6}=84$. By Routh's Theorem, if cevians divide the sides in ratios $BD/DC=CE/EA=AF/FB=t$, the inner triangle's area ratio to $[ABC]$ is $\\dfrac{(t^3-1)^2}{(t^2+t+1)^3}$. With $t=\\tfrac13$: $t^3-1=-\\tfrac{26}{27}$ so the numerator is $\\tfrac{676}{729}$, and $t^2+t+1=\\tfrac{13}{9}$ so the denominator is $\\tfrac{2197}{729}$. The ratio simplifies to $\\dfrac{676}{2197}=\\dfrac{4}{13}$. Thus the inner triangle's area is $84\\cdot\\dfrac{4}{13}=\\dfrac{336}{13}$, and since $\\gcd(336,13)=1$, $m+n=336+13=349$.",
       "id": "AIME|-|Geometry|early#1787971083631#2uzfo2"
+    },
+    {
+      "problem": "In triangle $ABC$, $AB=15$, $BC=14$, and $CA=13$. Circle $\\omega$ has diameter $AC$ and intersects side $AB$ at a point $D \\neq A$ and side $BC$ at a point $E \\neq C$. The area of triangle $BDE$ can be written as $\\tfrac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m+n$.",
+      "answer": 781,
+      "solution": "Since $AC$ is a diameter of $\\omega$, any point on $\\omega$ sees $AC$ at a right angle. Thus $\\angle ADC = 90^\\circ$, so $D$ is the foot of the altitude from $C$ to $AB$, and $\\angle AEC = 90^\\circ$, so $E$ is the foot of the altitude from $A$ to $BC$. Using the Law of Cosines, $\\cos B = \\frac{AB^2+BC^2-AC^2}{2\\cdot AB\\cdot BC} = \\frac{225+196-169}{420} = \\frac{3}{5}$, and since the triangle is acute (all angle cosines positive), $D$ and $E$ lie on the segments as required. In right triangles $BDC$ and $BEA$, $BD = BC\\cos B = 14\\cdot\\frac{3}{5} = \\frac{42}{5}$ and $BE = AB\\cos B = 15\\cdot\\frac{3}{5} = 9$. Since $\\angle DBE = \\angle B$ is common, triangle $BDE \\sim$ triangle $BCA$ with ratio $\\cos B$, so $\\frac{[BDE]}{[ABC]} = \\cos^2 B = \\frac{9}{25}$. By Heron's formula with $s=21$, $[ABC] = \\sqrt{21\\cdot6\\cdot7\\cdot8} = 84$, so $[BDE] = \\frac{9}{25}\\cdot 84 = \\frac{756}{25}$. Since $\\gcd(756,25)=1$, $m+n = 756+25 = 781$.",
+      "id": "AIME|-|Geometry|early#1788013842229#kc4msz"
     }
   ],
   "AIME|-|Geometry|mid": [
@@ -4779,6 +5310,12 @@
       "answer": 26,
       "solution": "By Heron's formula with $s=21$, the area of $\\triangle ABC$ is $\\sqrt{21\\cdot8\\cdot7\\cdot6}=84$, so the altitude from $A$ is $AD=\\frac{2\\cdot84}{14}=12$. Then $BD=\\sqrt{13^2-12^2}=5$ and $DC=14-5=9$ (check: $\\sqrt{12^2+9^2}=15$, matching $CA$). Place $D=(0,0)$, $B=(-5,0)$, $C=(9,0)$, $A=(0,12)$; both $\\triangle ABD$ and $\\triangle ACD$ are right triangles at $D$. Since $\\triangle ABD$ has legs $12,5$ and hypotenuse $13$, its inradius is $r_1=\\frac{12+5-13}{2}=2$, giving incenter $I_1=(-2,2)$; since $\\triangle ACD$ has legs $12,9$ and hypotenuse $15$, its inradius is $r_2=\\frac{12+9-15}{2}=3$, giving incenter $I_2=(3,3)$. Then $I_1I_2^2=(3-(-2))^2+(3-2)^2=25+1=26$.",
       "id": "AIME|-|Geometry|mid#1787971302304#rn1oih"
+    },
+    {
+      "problem": "In right triangle $ABC$ with the right angle at $A$, $AB=20$, $AC=21$, and $BC=29$. Let $I$ be the incenter of $\\triangle ABC$. A line through $I$ parallel to $BC$ intersects segment $AB$ at $P$ and segment $AC$ at $Q$. Find the perimeter of $\\triangle APQ$.",
+      "answer": 41,
+      "solution": "Place $A=(0,0)$, $B=(20,0)$, $C=(0,21)$; the area of $\\triangle ABC$ is $210$ and the semiperimeter is $s=35$, so the inradius is $r=210/35=6$, giving $I=(6,6)$. The distance from $A$ to line $BC$ is $h = \\frac{2\\cdot 210}{29}=\\frac{420}{29}$, and since $I$ lies at distance $r=6$ from $BC$, the distance from $A$ to line $PQ$ (which passes through $I$ parallel to $BC$) is $h-r=\\frac{420}{29}-6=\\frac{246}{29}$. Thus $\\triangle APQ \\sim \\triangle ABC$ with ratio $k=\\frac{h-r}{h}=\\frac{246/29}{420/29}=\\frac{246}{420}=\\frac{41}{70}$. Since the perimeter of $\\triangle ABC$ is $20+21+29=70$, the perimeter of $\\triangle APQ$ is $k\\cdot 70 = \\frac{41}{70}\\cdot 70 = 41$.",
+      "id": "AIME|-|Geometry|mid#1788013870178#ndygr9"
     }
   ],
   "AIME|-|Geometry|late": [
@@ -4823,6 +5360,12 @@
       "answer": 781,
       "solution": "Place $B=(0,0)$, $A=(0,5)$, $C=(12,0)$, so the incenter is $I=(r,r)$ with $r=\\text{Area}/s = 30/15=2$, giving $I=(2,2)$. The midpoint is $M=(6,0)$, and line $AM$ has equation $5x+6y-30=0$ (check: satisfies both $A$ and $M$), with $\\sqrt{5^2+6^2}=\\sqrt{61}$. The distance from $I=(2,2)$ to this line is $d=\\frac{|5(2)+6(2)-30|}{\\sqrt{61}}=\\frac{8}{\\sqrt{61}}$. The chord length formula gives $XY=2\\sqrt{r^2-d^2}=2\\sqrt{4-\\frac{64}{61}}=2\\sqrt{\\frac{180}{61}}$, so $XY^2=\\frac{720}{61}$. Since $\\gcd(720,61)=1$, the answer is $720+61=781$.",
       "id": "AIME|-|Geometry|late#1787971783599#g07jy9"
+    },
+    {
+      "problem": "In $\\triangle ABC$, $AB=13$, $BC=14$, and $CA=15$. Let $\\omega$ be the incircle of $\\triangle ABC$, which is tangent to $\\overline{BC}$, $\\overline{CA}$, $\\overline{AB}$. For each side of the triangle there is exactly one line, other than that side itself, that is parallel to it and tangent to $\\omega$: call these lines $\\ell_A$ (parallel to $BC$), $\\ell_B$ (parallel to $CA$), and $\\ell_C$ (parallel to $AB$). Line $\\ell_A$ meets lines $AB$ and $AC$ at points $P$ and $Q$, forming $\\triangle APQ$; line $\\ell_B$ meets lines $BC$ and $BA$ at points $R$ and $S$, forming $\\triangle BRS$; line $\\ell_C$ meets lines $CA$ and $CB$ at points $T$ and $U$, forming $\\triangle CTU$. The sum of the areas of $\\triangle APQ$, $\\triangle BRS$, and $\\triangle CTU$ can be written as $\\frac{m}{n}$ for relatively prime positive integers $m,n$. Find $m+n$.",
+      "answer": 617,
+      "solution": "Place $BC$ on the x-axis; the incircle has radius $r$ and its center is at height $r$, so the tangent line $\\ell_A$ parallel to $BC$ lies at height $2r$. Since $A$ is at height $h_a$ (the altitude from $A$), triangle $APQ$ is similar to $ABC$ with ratio $k_A=\\frac{h_a-2r}{h_a}=1-\\frac{2r}{h_a}$. Using $r=\\frac{[ABC]}{s}$ and $h_a=\\frac{2[ABC]}{a}$, this simplifies to $k_A=1-\\frac{a}{s}=\\frac{s-a}{s}$, and similarly $k_B=\\frac{s-b}{s}$, $k_C=\\frac{s-c}{s}$. For $a=14,b=15,c=13$, $s=21$, so $s-a=7$, $s-b=6$, $s-c=8$, giving $k_A^2+k_B^2+k_C^2=\\frac{7^2+6^2+8^2}{21^2}=\\frac{149}{441}$. The area is $[ABC]=\\sqrt{21\\cdot7\\cdot6\\cdot8}=84$, so the total area is $84\\cdot\\frac{149}{441}=\\frac{596}{21}$. Since $596=4\\cdot149$ and $21=3\\cdot7$ share no common factors, $m+n=596+21=617$.",
+      "id": "AIME|-|Geometry|late#1788013934110#q7g6dk"
     }
   ],
   "AIME|-|Number Theory|early": [
@@ -4911,6 +5454,12 @@
       "answer": 25,
       "solution": "For $n$ coprime to $10$, the period of $1/n$ equals the multiplicative order of $10$ modulo $n$. The order divides $6$ exactly when $n \\mid 10^6-1 = 999999 = 3^3\\cdot 7\\cdot 11\\cdot 13\\cdot 37$, which has $4\\cdot2\\cdot2\\cdot2\\cdot2=64$ divisors. Among divisors of $999999$, the order divides a proper divisor of $6$ (namely $1,2,3$) exactly when $n$ divides $10-1=9$, $10^2-1=99$, or $10^3-1=999$; since divisors of $9$ all divide $999$, the 'bad' set is (divisors of $99$) $\\cup$ (divisors of $999$), of size $6+8-3=11$ (subtracting the $3$ common divisors of $\\gcd(99,999)=9$). Enumerating divisors of $999999$ by prime factors shows exactly $36$ of the $64$ divisors are $\\le 2023$ (verified by pairing $d\\leftrightarrow 999999/d$, giving $28$ divisors $\\le 494$, and $36+28=64$). All $11$ 'bad' divisors are among these $36$, so the number of $n\\le2023$ with order exactly $6$ is $36-11=25$.",
       "id": "AIME|-|Number Theory|mid#1787972277472#7m4kyz"
+    },
+    {
+      "problem": "Find the number of positive integers $n$ with $1 \\le n \\le 1000$ such that $\\lfloor \\sqrt{n} \\rfloor$ divides $n$.",
+      "answer": 92,
+      "solution": "For a fixed integer $k \\ge 1$, $\\lfloor \\sqrt{n} \\rfloor = k$ exactly when $n = k^2 + r$ for $r = 0, 1, \\dots, 2k$ (since $(k+1)^2 - 1 = k^2+2k$). Since $k \\mid k^2$, the condition $k \\mid n$ becomes $k \\mid r$, and among $r = 0,1,\\dots,2k$ the multiples of $k$ are exactly $r = 0, k, 2k$, giving $3$ valid values of $n$ per complete block. For $k = 1, 2, \\dots, 30$ the full block $k^2$ to $k^2+2k$ lies within $1$ to $1000$ (since $30^2+60 = 960 \\le 1000$), contributing $30 \\times 3 = 90$ values. For $k = 31$, $n$ ranges only from $961$ to $1000$ (since $961+62=1023>1000$), so $r$ ranges from $0$ to $39$; the multiples of $31$ in that range are $r=0,31$ (since $62>39$), giving $n=961,992$, i.e. $2$ more values. Adding these gives $90+2 = 92$.",
+      "id": "AIME|-|Number Theory|mid#1788014068338#fax5zh"
     }
   ],
   "AIME|-|Number Theory|late": [
@@ -4955,6 +5504,12 @@
       "answer": 496,
       "solution": "Testing residues mod $7$ shows $n^2+n+1\\equiv 0 \\pmod 7$ exactly when $n\\equiv 2$ or $n\\equiv 4 \\pmod 7$. Writing $n=2+7t$, one finds $n^2+n+1\\equiv 7(1+5t)\\pmod{49}$, which vanishes mod $49$ iff $t\\equiv 4\\pmod 7$, giving $n\\equiv 30\\pmod{49}$; similarly for $n=4+7t$ we get $n\\equiv 18\\pmod{49}$. In $[1,2023]$ there are $289$ integers each congruent to $2$ and to $4 \\pmod 7$, and $41$ integers each congruent to $30$ and to $18 \\pmod{49}$. Removing the multiples of $49$ from each class of $7$ leaves $289-41=248$ valid values for each residue class. Adding the two classes gives $248+248=496$.",
       "id": "AIME|-|Number Theory|late#1787972644639#dgwgzl"
+    },
+    {
+      "problem": "For a positive integer $n$, let $f(n)$ denote the number of positive integers $d$ such that $d^2$ divides $n$. Find $\\sum_{n=1}^{500} f(n)$.",
+      "answer": 792,
+      "solution": "Swapping the order of summation, $\\sum_{n=1}^{500} f(n) = \\sum_{d=1}^{22} \\left\\lfloor \\frac{500}{d^2} \\right\\rfloor$, since $d^2 \\le 500$ requires $d \\le 22$. Computing each term: $500,125,55,31,20,13,10,7,6,5,4,3,2,2,2,1,1,1,1,1,1,1$ for $d=1,\\dots,22$. Summing these values gives $792$.",
+      "id": "AIME|-|Number Theory|late#1788014212673#3e3vul"
     }
   ],
   "AIME|-|Combinatorics|early": [
@@ -4999,6 +5554,12 @@
       "answer": 130,
       "solution": "The chromatic polynomial of a cycle $C_n$ with $k$ colors is $P(C_n,k) = (k-1)^n + (-1)^n(k-1)$; for $n=6, k=4$ this gives $3^6+3=732$ total proper colorings (before accounting for rotation). By Burnside's lemma we average the number of proper colorings fixed by each of the 6 rotations of the hexagon. A coloring fixed by rotation $j$ must be periodic with period $d=\\gcd(6,j)$, and such periodic colorings correspond exactly to proper colorings of a cycle $C_d$, counted by $P(C_d,4)=3^d+(-1)^d\\cdot 3$. The rotations $j=0,\\dots,5$ give $d=6,1,2,3,2,1$, so the fixed-coloring counts are $732, 0, 12, 24, 12, 0$. Summing gives $732+0+12+24+12+0=780$, and dividing by $6$ rotations gives $780/6=130$ distinct colorings.",
       "id": "AIME|-|Combinatorics|early#1787972902516#nam7dm"
+    },
+    {
+      "problem": "A sequence of length 10 is formed by choosing, for each of the 10 positions, one of the letters $A$, $B$, or $C$, such that no three consecutive letters in the sequence are all the same (that is, there is no index $i$ with the $i$-th, $(i+1)$-th, and $(i+2)$-th letters all equal). Let $N$ be the number of such sequences. Find the remainder when $N$ is divided by $1000$.",
+      "answer": 408,
+      "solution": "Let $a(n)$ be the number of valid sequences of length $n$, and split them by the length of the final run of equal letters: $R_1(n)$ ends in a run of length exactly 1, $R_2(n)$ ends in a run of length exactly 2, so $a(n)=R_1(n)+R_2(n)$. Appending a letter different from the last letter (2 choices) always creates a new run of length 1, giving $R_1(n)=2a(n-1)$. Appending the same letter as the last one is only allowed if the current run has length 1 (otherwise it would create a forbidden run of 3), giving $R_2(n)=R_1(n-1)=2a(n-2)$. Thus $a(n)=2a(n-1)+2a(n-2)$, with $a(1)=3$, $a(2)=9$. Computing: $a(3)=24, a(4)=66, a(5)=180, a(6)=492, a(7)=1344, a(8)=3672, a(9)=10032, a(10)=27408$, so $N \\bmod 1000 = 408$.",
+      "id": "AIME|-|Combinatorics|early#1788014263366#z8fc7e"
     }
   ],
   "AIME|-|Combinatorics|mid": [
@@ -5043,6 +5604,12 @@
       "answer": 140,
       "solution": "First count the linear arrangements of the multiset $\\{R,R,R,R,B,B,B,G,G\\}$ placed around the circle (labeling one position as a reference): there are $\\frac{9!}{4!3!2!}=1260$ ways. By Burnside's Lemma, the number of distinguishable circular arrangements equals the average number of these $1260$ colorings fixed by each of the $9$ rotations. A nonidentity rotation by $k$ positions fixes only colorings that are periodic with period $d=\\gcd(9,k)$, meaning the coloring consists of a block of length $d$ repeated $9/d$ times; this forces every color's total count to be divisible by $9/d$. Since $9$'s only divisors are $1,3,9$, a nontrivial rotation gives $9/d=3$ or $9/d=9$, but neither $3$ nor $9$ divides $4$ (the red count), so no nonidentity rotation fixes any valid coloring. Thus only the identity rotation contributes, giving $\\frac{1260}{9}=140$ distinguishable arrangements.",
       "id": "AIME|-|Combinatorics|mid#1787973085440#uk20n0"
+    },
+    {
+      "problem": "Ten people sit around a circular table, each labeled either a truth-teller (who always tells the truth) or a liar (who always lies). Each person announces, \"Exactly two of my neighbors are liars.\" (Each person has exactly two neighbors, the people immediately to their left and right.) Determine the number of ways to label the ten people as truth-tellers or liars so that all ten statements are consistent with their labels.",
+      "answer": 17,
+      "solution": "A truth-teller's statement forces both neighbors to be liars, so no two truth-tellers can be adjacent; a liar's statement is false, so a liar cannot have both neighbors be liars, meaning no three consecutive liars. Thus valid configurations correspond to placing $m$ truth-tellers around the labeled circle of 10 seats so that consecutive truth-tellers are separated by gaps of 2 or 3 liars-plus-truth-teller spacing; writing the gaps $d_1,\\dots,d_m\\in\\{2,3\\}$ summing to 10 forces $m=4$ (with two gaps of 3) or $m=5$ (all gaps of 2), giving labeled counts $10\\cdot\\binom{4}{2}/4=15$ and $10\\cdot\\binom{5}{0}/5=2$ respectively. Summing gives $15+2=17$.",
+      "id": "AIME|-|Combinatorics|mid#1788014442612#0cn5gf"
     }
   ],
   "AIME|-|Combinatorics|late": [
@@ -5087,6 +5654,12 @@
       "answer": 820,
       "solution": "Use the generating function $P(x) = \\prod_{k=1}^{12}(1+x^k)$, whose coefficient of $x^n$ counts subsets summing to $n$; we want the sum of coefficients with exponent $\\equiv 0 \\pmod 5$, obtained via the roots-of-unity filter $N = \\frac{1}{5}\\sum_{j=0}^{4} P(\\omega^j)$ where $\\omega = e^{2\\pi i/5}$. Since $P(1) = 2^{12} = 4096$, we need $P(\\omega^j)$ for $j=1,2,3,4$; grouping $k=1,\\dots,12$ by residue mod 5 (counts $2,3,3,2,2$ for residues $0,1,2,3,4$) gives $P(\\omega^j) = 2^2 (1+\\omega^j)^3(1+\\omega^{2j})^3(1+\\omega^{3j})^2(1+\\omega^{4j})^2$. Using $\\prod_{r=1}^4(1+\\omega^r)=1$ (from $(x^5-1)/(x-1)$ at $x=-1$), this simplifies to $P(\\omega^j) = 4(1+\\omega^j)(1+\\omega^{2j})$, which equals $-4\\omega^{5-j}$ for each $j=1,2,3,4$. Summing, $\\sum_{j=1}^4 P(\\omega^j) = -4(\\omega^4+\\omega^3+\\omega^2+\\omega) = -4(-1)=4$. Thus $N = \\frac{4096+4}{5} = \\frac{4100}{5} = 820$, which is confirmed by direct dynamic-programming computation tracking subset sums mod 5 through elements $1$ through $12$.",
       "id": "AIME|-|Combinatorics|late#1787973527213#fqm576"
+    },
+    {
+      "problem": "Let $N$ be the number of ordered quadruples of sets $(A_1, A_2, A_3, A_4)$ such that $A_1 \\subseteq A_2 \\subseteq A_3 \\subseteq A_4 \\subseteq \\{1, 2, \\ldots, 12\\}$ and $|A_1| + |A_2| + |A_3| + |A_4|$ is odd. Find the remainder when $N$ is divided by $1000$.",
+      "answer": 312,
+      "solution": "For each element $x \\in \\{1,\\ldots,12\\}$, the chain is determined by the least index $j$ with $x \\in A_j$, or by $x$ never appearing, giving $5$ independent choices per element and total chains $5^{12}$. If $x$ first appears at level $j$, it lies in $5-j$ of the four sets, so its contribution to $|A_1|+|A_2|+|A_3|+|A_4|$ is odd exactly when $j=2$ or $j=4$ (2 of the 5 options) and even when $j=1,3$ or never (3 of the 5 options). So we need, over $12$ elements each independently labeled 'odd' (weight $2$) or 'even' (weight $3$), the count where the number of 'odd' labels is odd, which equals $\\frac{(3+2)^{12}-(3-2)^{12}}{2} = \\frac{5^{12}-1}{2}$. Since $5^{12}=244140625$, we get $N = \\frac{244140624}{2} = 122070312$. The remainder when $N$ is divided by $1000$ is $312$.",
+      "id": "AIME|-|Combinatorics|late#1788014517580#hm4eth"
     }
   ],
   "AIME|-|Probability|early": [
@@ -5131,6 +5704,12 @@
       "answer": 47,
       "solution": "Let $A_i$ be the event that couple $i$ sits together. By inclusion-exclusion, the number of arrangements where none of the couples sit together is $\\sum_{k=0}^{4}(-1)^k \\binom{4}{k}2^k(8-k)!$, since choosing $k$ couples to be 'glued' gives $2^k$ internal orderings and $(8-k)!$ ways to arrange the resulting $8-k$ units. Computing each term: $k=0: 40320$, $k=1: 4\\cdot2\\cdot5040=40320$, $k=2: 6\\cdot4\\cdot720=17280$, $k=3: 4\\cdot8\\cdot120=3840$, $k=4: 1\\cdot16\\cdot24=384$. The alternating sum is $40320-40320+17280-3840+384=13824$. Dividing by $8!=40320$ gives the probability $\\frac{13824}{40320}=\\frac{12}{35}$. Since $\\gcd(12,35)=1$, we get $m+n=12+35=47$.",
       "id": "AIME|-|Probability|early#1787973732511#mh1mq2"
+    },
+    {
+      "problem": "A fair coin is flipped repeatedly, generating an infinite sequence of heads (H) and tails (T). Let $p$ be the probability that the pattern $HHH$ appears somewhere in the sequence before the pattern $HTT$ appears. Given that $p = \\frac{m}{n}$ for relatively prime positive integers $m$ and $n$, find $m+n$.",
+      "answer": 7,
+      "solution": "Track the state of the sequence by the longest suffix matching a prefix of $HHH$ or $HTT$: states are $S$ (no match), $H$, $HH$, $HT$, with absorbing outcomes $HHH$-win and $HTT$-win. From $S$: flipping $H$ goes to $H$, flipping $T$ stays at $S$, giving $p_S=p_H$. From $H$: $H\\to HH$, $T\\to HT$, so $p_H=\\frac12p_{HH}+\\frac12p_{HT}$. From $HH$: $H$ completes $HHH$ (win), $T$ leads to suffix $HT$ (since $HHT$'s longest matching suffix is $HT$), so $p_{HH}=\\frac12+\\frac12p_{HT}$. From $HT$: $T$ completes $HTT$ (loss), $H$ leads back to suffix $H$ (since $HTH$'s longest matching suffix is $H$), so $p_{HT}=\\frac12p_H$. Substituting: $p_{HH}=\\frac12+\\frac14p_H$, then $p_H=\\frac12\\left(\\frac12+\\frac14p_H\\right)+\\frac12\\left(\\frac12p_H\\right)=\\frac14+\\frac38p_H$, giving $\\frac58p_H=\\frac14$, so $p_H=\\frac25=p_S$. Thus $p=\\frac{2}{5}$, and $m+n=2+5=7$.",
+      "id": "AIME|-|Probability|early#1788014606366#jz3qbm"
     }
   ],
   "AIME|-|Probability|mid": [
@@ -5175,6 +5754,12 @@
       "answer": 111,
       "solution": "Label the chosen integers $a<b<c$; they form a triangle exactly when $a+b>c$. For a fixed largest value $c$, let $n=c-1$, so $a<b\\le n$ and we need pairs with $a+b>n+1$. The map $(a,b)\\mapsto(n+1-b,n+1-a)$ is an involution swapping pairs with sum $s$ and sum $2n+2-s$, showing the number of pairs with $a+b\\ge n+2$ equals $\\big(\\binom{n}{2}-\\lceil (n-1)/2\\rceil\\big)/2$. Summing this expression for $n=2,3,\\ldots,19$ (i.e. $c=3,\\ldots,20$) gives the total favorable triples: $0+1+2+4+6+9+12+16+20+25+30+36+42+49+56+64+72+81=525$. Since there are $\\binom{20}{3}=1140$ total triples, the probability is $\\frac{525}{1140}=\\frac{35}{76}$, and since $\\gcd(35,76)=1$, the answer is $35+76=111$.",
       "id": "AIME|-|Probability|mid#1787974056571#wj4oa6"
+    },
+    {
+      "problem": "A fair six-sided die is rolled repeatedly, and after each roll the outcomes so far are added together to form a running total $T$. Let $p_n$ denote the probability that $T$ is ever exactly equal to $n$. The probability $p_6$ can be written as $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find the remainder when $m+n$ is divided by $1000$.",
+      "answer": 463,
+      "solution": "Since the running total increases by 1 to 6 each roll, $T$ hits value $n$ if and only if some roll lands exactly on the needed remainder; this gives the recursion $p_n=\\frac{1}{6}(p_{n-1}+p_{n-2}+\\cdots+p_{n-6})$ for $n\\ge 1$, with $p_0=1$ and $p_k=0$ for $k<0$. Computing successively: $p_1=\\frac{1}{6}$, $p_2=\\frac{7}{36}$, $p_3=\\frac{49}{216}$, $p_4=\\frac{343}{1296}$, $p_5=\\frac{2401}{7776}$. One can verify inductively that for $1\\le n\\le 6$, $p_n = \\frac{7^{n-1}}{6^n}$, since each step sums six terms whose numerators telescope as powers of 7 over powers of 6. Thus $p_6=\\frac{7^5}{6^6}=\\frac{16807}{46656}$, and since $16807=7^5$ and $46656=2^6\\cdot 3^6$ share no common factors, $m=16807$, $n=46656$. Then $m+n=63463$, which leaves a remainder of $463$ when divided by $1000$.",
+      "id": "AIME|-|Probability|mid#1788014679247#yde3c3"
     }
   ],
   "AIME|-|Probability|late": [
@@ -5219,6 +5804,12 @@
       "answer": 511,
       "solution": "Let $A(n,k)$ be the number of permutations of $\\{1,\\dots,n\\}$ with exactly $k$ ascents; these satisfy the recurrence $A(n,k) = (k+1)A(n-1,k) + (n-k)A(n-1,k-1)$, with $A(1,0)=1$. Building up: $A(2,\\cdot)=1,1$; $A(3,\\cdot)=1,4,1$; $A(4,\\cdot)=1,11,11,1$; $A(5,\\cdot)=1,26,66,26,1$. Then $A(6,3) = 4A(5,3)+3A(5,2) = 4(26)+3(66) = 104+198 = 302$, and one checks the full row $1,57,302,302,57,1$ sums to $720=6!$. Thus $p = \\frac{302}{720} = \\frac{151}{360}$ after dividing by $2$, and since $151$ is prime and does not divide $360$, this is fully reduced. Therefore $m+n = 151+360 = 511$.",
       "id": "AIME|-|Probability|late#1787974285594#zawv4e"
+    },
+    {
+      "problem": "A regular octahedron has $6$ vertices, and each vertex is adjacent (connected by an edge) to exactly $4$ of the other $5$ vertices; each vertex is non-adjacent only to the single vertex directly opposite it. An ant starts at a vertex $A$ and takes $6$ steps, where on each step it moves to one of the vertices currently adjacent to it, each chosen with equal probability. The probability that the ant is back at $A$ after $6$ steps is $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m+n$.",
+      "answer": 75,
+      "solution": "Classify each vertex relative to the start $A$: state $S_0=\\{A\\}$, state $S_1$ = the $4$ vertices adjacent to $A$, and state $S_2$ = the single vertex opposite $A$. From $S_0$ the ant always moves to $S_1$. From $S_2$ the ant always moves to $S_1$ (since the opposite vertex's neighbors are exactly the 4 vertices adjacent to $A$). From a vertex in $S_1$, its four neighbors consist of $A$ (giving $S_0$), the vertex opposite $A$ (giving $S_2$), and two other vertices of $S_1$, so from $S_1$ the ant goes to $S_0,S_1,S_2$ with probabilities $\\tfrac14,\\tfrac12,\\tfrac14$. Letting $p_n=P(\\text{at }S_0\\text{ after }n\\text{ steps})$, symmetry gives $p_n = P(S_2\\text{ after }n)$ for $n\\ge1$, so $P(S_1)=1-2p_n$, and $p_{n+1}=\\tfrac14 P(S_1\\text{ at step }n)=\\tfrac14(1-2p_n)=\\tfrac14-\\tfrac12 p_n$ for $n\\ge1$, with $p_1=0$. Computing: $p_2=\\tfrac14,\\ p_3=\\tfrac18,\\ p_4=\\tfrac{3}{16},\\ p_5=\\tfrac{5}{32},\\ p_6=\\tfrac{11}{64}$. Thus the probability is $\\tfrac{11}{64}$, so $m+n=11+64=75$.",
+      "id": "AIME|-|Probability|late#1788014755703#3aapsy"
     }
   ],
   "MATHCOUNTS|Sprint|Mixed|early": [
@@ -5323,6 +5914,12 @@
       "answer": "2/3",
       "solution": "From $4x - y = 5$, solve for $y$: $y = 4x - 5$. Substitute into $2x + 3y = 13$: $2x + 3(4x-5) = 13$, which gives $2x + 12x - 15 = 13$, so $14x = 28$ and $x = 2$. Then $y = 4(2) - 5 = 3$. Thus $\\dfrac{x}{y} = \\dfrac{2}{3}$.",
       "id": "MATHCOUNTS|Sprint|Algebra|early#1787974349379#lwjb0k"
+    },
+    {
+      "problem": "The sum of three times a number $x$ and twice a number $y$ is $16$. Also, $x$ exceeds $y$ by $2$. Find the value of $x^2 - y^2$.",
+      "answer": "12",
+      "solution": "From the conditions, $3x + 2y = 16$ and $x - y = 2$, so $x = y+2$. Substituting gives $3(y+2) + 2y = 16$, so $5y + 6 = 16$, giving $y = 2$ and $x = 4$. Then $x^2 - y^2 = (x-y)(x+y) = 2 \\cdot 6 = 12$.",
+      "id": "MATHCOUNTS|Sprint|Algebra|early#1788014760713#z5m0ef"
     }
   ],
   "MATHCOUNTS|Sprint|Algebra|mid": [
@@ -5367,6 +5964,12 @@
       "answer": "217",
       "solution": "Since $(a+b)^2=a^2+2ab+b^2$, we have $49=37+2ab$, so $ab=6$. Using the identity $a^3+b^3=(a+b)^3-3ab(a+b)$, substitute to get $a^3+b^3=7^3-3(6)(7)=343-126=217$.",
       "id": "MATHCOUNTS|Sprint|Algebra|mid#1787974384385#viongd"
+    },
+    {
+      "problem": "A two-digit number has digits that sum to 11. When the digits are reversed, the resulting number is 27 more than the original number. What is the original two-digit number?",
+      "answer": "47",
+      "solution": "Let the tens digit be $a$ and the units digit be $b$, so the number is $10a+b$ and $a+b=11$. Reversing gives $10b+a$, and we know $10b+a=(10a+b)+27$, which simplifies to $9b-9a=27$, or $b-a=3$. Adding $a+b=11$ and $b-a=3$ gives $2b=14$, so $b=7$ and $a=4$. The original number is $10(4)+7=47$, and indeed $74-47=27$.",
+      "id": "MATHCOUNTS|Sprint|Algebra|mid#1788014771822#ohuovn"
     }
   ],
   "MATHCOUNTS|Sprint|Algebra|late": [
@@ -5411,6 +6014,12 @@
       "answer": "152",
       "solution": "Let the numbers be $x$ and $y$, so $x+y=8$ and $x^2+y^2=34$. Since $(x+y)^2 = x^2+2xy+y^2$, we get $64 = 34 + 2xy$, so $xy=15$. Using the identity $x^3+y^3=(x+y)(x^2-xy+y^2)$, substitute to get $x^3+y^3 = 8(34-15) = 8 \\times 19 = 152$.",
       "id": "MATHCOUNTS|Sprint|Algebra|late#1787974432220#948l9d"
+    },
+    {
+      "problem": "Real numbers $x$ and $y$ satisfy $x+y=20$ and $\\frac{1}{x}+\\frac{1}{y}=\\frac{5}{24}$. What is the value of $x^2+y^2$?",
+      "answer": "208",
+      "solution": "Combine the fractions: $\\frac{1}{x}+\\frac{1}{y}=\\frac{x+y}{xy}=\\frac{20}{xy}$. Setting this equal to $\\frac{5}{24}$ gives $\\frac{20}{xy}=\\frac{5}{24}$, so $xy=\\frac{20\\cdot 24}{5}=96$. Then use $x^2+y^2=(x+y)^2-2xy=20^2-2(96)=400-192$. This gives $x^2+y^2=208$.",
+      "id": "MATHCOUNTS|Sprint|Algebra|late#1788014778268#8adwn8"
     }
   ],
   "MATHCOUNTS|Sprint|Geometry|early": [
@@ -5455,6 +6064,12 @@
       "answer": "1/2",
       "solution": "Let the square have side length $s$. The smaller circle is inscribed in the square, so its radius is $s/2$, giving area $\\pi(s/2)^2 = \\pi s^2/4$. The square is inscribed in the larger circle, so the circle's diameter equals the square's diagonal $s\\sqrt{2}$, making its radius $s\\sqrt{2}/2$ and its area $\\pi(s\\sqrt{2}/2)^2 = \\pi s^2/2$. The ratio of the smaller area to the larger area is $(\\pi s^2/4)/(\\pi s^2/2) = 1/2$.",
       "id": "MATHCOUNTS|Sprint|Geometry|early#1787974484830#uf0i8q"
+    },
+    {
+      "problem": "In right triangle $DEF$, the right angle is at $D$, with legs $DE = 8$ and $DF = 6$. A perpendicular segment is drawn from $D$ to the hypotenuse $EF$, meeting it at point $G$. What is the length of $DG$?",
+      "answer": "4.8",
+      "solution": "First find the hypotenuse: $EF = \\sqrt{8^2+6^2} = \\sqrt{100} = 10$. The area of triangle $DEF$ can be computed two ways: using the legs, $\\text{Area} = \\frac{1}{2}(8)(6) = 24$; using the hypotenuse and altitude $DG$, $\\text{Area} = \\frac{1}{2}(EF)(DG) = \\frac{1}{2}(10)(DG)$. Setting these equal: $\\frac{1}{2}(10)(DG) = 24$, so $DG = \\frac{48}{10} = 4.8$.",
+      "id": "MATHCOUNTS|Sprint|Geometry|early#1788014793618#6w22bj"
     }
   ],
   "MATHCOUNTS|Sprint|Geometry|mid": [
@@ -5499,6 +6114,12 @@
       "answer": "54",
       "solution": "First, $AB = \\sqrt{15^2+20^2} = 25$, so the area of $\\triangle ABC$ is $\\frac{1}{2}(15)(20) = 150$. Since $CD \\perp AB$, triangle $ACD$ is similar to triangle $ABC$ (they share angle $A$ and both have a right angle), with ratio of similarity $\\frac{AC}{AB} = \\frac{15}{25} = \\frac{3}{5}$. The area ratio between similar triangles is the square of the side ratio, so $[\\triangle ACD] = \\left(\\frac{3}{5}\\right)^2 \\cdot [\\triangle ABC] = \\frac{9}{25}\\cdot 150 = 54$. Thus the area of triangle $ACD$ is $54$.",
       "id": "MATHCOUNTS|Sprint|Geometry|mid#1787974650853#5ctkp9"
+    },
+    {
+      "problem": "Rectangle $ABCD$ has $AB = 15$ and $BC = 8$. Point $E$ is the midpoint of $\\overline{BC}$, and point $F$ lies on $\\overline{CD}$ so that $CF = 3$. Segments $\\overline{AE}$ and $\\overline{BF}$ intersect at point $P$. Find the area of $\\triangle ABP$.",
+      "answer": "300/11",
+      "solution": "Place $A=(0,8)$, $B=(15,8)$, $C=(15,0)$, $D=(0,0)$, so $E=(15,4)$ (midpoint of $BC$) and $F=(12,0)$ (since $CF=3$). Line $AE$ has slope $-\\frac{4}{15}$, giving $y=8-\\frac{4}{15}x$; line $BF$ has slope $\\frac{8}{3}$, giving $y=8+\\frac{8}{3}(x-15)$. Setting these equal: $8-\\frac{4}{15}x=8+\\frac{8}{3}(x-15)$ leads to $-4x=40(x-15)$, so $x=\\frac{150}{11}$, and substituting back gives $y=\\frac{48}{11}$. Since $\\overline{AB}$ lies on $y=8$ with length $15$, the height of $\\triangle ABP$ is $8-\\frac{48}{11}=\\frac{40}{11}$. The area is $\\frac12\\cdot 15\\cdot\\frac{40}{11}=\\frac{300}{11}$.",
+      "id": "MATHCOUNTS|Sprint|Geometry|mid#1788014821108#sxsyzp"
     }
   ],
   "MATHCOUNTS|Sprint|Geometry|late": [
@@ -5543,6 +6164,12 @@
       "answer": "24",
       "solution": "Place $A=(0,0)$, $B=(12,0)$, $C=(12,12)$, $D=(0,12)$, so $M=(12,6)$. Line $AM$ has equation $y=\\frac{x}{2}$, and diagonal $BD$ has equation $x+y=12$. Substituting gives $\\frac{x}{2}+x=12$, so $x=8$ and $y=4$, meaning $P=(8,4)$. Triangle $ABP$ has base $AB=12$ along the x-axis and height equal to $P$'s $y$-coordinate, $4$. Thus the area is $\\frac{1}{2}(12)(4)=24$.",
       "id": "MATHCOUNTS|Sprint|Geometry|late#1787974813914#xe611s"
+    },
+    {
+      "problem": "In trapezoid $ABCD$, $\\overline{AB} \\parallel \\overline{CD}$, $AB = 10$, $CD = 22$, and the distance between the two parallel sides is $12$. The diagonals of the trapezoid intersect at point $E$. What is the area of triangle $ABE$?",
+      "answer": "75/4",
+      "solution": "Since $\\overline{AB} \\parallel \\overline{CD}$, triangles $ABE$ and $CDE$ are similar with ratio $AB:CD = 10:22 = 5:11$. This means the perpendicular distances from $E$ to $AB$ and to $CD$ are also in ratio $5:11$, and together they sum to the total height of $12$. So the distance from $E$ to $AB$ is $12 \\cdot \\frac{5}{5+11} = 12 \\cdot \\frac{5}{16} = \\frac{15}{4}$. The area of triangle $ABE$ is then $\\frac{1}{2} \\cdot 10 \\cdot \\frac{15}{4} = \\frac{75}{4}$.",
+      "id": "MATHCOUNTS|Sprint|Geometry|late#1788014856720#330vo3"
     }
   ],
   "MATHCOUNTS|Sprint|Number Theory|early": [
@@ -5583,6 +6210,18 @@
       "answer": "4046",
       "solution": "Since $2023 = 7 \\cdot 17^2$, any multiple must include at least $7^1\\cdot 17^2$ in its prime factorization. The divisor count of $7^1\\cdot17^2\\cdot p^1$ (for a new prime $p$) is $(1+1)(2+1)(1+1)=12$, matching the requirement. Choosing the smallest possible extra prime $p=2$ minimizes the number: $N=2\\cdot7\\cdot17^2=4046$, and no combination using only primes $7,17$ or larger primes gives a smaller value with exactly 12 divisors.",
       "id": "MATHCOUNTS|Sprint|Number Theory|mid#1787980563636#c9u08w"
+    },
+    {
+      "problem": "How many positive divisors of $2024^2$ are less than $2024$?",
+      "answer": "31",
+      "solution": "Factor $2024 = 2^3 \\cdot 11 \\cdot 23$, so $2024^2 = 2^6 \\cdot 11^2 \\cdot 23^2$. The number of positive divisors of $2024^2$ is $(6+1)(2+1)(2+1) = 63$. Since $2024^2$ is a perfect square, its divisors pair up as $d$ and $2024^2/d$ with product $2024^2$, and exactly one divisor, namely $2024$ itself, equals its own pair. The remaining $63 - 1 = 62$ divisors split evenly into pairs with one member less than $2024$ and one greater, giving $62/2 = 31$ divisors less than $2024$.",
+      "id": "MATHCOUNTS|Sprint|Number Theory|mid#1788015176697#vo1yhs"
+    },
+    {
+      "problem": "What is the smallest positive integer that is both a multiple of $2024$ and a perfect square?",
+      "answer": "1024144",
+      "solution": "Factor $2024 = 2^3 \\cdot 11 \\cdot 23$. For a multiple of $2024$ to be a perfect square, each prime's exponent must be even and at least as large as in $2024$. So we need at least $2^4$, $11^2$, and $23^2$. Thus the smallest such square is $N = 2^4 \\cdot 11^2 \\cdot 23^2 = 16 \\cdot 121 \\cdot 529$. Computing, $16 \\cdot 121 = 1936$, and $1936 \\cdot 529 = 1{,}024{,}144$. Checking, $\\sqrt{1{,}024{,}144} = 1012$, confirming it is a perfect square and a multiple of $2024$ (since $1{,}024{,}144 = 2024 \\cdot 506$).",
+      "id": "MATHCOUNTS|Sprint|Number Theory|mid#1788015217165#xv09v0"
     }
   ],
   "MATHCOUNTS|Sprint|Number Theory|late": [
@@ -5615,6 +6254,12 @@
       "answer": "400",
       "solution": "Count multiples of $3$: $\\lfloor 999/3 \\rfloor = 333$. Count multiples of $5$: $\\lfloor 999/5 \\rfloor = 199$. Count multiples of both (i.e. multiples of $15$): $\\lfloor 999/15 \\rfloor = 66$. Numbers divisible by $3$ only: $333-66=267$. Numbers divisible by $5$ only: $199-66=133$. Adding these (since we want exactly one of the two conditions) gives $267+133=400$.",
       "id": "MATHCOUNTS|Sprint|Number Theory|late#1787980826745#t1b2qx"
+    },
+    {
+      "problem": "The greatest common divisor of two positive integers is $22$ and their least common multiple is $2024$. If one of the integers is $88$, what is the other integer?",
+      "answer": "506",
+      "solution": "For any two positive integers, the product of the numbers equals the product of their GCD and LCM: $a \\cdot b = \\gcd(a,b) \\cdot \\text{lcm}(a,b)$. Here $88 \\cdot b = 22 \\cdot 2024$. So $b = \\frac{22 \\cdot 2024}{88} = \\frac{44528}{88} = 506$. Checking: $88 = 2^3 \\cdot 11$ and $506 = 2 \\cdot 11 \\cdot 23$, so $\\gcd = 2 \\cdot 11 = 22$ and $\\text{lcm} = 2^3 \\cdot 11 \\cdot 23 = 2024$, confirming the answer. Thus the other integer is $506$.",
+      "id": "MATHCOUNTS|Sprint|Number Theory|late#1788015567904#dry7ty"
     }
   ],
   "MATHCOUNTS|Sprint|Combinatorics|early": [
@@ -5659,6 +6304,12 @@
       "answer": "20",
       "solution": "First arrange the 5 identical yellow tulips in a row; this creates $5+1=6$ gaps (including the two ends) where red tulips could go. To ensure no two red tulips are adjacent, choose 3 of these 6 gaps to place one red tulip each: $\\binom{6}{3}=20$. Since the tulips of each color are identical, each choice of gaps gives a distinct arrangement, so the total is $20$.",
       "id": "MATHCOUNTS|Sprint|Combinatorics|early#1787975796289#40awa5"
+    },
+    {
+      "problem": "How many four-digit positive integers have digits that strictly increase from left to right (each digit is greater than the digit before it)?",
+      "answer": "126",
+      "solution": "Since the digits must strictly increase, no digit repeats and once a set of 4 digits is chosen, there is exactly one way to arrange them in increasing order. If $0$ were among the chosen digits, it would have to be the smallest and thus placed first, making the number start with $0$, which is not allowed. So all 4 digits must be chosen from $1$ through $9$. The number of such 4-digit numbers equals the number of ways to choose 4 digits from $\\{1,2,\\dots,9\\}$: $\\binom{9}{4} = 126$.",
+      "id": "MATHCOUNTS|Sprint|Combinatorics|early#1788015649024#fk0gdw"
     }
   ],
   "MATHCOUNTS|Sprint|Combinatorics|mid": [
@@ -5703,6 +6354,12 @@
       "answer": "240",
       "solution": "The word ANAGRAM has letters A, A, A, N, G, R, M: three identical A's and four distinct letters N, G, R, M. First arrange the four distinct letters: there are $4! = 24$ ways. These 4 letters create 5 gaps (before, between, and after them) where the A's can be inserted, and to avoid two A's being adjacent we must choose 3 of these 5 gaps: $\\binom{5}{3} = 10$ ways. Since the A's are identical, no further arrangement is needed within the chosen gaps. Multiplying gives $24 \\times 10 = 240$ total arrangements.",
       "id": "MATHCOUNTS|Sprint|Combinatorics|mid#1787975855283#r19hym"
+    },
+    {
+      "problem": "A teacher has 5 different books to distribute to 3 different students, and every student must receive at least one book. In how many ways can the teacher distribute the books?",
+      "answer": "150",
+      "solution": "First count all ways to give 5 distinct books to 3 distinct students with no restriction: each book has 3 choices, giving $3^5 = 243$ ways. Use inclusion-exclusion to remove cases where at least one student gets nothing: choosing 1 student to exclude gives $\\binom{3}{1}2^5 = 96$ ways, and choosing 2 students to exclude gives $\\binom{3}{2}1^5 = 3$ ways. By inclusion-exclusion, the number of ways where every student gets at least one book is $243 - 96 + 3 = 150$.",
+      "id": "MATHCOUNTS|Sprint|Combinatorics|mid#1788015662726#601aey"
     }
   ],
   "MATHCOUNTS|Sprint|Combinatorics|late": [
@@ -5747,6 +6404,12 @@
       "answer": "80",
       "solution": "Since the committee has 4 people and no couple can contribute both members, the 4 people must come from 4 different couples (one person each). First choose which 4 of the 5 couples will be represented: $\\binom{5}{4}=5$ ways. Then, for each of those 4 chosen couples, pick one of its 2 members: $2^4=16$ ways. Multiplying gives $5\\times16=80$ possible committees.",
       "id": "MATHCOUNTS|Sprint|Combinatorics|late#1787975904212#pvefqs"
+    },
+    {
+      "problem": "A social club has six married couples (12 people in all). A committee of 5 people is to be selected from these 12 people so that no two committee members are married to each other. How many different committees are possible?",
+      "answer": "192",
+      "solution": "Since no two committee members can be a married couple, the 5 committee members must come from 5 different couples (out of the 6 couples). First choose which 5 of the 6 couples will contribute a member: $\\binom{6}{5}=6$ ways. Then, from each of those 5 chosen couples, pick one of the 2 spouses to serve: $2^5=32$ ways. Multiplying gives $6\\times 32 = 192$ possible committees.",
+      "id": "MATHCOUNTS|Sprint|Combinatorics|late#1788015671616#cynwg4"
     }
   ],
   "MATHCOUNTS|Sprint|Probability|early": [
@@ -5807,6 +6470,12 @@
       "answer": "2/7",
       "solution": "The total number of ways to choose 3 marbles from the 9 in the bag is $\\binom{9}{3}=84$. To get one of each color, choose 1 red from 4, 1 blue from 3, and 1 green from 2, giving $4\\cdot3\\cdot2=24$ favorable outcomes. The probability is $\\frac{24}{84}$, which simplifies by dividing numerator and denominator by 12 to $\\frac{2}{7}$.",
       "id": "MATHCOUNTS|Sprint|Probability|late#1786644629289#1obnvi"
+    },
+    {
+      "problem": "A fair six-sided die is rolled twice. Given that at least one of the two rolls is a multiple of $3$, what is the probability that the product of the two rolls is even?",
+      "answer": "3/4",
+      "solution": "There are $36$ equally likely outcomes. Rolls that are NOT multiples of $3$ are $\\{1,2,4,5\\}$, so outcomes with neither roll a multiple of $3$ number $4\\times4=16$, leaving $36-16=20$ outcomes with at least one multiple of $3$ (this is our conditioning event). Within these $20$, we want to exclude cases where the product is odd, which requires both rolls odd; odd numbers are $\\{1,3,5\\}$, giving $3\\times3=9$ such pairs, but we need at least one multiple of $3$ (only $3$ qualifies among odds), and pairs of odds avoiding $3$ number $2\\times2=4$, so pairs with both odd AND at least one being $3$ total $9-4=5$. Thus outcomes with at least one multiple of $3$ and an even product are $20-5=15$. The desired probability is $15/20 = 3/4$.",
+      "id": "MATHCOUNTS|Sprint|Probability|late#1788015842495#o1wnul"
     }
   ],
   "MATHCOUNTS|Target|Mixed|early": [
@@ -5911,6 +6580,12 @@
       "answer": "7/3",
       "solution": "Since Hannah's rate is $1/t$ fences per hour and Marcus's rate is $1/(t+3)$ fences per hour, working together gives $\\frac{1}{t}+\\frac{1}{t+3}=\\frac{1}{2}$. Multiplying both sides by $2t(t+3)$ gives $2(t+3)+2t = t(t+3)$, which simplifies to $t^2 - t - 6 = 0$, or $(t-3)(t+2)=0$. Since $t>0$, $t=3$, so Hannah's rate is $1/3$ fence per hour and Marcus's rate is $1/6$ fence per hour (their combined rate $1/3+1/6=1/2$ checks out). In her first hour alone, Hannah paints $1/3$ of the fence, leaving $2/3$ of the fence remaining; working together at a combined rate of $1/2$ fence per hour, this takes $\\frac{2/3}{1/2}=\\frac{4}{3}$ hours. Adding the initial hour, the total time is $1+\\frac{4}{3}=\\frac{7}{3}$ hours.",
       "id": "MATHCOUNTS|Target|Algebra|early#1787976188168#fcnhav"
+    },
+    {
+      "problem": "A rectangular garden has a perimeter of 44 feet. If its length is increased by 3 feet and its width is decreased by 2 feet, the resulting rectangle has the same area as the original garden. What is the area of the original garden, in square feet?",
+      "answer": "120",
+      "solution": "Let the length be $l$ and width be $w$. The perimeter condition gives $l+w=22$. The area condition gives $lw=(l+3)(w-2)$. Expanding the right side: $lw = lw -2l+3w-6$, so $0=-2l+3w-6$, giving $l=\\frac{3w-6}{2}$. Substituting into $l+w=22$: $\\frac{3w-6}{2}+w=22 \\Rightarrow 3w-6+2w=44 \\Rightarrow 5w=50 \\Rightarrow w=10$, so $l=12$. The original area is $l\\cdot w = 12\\cdot 10 = 120$.",
+      "id": "MATHCOUNTS|Target|Algebra|early#1788015897147#91xeym"
     }
   ],
   "MATHCOUNTS|Target|Algebra|mid": [
@@ -5955,6 +6630,12 @@
       "answer": "9/14",
       "solution": "Square the sum: $(x+y)^2 = x^2+2xy+y^2$, so $81 = 53 + 2xy$, giving $2xy = 28$ and $xy = 14$. Since $\\frac{1}{x}+\\frac{1}{y} = \\frac{x+y}{xy}$, substitute the known values to get $\\frac{9}{14}$. (Checking: $x^2-9x+14=0$ factors as $(x-7)(x-2)=0$, so $x=7, y=2$ works since $7+2=9$ and $49+4=53$.) Thus $\\frac{1}{7}+\\frac{1}{2}=\\frac{2}{14}+\\frac{7}{14}=\\frac{9}{14}$, confirming the answer $\\frac{9}{14}$.",
       "id": "MATHCOUNTS|Target|Algebra|mid#1787976286939#uzb5tc"
+    },
+    {
+      "problem": "The equation $x^2 - kx + (k+3) = 0$ has two real roots $r$ and $s$ satisfying $r^2 + s^2 = 29$. Find the sum of all possible values of $k$.",
+      "answer": "2",
+      "solution": "By Vieta's formulas, $r+s=k$ and $rs=k+3$. Then $r^2+s^2=(r+s)^2-2rs = k^2-2(k+3)=k^2-2k-6$. Setting this equal to $29$ gives $k^2-2k-35=0$, which factors as $(k-7)(k+5)=0$, so $k=7$ or $k=-5$. Checking the discriminant $k^2-4(k+3)\\ge 0$: for $k=7$, it's $49-40=9\\ge0$; for $k=-5$, it's $25+8=33\\ge0$, so both values give real roots. The sum of all possible values of $k$ is $7+(-5)=2$.",
+      "id": "MATHCOUNTS|Target|Algebra|mid#1788015906905#fkysa9"
     }
   ],
   "MATHCOUNTS|Target|Algebra|late": [
@@ -5999,6 +6680,12 @@
       "answer": "10/21",
       "solution": "Use the identity $x^3+y^3=(x+y)^3-3xy(x+y)$. Substituting $x+y=10$ gives $370 = 1000 - 30xy$, so $xy = 21$. Then $\\frac{1}{x}+\\frac{1}{y}=\\frac{x+y}{xy}=\\frac{10}{21}$. Checking: solving $t^2-10t+21=0$ gives $t=7,3$, which are indeed positive reals satisfying both original equations, confirming the values of $x+y$ and $xy$ are consistent.",
       "id": "MATHCOUNTS|Target|Algebra|late#1787976365333#q4z2mg"
+    },
+    {
+      "problem": "The sum of the ages of three siblings, Ana, Ben, and Cara, is 17. Twice Ana's age, plus three times Ben's age, minus Cara's age, equals 12. Ana's age minus Ben's age, plus twice Cara's age, equals 16. What is the product of the three siblings' ages?",
+      "answer": "135",
+      "solution": "Let $A$, $B$, $C$ be the ages, so $A+B+C=17$, $2A+3B-C=12$, and $A-B+2C=16$. Adding the first two equations eliminates $C$: $3A+4B=29$. Substituting $C=17-A-B$ into the third equation gives $A-B+2(17-A-B)=16$, which simplifies to $A+3B=18$. Solving $3A+4B=29$ and $A+3B=18$ together (using $A=18-3B$) gives $54-9B+4B=29$, so $B=5$, then $A=3$ and $C=17-3-5=9$. Checking: $2(3)+3(5)-9=12$ and $3-5+2(9)=16$, both correct, so the product is $3\\cdot5\\cdot9=135$.",
+      "id": "MATHCOUNTS|Target|Algebra|late#1788015945272#puo2wk"
     }
   ],
   "MATHCOUNTS|Target|Geometry|early": [
@@ -6043,6 +6730,12 @@
       "answer": "82.19",
       "solution": "Each arc bounds a quarter-disk of radius $12$ centered at a corner of the square; since the radius equals the side length, each quarter-disk lies entirely inside the square and has area $\\frac{\\pi (12)^2}{4}=36\\pi$. One can check every point of the square lies within distance $12$ of $A$ or of $C$ (the farthest points, $B$ and $D$, are exactly distance $12$ from both), so the two quarter-disks together cover the whole square: their union has area $144$. By inclusion-exclusion, the lens (intersection) has area $2(36\\pi) - 144 = 72\\pi - 144$. Numerically, $72\\pi \\approx 226.1947$, so the area is $226.1947 - 144 \\approx 82.1947$. Rounded to the nearest hundredth, the area is $82.19$.",
       "id": "MATHCOUNTS|Target|Geometry|early#1787976506953#ol9rkt"
+    },
+    {
+      "problem": "Square $ABCD$ has side length $12$. A quarter-circle arc of radius $12$ centered at $A$ is drawn from $B$ to $D$, staying inside the square, and a second quarter-circle arc of radius $12$ centered at $C$ is drawn from $B$ to $D$, also staying inside the square. These two arcs enclose a lens-shaped region between them. Find the area of this lens-shaped region, rounded to the nearest tenth.",
+      "answer": "82.2",
+      "solution": "Place $A=(0,0)$, $B=(12,0)$, $C=(12,12)$, $D=(0,12)$. The circle centered at $A$ has equation $x^2+y^2=144$ and the circle centered at $C$ has equation $(x-12)^2+(y-12)^2=144$; subtracting shows both pass through exactly $B$ and $D$, so the arcs from $B$ to $D$ bound the lens. The distance between centers is $d=AC=12\\sqrt2$, and for two circles of radius $r=12$ the lens (intersection) area is $2r^2\\cos^{-1}\\left(\\frac{d}{2r}\\right)-\\frac{d}{2}\\sqrt{4r^2-d^2}$. Since $\\frac{d}{2r}=\\frac{\\sqrt2}{2}$, $\\cos^{-1}\\left(\\frac{\\sqrt2}{2}\\right)=\\frac{\\pi}{4}$, giving area $=2(144)\\left(\\frac{\\pi}{4}\\right)-\\left(6\\sqrt2\\right)\\sqrt{288}=72\\pi-144$. Numerically, $72\\pi-144\\approx226.1947-144=82.1947$, which rounds to $82.2$.",
+      "id": "MATHCOUNTS|Target|Geometry|early#1788016007593#g0d10l"
     }
   ],
   "MATHCOUNTS|Target|Geometry|mid": [
@@ -6087,6 +6780,12 @@
       "answer": "24",
       "solution": "Since $C$ lies on the semicircle with diameter $AB$, that semicircle is split into triangle $ABC$ plus two circular segments $S_1$ (cut off by chord $AC$) and $S_2$ (cut off by chord $BC$), so $S_1+S_2 = \\text{semicircle}(AB) - \\text{area}(ABC)$. Each lune equals its leg-semicircle minus the matching segment: lune on $AC$ = semicircle$(AC) - S_1$, lune on $BC$ = semicircle$(BC) - S_2$. Adding these gives total lune area $= \\text{semicircle}(AC)+\\text{semicircle}(BC) - \\text{semicircle}(AB) + \\text{area}(ABC)$. The semicircle areas are $\\frac{1}{2}\\pi(4)^2=8\\pi$, $\\frac{1}{2}\\pi(3)^2=4.5\\pi$, and $\\frac{1}{2}\\pi(5)^2=12.5\\pi$, and $8\\pi+4.5\\pi-12.5\\pi=0$ because $6^2+8^2=10^2$. So the total lune area equals the triangle's area, $\\frac{6\\cdot 8}{2}=24$.",
       "id": "MATHCOUNTS|Target|Geometry|mid#1787976704200#xb4prz"
+    },
+    {
+      "problem": "Circle $O$ has radius $8$ centimeters. A square is inscribed in circle $O$. A second, smaller circle is then inscribed in that square. Finally, a regular hexagon is inscribed in the smaller circle. What is the area of the hexagon, in square centimeters, to the nearest tenth?",
+      "answer": "83.1",
+      "solution": "Since the square is inscribed in circle $O$, its diagonal equals the diameter of $O$, so the diagonal is $16$ cm, giving side length $s = \\frac{16}{\\sqrt{2}} = 8\\sqrt{2}$. The smaller circle is inscribed in the square, so its radius is half the side length: $r = \\frac{8\\sqrt{2}}{2} = 4\\sqrt{2}$. A regular hexagon inscribed in a circle of radius $r$ can be split into 6 equilateral triangles of side $r$, so its area is $\\frac{3\\sqrt{3}}{2}r^2$. Here $r^2 = (4\\sqrt{2})^2 = 32$, so the area is $\\frac{3\\sqrt{3}}{2}(32) = 48\\sqrt{3} \\approx 83.138$. Rounded to the nearest tenth, the area is $83.1$ square centimeters.",
+      "id": "MATHCOUNTS|Target|Geometry|mid#1788016025140#5vt0e1"
     }
   ],
   "MATHCOUNTS|Target|Geometry|late": [
@@ -6131,6 +6830,12 @@
       "answer": "8.94",
       "solution": "Place $A=(0,0)$, $B=(16,0)$, $C=(16,12)$, $D=(0,12)$, so $AC=\\sqrt{16^2+12^2}=20$. In right $\\triangle ABC$ (right angle at $B$, legs $16,12$, hypotenuse $20$), the inradius is $r=\\frac{16+12-20}{2}=4$, and since the incircle sits a distance $r$ from each leg, its center is at $(16-4,\\,4)=(12,4)$. In right $\\triangle ACD$ (right angle at $D$, legs $12,16$, hypotenuse $20$), the inradius is also $r=4$, giving center $(4,\\,12-4)=(4,8)$. The distance between the centers is $\\sqrt{(12-4)^2+(4-8)^2}=\\sqrt{64+16}=\\sqrt{80}=4\\sqrt5\\approx 8.94$.",
       "id": "MATHCOUNTS|Target|Geometry|late#1787976866541#xt103a"
+    },
+    {
+      "problem": "In right triangle $ABC$, the right angle is at $C$, with $CA = 8$ and $CB = 15$. The circle inscribed in $\\triangle ABC$ is tangent to $\\overline{CB}$. Let $\\ell$ be the line that is parallel to $\\overline{CB}$, tangent to the inscribed circle, and different from line $CB$. Line $\\ell$ intersects $\\overline{CA}$ at point $D$ and $\\overline{AB}$ at point $E$. What is the area of $\\triangle ADE$, expressed as a common fraction?",
+      "answer": "15/4",
+      "solution": "Since $\\triangle ABC$ has legs $8$ and $15$, the hypotenuse is $AB=17$ (an $8$-$15$-$17$ triple). The inradius of a right triangle is $r=\\frac{CA+CB-AB}{2}=\\frac{8+15-17}{2}=3$. Placing $C$ at the origin with legs on the axes, the incircle's center is at $(3,3)$, so the two tangent lines parallel to $\\overline{CB}$ (the $x$-axis) are $y=0$ (which is $CB$) and $y=2r=6$ (which is $\\ell$). Since $D$ lies on $\\overline{CA}$ with $CD=6$, we get $DA = CA-CD = 8-6=2$, so $\\triangle ADE \\sim \\triangle ACB$ with ratio $\\frac{DA}{CA}=\\frac{2}{8}=\\frac14$. The area of $\\triangle ACB$ is $\\frac12(8)(15)=60$, so the area of $\\triangle ADE$ is $60\\left(\\frac14\\right)^2=\\frac{60}{16}=\\frac{15}{4}$.",
+      "id": "MATHCOUNTS|Target|Geometry|late#1788016062521#wg50ng"
     }
   ],
   "MATHCOUNTS|Target|Number Theory|early": [
@@ -6175,6 +6880,12 @@
       "answer": "48",
       "solution": "Since $n^2+n+41 \\equiv n^2+n \\equiv n(n+1) \\pmod{41}$, we need $41 \\mid n(n+1)$. Because $41$ is prime, this means $41 \\mid n$ or $41 \\mid (n+1)$. Multiples of $41$ in $[1,1000]$: since $41 \\cdot 24 = 984 \\le 1000 < 41\\cdot 25$, there are $24$ such $n$. Values with $n\\equiv 40 \\pmod{41}$ (i.e. $n+1$ a multiple of $41$) in $[1,1000]$ are $n=40,81,\\dots,983$, giving another $24$ values, none overlapping the first set. So the total count is $24+24=48$.",
       "id": "MATHCOUNTS|Target|Number Theory|early#1787977127232#qffu2o"
+    },
+    {
+      "problem": "A positive integer $n$ is a multiple of both $12$ and $18$, and $n$ has exactly $15$ positive divisors. What is the smallest possible value of $n$?",
+      "answer": "144",
+      "solution": "Since $n$ is a multiple of both $12=2^2\\cdot3$ and $18=2\\cdot3^2$, $n$ must be a multiple of $\\text{lcm}(12,18)=36=2^2\\cdot3^2$, so in the prime factorization of $n$ the exponent of $2$ is at least $2$ and the exponent of $3$ is at least $2$. If $n=2^a3^b\\cdot(\\text{other primes})$, the number of divisors is $(a+1)(b+1)\\cdots=15$. Since $a+1\\ge3$ and $b+1\\ge3$, the only way to write $15$ as a product of factors each at least $3$ is $15=3\\times5$, so $(a,b)=(2,4)$ or $(4,2)$, with no other primes allowed. This gives $n=2^2\\cdot3^4=324$ or $n=2^4\\cdot3^2=144$, and the smaller value, $144$, is divisible by $36$ and has $(4+1)(2+1)=15$ divisors. Thus the smallest possible value of $n$ is $144$.",
+      "id": "MATHCOUNTS|Target|Number Theory|early#1788016136251#nginje"
     }
   ],
   "MATHCOUNTS|Target|Number Theory|mid": [
@@ -6219,6 +6930,12 @@
       "answer": "4",
       "solution": "Since $\\gcd(a,b)\\cdot\\text{lcm}(a,b)=ab$, write $a=12x$, $b=12y$ with $\\gcd(x,y)=1$. Then $\\text{lcm}(a,b)=12xy=2016$, so $xy=168=2^3\\cdot3\\cdot7$. Since $\\gcd(x,y)=1$, each prime power ($2^3$, $3$, $7$) must go entirely to $x$ or entirely to $y$, giving $2^3=8$ ordered choices, or $4$ unordered pairs $\\{x,y\\}$ (none equal since $168$ isn't a perfect square): $\\{1,168\\},\\{3,56\\},\\{8,21\\},\\{7,24\\}$. Each gives a valid pair $(a,b)=(12x,12y)$ with $\\gcd=12$: $(12,2016),(36,672),(96,252),(84,288)$. Thus there are $4$ such pairs.",
       "id": "MATHCOUNTS|Target|Number Theory|mid#1787977345802#hr3xum"
+    },
+    {
+      "problem": "The positive integer $N=2^a\\cdot3^b\\cdot5^c$ has exactly $42$ positive divisors and is a multiple of $60$. If $N$ is as small as possible, find $a+b+c$.",
+      "answer": "9",
+      "solution": "Since $N$ is a multiple of $60=2^2\\cdot3\\cdot5$, we need $a\\ge2$, $b\\ge1$, $c\\ge1$. The divisor count is $(a+1)(b+1)(c+1)=42=2\\cdot3\\cdot7$, and since each factor must be at least $2$ (with $a+1\\ge3$), the only way to write $42$ as a product of three factors each $\\ge2$ is $2\\cdot3\\cdot7$, giving exponent values $\\{1,2,6\\}$ for $\\{a,b,c\\}$ (with $a\\in\\{2,6\\}$). To minimize $N$, assign the largest exponent to the smallest prime: testing all valid assignments, $a=6,b=2,c=1$ gives $N=2^6\\cdot3^2\\cdot5=2880$, the smallest among all options (others give $4800$, $14580$, $187500$). Check: $(6+1)(2+1)(1+1)=42$ divisors and $2880/60=48$, so it is a valid multiple of $60$. Thus $a+b+c=6+2+1=9$.",
+      "id": "MATHCOUNTS|Target|Number Theory|mid#1788016227419#qv02w6"
     }
   ],
   "MATHCOUNTS|Target|Number Theory|late": [
@@ -6263,6 +6980,12 @@
       "answer": "426",
       "solution": "Write $a = 6m$ and $b = 6n$ where $\\gcd(m,n) = 1$. Since $\\gcd(a,b)\\cdot\\text{lcm}(a,b) = ab$, we get $6\\cdot 420 = 6m\\cdot 6n$, so $mn = 420/6 = 70$. Because $70 = 2\\cdot5\\cdot7$ is squarefree, every way of splitting its prime factors between $m$ and $n$ automatically gives $\\gcd(m,n)=1$, so the coprime factor pairs of $70$ are $(1,70), (2,35), (5,14), (7,10)$. To maximize $a+b = 6(m+n)$, choose the pair with the largest sum, $(1,70)$, giving $m+n = 71$. Then $a+b = 6\\cdot 71 = 426$, achieved by $a=6, b=420$.",
       "id": "MATHCOUNTS|Target|Number Theory|late#1787977566723#4knlt0"
+    },
+    {
+      "problem": "Find the sum of all positive integers $n$ less than $1000$ such that $n^2 - n$ is divisible by $1000$.",
+      "answer": "1002",
+      "solution": "We need $n(n-1)\\equiv 0 \\pmod{1000}$, and since $1000 = 8 \\cdot 125$ with $\\gcd(8,125)=1$, this requires $n(n-1)\\equiv 0 \\pmod 8$ and $n(n-1)\\equiv 0 \\pmod{125}$ simultaneously. Since $n$ and $n-1$ are coprime, each prime-power factor must divide one of the two consecutive numbers entirely: $n\\equiv 0$ or $1 \\pmod 8$, and $n\\equiv 0$ or $1 \\pmod{125}$. Combining via the Chinese Remainder Theorem gives four residues mod $1000$: $n\\equiv 0, 1, 376, 625$ (solving $n\\equiv 0\\pmod8,\\ n\\equiv1\\pmod{125}$ gives $376$, and $n\\equiv1\\pmod8,\\ n\\equiv0\\pmod{125}$ gives $625$). Excluding $n=0$ since $n$ must be a positive integer less than $1000$, the valid values are $n=1, 376, 625$. Their sum is $1+376+625 = 1002$.",
+      "id": "MATHCOUNTS|Target|Number Theory|late#1788016325315#1k4fng"
     }
   ],
   "MATHCOUNTS|Target|Combinatorics|early": [
@@ -6307,6 +7030,12 @@
       "answer": "1263360",
       "solution": "Use inclusion-exclusion on the 5 couples. Let $A_i$ be the event that couple $i$ sits together. If exactly $k$ specified couples are forced to sit together, glue each of those $k$ couples into a single block (with $2^k$ ways to order the two people inside the blocks), giving $10-k$ total units to arrange in $(10-k)!$ ways. By inclusion-exclusion, the number of valid seatings is $$N=\\sum_{k=0}^{5}(-1)^k\\binom{5}{k}2^k(10-k)!.$$ Computing each term: $k=0: 3628800$, $k=1: -3628800$, $k=2: 1612800$, $k=3: -403200$, $k=4: 57600$, $k=5: -3840$. Adding these gives $N = 3628800-3628800+1612800-403200+57600-3840 = 1263360$. So there are $1263360$ valid seatings.",
       "id": "MATHCOUNTS|Target|Combinatorics|early#1787977665752#07ayq9"
+    },
+    {
+      "problem": "Six distinct books, labeled $1$ through $6$, are to be arranged in a row on a shelf. In how many ways can this be done so that book $3$ is at one end of the shelf (either end) and books $1$ and $2$ are not adjacent to each other?",
+      "answer": "144",
+      "solution": "First place book $3$ at an end: there are $2$ choices (left or right end), and the remaining $5$ books can fill the other $5$ spots in $5! = 120$ ways, giving $2 \\times 120 = 240$ total arrangements with book $3$ at an end. Next, count how many of these have books $1$ and $2$ adjacent: with book $3$ fixed at an end, treat books $1$ and $2$ as a single block among the $4$ other items (the block plus $4,5,6$), giving $4!$ orderings, times $2$ for the internal order of $1,2$, times $2$ for which end book $3$ occupies: $4! \\times 2 \\times 2 = 96$. Subtracting, the number of valid arrangements is $240 - 96 = 144$.",
+      "id": "MATHCOUNTS|Target|Combinatorics|early#1788016338991#hg554p"
     }
   ],
   "MATHCOUNTS|Target|Combinatorics|mid": [
@@ -6351,6 +7080,12 @@
       "answer": "282",
       "solution": "The total number of paths from $(0,0)$ to $(7,5)$ is $\\binom{12}{5}=792$. Paths through $(3,2)$: $\\binom{5}{2}\\binom{7}{3}=10\\cdot35=350$. Paths through $(4,4)$: $\\binom{8}{4}\\binom{4}{1}=70\\cdot4=280$. Paths through both points (via $(0,0)\\to(3,2)\\to(4,4)\\to(7,5)$): $\\binom{5}{2}\\binom{3}{1}\\binom{4}{1}=10\\cdot3\\cdot4=120$. By inclusion-exclusion, paths through at least one bad point: $350+280-120=510$, so valid paths $=792-510=282$.",
       "id": "MATHCOUNTS|Target|Combinatorics|mid#1787977760521#p4ddso"
+    },
+    {
+      "problem": "In how many distinct ways can the letters of the word MATHCOUNTS be arranged in a row so that no two of the vowels A, O, U are adjacent? (The word has 10 letters, with T appearing twice and all other letters distinct.)",
+      "answer": "846720",
+      "solution": "First arrange the 7 consonants M, T, H, C, N, T, S, where the T's are identical: there are $\\dfrac{7!}{2!}=2520$ distinct arrangements. This creates 8 gaps (including the two ends) around the consonants where vowels can be inserted, one gap before, one after, and one between each pair of consonants. We must place the 3 distinct vowels A, O, U into 3 of these 8 gaps, at most one per gap, and order matters: this can be done in $8\\times7\\times6=336$ ways. Multiplying the independent choices gives $2520\\times336=846720$ total arrangements with no two vowels adjacent.",
+      "id": "MATHCOUNTS|Target|Combinatorics|mid#1788016356438#g1c1b5"
     }
   ],
   "MATHCOUNTS|Target|Combinatorics|late": [
@@ -6395,6 +7130,12 @@
       "answer": "27",
       "solution": "Let $a,b,c,d\\ge 1$ be the amounts given to Alice, Bob, Carol, Dave with $a+b+c+d=10$, $a\\in\\{1,2,3\\}$, and $b$ a positive even number. For fixed $a$ and $b$, the number of positive integer solutions to $c+d=10-a-b=N$ is $N-1$ (valid only when $N\\ge 2$). Checking $a=1$: $b=2,4,6$ give $N=7,5,3$, contributing $6+4+2=12$. For $a=2$: $b=2,4,6$ give $N=6,4,2$, contributing $5+3+1=9$. For $a=3$: $b=2,4$ give $N=5,3$, contributing $4+2=6$ (b=6 makes $N=1$, invalid). Adding all cases: $12+9+6=27$.",
       "id": "MATHCOUNTS|Target|Combinatorics|late#1787977863715#wp4t7w"
+    },
+    {
+      "problem": "Eight students, including best friends Alice and Bob and rival classmates Carol and Dave, are to be seated at a round table for a strategy game. Seatings that differ only by a rotation are considered the same, but a seating and its mirror image are considered different. In how many ways can the eight students be seated so that Alice and Bob sit next to each other, but Carol and Dave do not sit next to each other?",
+      "answer": "960",
+      "solution": "Fix rotations as identical, so circular arrangements of $n$ distinct people number $(n-1)!$. Glue Alice and Bob into one block: this leaves $7$ units to arrange in a circle, giving $(7-1)! = 720$ arrangements, and multiply by $2$ for the two internal orders of Alice/Bob, giving $1440$ seatings with Alice and Bob together. Now count those seatings where Carol and Dave are ALSO together: glue Carol and Dave into a second block, leaving $6$ units in a circle, giving $(6-1)! = 120$ arrangements, times $2\\times2=4$ for the internal orders of both blocks, giving $480$ seatings with both pairs together. Subtracting, the seatings with Alice-Bob together but Carol-Dave apart number $1440 - 480 = 960$.",
+      "id": "MATHCOUNTS|Target|Combinatorics|late#1788016368011#d7j9d9"
     }
   ],
   "MATHCOUNTS|Target|Probability|early": [
@@ -6439,6 +7180,12 @@
       "answer": "28/103",
       "solution": "First find $P(\\text{both red}\\mid A)=\\dfrac{\\binom{4}{2}}{\\binom{10}{2}}=\\dfrac{6}{45}=\\dfrac{2}{15}$ and $P(\\text{both red}\\mid B)=\\dfrac{\\binom{5}{2}}{\\binom{8}{2}}=\\dfrac{10}{28}=\\dfrac{5}{14}$. Since each bag is chosen with probability $\\dfrac12$, the total probability of drawing two red marbles is $P(\\text{red,red})=\\dfrac12\\left(\\dfrac{2}{15}+\\dfrac{5}{14}\\right)=\\dfrac12\\cdot\\dfrac{103}{210}=\\dfrac{103}{420}$. By Bayes' theorem, $P(A\\mid \\text{red,red})=\\dfrac{\\frac12\\cdot\\frac{2}{15}}{\\frac{103}{420}}=\\dfrac{\\frac{1}{15}}{\\frac{103}{420}}=\\dfrac{420}{15\\cdot 103}=\\dfrac{28}{103}$. Since $103$ is prime and does not divide $28$, this fraction is already in simplest form.",
       "id": "MATHCOUNTS|Target|Probability|early#1787977953094#kfbhe5"
+    },
+    {
+      "problem": "A fair six-sided die is rolled three times, and the results are recorded in the order rolled. What is the probability that the sequence of three results is non-decreasing (that is, each roll is greater than or equal to the roll before it)? Express your answer as a common fraction.",
+      "answer": "7/27",
+      "solution": "There are $6^3 = 216$ equally likely ordered outcomes for the three rolls. A non-decreasing sequence $a_1 \\le a_2 \\le a_3$ with each value from $1$ to $6$ corresponds exactly to choosing a multiset of size 3 from 6 possible values, since once the multiset of values is chosen there is exactly one way to arrange them in non-decreasing order. The number of such multisets is $\\binom{6+3-1}{3} = \\binom{8}{3} = 56$. So the probability is $\\frac{56}{216} = \\frac{7}{27}$.",
+      "id": "MATHCOUNTS|Target|Probability|early#1788016387057#g9j25n"
     }
   ],
   "MATHCOUNTS|Target|Probability|mid": [
@@ -6483,6 +7230,12 @@
       "answer": "11/45",
       "solution": "There are $\\binom{10}{2}=45$ total pairs. For the sum to be even, both balls must be even or both must be odd. The evens are $\\{2,4,6,8,10\\}$, giving $\\binom{5}{2}=10$ pairs, and among these only pairs containing $6$ (the only multiple of 3) have a product divisible by 3 — that's $4$ pairs ($(6,2),(6,4),(6,8),(6,10)$). The odds are $\\{1,3,5,7,9\\}$, giving $\\binom{5}{2}=10$ pairs; the multiples of 3 here are $3$ and $9$, so pairs with no multiple of 3 come only from $\\{1,5,7\\}$, giving $\\binom{3}{2}=3$ pairs, leaving $10-3=7$ favorable pairs. In total, favorable outcomes are $4+7=11$ out of $45$, so the probability is $\\frac{11}{45}$.",
       "id": "MATHCOUNTS|Target|Probability|mid#1787978045763#puibd0"
+    },
+    {
+      "problem": "A drawer contains 5 pairs of socks, each pair a different color (10 socks total, and no two socks of different colors look alike). Mia reaches into the drawer without looking and pulls out 4 socks at random. What is the probability that at least two of the socks she pulls out form a matching pair?",
+      "answer": "13/21",
+      "solution": "The total number of ways to choose 4 socks from 10 is $\\binom{10}{4}=210$. To count outcomes with no matching pair, Mia must pick 4 different colors out of the 5 available colors, which can be done in $\\binom{5}{4}=5$ ways, and then for each of those 4 colors choose one of its 2 socks, giving $2^4=16$ ways. So the number of no-pair outcomes is $5\\times16=80$, giving $P(\\text{no pair})=\\frac{80}{210}=\\frac{8}{21}$. The probability of at least one matching pair is the complement: $1-\\frac{8}{21}=\\frac{13}{21}$.",
+      "id": "MATHCOUNTS|Target|Probability|mid#1788016401090#nzasm3"
     }
   ],
   "MATHCOUNTS|Target|Probability|late": [
@@ -6527,6 +7280,12 @@
       "answer": "19/32",
       "solution": "Let $a_n$ be the number of length-$n$ coin-flip sequences that contain NO two consecutive heads. Considering the last flip: if it's T, the first $n-1$ flips can be any valid sequence ($a_{n-1}$ ways); if it's H, the flip before it must be T, and the first $n-2$ flips can be any valid sequence ($a_{n-2}$ ways). This gives $a_n=a_{n-1}+a_{n-2}$, with $a_1=2$ (H,T) and $a_2=3$ (TT,TH,HT). So $a_3=5$, $a_4=8$, $a_5=13$. Since there are $2^5=32$ total equally likely sequences of 5 flips, the probability of NO consecutive heads is $13/32$, so the probability of at least one pair of consecutive heads is $1-\\frac{13}{32}=\\frac{19}{32}$.",
       "id": "MATHCOUNTS|Target|Probability|late#1787978107131#16v9gh"
+    },
+    {
+      "problem": "In a game, Mia flips a fair coin. If it lands heads, she wins the game immediately. If it lands tails, she then rolls a fair six-sided die. If the die shows a $1$, she starts the game over from the coin flip. If the die shows any number other than $1$, she loses the game immediately. What is the probability that Mia eventually wins the game? Express your answer as a common fraction.",
+      "answer": "6/11",
+      "solution": "Let $p$ be the probability Mia eventually wins. In one round, she wins outright with probability $\\frac{1}{2}$ (heads). Otherwise (tails, probability $\\frac{1}{2}$), she rolls the die: with probability $\\frac{1}{6}$ she gets a $1$ and restarts, facing the same probability $p$ of eventually winning, and with probability $\\frac{5}{6}$ she loses. This gives the equation $p = \\frac{1}{2} + \\frac{1}{2}\\cdot\\frac{1}{6}\\cdot p$, i.e. $p = \\frac{1}{2} + \\frac{p}{12}$. Multiplying both sides by $12$: $12p = 6 + p$, so $11p = 6$, giving $p = \\frac{6}{11}$.",
+      "id": "MATHCOUNTS|Target|Probability|late#1788016428528#1bf4h7"
     }
   ]
 }
