@@ -14,12 +14,22 @@
   ul { padding-left: 22px; }
   li { margin-bottom: 6px; }
   a { color: #9A7B1B; }
+  .topbar { display: flex; align-items: center; justify-content: space-between; max-width: 720px; margin: 0 auto; padding: 18px 20px 0; }
+  .brand { display: flex; align-items: center; gap: 8px; text-decoration: none; color: #17264A; }
+  .mark { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 6px; background: #17264A; color: #FBFAF6; font-style: italic; }
+  .name { font-weight: 600; font-size: 18px; }
+  .links a { margin-left: 18px; font-size: 14px; text-decoration: none; }
+  .links a:hover { text-decoration: underline; }
   table { border-collapse: collapse; width: 100%; font-size: 15px; }
   th, td { border: 1px solid #DFE6F0; padding: 8px 10px; text-align: left; vertical-align: top; }
   th { background: #F1EEE3; }
 </style>
 </head>
 <body>
+<nav class="topbar">
+  <a class="brand" href="https://lemmamath.net/"><span class="mark">ℓ</span><span class="name">Lemma</span></a>
+  <span class="links"><a href="https://lemmamath.net/">Home</a><a href="https://lemmamath.net/train">Try the trainer</a></span>
+</nav>
 <main>
 <h1>Lemma Privacy Policy</h1>
 <p class="meta">Last updated: October 21, 2026</p>
@@ -97,6 +107,7 @@
 
 <h2>Contact</h2>
 <p>Justin Puno, <a href="mailto:justintpuno@gmail.com">justintpuno@gmail.com</a></p>
+<p style="margin-top:40px;"><a href="https://lemmamath.net/">← Back to Lemma</a></p>
 </main>
 </body>
 </html>
