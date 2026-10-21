@@ -54,7 +54,7 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'POST only' });
   }
-  const { level, topic, band, recent, round, seenIds, clientId } = req.body || {};
+  const { level, topic, band, recent, round, seenIds, clientId, src } = req.body || {};
   if (!LEVELS.has(level) || !TOPICS.has(topic) || (band !== 'mixed' && !BANDS.has(band))) {
     return res.status(400).json({ error: 'Invalid parameters' });
   }
@@ -66,6 +66,7 @@ export default async function handler(req, res) {
     : [];
   const safeSeenIds = Array.isArray(seenIds) ? seenIds.slice(-500) : [];
   const safeClientId = typeof clientId === 'string' ? clientId.slice(0, 64) : null;
+  const safeSrc = (typeof src === 'string' && /^[a-z0-9_-]{1,40}$/.test(src)) ? src : null;
 
   // 1) Try the pre-generated bank first — zero marginal cost, zero live spend.
   //    "Mixed" has no bank entries of its own; instead it draws from the
@@ -83,7 +84,7 @@ export default async function handler(req, res) {
     .filter(p => !safeSeenIds.includes(p.id));
   if (candidates.length > 0) {
     const picked = candidates[Math.floor(Math.random() * candidates.length)];
-    await logRequest({ client_id: safeClientId, level, topic, band, source: 'bank' });
+    await logRequest({ client_id: safeClientId, src: safeSrc, level, topic, band, source: 'bank' });
     return res.status(200).json({ ...picked, source: 'bank' });
   }
 
@@ -99,7 +100,7 @@ export default async function handler(req, res) {
   const liveBand = band === 'mixed' ? [...BANDS][Math.floor(Math.random() * BANDS.size)] : band;
   try {
     const { problem } = await generateProblem({ level, topic, band: liveBand, round, recent: safeRecent, apiKey });
-    await logRequest({ client_id: safeClientId, level, topic, band, source: 'live' });
+    await logRequest({ client_id: safeClientId, src: safeSrc, level, topic, band, source: 'live' });
     return res.status(200).json({ ...problem, source: 'live' });
   } catch (e) {
     return res.status(502).json({ error: e.message });

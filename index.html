@@ -983,6 +983,18 @@
     }
   }
   // ---------- API (server-side proxy) ----------
+  function getSrc() {
+    // First-touch referral tag from ?src= in the link (letters, numbers, - and _ only).
+    try {
+      let s = localStorage.getItem('lemma_src');
+      const q = new URLSearchParams(window.location.search).get('src');
+      if (!s && q) {
+        s = q.toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 40);
+        if (s) localStorage.setItem('lemma_src', s);
+      }
+      return s || null;
+    } catch (e) { return null; }
+  }
   function getClientId() {
     try {
       let id = localStorage.getItem('lemma_cid');
@@ -1004,7 +1016,8 @@
         recent: recent,
         round: level === 'MATHCOUNTS' ? round : null,
         seenIds: seenIds.slice(-200),
-        clientId: getClientId()
+        clientId: getClientId(),
+        src: getSrc()
       })
     });
     const data = await resp.json();
