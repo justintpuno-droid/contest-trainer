@@ -1188,6 +1188,17 @@
     if (recent.length > 6) recent.shift();
     updateStats();
     saveAttempt(correct);
+    try {
+      const cat = tpResolvedCategory();
+      fetch('/api/answer', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, keepalive: true,
+        body: JSON.stringify({
+          clientId: getClientId(), src: getSrc(),
+          level: problemLevel || level, topic: cat.topic, band: cat.band,
+          problemId: (current && current.id) || null, correct: correct
+        })
+      }).catch(function () {});
+    } catch (e) {}
     renderGuestNote();
     const v = $('verdict');
     const time = $('timer').textContent;
