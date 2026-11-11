@@ -476,6 +476,9 @@
     margin-bottom: 10px;
   }
   .solution .s-text { font-size: 16px; line-height: 1.7; }
+  .solution .s-text p { margin: 0 0 .85em; }
+  .solution .s-text p:last-child { margin-bottom: 0; }
+  .solution .s-text p.final { font-weight: 600; padding-top: .35em; border-top: 1px solid rgba(0,0,0,.12); }
   .after { display: none; margin-top: 20px; gap: 12px; }
   .after.show { display: flex; }
   .loading {
@@ -714,6 +717,7 @@
       <div class="after" id="after">
         <button class="go" id="nextBtn">Next Problem →</button>
         <button class="submit" id="revealBtn" style="display:none;">Show Solution</button>
+        <button class="submit" id="likeBtn" style="display:none;" type="button"></button>
       </div>
     </div>
   </div>
@@ -1209,6 +1213,60 @@
     const correct = target !== null && answersMatch(guess, target);
     finish(correct, 'Answer: ' + current.answer);
   }
+  // Splits a solution into one short paragraph per sentence so it is easy to
+  // scan. Sentence ends are only recognised OUTSIDE $...$ math, so decimals and
+  // expressions are never cut. Falls back to the raw text if anything is odd.
+  function splitSolution(text) {
+    const out = [];
+    let buf = '', inMath = false;
+    for (let i = 0; i < text.length; i++) {
+      const ch = text[i];
+      buf += ch;
+      if (ch === '$') { inMath = !inMath; continue; }
+      if (!inMath && (ch === '.' || ch === '?' || ch === '!')) {
+        const rest = text.slice(i + 1);
+        const m = rest.match(/^\s+(\S)/);
+        const abbrev = /(e\.g\.|i\.e\.|vs\.|mr\.|mrs\.|dr\.)$/.test(buf.toLowerCase());
+        if (m && /[A-Z$(\\]/.test(m[1]) && !abbrev) { out.push(buf.trim()); buf = ''; }
+      }
+    }
+    if (buf.trim()) out.push(buf.trim());
+    return out;
+  }
+  function renderSolution(text) {
+    const box = $('sText');
+    box.textContent = '';
+    const parts = splitSolution(String(text));
+    if (parts.length < 2) { box.textContent = text; return; }
+    parts.forEach((t, i) => {
+      const p = document.createElement('p');
+      if (i === parts.length - 1) p.className = 'final';
+      p.textContent = t;
+      box.appendChild(p);
+    });
+  }
+  // "More like this": only offered when it would change something, i.e. the
+  // dropdowns are on Mixed (topic or difficulty) but this problem has a real
+  // topic and band. Pressing it pins the dropdowns to that topic and band.
+  function updateLikeBtn() {
+    const btn = $('likeBtn');
+    const cat = tpResolvedCategory();
+    const topicNow = $('topic').value, bandNow = $('diff').value;
+    const bands = { early: 'Early', mid: 'Mid', late: 'Late' };
+    const changes = cat.topic !== 'Mixed' && bands[cat.band] && (topicNow !== cat.topic || bandNow !== cat.band);
+    if (!changes) { btn.style.display = 'none'; return; }
+    btn.textContent = 'More like this (' + cat.topic + ' · ' + bands[cat.band] + ')';
+    btn.dataset.topic = cat.topic;
+    btn.dataset.band = cat.band;
+    btn.style.display = '';
+  }
+  $('likeBtn').addEventListener('click', () => {
+    const t = $('likeBtn').dataset.topic, b = $('likeBtn').dataset.band;
+    if (!t || !b) return;
+    $('topic').value = t;
+    $('diff').value = b;
+    newProblem();
+  });
   function finish(correct, answerLabel) {
     $('skipRow').style.display = 'none';
     $('confirmRow').style.display = 'none';
@@ -1234,7 +1292,8 @@
     const time = $('timer').textContent;
     v.textContent = (correct ? '✓ Correct — ' : '✗ Not quite — ') + answerLabel + '  ·  ' + time;
     v.className = 'verdict show ' + (correct ? 'ok' : 'no');
-    $('sText').textContent = current.solution || '';
+    renderSolution(current.solution || '');
+    updateLikeBtn();
     if (correct) {
       $('revealBtn').style.display = '';
       $('revealBtn').onclick = () => {
