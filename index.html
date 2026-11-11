@@ -444,6 +444,10 @@
     cursor: pointer;
   }
   .submit:disabled { opacity: .5; cursor: default; }
+  .confirm-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 18px; }
+  .skip-row { margin-top: 14px; }
+  .skip-btn { background: none; border: none; padding: 4px 0; font: inherit; font-size: 14px; color: var(--ink); opacity: .6; cursor: pointer; text-decoration: underline; }
+  .skip-btn:hover { opacity: 1; }
   .verdict {
     margin-top: 22px;
     font-family: var(--mono);
@@ -681,6 +685,10 @@
       </div>
       <div class="p-text" id="pText"></div>
       <div class="bubbles" id="bubbles"></div>
+      <div class="confirm-row" id="confirmRow" style="display:none;">
+        <button class="submit" id="confirmBtn" disabled>Submit answer</button>
+        <span class="aime-note" id="confirmNote">Pick a choice, then submit. You can change it before you submit.</span>
+      </div>
       <div class="aime-entry" id="aimeEntry" style="display:none;">
         <div class="digits">
           <input inputmode="numeric" maxlength="1" id="d0" aria-label="hundreds digit">
@@ -694,6 +702,9 @@
         <input type="text" class="mc-input" id="mcAnswer" inputmode="text" placeholder="e.g. 3/7 or 12.5" aria-label="answer">
         <button class="submit" id="mcSubmit">Submit</button>
         <div class="aime-note" id="mcNote">Integer, decimal, or reduced fraction (e.g. 3/7). No units or mixed numbers.</div>
+      </div>
+      <div class="skip-row" id="skipRow">
+        <button class="skip-btn" id="skipBtn" type="button">Skip this problem →</button>
       </div>
       <div class="verdict" id="verdict"></div>
       <div class="solution" id="solution">
@@ -1051,6 +1062,10 @@
     $('verdict').className = 'verdict';
     $('solution').className = 'solution';
     $('after').className = 'after';
+    $('skipRow').style.display = '';
+    selectedLetter = null;
+    $('confirmRow').style.display = 'none';
+    $('confirmBtn').disabled = true;
     $('pTag').innerHTML = '<b>' + level + (level === 'MATHCOUNTS' ? ' · ' + round : '') + '</b> &nbsp;·&nbsp; ' + $('topic').value + ' &nbsp;·&nbsp; ' + $('diff').selectedOptions[0].text;
     $('pText').textContent = current.problem;
     const bubbles = $('bubbles');
@@ -1074,6 +1089,7 @@
       $('aimeEntry').style.display = 'none';
       $('mcEntry').style.display = 'none';
       bubbles.style.display = 'flex';
+      $('confirmRow').style.display = 'flex';
       for (const letter of ['A','B','C','D','E']) {
         const btn = document.createElement('button');
         btn.className = 'bubble';
@@ -1085,7 +1101,7 @@
         val = val.replace(/\$/g, ''); // strip any existing $ the model may have added, avoid double-wrapping
         val = '$' + val + '$';
         btn.innerHTML = '<span class="dot">' + letter + '</span><span class="val">' + escapeHtml(val) + '</span>';
-        btn.addEventListener('click', () => pick(letter, btn));
+        btn.addEventListener('click', () => selectChoice(letter, btn));
         bubbles.appendChild(btn);
       }
     }
@@ -1097,10 +1113,22 @@
   function escapeHtml(s) {
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   }
+  let selectedLetter = null;
+  function selectChoice(letter, btn) {
+    if (answered) return;
+    selectedLetter = letter;
+    document.querySelectorAll('.bubble').forEach(b => b.classList.toggle('picked', b === btn));
+    $('confirmBtn').disabled = false;
+  }
+  $('confirmBtn').addEventListener('click', () => {
+    if (answered || !selectedLetter) return;
+    pick(selectedLetter, document.querySelector('.bubble.picked'));
+  });
   function pick(letter, btn) {
     if (answered) return;
     answered = true;
     clearInterval(timerInt);
+    $('confirmBtn').disabled = true;
     btn.classList.add('picked');
     const correct = letter === current.answer;
     document.querySelectorAll('.bubble').forEach(b => {
@@ -1182,6 +1210,8 @@
     finish(correct, 'Answer: ' + current.answer);
   }
   function finish(correct, answerLabel) {
+    $('skipRow').style.display = 'none';
+    $('confirmRow').style.display = 'none';
     stats.total++;
     if (correct) { stats.correct++; stats.streak++; } else { stats.streak = 0; }
     recent.push(correct ? 'correct' : 'wrong');
@@ -1470,6 +1500,13 @@
   $('progressClose').addEventListener('click', () => { $('progressModal').style.display = 'none'; });
   $('goBtn').addEventListener('click', newProblem);
   $('nextBtn').addEventListener('click', newProblem);
+  // Skip: no attempt saved, no stats/streak change, no answer_events row. The
+  // problem id is already in seenIds so it will not come back this session.
+  $('skipBtn').addEventListener('click', () => {
+    if (answered) return;
+    clearInterval(timerInt);
+    newProblem();
+  });
 
   // ---------- feedback form ----------
   $('fbForm').addEventListener('submit', async (e) => {
