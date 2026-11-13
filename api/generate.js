@@ -54,7 +54,7 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'POST only' });
   }
-  const { level, topic, band, recent, round, seenIds, clientId, src } = req.body || {};
+  const { level, topic, band, recent, round, seenIds, clientId, src, recentProblems } = req.body || {};
   if (!LEVELS.has(level) || !TOPICS.has(topic) || (band !== 'mixed' && !BANDS.has(band))) {
     return res.status(400).json({ error: 'Invalid parameters' });
   }
@@ -99,7 +99,11 @@ export default async function handler(req, res) {
   // problem, rather than asking the model for an undefined "any difficulty."
   const liveBand = band === 'mixed' ? [...BANDS][Math.floor(Math.random() * BANDS.size)] : band;
   try {
-    const { problem } = await generateProblem({ level, topic, band: liveBand, round, recent: safeRecent, apiKey });
+    // Tell the model what this student (and the bank) already has so live
+    // generation stops returning the same scenario over and over.
+    const shown = Array.isArray(recentProblems) ? recentProblems.slice(-5).filter(t => typeof t === 'string').map(t => t.slice(0, 200)) : [];
+    const banked = topicsToUse.flatMap(t => bank[bucketKey(level, round, t, liveBand)] || []).map(p => p.problem).slice(-4);
+    const { problem } = await generateProblem({ level, topic, band: liveBand, round, recent: safeRecent, apiKey, avoid: [...banked, ...shown] });
     await logRequest({ client_id: safeClientId, src: safeSrc, level, topic, band, source: 'live' });
     return res.status(200).json({ ...problem, source: 'live' });
   } catch (e) {

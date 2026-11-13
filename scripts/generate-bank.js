@@ -125,7 +125,7 @@ async function main() {
       attempts++;
       try {
         const { problem, usage } = await generateProblem({
-          level: b.level, topic: b.topic, band: b.band, round: b.round, recent: [], apiKey
+          level: b.level, topic: b.topic, band: b.band, round: b.round, recent: [], apiKey, avoid: bank[key].map(x => x.problem)
         });
         totalInput += usage.input_tokens;
         totalOutput += usage.output_tokens;
