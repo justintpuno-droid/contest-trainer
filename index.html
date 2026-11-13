@@ -445,6 +445,15 @@
   }
   .submit:disabled { opacity: .5; cursor: default; }
   .confirm-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 18px; }
+  .hint-wrap { margin-top: 16px; }
+  .hint-box:empty { display: none; }
+  .hint-box { background: #FBF3DC; border-left: 4px solid var(--gold-deep); border-radius: 4px; padding: 10px 14px; margin-bottom: 10px; font-size: 15px; line-height: 1.6; }
+  .hint-box .hint-label { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold-deep); display: block; margin-bottom: 2px; }
+  .hint-box p { margin: 0 0 .6em; }
+  .hint-box p:last-child { margin-bottom: 0; }
+  .hint-btn { background: none; border: none; padding: 4px 0; font: inherit; font-size: 14px; color: var(--ink); opacity: .7; cursor: pointer; text-decoration: underline; }
+  .hint-btn:hover { opacity: 1; }
+  .hint-btn:disabled { opacity: .4; cursor: default; text-decoration: none; }
   .p-head-right { display: flex; align-items: center; gap: 16px; }
   .skip-btn { background: none; border: 1px solid transparent; border-radius: 6px; padding: 4px 8px; font: inherit; font-size: 13px; color: var(--ink); opacity: .55; cursor: pointer; text-decoration: underline; }
   .skip-btn:hover { opacity: 1; }
@@ -693,6 +702,10 @@
         </div>
       </div>
       <div class="p-text" id="pText"></div>
+      <div class="hint-wrap" id="hintWrap">
+        <div class="hint-box" id="hintBox" aria-live="polite"></div>
+        <button class="hint-btn" id="hintBtn" type="button">Stuck? Get a hint</button>
+      </div>
       <div class="bubbles" id="bubbles"></div>
       <div class="confirm-row" id="confirmRow" style="display:none;">
         <button class="submit" id="confirmBtn" disabled>Submit answer</button>
@@ -1071,6 +1084,7 @@
     $('after').className = 'after';
     resetSkip();
     $('skipBtn').style.display = '';
+    resetHints();
     selectedLetter = null;
     $('confirmRow').style.display = 'none';
     $('confirmBtn').disabled = true;
@@ -1274,6 +1288,7 @@
   function finish(correct, answerLabel) {
     resetSkip();
     $('skipBtn').style.display = 'none';
+    $('hintWrap').style.display = 'none';
     $('confirmRow').style.display = 'none';
     stats.total++;
     if (correct) { stats.correct++; stats.streak++; } else { stats.streak = 0; }
@@ -1566,6 +1581,54 @@
   $('nextBtn').addEventListener('click', newProblem);
   // Skip: no attempt saved, no stats/streak change, no answer_events row. The
   // problem id is already in seenIds so it will not come back this session.
+  // Hints: reveal the solution one step at a time, but never the last step
+  // (that is where the answer lands). Uses the same sentence splitter as the
+  // solution display, so no extra data or API calls are needed. Hidden once
+  // the problem is answered, since the full solution is shown then.
+  let hintSteps = [], hintShown = 0;
+  function resetHints() {
+    hintShown = 0;
+    hintSteps = [];
+    $('hintBox').textContent = '';
+    const parts = current && current.solution ? splitSolution(String(current.solution)) : [];
+    const cand = parts.slice(0, Math.min(parts.length - 1, 4));
+    // Stop before the first step that contains the final answer, so a hint can
+    // never hand it over. Conservative: a small answer like 2 may match by
+    // coincidence and shorten the hints, which is the safe direction to err.
+    let ansText = current ? String(current.answer) : '';
+    if (current && current.choices && current.choices[ansText] !== undefined) ansText = String(current.choices[ansText]);
+    ansText = ansText.replace(/[\s$\\{}]/g, '');
+    const leaks = (step) => {
+      if (!ansText) return false;
+      const t = step.replace(/[\s$\\{}]/g, '');
+      const esc = ansText.replace(/[.*+?^${}()|[\]\\\/]/g, '\\$&');
+      return new RegExp('(^|[^0-9.])' + esc + '($|[^0-9])').test(t);
+    };
+    const firstLeak = cand.findIndex(leaks);
+    hintSteps = firstLeak === -1 ? cand : cand.slice(0, firstLeak);
+    const b = $('hintBtn');
+    b.disabled = false;
+    b.textContent = 'Stuck? Get a hint';
+    $('hintWrap').style.display = hintSteps.length ? '' : 'none';
+  }
+  $('hintBtn').addEventListener('click', () => {
+    if (answered || hintShown >= hintSteps.length) return;
+    const box = $('hintBox');
+    const div = document.createElement('div');
+    div.style.marginBottom = '.6em';
+    const label = document.createElement('span');
+    label.className = 'hint-label';
+    label.textContent = 'Hint ' + (hintShown + 1) + ' of ' + hintSteps.length;
+    const p = document.createElement('p');
+    p.textContent = hintSteps[hintShown];
+    div.appendChild(label); div.appendChild(p);
+    box.appendChild(div);
+    hintShown++;
+    renderMath(div);
+    const b = $('hintBtn');
+    if (hintShown >= hintSteps.length) { b.disabled = true; b.textContent = 'No more hints'; }
+    else b.textContent = 'Another hint (' + (hintShown + 1) + ' of ' + hintSteps.length + ')';
+  });
   // Two-tap skip: first tap arms the button ("Tap again to skip") for 3 seconds,
   // second tap skips. Prevents accidental skips; it also sits in the header,
   // away from the answer controls.
