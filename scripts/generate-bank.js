@@ -16,6 +16,7 @@ import 'dotenv/config';
 // Usage:
 //   ANTHROPIC_API_KEY=sk-ant-... node scripts/generate-bank.js
 //   ANTHROPIC_API_KEY=sk-ant-... BANK_PER_BUCKET=3 node scripts/generate-bank.js
+//   Only one contest:  BANK_LEVELS=MOEMS BANK_PER_BUCKET=3 node scripts/generate-bank.js
 //
 // Safe to interrupt (Ctrl+C) and re-run: it saves data/bank.json after every
 // bucket and skips buckets that already have enough problems, so you can
@@ -30,6 +31,8 @@ import { TOPICS, BANDS, ROUNDS, DIVISIONS, generateProblem } from '../lib/proble
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const BANK_PATH = path.join(__dirname, '..', 'data', 'bank.json');
 const PER_BUCKET = parseInt(process.env.BANK_PER_BUCKET || '6', 10);
+// Optional filter: BANK_LEVELS=MOEMS (comma-separated, e.g. "MOEMS,AIME"). Empty = all levels.
+const ONLY_LEVELS = (process.env.BANK_LEVELS || '').split(',').map(s => s.trim()).filter(Boolean);
 
 // Verify current pricing at https://anthropic.com/pricing before trusting
 // this — these are the figures used to produce the running cost estimate
@@ -109,7 +112,7 @@ function costSoFar(input, output) {
 
 async function main() {
   const bank = loadBank();
-  const buckets = buildBuckets();
+  const buckets = buildBuckets().filter(b => !ONLY_LEVELS.length || ONLY_LEVELS.includes(b.level));
   let totalInput = 0, totalOutput = 0, totalGenerated = 0, totalRejectedDupes = 0, totalErrors = 0;
 
   console.log(`Target: ${PER_BUCKET} problems/bucket across ${buckets.length} buckets (up to ${buckets.length * PER_BUCKET} problems).`);
