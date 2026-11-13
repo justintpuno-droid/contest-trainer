@@ -445,9 +445,10 @@
   }
   .submit:disabled { opacity: .5; cursor: default; }
   .confirm-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 18px; }
-  .skip-row { margin-top: 14px; }
-  .skip-btn { background: none; border: none; padding: 4px 0; font: inherit; font-size: 14px; color: var(--ink); opacity: .6; cursor: pointer; text-decoration: underline; }
+  .p-head-right { display: flex; align-items: center; gap: 16px; }
+  .skip-btn { background: none; border: 1px solid transparent; border-radius: 6px; padding: 4px 8px; font: inherit; font-size: 13px; color: var(--ink); opacity: .55; cursor: pointer; text-decoration: underline; }
   .skip-btn:hover { opacity: 1; }
+  .skip-btn.armed { opacity: 1; text-decoration: none; border-color: var(--ink); background: #FBF3DC; font-weight: 600; }
   .verdict {
     margin-top: 22px;
     font-family: var(--mono);
@@ -480,7 +481,9 @@
   .solution .s-text p:last-child { margin-bottom: 0; }
   .solution .s-text p.final { font-weight: 600; padding-top: .35em; border-top: 1px solid rgba(0,0,0,.12); }
   .after { display: none; margin-top: 20px; gap: 12px; }
-  .after.show { display: flex; }
+  .after.show { display: flex; flex-wrap: wrap; }
+  .after .go, .after .submit { flex: 1 1 auto; min-width: 0; }
+  @media (max-width: 560px) { .after .go, .after .submit { flex: 1 1 100%; } }
   .loading {
     display: none;
     background: var(--card);
@@ -684,7 +687,10 @@
     <div class="problem-card" id="card">
       <div class="p-head">
         <div class="p-tag" id="pTag"></div>
-        <div class="timer" id="timer">0:00</div>
+        <div class="p-head-right">
+          <button class="skip-btn" id="skipBtn" type="button">Skip</button>
+          <div class="timer" id="timer">0:00</div>
+        </div>
       </div>
       <div class="p-text" id="pText"></div>
       <div class="bubbles" id="bubbles"></div>
@@ -705,9 +711,6 @@
         <input type="text" class="mc-input" id="mcAnswer" inputmode="text" placeholder="e.g. 3/7 or 12.5" aria-label="answer">
         <button class="submit" id="mcSubmit">Submit</button>
         <div class="aime-note" id="mcNote">Integer, decimal, or reduced fraction (e.g. 3/7). No units or mixed numbers.</div>
-      </div>
-      <div class="skip-row" id="skipRow">
-        <button class="skip-btn" id="skipBtn" type="button">Skip this problem →</button>
       </div>
       <div class="verdict" id="verdict"></div>
       <div class="solution" id="solution">
@@ -1066,7 +1069,8 @@
     $('verdict').className = 'verdict';
     $('solution').className = 'solution';
     $('after').className = 'after';
-    $('skipRow').style.display = '';
+    resetSkip();
+    $('skipBtn').style.display = '';
     selectedLetter = null;
     $('confirmRow').style.display = 'none';
     $('confirmBtn').disabled = true;
@@ -1268,7 +1272,8 @@
     newProblem();
   });
   function finish(correct, answerLabel) {
-    $('skipRow').style.display = 'none';
+    resetSkip();
+    $('skipBtn').style.display = 'none';
     $('confirmRow').style.display = 'none';
     stats.total++;
     if (correct) { stats.correct++; stats.streak++; } else { stats.streak = 0; }
@@ -1561,8 +1566,26 @@
   $('nextBtn').addEventListener('click', newProblem);
   // Skip: no attempt saved, no stats/streak change, no answer_events row. The
   // problem id is already in seenIds so it will not come back this session.
+  // Two-tap skip: first tap arms the button ("Tap again to skip") for 3 seconds,
+  // second tap skips. Prevents accidental skips; it also sits in the header,
+  // away from the answer controls.
+  let skipTimer = null;
+  function resetSkip() {
+    clearTimeout(skipTimer);
+    const b = $('skipBtn');
+    b.classList.remove('armed');
+    b.textContent = 'Skip';
+  }
   $('skipBtn').addEventListener('click', () => {
     if (answered) return;
+    const b = $('skipBtn');
+    if (!b.classList.contains('armed')) {
+      b.classList.add('armed');
+      b.textContent = 'Tap again to skip';
+      skipTimer = setTimeout(resetSkip, 3000);
+      return;
+    }
+    resetSkip();
     clearInterval(timerInt);
     newProblem();
   });
