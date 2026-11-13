@@ -775,6 +775,7 @@
   // pushed here — each one is already fresh, nothing to dedupe against.
   const seenIds = (() => { try { const a = JSON.parse(localStorage.getItem('lemma_seen') || '[]'); return Array.isArray(a) ? a.slice(-500) : []; } catch (e) { return []; } })();
   const recentProblems = [];
+  const recentTopics = [];
   function rememberSeen() { try { localStorage.setItem('lemma_seen', JSON.stringify(seenIds.slice(-500))); } catch (e) {} }
   const $ = id => document.getElementById(id);
 
@@ -1050,6 +1051,7 @@
         round: level === 'MATHCOUNTS' ? round : null,
         seenIds: seenIds.slice(-200),
         recentProblems: recentProblems.slice(-5),
+        recentTopics: recentTopics.slice(-2),
         clientId: getClientId(),
         src: getSrc()
       })
@@ -1071,6 +1073,7 @@
       problemRound = reqRound;
       if (!sessionStartedAt) sessionStartedAt = new Date().toISOString();
       if (current.id) { seenIds.push(current.id); rememberSeen(); }
+      if (current.topic) recentTopics.push(current.topic);
       if (current.problem) { recentProblems.push(String(current.problem).slice(0, 200)); }
       showProblem();
     } catch (e) {

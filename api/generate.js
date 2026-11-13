@@ -54,7 +54,7 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'POST only' });
   }
-  const { level, topic, band, recent, round, seenIds, clientId, src, recentProblems } = req.body || {};
+  const { level, topic, band, recent, round, seenIds, clientId, src, recentProblems, recentTopics } = req.body || {};
   if (!LEVELS.has(level) || !TOPICS.has(topic) || (band !== 'mixed' && !BANDS.has(band))) {
     return res.status(400).json({ error: 'Invalid parameters' });
   }
@@ -79,13 +79,24 @@ export default async function handler(req, res) {
   //    mixed band pools across every topic/band bucket at this level/round.
   const topicsToUse = topic === 'Mixed' ? [...TOPICS].filter(t => t !== 'Mixed') : [topic];
   const bandsToUse = band === 'mixed' ? [...BANDS] : [band];
-  let candidates = topicsToUse
-    .flatMap(t => bandsToUse.flatMap(b => bank[bucketKey(level, round, t, b)] || []))
-    .filter(p => !safeSeenIds.includes(p.id));
-  if (candidates.length > 0) {
-    const picked = candidates[Math.floor(Math.random() * candidates.length)];
+  // Group unseen candidates by topic. For Mixed, pick the TOPIC first (uniformly,
+  // so a topic with a deeper bank doesn't dominate), and skip any topic the
+  // student got in each of their last two problems so it can't run three in a row.
+  const byTopic = topicsToUse
+    .map(t => ({ t, list: bandsToUse.flatMap(b => bank[bucketKey(level, round, t, b)] || []).filter(p => !safeSeenIds.includes(p.id)) }))
+    .filter(g => g.list.length > 0);
+  if (byTopic.length > 0) {
+    let pool = byTopic;
+    if (topic === 'Mixed') {
+      const rt = Array.isArray(recentTopics) ? recentTopics.slice(-2) : [];
+      const streak = rt.length === 2 && rt[0] === rt[1] ? rt[1] : null;
+      const varied = byTopic.filter(g => g.t !== streak);
+      if (varied.length > 0) pool = varied;
+    }
+    const group = pool[Math.floor(Math.random() * pool.length)];
+    const picked = group.list[Math.floor(Math.random() * group.list.length)];
     await logRequest({ client_id: safeClientId, src: safeSrc, level, topic, band, source: 'bank' });
-    return res.status(200).json({ ...picked, source: 'bank' });
+    return res.status(200).json({ ...picked, topic: group.t, source: 'bank' });
   }
 
   // 2) Bank has nothing left (or doesn't exist yet) for this bucket — fall
