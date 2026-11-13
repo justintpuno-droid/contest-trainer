@@ -25,7 +25,7 @@ import 'dotenv/config';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { TOPICS, BANDS, ROUNDS, generateProblem } from '../lib/problem-gen.js';
+import { TOPICS, BANDS, ROUNDS, DIVISIONS, generateProblem } from '../lib/problem-gen.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const BANK_PATH = path.join(__dirname, '..', 'data', 'bank.json');
@@ -59,6 +59,13 @@ function buildBuckets() {
     for (const topic of topics) {
       for (const band of bands) {
         buckets.push({ level: 'MATHCOUNTS', topic, band, round });
+      }
+    }
+  }
+  for (const round of [...DIVISIONS]) {
+    for (const topic of topics) {
+      for (const band of bands) {
+        buckets.push({ level: 'MOEMS', topic, band, round });
       }
     }
   }

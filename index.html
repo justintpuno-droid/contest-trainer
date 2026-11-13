@@ -648,6 +648,7 @@
             <button data-v="AMC 12">AMC 12</button>
             <button data-v="AIME">AIME</button>
             <button data-v="MATHCOUNTS">MATHCOUNTS</button>
+            <button data-v="MOEMS">MOEMS</button>
           </div>
         </div>
         <div class="field" id="roundField" style="display:none;">
@@ -655,6 +656,13 @@
           <div class="seg" id="roundSeg">
             <button data-v="Sprint" class="on">Sprint</button>
             <button data-v="Target">Target</button>
+          </div>
+        </div>
+        <div class="field" id="divField" style="display:none;">
+          <label>Division</label>
+          <div class="seg" id="divSeg">
+            <button data-v="E" class="on">E · Gr 4–6</button>
+            <button data-v="M">M · Gr 6–8</button>
           </div>
         </div>
         <div class="field">
@@ -764,6 +772,15 @@
   // ---------- state ----------
   let level = "AMC 10";
   let round = "Sprint";
+  let mcRound = "Sprint";   // MATHCOUNTS round
+  let division = "E";       // MOEMS division (sent to the server in the same "round" slot)
+  const isTyped = (lvl) => lvl === "MATHCOUNTS" || lvl === "MOEMS";
+  function syncRound() { round = level === "MOEMS" ? division : mcRound; }
+  function updateMcNote() {
+    const noCalc = level === "MOEMS" || mcRound !== "Target";
+    $("mcNote").textContent = (noCalc ? "No calculator. " : "Calculator allowed. ")
+      + "Integer, decimal, or reduced fraction (e.g. 3/7). No units or mixed numbers.";
+  }
   let current = null;
   let answered = false;
   let timerInt = null, seconds = 0;
@@ -837,7 +854,7 @@
         level: problemLevel || level,
         topic: cat.topic,
         band: cat.band,
-        round: (problemLevel || level) === 'MATHCOUNTS' ? (problemRound || round) : null,
+        round: isTyped(problemLevel || level) ? (problemRound || round) : null,
         correct: correct,
         time_seconds: (typeof seconds === 'number') ? seconds : null,
         session_id: sessionId,
@@ -958,6 +975,10 @@
       d.options[1].text = 'Early (#1–5)';
       d.options[2].text = 'Middle (#6–10)';
       d.options[3].text = 'Late (#11–15)';
+    } else if (lvl === 'MOEMS') {
+      d.options[1].text = 'Warm-up';
+      d.options[2].text = 'Middle';
+      d.options[3].text = 'Challenge';
     } else if (lvl === 'MATHCOUNTS') {
       d.options[1].text = 'Chapter';
       d.options[2].text = 'State';
@@ -976,6 +997,9 @@
       level = b.dataset.v;
       updateDiffLabels(level);
       $('roundField').style.display = (level === 'MATHCOUNTS') ? 'flex' : 'none';
+      $('divField').style.display = (level === 'MOEMS') ? 'flex' : 'none';
+      syncRound();
+      updateMcNote();
     });
   });
   // ---------- round segment (MATHCOUNTS only) ----------
@@ -983,9 +1007,18 @@
     b.addEventListener('click', () => {
       document.querySelectorAll('#roundSeg button').forEach(x => x.classList.remove('on'));
       b.classList.add('on');
-      round = b.dataset.v;
-      $('mcNote').textContent = (round === 'Target' ? 'Calculator allowed. ' : 'No calculator. ')
-        + 'Integer, decimal, or reduced fraction (e.g. 3/7). No units or mixed numbers.';
+      mcRound = b.dataset.v;
+      syncRound();
+      updateMcNote();
+    });
+  });
+  // ---------- division segment (MOEMS only) ----------
+  document.querySelectorAll('#divSeg button').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('#divSeg button').forEach(x => x.classList.remove('on'));
+      b.classList.add('on');
+      division = b.dataset.v;
+      syncRound();
     });
   });
   // ---------- timer ----------
@@ -1045,7 +1078,7 @@
         topic: $('topic').value,
         band: $('diff').value,
         recent: recent,
-        round: level === 'MATHCOUNTS' ? round : null,
+        round: isTyped(level) ? round : null,
         seenIds: seenIds.slice(-200),
         clientId: getClientId(),
         src: getSrc()
@@ -1088,7 +1121,7 @@
     selectedLetter = null;
     $('confirmRow').style.display = 'none';
     $('confirmBtn').disabled = true;
-    $('pTag').innerHTML = '<b>' + level + (level === 'MATHCOUNTS' ? ' · ' + round : '') + '</b> &nbsp;·&nbsp; ' + $('topic').value + ' &nbsp;·&nbsp; ' + $('diff').selectedOptions[0].text;
+    $('pTag').innerHTML = '<b>' + level + (level === 'MATHCOUNTS' ? ' · ' + round : (level === 'MOEMS' ? ' · Div ' + round : '')) + '</b> &nbsp;·&nbsp; ' + $('topic').value + ' &nbsp;·&nbsp; ' + $('diff').selectedOptions[0].text;
     $('pText').textContent = current.problem;
     const bubbles = $('bubbles');
     bubbles.innerHTML = '';
@@ -1099,7 +1132,7 @@
       ['d0','d1','d2'].forEach(id => { $(id).value = ''; $(id).disabled = false; });
       $('aimeSubmit').disabled = false;
       setTimeout(() => $('d0').focus(), 50);
-    } else if (level === 'MATHCOUNTS') {
+    } else if (isTyped(level)) {
       bubbles.style.display = 'none';
       $('aimeEntry').style.display = 'none';
       $('mcEntry').style.display = 'flex';
@@ -1403,6 +1436,7 @@
   const TP_STRONG = 0.8;      // at or above this = handling it
   function tpBandLabel(level, band) {
     if (level === 'MATHCOUNTS') return { early: 'Chapter', mid: 'State', late: 'National' }[band];
+    if (level === 'MOEMS') return { early: 'Warm-up', mid: 'Middle', late: 'Challenge' }[band];
     if (level === 'AIME') return { early: 'Early (#1–5)', mid: 'Middle (#6–10)', late: 'Late (#11–15)' }[band];
     return { early: 'Early (#1–10)', mid: 'Middle (#11–20)', late: 'Late (#21–25)' }[band];
   }
