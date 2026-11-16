@@ -451,9 +451,9 @@
   .hint-box .hint-label { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold-deep); display: block; margin-bottom: 2px; }
   .hint-box p { margin: 0 0 .6em; }
   .hint-box p:last-child { margin-bottom: 0; }
-  .hint-btn { background: none; border: none; padding: 4px 0; font: inherit; font-size: 14px; color: var(--ink); opacity: .7; cursor: pointer; text-decoration: underline; }
-  .hint-btn:hover { opacity: 1; }
-  .hint-btn:disabled { opacity: .4; cursor: default; text-decoration: none; }
+  .hint-btn { background: none; border: 1px solid var(--ink); border-radius: 6px; padding: 6px 14px; font: inherit; font-size: 14px; font-weight: 600; color: var(--ink); opacity: .8; cursor: pointer; }
+  .hint-btn:hover { opacity: 1; background: #FBF3DC; }
+  .hint-btn:disabled { opacity: .4; cursor: default; background: none; }
   .p-head-right { display: flex; align-items: center; gap: 16px; }
   .skip-btn { background: none; border: 1px solid transparent; border-radius: 6px; padding: 4px 8px; font: inherit; font-size: 13px; color: var(--ink); opacity: .55; cursor: pointer; text-decoration: underline; }
   .skip-btn:hover { opacity: 1; }
@@ -704,12 +704,11 @@
       <div class="p-text" id="pText"></div>
       <div class="hint-wrap" id="hintWrap">
         <div class="hint-box" id="hintBox" aria-live="polite"></div>
-        <button class="hint-btn" id="hintBtn" type="button">Stuck? Get a hint</button>
+        <button class="hint-btn" id="hintBtn" type="button">Hint</button>
       </div>
       <div class="bubbles" id="bubbles"></div>
       <div class="confirm-row" id="confirmRow" style="display:none;">
         <button class="submit" id="confirmBtn" disabled>Submit answer</button>
-        <span class="aime-note" id="confirmNote">Pick a choice, then submit. You can change it before you submit.</span>
       </div>
       <div class="aime-entry" id="aimeEntry" style="display:none;">
         <div class="digits">
@@ -1615,7 +1614,7 @@
     hintSteps = firstLeak === -1 ? cand : cand.slice(0, firstLeak);
     const b = $('hintBtn');
     b.disabled = false;
-    b.textContent = 'Stuck? Get a hint';
+    b.textContent = 'Hint';
     $('hintWrap').style.display = hintSteps.length ? '' : 'none';
   }
   $('hintBtn').addEventListener('click', () => {
@@ -1634,7 +1633,7 @@
     renderMath(div);
     const b = $('hintBtn');
     if (hintShown >= hintSteps.length) { b.disabled = true; b.textContent = 'No more hints'; }
-    else b.textContent = 'Another hint (' + (hintShown + 1) + ' of ' + hintSteps.length + ')';
+    else b.textContent = 'Hint';
   });
   // Two-tap skip: first tap arms the button ("Tap again to skip") for 3 seconds,
   // second tap skips. Prevents accidental skips; it also sits in the header,
