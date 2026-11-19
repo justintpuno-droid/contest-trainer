@@ -135,12 +135,14 @@ async function main() {
       attempts++;
       try {
         const { problem, usage } = await generateProblem({
-          level: b.level, topic: b.topic, band: b.band, round: b.round, recent: [], apiKey
+          level: b.level, topic: b.topic, band: b.band, round: b.round, recent: [], apiKey, avoid: bank[key].map(x => x.problem)
         });
         totalInput += usage.input_tokens;
         totalOutput += usage.output_tokens;
 
-        const isDupe = bank[key].some(existing => tooSimilar(existing.problem, problem.problem));
+        // Compare against every bucket of the same contest, not just this one, so the same
+        // problem can't reappear under another topic or band.
+        const isDupe = Object.entries(bank).some(([k2, list]) => k2.split('|')[0] === b.level && list.some(existing => tooSimilar(existing.problem, problem.problem)));
         if (isDupe) {
           totalRejectedDupes++;
           continue;
