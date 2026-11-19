@@ -322,6 +322,7 @@
   #roundField, #divField { flex: 0 0 auto; }
   #roundSeg button, #divSeg button { padding: 9px 14px; flex: 1 1 0; text-align: center; }
   #roundSeg, #divSeg { width: 290px; max-width: 100%; }
+  @media (max-width: 420px) { #roundField, #divField { flex: 1 1 100%; } #roundSeg, #divSeg { width: 100%; } }
   label { white-space: nowrap; }
   .seg button.on { background: var(--ink); color: var(--paper); }
   select {
