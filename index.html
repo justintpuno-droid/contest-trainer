@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contest Math Trainer — Free AMC & AIME Practice</title>
-<meta name="description" content="Free, unlimited AI-generated AMC 8/10/12 and AIME practice problems with full solutions. Democratizing access to competition math training.">
+<title>Contest Math Trainer — Free AMC, AIME, MATHCOUNTS & MOEMS Practice</title>
+<meta name="description" content="Free AI-generated practice problems with full solutions for the AMC 8/10/12, AIME, MATHCOUNTS and MOEMS. Democratizing access to competition math training.">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
@@ -312,6 +312,18 @@
     cursor: pointer;
   }
   .seg button:last-child { border-right: none; }
+  .seg button { white-space: nowrap; }
+  .seg { height: 38px; box-sizing: border-box; }
+  select { height: 38px; box-sizing: border-box; }
+  /* Contest picker gets its own row; Round / Division size to their content so
+     their labels are never squeezed or clipped. */
+  #levelSeg { min-width: 0; }
+  .field:has(> #levelSeg) { flex: 1 1 auto; }
+  #roundField, #divField { flex: 0 0 auto; }
+  #roundSeg button, #divSeg button { padding: 9px 14px; flex: 1 1 0; text-align: center; }
+  #roundSeg, #divSeg { width: 290px; max-width: 100%; }
+  @media (max-width: 420px) { #roundField, #divField { flex: 1 1 100%; } #roundSeg, #divSeg { width: 100%; } }
+  label { white-space: nowrap; }
   .seg button.on { background: var(--ink); color: var(--paper); }
   select {
     width: 100%;
@@ -608,9 +620,9 @@
 </div>
 <section class="hero">
   <div class="wrap">
-    <div class="kicker">Free &middot; Unlimited &middot; AMC 8 / 10 / 12 &middot; AIME</div>
+    <div class="kicker">Free &middot; Unlimited &middot; AMC 8 / 10 / 12 &middot; AIME &middot; MATHCOUNTS &middot; MOEMS</div>
     <h1>Competition math training shouldn't depend on your zip code.</h1>
-    <p class="lede">The students who excel at the AMC and AIME usually have coaches, prep programs, and shelves of books. Most students have none of those. This tool generates unlimited contest-level practice problems with full step-by-step solutions, free for any student, any school.</p>
+    <p class="lede">The students who excel at the AMC, AIME, MATHCOUNTS and MOEMS usually have coaches, prep programs, and shelves of books. Most students have none of those. This tool generates unlimited contest-level practice problems with full step-by-step solutions, free for any student, any school.</p>
     <a class="cta" href="#train">Start Training →</a>
   </div>
 </section>
@@ -640,7 +652,7 @@
     </header>
     <div class="controls">
       <div class="row">
-        <div class="field" style="flex:2 1 260px;">
+        <div class="field" style="flex:1 1 auto;">
           <label>Contest</label>
           <div class="seg" id="levelSeg">
             <button data-v="AMC 8">AMC 8</button>
@@ -648,6 +660,7 @@
             <button data-v="AMC 12">AMC 12</button>
             <button data-v="AIME">AIME</button>
             <button data-v="MATHCOUNTS">MATHCOUNTS</button>
+            <button data-v="MOEMS">MOEMS</button>
           </div>
         </div>
         <div class="field" id="roundField" style="display:none;">
@@ -657,6 +670,15 @@
             <button data-v="Target">Target</button>
           </div>
         </div>
+        <div class="field" id="divField" style="display:none;">
+          <label>Division</label>
+          <div class="seg" id="divSeg">
+            <button data-v="E" class="on">E · Gr 4–6</button>
+            <button data-v="M">M · Gr 6–8</button>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:14px;">
         <div class="field">
           <label>Topic</label>
           <select id="topic">
@@ -763,6 +785,15 @@
   // ---------- state ----------
   let level = "AMC 10";
   let round = "Sprint";
+  let mcRound = "Sprint";   // MATHCOUNTS round
+  let division = "E";       // MOEMS division (sent to the server in the same "round" slot)
+  const isTyped = (lvl) => lvl === "MATHCOUNTS" || lvl === "MOEMS";
+  function syncRound() { round = level === "MOEMS" ? division : mcRound; }
+  function updateMcNote() {
+    const noCalc = level === "MOEMS" || mcRound !== "Target";
+    $("mcNote").textContent = (noCalc ? "No calculator. " : "Calculator allowed. ")
+      + "Integer, decimal, or reduced fraction (e.g. 3/7). No units or mixed numbers.";
+  }
   let current = null;
   let answered = false;
   let timerInt = null, seconds = 0;
@@ -839,7 +870,7 @@
         level: problemLevel || level,
         topic: cat.topic,
         band: cat.band,
-        round: (problemLevel || level) === 'MATHCOUNTS' ? (problemRound || round) : null,
+        round: isTyped(problemLevel || level) ? (problemRound || round) : null,
         correct: correct,
         time_seconds: (typeof seconds === 'number') ? seconds : null,
         session_id: sessionId,
@@ -960,6 +991,10 @@
       d.options[1].text = 'Early (#1–5)';
       d.options[2].text = 'Middle (#6–10)';
       d.options[3].text = 'Late (#11–15)';
+    } else if (lvl === 'MOEMS') {
+      d.options[1].text = 'Warm-up';
+      d.options[2].text = 'Middle';
+      d.options[3].text = 'Challenge';
     } else if (lvl === 'MATHCOUNTS') {
       d.options[1].text = 'Chapter';
       d.options[2].text = 'State';
@@ -977,7 +1012,10 @@
       b.classList.add('on');
       level = b.dataset.v;
       updateDiffLabels(level);
-      $('roundField').style.display = (level === 'MATHCOUNTS') ? 'flex' : 'none';
+      $('roundField').style.display = (level === 'MATHCOUNTS') ? 'block' : 'none';
+      $('divField').style.display = (level === 'MOEMS') ? 'block' : 'none';
+      syncRound();
+      updateMcNote();
     });
   });
   // ---------- round segment (MATHCOUNTS only) ----------
@@ -985,9 +1023,18 @@
     b.addEventListener('click', () => {
       document.querySelectorAll('#roundSeg button').forEach(x => x.classList.remove('on'));
       b.classList.add('on');
-      round = b.dataset.v;
-      $('mcNote').textContent = (round === 'Target' ? 'Calculator allowed. ' : 'No calculator. ')
-        + 'Integer, decimal, or reduced fraction (e.g. 3/7). No units or mixed numbers.';
+      mcRound = b.dataset.v;
+      syncRound();
+      updateMcNote();
+    });
+  });
+  // ---------- division segment (MOEMS only) ----------
+  document.querySelectorAll('#divSeg button').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('#divSeg button').forEach(x => x.classList.remove('on'));
+      b.classList.add('on');
+      division = b.dataset.v;
+      syncRound();
     });
   });
   // ---------- timer ----------
@@ -1047,7 +1094,7 @@
         topic: $('topic').value,
         band: $('diff').value,
         recent: recent,
-        round: level === 'MATHCOUNTS' ? round : null,
+        round: isTyped(level) ? round : null,
         seenIds: seenIds.slice(-200),
         recentProblems: recentProblems.slice(-5),
         recentTopics: recentTopics.slice(-2),
@@ -1094,7 +1141,7 @@
     selectedLetter = null;
     $('confirmRow').style.display = 'none';
     $('confirmBtn').disabled = true;
-    $('pTag').innerHTML = '<b>' + level + (level === 'MATHCOUNTS' ? ' · ' + round : '') + '</b> &nbsp;·&nbsp; ' + $('topic').value + ' &nbsp;·&nbsp; ' + $('diff').selectedOptions[0].text;
+    $('pTag').innerHTML = '<b>' + level + (level === 'MATHCOUNTS' ? ' · ' + round : (level === 'MOEMS' ? ' · Div ' + round : '')) + '</b> &nbsp;·&nbsp; ' + $('topic').value + ' &nbsp;·&nbsp; ' + $('diff').selectedOptions[0].text;
     $('pText').textContent = current.problem;
     const bubbles = $('bubbles');
     bubbles.innerHTML = '';
@@ -1105,7 +1152,7 @@
       ['d0','d1','d2'].forEach(id => { $(id).value = ''; $(id).disabled = false; });
       $('aimeSubmit').disabled = false;
       setTimeout(() => $('d0').focus(), 50);
-    } else if (level === 'MATHCOUNTS') {
+    } else if (isTyped(level)) {
       bubbles.style.display = 'none';
       $('aimeEntry').style.display = 'none';
       $('mcEntry').style.display = 'flex';
@@ -1315,8 +1362,7 @@
     } catch (e) {}
     renderGuestNote();
     const v = $('verdict');
-    const time = $('timer').textContent;
-    v.textContent = (correct ? '✓ Correct — ' : '✗ Not quite — ') + answerLabel + '  ·  ' + time;
+    v.textContent = (correct ? '✓ Correct — ' : '✗ Not quite — ') + answerLabel;
     v.className = 'verdict show ' + (correct ? 'ok' : 'no');
     renderSolution(current.solution || '');
     updateLikeBtn();
@@ -1409,6 +1455,7 @@
   const TP_STRONG = 0.8;      // at or above this = handling it
   function tpBandLabel(level, band) {
     if (level === 'MATHCOUNTS') return { early: 'Chapter', mid: 'State', late: 'National' }[band];
+    if (level === 'MOEMS') return { early: 'Warm-up', mid: 'Middle', late: 'Challenge' }[band];
     if (level === 'AIME') return { early: 'Early (#1–5)', mid: 'Middle (#6–10)', late: 'Late (#11–15)' }[band];
     return { early: 'Early (#1–10)', mid: 'Middle (#11–20)', late: 'Late (#21–25)' }[band];
   }

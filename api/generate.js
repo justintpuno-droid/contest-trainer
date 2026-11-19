@@ -7,7 +7,7 @@
 
 import fs from 'fs';
 import path from 'path';
-import { LEVELS, TOPICS, BANDS, ROUNDS, generateProblem } from '../lib/problem-gen.js';
+import { LEVELS, TOPICS, BANDS, ROUNDS, DIVISIONS, generateProblem } from '../lib/problem-gen.js';
 
 let bankCache = null;
 function loadBank() {
@@ -60,6 +60,9 @@ export default async function handler(req, res) {
   }
   if (level === 'MATHCOUNTS' && !ROUNDS.has(round)) {
     return res.status(400).json({ error: 'Invalid round' });
+  }
+  if (level === 'MOEMS' && !DIVISIONS.has(round)) {
+    return res.status(400).json({ error: 'Invalid division' });
   }
   const safeRecent = Array.isArray(recent)
     ? recent.slice(-6).filter(r => r === 'correct' || r === 'wrong')
