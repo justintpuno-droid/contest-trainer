@@ -318,7 +318,7 @@
   /* Contest picker gets its own row; Round / Division size to their content so
      their labels are never squeezed or clipped. */
   #levelSeg { min-width: 0; }
-  .field:has(> #levelSeg) { flex: 1 1 100%; }
+  .field:has(> #levelSeg) { flex: 1 1 auto; }
   #roundField, #divField { flex: 0 0 auto; }
   #roundSeg button, #divSeg button { padding: 9px 14px; }
   label { white-space: nowrap; }
@@ -650,7 +650,7 @@
     </header>
     <div class="controls">
       <div class="row">
-        <div class="field" style="flex:2 1 260px;">
+        <div class="field" style="flex:1 1 auto;">
           <label>Contest</label>
           <div class="seg" id="levelSeg">
             <button data-v="AMC 8">AMC 8</button>
@@ -675,6 +675,8 @@
             <button data-v="M">M · Gr 6–8</button>
           </div>
         </div>
+      </div>
+      <div class="row" style="margin-top:14px;">
         <div class="field">
           <label>Topic</label>
           <select id="topic">
