@@ -5142,6 +5142,12 @@
       "answer": "208",
       "solution": "Combine the fractions: $\\frac{1}{x}+\\frac{1}{y}=\\frac{x+y}{xy}=\\frac{20}{xy}$. Setting this equal to $\\frac{5}{24}$ gives $\\frac{20}{xy}=\\frac{5}{24}$, so $xy=\\frac{20\\cdot 24}{5}=96$. Then use $x^2+y^2=(x+y)^2-2xy=20^2-2(96)=400-192$. This gives $x^2+y^2=208$.",
       "id": "MATHCOUNTS|Sprint|Algebra|late#1788014778268#8adwn8"
+    },
+    {
+      "problem": "For real numbers $a$ and $b$, define $a \\star b = a^2 + b^2 - ab$. If $a + b = 7$ and $a \\star b = 19$, what is the value of $a^3 + b^3$?",
+      "answer": "133",
+      "solution": "Since $a\\star b = a^2+b^2-ab$, and $(a+b)^2 = a^2+2ab+b^2$, we have $a^2+b^2 = (a+b)^2-2ab = 49-2ab$. Substituting into $a\\star b=19$ gives $49-2ab-ab=19$, so $49-3ab=19$, meaning $ab=10$. Using the identity $a^3+b^3=(a+b)^3-3ab(a+b)$, we get $a^3+b^3 = 7^3 - 3(10)(7) = 343-210 = 133$.",
+      "id": "MATHCOUNTS|Sprint|Algebra|late#1795121385883#v10moe"
     }
   ],
   "MATHCOUNTS|Sprint|Geometry|early": [
@@ -5286,6 +5292,12 @@
       "answer": "75/4",
       "solution": "Since $\\overline{AB} \\parallel \\overline{CD}$, triangles $ABE$ and $CDE$ are similar with ratio $AB:CD = 10:22 = 5:11$. This means the perpendicular distances from $E$ to $AB$ and to $CD$ are also in ratio $5:11$, and together they sum to the total height of $12$. So the distance from $E$ to $AB$ is $12 \\cdot \\frac{5}{5+11} = 12 \\cdot \\frac{5}{16} = \\frac{15}{4}$. The area of triangle $ABE$ is then $\\frac{1}{2} \\cdot 10 \\cdot \\frac{15}{4} = \\frac{75}{4}$.",
       "id": "MATHCOUNTS|Sprint|Geometry|late#1788014856720#330vo3"
+    },
+    {
+      "problem": "A right triangle has legs of length $9$ and $12$. A rectangle is positioned inside the triangle so that one of its vertices coincides with the right-angle vertex, two of its sides lie along the two legs, and the opposite vertex of the rectangle lies on the hypotenuse. What is the greatest possible area of the rectangle?",
+      "answer": "27",
+      "solution": "Place the right angle at the origin, with the leg of length $12$ along the x-axis and the leg of length $9$ along the y-axis; the hypotenuse then satisfies $\\frac{x}{12}+\\frac{y}{9}=1$. A rectangle with vertices $(0,0)$, $(x,0)$, $(x,y)$, $(0,y)$ has its far corner on the hypotenuse, so $\\frac{x}{12}+\\frac{y}{9}=1$. Let $u=\\frac{x}{12}$ and $v=\\frac{y}{9}$, so $u+v=1$ and the area is $xy=108uv$. Since $u+v=1$ is fixed, $uv$ is maximized when $u=v=\\frac{1}{2}$, giving $uv=\\frac{1}{4}$. Thus the greatest area is $108\\cdot\\frac{1}{4}=27$.",
+      "id": "MATHCOUNTS|Sprint|Geometry|late#1795121477840#uavwzc"
     }
   ],
   "MATHCOUNTS|Sprint|Number Theory|early": [
@@ -5312,6 +5324,30 @@
       "answer": "1024144",
       "solution": "Factor $2024 = 2^3 \\cdot 11 \\cdot 23$. For a number to be a perfect square, every prime's exponent in its factorization must be even. So we need at least $2^4 \\cdot 11^2 \\cdot 23^2$ (bumping each odd exponent up to the next even number). Computing this product: $16 \\cdot 121 \\cdot 529 = 1936 \\cdot 529 = 1{,}024{,}144$. This equals $1012^2$, confirming it is a perfect square and a multiple of $2024$, and it is the smallest such number since we only added the minimum extra factors needed.",
       "id": "MATHCOUNTS|Sprint|Number Theory|early#1787980234666#07i9in"
+    },
+    {
+      "problem": "Three warning lights on a control panel blink at regular intervals: the red light every $18$ seconds, the blue light every $24$ seconds, and the green light every $30$ seconds. If all three lights blink together at time $0$, how many seconds will pass before all three blink together again?",
+      "answer": "360",
+      "solution": "The lights blink together again after a number of seconds equal to the least common multiple of $18$, $24$, and $30$. Factoring: $18=2\\cdot3^2$, $24=2^3\\cdot3$, $30=2\\cdot3\\cdot5$. Taking the highest power of each prime gives $\\text{lcm}=2^3\\cdot3^2\\cdot5=8\\cdot9\\cdot5=360$. So all three lights blink together again after $360$ seconds.",
+      "id": "MATHCOUNTS|Sprint|Number Theory|early#1795121494452#uuxl8u"
+    },
+    {
+      "problem": "How many three-digit positive integers are divisible by $30$ but not by $4$?",
+      "answer": "15",
+      "solution": "Three-digit multiples of $30$ range from $120=30\\cdot4$ to $990=30\\cdot33$, giving $33-4+1=30$ such numbers. A number divisible by both $30$ and $4$ must be divisible by $\\text{lcm}(30,4)=60$; the three-digit multiples of $60$ range from $120=60\\cdot2$ to $960=60\\cdot16$, giving $16-2+1=15$ numbers. Subtracting, the count divisible by $30$ but not $4$ is $30-15=15$.",
+      "id": "MATHCOUNTS|Sprint|Number Theory|early#1795121609199#rd0re7"
+    },
+    {
+      "problem": "What is the sum of all positive divisors of $180$ that are multiples of $3$?",
+      "answer": "504",
+      "solution": "Every divisor of $180$ that is a multiple of $3$ can be written as $3d$, where $d$ is a divisor of $180/3 = 60$. So the sum of such divisors equals $3$ times the sum of all divisors of $60$. Since $60 = 2^2\\cdot3\\cdot5$, the sum of its divisors is $(1+2+4)(1+3)(1+5)=7\\cdot4\\cdot6=168$. Multiplying by $3$ gives $3\\cdot168 = 504$.",
+      "id": "MATHCOUNTS|Sprint|Number Theory|early#1795121636757#920a7d"
+    },
+    {
+      "problem": "How many integers from 1 to 500, inclusive, are divisible by either 6 or 8, but not both?",
+      "answer": "105",
+      "solution": "There are $\\lfloor 500/6 \\rfloor = 83$ multiples of 6 and $\\lfloor 500/8 \\rfloor = 62$ multiples of 8. Numbers divisible by both 6 and 8 are multiples of $\\text{lcm}(6,8)=24$, and there are $\\lfloor 500/24 \\rfloor = 20$ of these. By inclusion-exclusion, the count divisible by 6 or 8 is $83+62-20=125$. To find numbers divisible by exactly one of 6 or 8 (not both), subtract the double-counted overlap once more: $125-20=105$.",
+      "id": "MATHCOUNTS|Sprint|Number Theory|early#1795121647254#pnq1h1"
     }
   ],
   "MATHCOUNTS|Sprint|Number Theory|mid": [
@@ -5326,6 +5362,42 @@
       "answer": "31",
       "solution": "Factor $2024 = 2^3 \\cdot 11 \\cdot 23$, so $2024^2 = 2^6 \\cdot 11^2 \\cdot 23^2$. The number of positive divisors of $2024^2$ is $(6+1)(2+1)(2+1) = 63$. Since $2024^2$ is a perfect square, its divisors pair up as $d$ and $2024^2/d$ with product $2024^2$, and exactly one divisor, namely $2024$ itself, equals its own pair. The remaining $63 - 1 = 62$ divisors split evenly into pairs with one member less than $2024$ and one greater, giving $62/2 = 31$ divisors less than $2024$.",
       "id": "MATHCOUNTS|Sprint|Number Theory|mid#1788015176697#vo1yhs"
+    },
+    {
+      "problem": "Two positive integers $m$ and $n$, both greater than $6$, have greatest common divisor $6$ and least common multiple $420$. What is the least possible value of $m+n$?",
+      "answer": "102",
+      "solution": "Since $\\gcd(m,n)=6$, write $m=6a$ and $n=6b$ where $\\gcd(a,b)=1$. Because $\\gcd(m,n)\\cdot\\text{lcm}(m,n)=mn$, we get $6\\cdot420=36ab$, so $ab=70$. The coprime factor pairs of $70$ are $(1,70),(2,35),(5,14),(7,10)$; since $m,n>6$ we need $a,b>1$, which rules out $(1,70)$. Then $m+n=6(a+b)$, and among the remaining pairs the smallest sum is $7+10=17$, giving $m+n=6\\cdot17=102$. Checking: $m=42$, $n=60$ have $\\gcd=6$ and $\\text{lcm}=420$, confirming the answer.",
+      "id": "MATHCOUNTS|Sprint|Number Theory|mid#1795121683250#zycyt6"
+    },
+    {
+      "problem": "A three-digit positive integer has digits that form an arithmetic sequence when read from left to right (that is, the tens digit minus the hundreds digit equals the units digit minus the tens digit), and the integer itself is divisible by $15$. What is the greatest such integer?",
+      "answer": "975",
+      "solution": "Divisibility by $15$ requires divisibility by both $5$ and $3$. Divisibility by $5$ means the units digit $c$ is $0$ or $5$. To maximize the number, try the hundreds digit $a=9$ first: the arithmetic sequence condition gives $2b=a+c$. If $c=0$, then $2b=9$, which has no integer solution. If $c=5$, then $2b=14$, so $b=7$, giving the number $975$. Check: the digits $9,7,5$ form an arithmetic sequence (common difference $-2$), and $9+7+5=21$ is divisible by $3$, while the number ends in $5$, so $975$ is divisible by $15$. Since $a=9$ is the largest possible hundreds digit and it yields a valid number, $975$ is the greatest such integer.",
+      "id": "MATHCOUNTS|Sprint|Number Theory|mid#1795121711464#ozf0wb"
+    },
+    {
+      "problem": "What is the least positive integer $N$ such that $N$ is divisible by $18$, $2N$ is a perfect square, and $3N$ is a perfect cube?",
+      "answer": "72",
+      "solution": "Write $N=2^a3^b$ (using only primes $2,3$ keeps $N$ smallest). Since $18=2\\cdot3^2$ divides $N$, we need $a\\ge1$ and $b\\ge2$. Since $2N=2^{a+1}3^b$ is a perfect square, $a+1$ and $b$ must be even, so $a$ is odd. Since $3N=2^a3^{b+1}$ is a perfect cube, $a$ and $b+1$ must be multiples of $3$, so $b\\equiv2\\pmod3$. The smallest $a$ that is odd and a multiple of $3$ is $a=3$; the smallest $b\\ge2$ that is even and $\\equiv2\\pmod3$ is $b=2$. Thus $N=2^3\\cdot3^2=72$, and checking: $2N=144=12^2$, $3N=216=6^3$.",
+      "id": "MATHCOUNTS|Sprint|Number Theory|mid#1795121817411#lo1dda"
+    },
+    {
+      "problem": "What is the greatest four-digit integer that leaves a remainder of $6$ when divided by $7$, a remainder of $10$ when divided by $11$, and a remainder of $12$ when divided by $13$?",
+      "answer": "9008",
+      "solution": "Since the remainder is always one less than the divisor ($6=7-1$, $10=11-1$, $12=13-1$), the number $n$ satisfies $n+1 \\equiv 0 \\pmod{7}$, $\\pmod{11}$, and $\\pmod{13}$. So $n+1$ must be a multiple of $\\text{lcm}(7,11,13)=1001$. The greatest four-digit multiple of $1001$ is $1001 \\times 9 = 9009$, since $1001 \\times 10 = 10010$ has five digits. Thus $n+1=9009$, giving $n=9008$, which indeed leaves remainders $6$, $10$, and $12$ when divided by $7$, $11$, and $13$ respectively.",
+      "id": "MATHCOUNTS|Sprint|Number Theory|mid#1795121861481#recvda"
+    },
+    {
+      "problem": "The digits $1$, $2$, $3$, $4$, and $5$ are each used exactly once to form a five-digit number. How many such numbers are divisible by $4$?",
+      "answer": "24",
+      "solution": "A number is divisible by $4$ exactly when its last two digits form a number divisible by $4$. Checking all two-digit combinations of distinct digits from $\\{1,2,3,4,5\\}$, the only ones divisible by $4$ are $12$, $24$, $32$, and $52$ — four valid endings. For each of these four endings, the remaining $3$ digits can fill the first three positions in $3! = 6$ ways. So the total count is $4 \\times 6 = 24$.",
+      "id": "MATHCOUNTS|Sprint|Number Theory|mid#1795121946392#vemcyt"
+    },
+    {
+      "problem": "How many positive integers $n$ satisfy the condition that $n!$ ends in exactly $24$ zeros when written in base ten?",
+      "answer": "5",
+      "solution": "The number of trailing zeros of $n!$ is $Z(n)=\\lfloor n/5\\rfloor+\\lfloor n/25\\rfloor+\\lfloor n/125\\rfloor+\\cdots$. Testing $n=100$: $Z(100)=20+4+0=24$. As $n$ increases by $1$ (without crossing a multiple of $5$), $Z(n)$ stays the same, so $Z(101)=Z(102)=Z(103)=Z(104)=24$ as well since none of these are multiples of $5$. At $n=105$, a new multiple of $5$ (and not $25$) is reached, giving $Z(105)=21+4=25$, so $n=105$ no longer works. Thus the values of $n$ giving exactly $24$ zeros are $n=100,101,102,103,104$, for a total of $5$ values.",
+      "id": "MATHCOUNTS|Sprint|Number Theory|mid#1795121961577#w553tk"
     }
   ],
   "MATHCOUNTS|Sprint|Number Theory|late": [
@@ -5358,6 +5430,24 @@
       "answer": "506",
       "solution": "For any two positive integers, the product of the numbers equals the product of their GCD and LCM: $a \\cdot b = \\gcd(a,b) \\cdot \\text{lcm}(a,b)$. Here $88 \\cdot b = 22 \\cdot 2024$. So $b = \\frac{22 \\cdot 2024}{88} = \\frac{44528}{88} = 506$. Checking: $88 = 2^3 \\cdot 11$ and $506 = 2 \\cdot 11 \\cdot 23$, so $\\gcd = 2 \\cdot 11 = 22$ and $\\text{lcm} = 2^3 \\cdot 11 \\cdot 23 = 2024$, confirming the answer. Thus the other integer is $506$.",
       "id": "MATHCOUNTS|Sprint|Number Theory|late#1788015567904#dry7ty"
+    },
+    {
+      "problem": "A positive integer is called balanced if the sum of its digits equals the total number of its positive divisors. What is the smallest balanced integer greater than $11$?",
+      "answer": "22",
+      "solution": "Check integers one at a time, comparing digit sum to divisor count. For $12$ through $21$, the digit sum and divisor count never match (for example, $18$ has digit sum $9$ but $6$ divisors, and $20$ has digit sum $2$ but $6$ divisors). For $22$, the divisors are $1, 2, 11, 22$, giving $4$ divisors, and the digit sum is $2+2=4$. Since these match, $22$ is balanced, and it is the smallest such integer greater than $11$.",
+      "id": "MATHCOUNTS|Sprint|Number Theory|late#1795121976236#m0dacx"
+    },
+    {
+      "problem": "A positive integer $n$ is called thrifty if the sum of its proper divisors (all positive divisors of $n$ other than $n$ itself) is strictly greater than $n/2$ but strictly less than $n$. How many thrifty numbers are less than $30$?",
+      "answer": "9",
+      "solution": "Compute the sum of proper divisors $s(n)$ for each $n$ from 1 to 29 and check whether $n/2 < s(n) < n$. Perfect numbers like $6, 28$ fail since $s(n)=n$, and abundant numbers like $12, 18, 20, 24$ fail since $s(n)>n$. Checking the rest, the numbers satisfying the condition are $4$ ($s=3$), $8$ ($s=7$), $10$ ($s=8$), $14$ ($s=10$), $15$ ($s=9$), $16$ ($s=15$), $21$ ($s=11$), $22$ ($s=14$), and $26$ ($s=16$). This gives $9$ thrifty numbers less than $30$.",
+      "id": "MATHCOUNTS|Sprint|Number Theory|late#1795122006858#x2igbk"
+    },
+    {
+      "problem": "A four-digit positive integer $n$ has the property that reversing its digits produces another four-digit number equal to $4n$. What is the smallest possible value of $n$?",
+      "answer": "2178",
+      "solution": "Let $n = 1000a+100b+10c+d$, so the reversed number is $1000d+100c+10b+a = 4n$. Expanding and simplifying $1000d+100c+10b+a=4000a+400b+40c+4d$ gives $332d+20c = 1333a+130b$. Since the reversed number equals $4n$ and must stay a four-digit number, $n<2500$, forcing $a=1$ or $a=2$; checking $a=1$ yields no digit solutions, while $a=2$ requires $d=8$ (since $4n$ is between $8000$ and $9996$). Substituting $a=2,d=8$ gives $2656+20c=2666+130b$, and testing $b=1$ gives $20c=140$, so $c=7$. This gives $n=2178$, and indeed reversing it gives $8712=4\\times2178$, confirming the answer.",
+      "id": "MATHCOUNTS|Sprint|Number Theory|late#1795122067454#be3rah"
     }
   ],
   "MATHCOUNTS|Sprint|Combinatorics|early": [
@@ -5402,6 +5492,12 @@
       "answer": "126",
       "solution": "Since the digits must strictly increase, no digit repeats and once a set of 4 digits is chosen, there is exactly one way to arrange them in increasing order. If $0$ were among the chosen digits, it would have to be the smallest and thus placed first, making the number start with $0$, which is not allowed. So all 4 digits must be chosen from $1$ through $9$. The number of such 4-digit numbers equals the number of ways to choose 4 digits from $\\{1,2,\\dots,9\\}$: $\\binom{9}{4} = 126$.",
       "id": "MATHCOUNTS|Sprint|Combinatorics|early#1788015649024#fk0gdw"
+    },
+    {
+      "problem": "A standard six-sided die is rolled once, and a spinner with five equal sections numbered 1 through 5 is spun once. In how many of the 30 equally likely (die, spinner) outcomes is the number rolled on the die greater than the number spun on the spinner?",
+      "answer": "15",
+      "solution": "For each die value $d$, count spinner values $s$ with $s<d$: $d=1$ gives $0$, $d=2$ gives $1$, $d=3$ gives $2$, $d=4$ gives $3$, $d=5$ gives $4$, and $d=6$ gives $5$ (all spinner values work since the spinner only goes up to $5$). Adding these: $0+1+2+3+4+5=15$. So there are $15$ outcomes where the die result exceeds the spinner result.",
+      "id": "MATHCOUNTS|Sprint|Combinatorics|early#1795122080016#jabgvo"
     }
   ],
   "MATHCOUNTS|Sprint|Combinatorics|mid": [
@@ -5434,6 +5530,24 @@
       "answer": "150",
       "solution": "First count all ways to give 5 distinct books to 3 distinct students with no restriction: each book has 3 choices, giving $3^5 = 243$ ways. Use inclusion-exclusion to remove cases where at least one student gets nothing: choosing 1 student to exclude gives $\\binom{3}{1}2^5 = 96$ ways, and choosing 2 students to exclude gives $\\binom{3}{2}1^5 = 3$ ways. By inclusion-exclusion, the number of ways where every student gets at least one book is $243 - 96 + 3 = 150$.",
       "id": "MATHCOUNTS|Sprint|Combinatorics|mid#1788015662726#601aey"
+    },
+    {
+      "problem": "A raffle sells tickets numbered 1 through 50. Three tickets are drawn without replacement, one at a time, to award first, second, and third prize in that order. How many outcomes are possible in which the three ticket numbers, in the order they are drawn, form an increasing arithmetic sequence with a positive common difference?",
+      "answer": "600",
+      "solution": "An outcome corresponds to a triple $(a, a+d, a+2d)$ with $d \\ge 1$, where $a$ is drawn first, $a+d$ second, $a+2d$ third. For a fixed common difference $d$, we need $a \\ge 1$ and $a+2d \\le 50$, so $a$ ranges over $1$ to $50-2d$, giving $50-2d$ choices, valid as long as $50-2d \\ge 1$, i.e. $d \\le 24$. Summing over $d=1$ to $24$: $\\sum_{d=1}^{24}(50-2d) = 24\\cdot 50 - 2\\cdot\\frac{24\\cdot25}{2} = 1200 - 600 = 600$. So there are $600$ possible outcomes.",
+      "id": "MATHCOUNTS|Sprint|Combinatorics|mid#1795122105705#xivnjc"
+    },
+    {
+      "problem": "A board game's circular track has 6 equally spaced, numbered spaces. A player places 2 identical red tokens, 2 identical blue tokens, and 2 identical green tokens onto the 6 spaces, one token per space. In how many ways can the tokens be placed so that no two tokens of the same color occupy adjacent spaces (space 6 and space 1 are also considered adjacent)?",
+      "answer": "24",
+      "solution": "Label the spaces $1$ through $6$ around the circle. Since each color has exactly 2 tokens, the two spaces holding each color form one of the 3 pairs in a partition of $\\{1,2,3,4,5,6\\}$ into 3 pairs, and no pair may consist of two adjacent spaces. Checking all 15 ways to partition the 6 spaces into pairs, only 4 partitions avoid every adjacent pair: $\\{1,3\\},\\{2,5\\},\\{4,6\\}$; $\\{1,4\\},\\{2,5\\},\\{3,6\\}$; $\\{1,4\\},\\{2,6\\},\\{3,5\\}$; and $\\{1,5\\},\\{2,4\\},\\{3,6\\}$. For each valid partition, the 3 colors can be assigned to the 3 pairs in $3! = 6$ ways. This gives $4 \\times 6 = 24$ total arrangements.",
+      "id": "MATHCOUNTS|Sprint|Combinatorics|mid#1795122174173#n7856w"
+    },
+    {
+      "problem": "In a board game, a straight path of 9 spaces is numbered 1 through 9. A player must place four distinct pieces—a knight, a rook, a bishop, and a queen—on four different spaces so that no two pieces occupy adjacent spaces. In how many ways can the four pieces be placed?",
+      "answer": "360",
+      "solution": "First choose which 4 of the 9 spaces will be occupied, with no two chosen spaces adjacent. If the chosen spaces in increasing order are $a_1<a_2<a_3<a_4$, let $b_i=a_i-(i-1)$; then the $b_i$ are 4 distinct values from 1 to $9-4+1=6$ with no restriction, so there are $\\binom{6}{4}=15$ valid sets of spaces. Each set of 4 spaces can hold the knight, rook, bishop, and queen in $4!=24$ orders since the pieces are distinct. Multiplying gives $15\\times 24 = 360$ total arrangements.",
+      "id": "MATHCOUNTS|Sprint|Combinatorics|mid#1795122185917#kiekwy"
     }
   ],
   "MATHCOUNTS|Sprint|Combinatorics|late": [
@@ -5472,6 +5586,18 @@
       "answer": "192",
       "solution": "Since no two committee members can be a married couple, the 5 committee members must come from 5 different couples (out of the 6 couples). First choose which 5 of the 6 couples will contribute a member: $\\binom{6}{5}=6$ ways. Then, from each of those 5 chosen couples, pick one of the 2 spouses to serve: $2^5=32$ ways. Multiplying gives $6\\times 32 = 192$ possible committees.",
       "id": "MATHCOUNTS|Sprint|Combinatorics|late#1788015671616#cynwg4"
+    },
+    {
+      "problem": "A fair six-sided die with faces numbered 1 through 6 is rolled once, and a spinner with four equal sectors labeled 1, 2, 3, and 4 is spun once. What is the probability that the product of the die roll and the spinner result is a multiple of 6? Express your answer as a common fraction.",
+      "answer": "1/3",
+      "solution": "There are $6 \\times 4 = 24$ equally likely outcomes. For the product to be a multiple of 6, check each die value $d$ and count spinner values $s$ (from 1 to 4) making $ds$ divisible by 6: $d=1$ gives 0 working values, $d=2$ gives 1 (s=3), $d=3$ gives 2 (s=2,4), $d=4$ gives 1 (s=3), $d=5$ gives 0, and $d=6$ gives 4 (all s). Summing gives $0+1+2+1+0+4 = 8$ favorable outcomes. The probability is $\\frac{8}{24} = \\frac{1}{3}$.",
+      "id": "MATHCOUNTS|Sprint|Combinatorics|late#1795122201119#z7oc9u"
+    },
+    {
+      "problem": "The 8 letters in the word COUNTING are arranged in a random order. What is the probability that the letters I, O, and U appear in alphabetical order when read from left to right (that is, I appears before O, and O appears before U)? Express your answer as a common fraction.",
+      "answer": "1/6",
+      "solution": "Think of the two N's as temporarily distinguishable (N_1, N_2); then every one of the $8!$ permutations of the 8 distinct symbols is equally likely, and each distinct arrangement of the actual word corresponds to exactly $2!$ of these permutations (swapping N_1, N_2). Since that multiplier is the same for every arrangement, the relative left-to-right order of the three distinct vowels I, O, U is equally likely to be any of the $3! = 6$ possible orderings. Exactly one of these six orderings is the alphabetical order I, O, U, so the probability is $1/6$.",
+      "id": "MATHCOUNTS|Sprint|Combinatorics|late#1795122269904#3tzroj"
     }
   ],
   "MATHCOUNTS|Sprint|Probability|early": [
@@ -5480,6 +5606,48 @@
       "answer": "19/66",
       "solution": "There are $\\binom{12}{2}=66$ ways to choose 2 marbles from the 12 total. The number of ways to choose 2 of the same color is $\\binom{5}{2}+\\binom{4}{2}+\\binom{3}{2}=10+6+3=19$. So the probability both marbles match in color is $\\frac{19}{66}$, which is already in simplest form since $19$ is prime and does not divide $66$.",
       "id": "MATHCOUNTS|Sprint|Probability|early#1786644543246#1ac818"
+    },
+    {
+      "problem": "A lunch line consists of 12 students: 5 sixth graders, 4 seventh graders, and 3 eighth graders. Two students are chosen at random from the line to carry the lunch trays. What is the probability that both students chosen are sixth graders? Express your answer as a common fraction.",
+      "answer": "5/33",
+      "solution": "The total number of ways to choose 2 students from 12 is $\\binom{12}{2} = 66$. The number of ways to choose 2 sixth graders from the 5 sixth graders is $\\binom{5}{2} = 10$. So the probability is $\\frac{10}{66} = \\frac{5}{33}$.",
+      "id": "MATHCOUNTS|Sprint|Probability|early#1795122275634#kgqk79"
+    },
+    {
+      "problem": "A digital lock sets its 3-digit code by choosing each digit independently and at random from 0 through 9, so digits may repeat. What is the probability that the resulting code has three different digits and is a multiple of 5 (that is, its last digit is 0 or 5)? Express your answer as a common fraction.",
+      "answer": "18/125",
+      "solution": "There are $10^3 = 1000$ equally likely codes. For the code to be a multiple of 5, the last digit must be 0 or 5. If the last digit is 0, the first digit has 9 choices (1-9, avoiding 0) and the second digit has 8 remaining choices, giving $9\\times 8 = 72$ codes. If the last digit is 5, the first digit has 9 choices (0-9 except 5) and the second digit has 8 remaining choices, also giving $9\\times 8 = 72$ codes. In total there are $72+72=144$ favorable codes. The probability is $\\frac{144}{1000} = \\frac{18}{125}$.",
+      "id": "MATHCOUNTS|Sprint|Probability|early#1795122287620#rwh066"
+    },
+    {
+      "problem": "A piggy bank contains 6 pennies, 5 nickels, and 4 dimes, for a total of 15 coins. Two coins are drawn at random without replacement. What is the probability that the two coins drawn have a total value of at least 15 cents? Express your answer as a common fraction.",
+      "answer": "26/105",
+      "solution": "There are $\\binom{15}{2}=105$ equally likely pairs of coins. A total of at least 15 cents occurs only for a nickel-and-dime pair (worth 15 cents) or a dime-and-dime pair (worth 20 cents). There are $5\\times4=20$ nickel-dime pairs and $\\binom{4}{2}=6$ dime-dime pairs, giving $20+6=26$ favorable pairs. The probability is $\\frac{26}{105}$, which is already in simplest form.",
+      "id": "MATHCOUNTS|Sprint|Probability|early#1795122295996#xox6lo"
+    },
+    {
+      "problem": "The letters of the word GEOMETRY are written on 8 separate cards, one letter per card. If two cards are drawn at random without replacement, what is the probability that both cards show the letter E? Express your answer as a common fraction.",
+      "answer": "1/28",
+      "solution": "The word GEOMETRY has 8 letters total, and exactly 2 of them are E. The total number of ways to choose 2 cards from 8 is $\\binom{8}{2}=28$. The number of ways to choose both E's is $\\binom{2}{2}=1$. So the probability is $\\frac{1}{28}$.",
+      "id": "MATHCOUNTS|Sprint|Probability|early#1795122300619#gfsr0r"
+    },
+    {
+      "problem": "Two cards are drawn at random without replacement from a standard 52-card deck. What is the probability that one card is a king and the other is a queen? Express your answer as a common fraction.",
+      "answer": "8/663",
+      "solution": "There are two favorable orders: king then queen, or queen then king. The probability of king then queen is $\\frac{4}{52}\\cdot\\frac{4}{51}=\\frac{16}{2652}$, and the probability of queen then king is also $\\frac{16}{2652}$. Adding these gives $\\frac{32}{2652}$, which simplifies by dividing numerator and denominator by 4 to $\\frac{8}{663}$. Since $663=3\\cdot13\\cdot17$ shares no factors with $8$, the fraction is already in simplest form.",
+      "id": "MATHCOUNTS|Sprint|Probability|early#1795122307612#8b96bs"
+    },
+    {
+      "problem": "A class election has 7 candidates running for two at-large committee seats: 3 are eighth graders, 2 are seventh graders, and 2 are sixth graders. If 2 of the 7 candidates are selected at random to fill the seats, what is the probability that both selected candidates are from the same grade? Express your answer as a common fraction.",
+      "answer": "5/21",
+      "solution": "The total number of ways to choose 2 candidates from 7 is $\\binom{7}{2}=21$. Choosing 2 eighth graders from 3 gives $\\binom{3}{2}=3$ ways; choosing 2 seventh graders from 2 gives $\\binom{2}{2}=1$ way; choosing 2 sixth graders from 2 gives $\\binom{2}{2}=1$ way. Adding these gives $3+1+1=5$ favorable outcomes. The probability is $\\frac{5}{21}$.",
+      "id": "MATHCOUNTS|Sprint|Probability|early#1795122313613#h8wr0m"
+    },
+    {
+      "problem": "Eight students, including best friends Mia and Leo, are randomly assigned to the 8 seats around a circular lunch table. What is the probability that Mia and Leo end up sitting next to each other? Express your answer as a common fraction.",
+      "answer": "2/7",
+      "solution": "Fix Mia's seat; this doesn't affect the probability since the table is symmetric. Leo is then equally likely to sit in any of the remaining 7 seats. Exactly 2 of those 7 seats (immediately to Mia's left or right) are adjacent to Mia. So the probability is $\\frac{2}{7}$.",
+      "id": "MATHCOUNTS|Sprint|Probability|early#1795122320866#hxjn7c"
     }
   ],
   "MATHCOUNTS|Sprint|Probability|mid": [
@@ -5506,6 +5674,30 @@
       "answer": "5/12",
       "solution": "There are $6 \\times 6 = 36$ equally likely outcomes when rolling two dice. The possible prime sums are $2, 3, 5, 7, 11$. Counting outcomes for each: sum of $2$ has $1$ way, $3$ has $2$ ways, $5$ has $4$ ways, $7$ has $6$ ways, and $11$ has $2$ ways, giving $1+2+4+6+2 = 15$ favorable outcomes. The probability is $\\frac{15}{36} = \\frac{5}{12}$.",
       "id": "MATHCOUNTS|Sprint|Probability|mid#1787980983793#bx7q6q"
+    },
+    {
+      "problem": "A raffle box contains 50 tickets numbered 1 through 50. Three tickets are drawn at random without replacement to award three different prizes. What is the probability that at least one of the three winning ticket numbers is a multiple of 6? Express your answer as a common fraction.",
+      "answer": "29/70",
+      "solution": "There are 8 multiples of 6 from 1 to 50 (6, 12, ..., 48), leaving 42 tickets that are not multiples of 6. The probability that none of the three drawn tickets is a multiple of 6 is $\\dfrac{\\binom{42}{3}}{\\binom{50}{3}}=\\dfrac{11480}{19600}=\\dfrac{41}{70}$. The probability that at least one ticket is a multiple of 6 is the complement: $1-\\dfrac{41}{70}=\\dfrac{29}{70}$.",
+      "id": "MATHCOUNTS|Sprint|Probability|mid#1795122339588#bl87qk"
+    },
+    {
+      "problem": "A standard 52-card deck is shuffled, and four cards are dealt in a row. What is the probability that the four cards show four different suits? Express your answer as a common fraction.",
+      "answer": "2197/20825",
+      "solution": "The first card can be anything, so it fixes one suit with probability $1$. The second card must avoid that suit: there are $39$ cards of the other three suits out of the remaining $51$, giving probability $\\frac{39}{51}=\\frac{13}{17}$. The third card must avoid the two suits already used: $26$ cards out of $50$ remain valid, giving $\\frac{26}{50}=\\frac{13}{25}$. The fourth card must be the one remaining suit: $13$ cards out of $49$ remain, giving $\\frac{13}{49}$. Multiplying: $\\frac{13}{17}\\cdot\\frac{13}{25}\\cdot\\frac{13}{49}=\\frac{13^3}{17\\cdot25\\cdot49}=\\frac{2197}{20825}$.",
+      "id": "MATHCOUNTS|Sprint|Probability|mid#1795122386798#qrnyei"
+    },
+    {
+      "problem": "A digital lock displays a 4-digit code, where each digit is chosen independently and at random from 0 through 9 (digits may repeat). What is the probability that, read left to right, the digits form a non-decreasing sequence, meaning each digit is greater than or equal to the digit before it? Express your answer as a common fraction.",
+      "answer": "143/2000",
+      "solution": "There are $10^4 = 10000$ equally likely codes. A non-decreasing sequence of 4 digits from $\\{0,1,\\dots,9\\}$ corresponds to choosing a multiset of size 4 from 10 values, which by stars and bars equals $\\binom{10+4-1}{4} = \\binom{13}{4} = 715$. So the probability is $\\frac{715}{10000}$, which simplifies (dividing by 5) to $\\frac{143}{2000}$, and since $143 = 11\\cdot 13$ shares no factors with $2000 = 2^4\\cdot5^3$, this is fully reduced.",
+      "id": "MATHCOUNTS|Sprint|Probability|mid#1795122400186#vmr320"
+    },
+    {
+      "problem": "A volleyball team's six starting players are randomly assigned to the six numbered positions in the serving rotation, which are arranged around the court in a circle (so position 6 is adjacent to position 1). What is the probability that the team's two co-captains end up in adjacent rotation positions? Express your answer as a common fraction.",
+      "answer": "2/5",
+      "solution": "Fix one co-captain in any position; by symmetry this doesn't affect the probability. The other co-captain is then equally likely to land in any of the remaining 5 positions. In a circle of 6 positions, each position has exactly 2 neighbors, so exactly 2 of the 5 remaining positions are adjacent to the fixed co-captain. Thus the probability both co-captains are adjacent is $\\frac{2}{5}$.",
+      "id": "MATHCOUNTS|Sprint|Probability|mid#1795122436790#gtn9lb"
     }
   ],
   "MATHCOUNTS|Sprint|Probability|late": [
@@ -5526,6 +5718,36 @@
       "answer": "3/4",
       "solution": "There are $36$ equally likely outcomes. Rolls that are NOT multiples of $3$ are $\\{1,2,4,5\\}$, so outcomes with neither roll a multiple of $3$ number $4\\times4=16$, leaving $36-16=20$ outcomes with at least one multiple of $3$ (this is our conditioning event). Within these $20$, we want to exclude cases where the product is odd, which requires both rolls odd; odd numbers are $\\{1,3,5\\}$, giving $3\\times3=9$ such pairs, but we need at least one multiple of $3$ (only $3$ qualifies among odds), and pairs of odds avoiding $3$ number $2\\times2=4$, so pairs with both odd AND at least one being $3$ total $9-4=5$. Thus outcomes with at least one multiple of $3$ and an even product are $20-5=15$. The desired probability is $15/20 = 3/4$.",
       "id": "MATHCOUNTS|Sprint|Probability|late#1788015842495#o1wnul"
+    },
+    {
+      "problem": "A license plate has the form of three letters followed by three digits. Each of the three letters is chosen independently and at random from the 26 letters of the alphabet, and each of the three digits is chosen independently and at random from 0 through 9, with repetition allowed in both groups. What is the probability that the three letters are all different from one another and the three digits, read left to right, form a strictly increasing sequence? Express your answer as a common fraction.",
+      "answer": "18/169",
+      "solution": "For the letters: the first can be anything, the second must differ from the first (probability $25/26$), and the third must differ from both (probability $24/26$), giving $\\frac{25}{26}\\cdot\\frac{24}{26}=\\frac{600}{676}=\\frac{150}{169}$. For the digits: there are $10^3=1000$ equally likely ordered triples, and exactly $\\binom{10}{3}=120$ choices of three distinct digits correspond to exactly one strictly increasing arrangement, giving probability $\\frac{120}{1000}=\\frac{3}{25}$. Multiplying the independent probabilities: $\\frac{150}{169}\\cdot\\frac{3}{25}=\\frac{450}{4225}=\\frac{18}{169}$.",
+      "id": "MATHCOUNTS|Sprint|Probability|late#1795122451287#z2q4ey"
+    },
+    {
+      "problem": "Eight students, including best friends Alice and Bob and feuding classmates Carla and Dana, line up in random order for lunch. What is the probability that Alice and Bob end up standing next to each other, but Carla and Dana do not end up standing next to each other? Express your answer as a common fraction.",
+      "answer": "5/28",
+      "solution": "Treat Alice and Bob as a block: there are $2 \\cdot 7!$ arrangements of the 8 students with them adjacent, out of $8!$ total, giving $P(\\text{A,B adjacent})=\\frac{2\\cdot 7!}{8!}=\\frac{1}{4}$. Among those, also make Carla and Dana a block: now there are 6 units arranged in $6!$ ways, with $2\\cdot2$ internal orders for the two blocks, giving $2\\cdot2\\cdot6! = 2880$ arrangements, so $P(\\text{both pairs adjacent})=\\frac{2880}{8!}=\\frac{1}{14}$. The desired probability is $P(\\text{A,B adjacent}) - P(\\text{both adjacent}) = \\frac{1}{4}-\\frac{1}{14}=\\frac{7}{28}-\\frac{2}{28}=\\frac{5}{28}$.",
+      "id": "MATHCOUNTS|Sprint|Probability|late#1795122473589#2jw4qv"
+    },
+    {
+      "problem": "A spinner has three equally likely outcomes, labeled $A$, $B$, and $C$. A fair six-sided die is rolled: if it shows $1$, $2$, or $3$, the spinner is spun once; if it shows $4$ or $5$, the spinner is spun twice; if it shows $6$, the spinner is spun three times. What is the probability that every spin lands on the same letter (note that a single spin automatically satisfies this)? Express your answer as a common fraction.",
+      "answer": "17/27",
+      "solution": "The die gives $1$ spin with probability $\\frac{3}{6}=\\frac{1}{2}$, $2$ spins with probability $\\frac{2}{6}=\\frac{1}{3}$, and $3$ spins with probability $\\frac{1}{6}$. With $1$ spin the condition always holds, contributing $\\frac{1}{2}\\cdot 1=\\frac{1}{2}$. With $2$ spins, both matching has probability $3\\cdot\\left(\\frac{1}{3}\\right)^2=\\frac{1}{3}$, contributing $\\frac{1}{3}\\cdot\\frac{1}{3}=\\frac{1}{9}$. With $3$ spins, all matching has probability $3\\cdot\\left(\\frac{1}{3}\\right)^3=\\frac{1}{9}$, contributing $\\frac{1}{6}\\cdot\\frac{1}{9}=\\frac{1}{54}$. Adding $\\frac{1}{2}+\\frac{1}{9}+\\frac{1}{54}=\\frac{27}{54}+\\frac{6}{54}+\\frac{1}{54}=\\frac{34}{54}=\\frac{17}{27}$.",
+      "id": "MATHCOUNTS|Sprint|Probability|late#1795122526962#l8m0cx"
+    },
+    {
+      "problem": "A basketball team has 12 players: 5 guards, 4 forwards, and 3 centers. The coach selects 5 players at random to form a starting lineup, with no regard to position. What is the probability that the lineup includes at least 2 guards, at least 1 forward, and at least 1 center? Express your answer as a common fraction.",
+      "answer": "35/66",
+      "solution": "The total number of lineups is $\\binom{12}{5}=792$. We need $(g,f,c)$ with $g+f+c=5$, $g\\ge2$, $f\\ge1$, $c\\ge1$, $g\\le5$, $f\\le4$, $c\\le3$: the only possibilities are $(2,1,2)$, $(2,2,1)$, and $(3,1,1)$. Counting each: $(2,1,2)$ gives $\\binom{5}{2}\\binom{4}{1}\\binom{3}{2}=10\\cdot4\\cdot3=120$; $(2,2,1)$ gives $\\binom{5}{2}\\binom{4}{2}\\binom{3}{1}=10\\cdot6\\cdot3=180$; $(3,1,1)$ gives $\\binom{5}{3}\\binom{4}{1}\\binom{3}{1}=10\\cdot4\\cdot3=120$. Adding these gives $120+180+120=420$ favorable lineups. The probability is $\\frac{420}{792}=\\frac{35}{66}$.",
+      "id": "MATHCOUNTS|Sprint|Probability|late#1795122539651#t42w6a"
+    },
+    {
+      "problem": "A class committee is formed by randomly selecting 4 students from a group of 5 boys and 4 girls. Then, 2 of the 4 committee members are chosen at random to serve as co-chairs. What is the probability that both co-chairs are girls? Express your answer as a common fraction.",
+      "answer": "1/6",
+      "solution": "Imagine lining up all 9 students in a uniformly random order: the first 4 in line become the committee, and the first 2 of those 4 become the co-chairs. This is equivalent to the described two-stage process, so the co-chairs are simply the first 2 students in a random ordering of all 9 students. The probability the first student is a girl is $\\frac{4}{9}$, and given that, the probability the second is also a girl is $\\frac{3}{8}$. Multiplying gives $\\frac{4}{9}\\cdot\\frac{3}{8}=\\frac{12}{72}=\\frac{1}{6}$.",
+      "id": "MATHCOUNTS|Sprint|Probability|late#1795122575368#vzcyo5"
     }
   ],
   "MATHCOUNTS|Target|Algebra|early": [
@@ -5570,6 +5792,12 @@
       "answer": "120",
       "solution": "Let the length be $l$ and width be $w$. The perimeter condition gives $l+w=22$. The area condition gives $lw=(l+3)(w-2)$. Expanding the right side: $lw = lw -2l+3w-6$, so $0=-2l+3w-6$, giving $l=\\frac{3w-6}{2}$. Substituting into $l+w=22$: $\\frac{3w-6}{2}+w=22 \\Rightarrow 3w-6+2w=44 \\Rightarrow 5w=50 \\Rightarrow w=10$, so $l=12$. The original area is $l\\cdot w = 12\\cdot 10 = 120$.",
       "id": "MATHCOUNTS|Target|Algebra|early#1788015897147#91xeym"
+    },
+    {
+      "problem": "At a stationery shop, two notebooks, three pens, and one marker together cost \\$14.50. One notebook, two pens, and two markers together cost \\$13.50. Three notebooks, one pen, and one marker together cost \\$13.00. If a customer buys exactly one notebook, one pen, and one marker, and receives a 10% discount on that purchase, what is the final price? Express your answer as a decimal to the nearest tenth.",
+      "answer": "7.2",
+      "solution": "Let $n$, $p$, $m$ be the prices of a notebook, pen, and marker. The equations are $2n+3p+m=14.5$, $n+2p+2m=13.5$, and $3n+p+m=13.0$. Taking $\\frac{2}{5}$ of the second equation plus $\\frac{1}{5}$ of the third gives $\\frac{2}{5}(13.5)+\\frac{1}{5}(13.0) = \\frac{27+13}{5}=8$, which equals $n+p+m$ since those coefficients combine to give 1 for each of $n$, $p$, and $m$. So one of each item costs $\\$8.00$. Applying a 10% discount gives $8.00 \\times 0.9 = 7.2$.",
+      "id": "MATHCOUNTS|Target|Algebra|early#1795122616669#t7czwd"
     }
   ],
   "MATHCOUNTS|Target|Algebra|mid": [
@@ -5664,6 +5892,12 @@
       "answer": "135",
       "solution": "Let $A$, $B$, $C$ be the ages, so $A+B+C=17$, $2A+3B-C=12$, and $A-B+2C=16$. Adding the first two equations eliminates $C$: $3A+4B=29$. Substituting $C=17-A-B$ into the third equation gives $A-B+2(17-A-B)=16$, which simplifies to $A+3B=18$. Solving $3A+4B=29$ and $A+3B=18$ together (using $A=18-3B$) gives $54-9B+4B=29$, so $B=5$, then $A=3$ and $C=17-3-5=9$. Checking: $2(3)+3(5)-9=12$ and $3-5+2(9)=16$, both correct, so the product is $3\\cdot5\\cdot9=135$.",
       "id": "MATHCOUNTS|Target|Algebra|late#1788015945272#puo2wk"
+    },
+    {
+      "problem": "The polynomial $x^3 - 12x^2 + kx - 48$ has three positive integer roots that form an arithmetic progression. Find the value of $k$.",
+      "answer": "44",
+      "solution": "Since the roots are in arithmetic progression, write them as $4-d$, $4$, $4+d$ (their average must equal one-third of the coefficient sum, $12/3=4$). The product of the roots equals $48$, so $(4-d)(4)(4+d) = 4(16-d^2) = 48$, giving $16-d^2=12$, so $d^2=4$ and $d=2$. The roots are $2$, $4$, and $6$. By Vieta's formulas, $k$ equals the sum of the products of the roots taken two at a time: $k = 2\\cdot4 + 2\\cdot6 + 4\\cdot6 = 8+12+24 = 44$.",
+      "id": "MATHCOUNTS|Target|Algebra|late#1795122637074#2iqo33"
     }
   ],
   "MATHCOUNTS|Target|Geometry|early": [
@@ -5708,6 +5942,12 @@
       "answer": "82.2",
       "solution": "Place $A=(0,0)$, $B=(12,0)$, $C=(12,12)$, $D=(0,12)$. The circle centered at $A$ has equation $x^2+y^2=144$ and the circle centered at $C$ has equation $(x-12)^2+(y-12)^2=144$; subtracting shows both pass through exactly $B$ and $D$, so the arcs from $B$ to $D$ bound the lens. The distance between centers is $d=AC=12\\sqrt2$, and for two circles of radius $r=12$ the lens (intersection) area is $2r^2\\cos^{-1}\\left(\\frac{d}{2r}\\right)-\\frac{d}{2}\\sqrt{4r^2-d^2}$. Since $\\frac{d}{2r}=\\frac{\\sqrt2}{2}$, $\\cos^{-1}\\left(\\frac{\\sqrt2}{2}\\right)=\\frac{\\pi}{4}$, giving area $=2(144)\\left(\\frac{\\pi}{4}\\right)-\\left(6\\sqrt2\\right)\\sqrt{288}=72\\pi-144$. Numerically, $72\\pi-144\\approx226.1947-144=82.1947$, which rounds to $82.2$.",
       "id": "MATHCOUNTS|Target|Geometry|early#1788016007593#g0d10l"
+    },
+    {
+      "problem": "A semicircular region has diameter $\\overline{PQ}$ with $PQ = 20$. Point $R$ lies on the semicircular arc so that $PR = 12$. What is the area of the region inside the semicircle but outside triangle $PQR$? Express your answer as a decimal to the nearest tenth.",
+      "answer": "61.1",
+      "solution": "Since $R$ lies on a semicircle with diameter $PQ$, angle $PRQ$ is a right angle (Thales' theorem). With $PQ=20$ as the hypotenuse and $PR=12$, the Pythagorean theorem gives $QR = \\sqrt{20^2-12^2} = \\sqrt{256} = 16$. The area of triangle $PQR$ is $\\frac{1}{2}(12)(16) = 96$. The semicircle has radius $10$, so its area is $\\frac{1}{2}\\pi(10)^2 = 50\\pi \\approx 157.0796$. Subtracting the triangle's area gives $157.0796 - 96 \\approx 61.1$.",
+      "id": "MATHCOUNTS|Target|Geometry|early#1795122656447#03lffg"
     }
   ],
   "MATHCOUNTS|Target|Geometry|mid": [
@@ -5752,6 +5992,12 @@
       "answer": "83.1",
       "solution": "Since the square is inscribed in circle $O$, its diagonal equals the diameter of $O$, so the diagonal is $16$ cm, giving side length $s = \\frac{16}{\\sqrt{2}} = 8\\sqrt{2}$. The smaller circle is inscribed in the square, so its radius is half the side length: $r = \\frac{8\\sqrt{2}}{2} = 4\\sqrt{2}$. A regular hexagon inscribed in a circle of radius $r$ can be split into 6 equilateral triangles of side $r$, so its area is $\\frac{3\\sqrt{3}}{2}r^2$. Here $r^2 = (4\\sqrt{2})^2 = 32$, so the area is $\\frac{3\\sqrt{3}}{2}(32) = 48\\sqrt{3} \\approx 83.138$. Rounded to the nearest tenth, the area is $83.1$ square centimeters.",
       "id": "MATHCOUNTS|Target|Geometry|mid#1788016025140#5vt0e1"
+    },
+    {
+      "problem": "A cubical crate with edge length $4$ feet rests in the corner of a room, with one face flush against a wall and the adjacent face flush against the floor. A ladder leans against that same wall, touching the floor at a point $9$ feet from the wall, and the ladder just grazes the top outer edge of the crate, which is $4$ feet from the wall and $4$ feet above the floor. Treating the wall, the floor, and the ladder as the three sides of a right triangle, what is the area of that triangle, in square feet? Express your answer as a decimal to the nearest tenth.",
+      "answer": "32.4",
+      "solution": "Set up coordinates with the wall as the $y$-axis and the floor as the $x$-axis. The ladder meets the floor at $(9,0)$ and the wall at $(0,h)$, so its line has equation $\\frac{x}{9}+\\frac{y}{h}=1$. Since the ladder also passes through the crate's top corner at $(4,4)$, substitute to get $\\frac{4}{9}+\\frac{4}{h}=1$. Solving, $\\frac{4}{h}=\\frac{5}{9}$, so $h=\\frac{36}{5}=7.2$. The right triangle formed by the wall, floor, and ladder has legs $9$ and $7.2$, so its area is $\\frac{1}{2}(9)(7.2)=32.4$.",
+      "id": "MATHCOUNTS|Target|Geometry|mid#1795122690506#jowws6"
     }
   ],
   "MATHCOUNTS|Target|Geometry|late": [
@@ -5796,6 +6042,12 @@
       "answer": "15/4",
       "solution": "Since $\\triangle ABC$ has legs $8$ and $15$, the hypotenuse is $AB=17$ (an $8$-$15$-$17$ triple). The inradius of a right triangle is $r=\\frac{CA+CB-AB}{2}=\\frac{8+15-17}{2}=3$. Placing $C$ at the origin with legs on the axes, the incircle's center is at $(3,3)$, so the two tangent lines parallel to $\\overline{CB}$ (the $x$-axis) are $y=0$ (which is $CB$) and $y=2r=6$ (which is $\\ell$). Since $D$ lies on $\\overline{CA}$ with $CD=6$, we get $DA = CA-CD = 8-6=2$, so $\\triangle ADE \\sim \\triangle ACB$ with ratio $\\frac{DA}{CA}=\\frac{2}{8}=\\frac14$. The area of $\\triangle ACB$ is $\\frac12(8)(15)=60$, so the area of $\\triangle ADE$ is $60\\left(\\frac14\\right)^2=\\frac{60}{16}=\\frac{15}{4}$.",
       "id": "MATHCOUNTS|Target|Geometry|late#1788016062521#wg50ng"
+    },
+    {
+      "problem": "A rectangular prism has edge lengths that are positive integers, and its total surface area is $148$ square units. What is the greatest possible volume of the prism, in cubic units?",
+      "answer": "120",
+      "solution": "Let the edge lengths be positive integers $a$, $b$, $c$. The surface area condition gives $2(ab+bc+ca)=148$, so $ab+bc+ca=74$. To maximize the volume $abc$ for a fixed value of $ab+bc+ca$, the edges should be as close to equal as possible (by AM-GM-type reasoning), so try values near $\\sqrt{74/3}\\approx 5$. Testing $a=4, b=5, c=6$ gives $ab+bc+ca = 20+30+24 = 74$, which satisfies the condition exactly. Checking other integer triples satisfying $ab+bc+ca=74$ (such as $(2,4,11)$ with volume $88$, or $(1,4,14)$ with volume $56$) gives smaller volumes, confirming $(4,5,6)$ is optimal. The volume is $4\\cdot5\\cdot6=120$.",
+      "id": "MATHCOUNTS|Target|Geometry|late#1795122722374#2e3nez"
     }
   ],
   "MATHCOUNTS|Target|Number Theory|early": [
@@ -5872,6 +6124,30 @@
       "answer": "9",
       "solution": "Since $N$ is a multiple of $60=2^2\\cdot3\\cdot5$, we need $a\\ge2$, $b\\ge1$, $c\\ge1$. The divisor count is $(a+1)(b+1)(c+1)=42=2\\cdot3\\cdot7$, and since each factor must be at least $2$ (with $a+1\\ge3$), the only way to write $42$ as a product of three factors each $\\ge2$ is $2\\cdot3\\cdot7$, giving exponent values $\\{1,2,6\\}$ for $\\{a,b,c\\}$ (with $a\\in\\{2,6\\}$). To minimize $N$, assign the largest exponent to the smallest prime: testing all valid assignments, $a=6,b=2,c=1$ gives $N=2^6\\cdot3^2\\cdot5=2880$, the smallest among all options (others give $4800$, $14580$, $187500$). Check: $(6+1)(2+1)(1+1)=42$ divisors and $2880/60=48$, so it is a valid multiple of $60$. Thus $a+b+c=6+2+1=9$.",
       "id": "MATHCOUNTS|Target|Number Theory|mid#1788016227419#qv02w6"
+    },
+    {
+      "problem": "For how many integers $n$ with $2 \\le n \\le 20$ is $n$ a divisor of $(n-1)! + 1$?",
+      "answer": "8",
+      "solution": "By Wilson's Theorem, if $p$ is prime then $(p-1)! \\equiv -1 \\pmod{p}$, so $p \\mid (p-1)!+1$ for every prime $p$. Conversely, if $n$ is composite and $n>4$, then $n$'s factors all appear among $1,2,\\dots,n-1$, so $n \\mid (n-1)!$, meaning $(n-1)!+1 \\equiv 1 \\pmod n$, which is never $0$. Checking the small exception $n=4$ directly: $3!+1=7$, which is not divisible by $4$. Thus the only values of $n$ that work are the primes from $2$ to $20$: $2,3,5,7,11,13,17,19$. That gives $8$ values of $n$.",
+      "id": "MATHCOUNTS|Target|Number Theory|mid#1795122786797#vgoh4e"
+    },
+    {
+      "problem": "Call a two-digit positive integer with no digit equal to $0$ \"dual-divisible\" if it is divisible by both the sum of its digits and the product of its digits. What is the sum of all dual-divisible two-digit positive integers?",
+      "answer": "72",
+      "solution": "Let the number be $10a+b$ with $a,b \\in \\{1,2,\\dots,9\\}$. We need $(a+b) \\mid (10a+b)$ and $(ab) \\mid (10a+b)$. Checking all $81$ pairs systematically (or noting the pattern among small digit sums), the digit sum must divide $10a+b$, which quickly narrows candidates to $a=1,b=2$; $a=2,b=4$; $a=3,b=6$, giving $12, 24, 36$. Verify: $12$: sum $3$, product $2$, and $12/3=4$, $12/2=6$ — both integers. $24$: sum $6$, product $8$, $24/6=4$, $24/8=3$ — both integers. $36$: sum $9$, product $18$, $36/9=4$, $36/18=2$ — both integers. No other two-digit number (checked exhaustively) satisfies both conditions, so the sum is $12+24+36=72$.",
+      "id": "MATHCOUNTS|Target|Number Theory|mid#1795122828501#0ihcrx"
+    },
+    {
+      "problem": "Find the number of ordered pairs of positive integers $(x,y)$ with $x>y$ such that $x^2-y^2=1800$.",
+      "answer": "9",
+      "solution": "Factor $x^2-y^2=(x+y)(x-y)=1800$. Since $x+y$ and $x-y$ differ by $2y$, they must have the same parity, and since their product $1800$ is even, both must be even. Writing $x+y=2p$ and $x-y=2q$ gives $pq=450$ with $p>q>0$, so each valid factorization of $450$ into two positive factors determines a unique pair $(x,y)$. Since $450=2\\cdot3^2\\cdot5^2$ has $(1+1)(2+1)(2+1)=18$ divisors and is not a perfect square, there are $18/2=9$ unordered factor pairs, giving $9$ valid ordered pairs $(x,y)$.",
+      "id": "MATHCOUNTS|Target|Number Theory|mid#1795122851238#1dgf23"
+    },
+    {
+      "problem": "What is the sum of all positive integers less than $1000$ that leave a remainder of $3$ when divided by $4$, a remainder of $4$ when divided by $5$, and a remainder of $5$ when divided by $6$?",
+      "answer": "8144",
+      "solution": "Notice that each remainder is exactly $1$ less than its divisor: $3=4-1$, $4=5-1$, $5=6-1$. So such an integer $x$ satisfies $x+1 \\equiv 0 \\pmod{4}$, $x+1\\equiv 0\\pmod5$, and $x+1\\equiv 0\\pmod6$, meaning $x+1$ is a multiple of $\\text{lcm}(4,5,6)=60$. Thus $x = 60k-1$ for positive integers $k$, and we need $60k-1<1000$, so $k \\le 16$ (since $60\\cdot16-1=959$ works but $60\\cdot17-1=1019$ does not). The sum is $\\sum_{k=1}^{16}(60k-1) = 60\\cdot\\frac{16\\cdot17}{2} - 16 = 8160-16 = 8144$.",
+      "id": "MATHCOUNTS|Target|Number Theory|mid#1795122944146#9r90hs"
     }
   ],
   "MATHCOUNTS|Target|Number Theory|late": [
@@ -5910,6 +6186,18 @@
       "answer": "1002",
       "solution": "We need $n(n-1)\\equiv 0 \\pmod{1000}$, and since $1000 = 8 \\cdot 125$ with $\\gcd(8,125)=1$, this requires $n(n-1)\\equiv 0 \\pmod 8$ and $n(n-1)\\equiv 0 \\pmod{125}$ simultaneously. Since $n$ and $n-1$ are coprime, each prime-power factor must divide one of the two consecutive numbers entirely: $n\\equiv 0$ or $1 \\pmod 8$, and $n\\equiv 0$ or $1 \\pmod{125}$. Combining via the Chinese Remainder Theorem gives four residues mod $1000$: $n\\equiv 0, 1, 376, 625$ (solving $n\\equiv 0\\pmod8,\\ n\\equiv1\\pmod{125}$ gives $376$, and $n\\equiv1\\pmod8,\\ n\\equiv0\\pmod{125}$ gives $625$). Excluding $n=0$ since $n$ must be a positive integer less than $1000$, the valid values are $n=1, 376, 625$. Their sum is $1+376+625 = 1002$.",
       "id": "MATHCOUNTS|Target|Number Theory|late#1788016325315#1k4fng"
+    },
+    {
+      "problem": "A three-digit number is formed by rolling a fair six-sided die three times: the first roll gives the hundreds digit, the second gives the tens digit, and the third gives the units digit. What is the probability that the resulting three-digit number is divisible by 11? Express your answer as a common fraction.",
+      "answer": "2/27",
+      "solution": "A number with digits $a,b,c$ (hundreds, tens, units) is divisible by 11 exactly when $a-b+c \\equiv 0 \\pmod{11}$. Since $a,b,c$ range over $1$ through $6$, the value $a+c-b$ ranges from $-4$ to $11$, so the only possibilities are $a+c-b=0$ or $a+c-b=11$. For $a+c-b=0$, we need $b=a+c\\le 6$; for each sum $s=a+c$ from $2$ to $6$ there are $s-1$ ordered pairs $(a,c)$, giving $1+2+3+4+5=15$ outcomes. For $a+c-b=11$, the only way is $a=c=6,b=1$, giving $1$ outcome. In total there are $16$ favorable outcomes out of $6^3=216$ equally likely outcomes, so the probability is $\\frac{16}{216}=\\frac{2}{27}$.",
+      "id": "MATHCOUNTS|Target|Number Theory|late#1795122974326#9hpu3z"
+    },
+    {
+      "problem": "A positive integer $n$ can be written as a sum of two or more consecutive positive integers in several different ways (for example, $9 = 4+5 = 2+3+4$ gives two ways). Find the smallest positive integer that can be written as a sum of two or more consecutive positive integers in exactly 5 different ways.",
+      "answer": "45",
+      "solution": "If $n$ is a sum of $k\\ge 2$ consecutive positive integers starting at $a$, then $n = ka + \\frac{k(k-1)}{2}$, so $2n = k(2a+k-1)$. Since $2a+k-1$ and $k$ have opposite parity, $k$ must be the odd factor in this product, so each valid $k$ corresponds to an odd divisor of $n$ (with $k\\ge 2$ and $a\\ge 1$ forcing that divisor to not give the trivial single-term case). This gives: the number of ways to write $n$ as a sum of two or more consecutive positive integers equals (number of odd divisors of $n$) $- 1$. We need this count to equal 5, so $n$ must have exactly 6 odd divisors; writing $n=2^a\\cdot m$ with $m$ odd, we need $d(m)=6$, and to minimize $n$ we take $a=0$. Checking odd numbers in order, the smallest $m$ with exactly 6 divisors is $45=3^2\\cdot5$ (divisors $1,3,5,9,15,45$), confirmed by checking all smaller odd numbers have fewer divisors. Indeed, $45=22+23=14+15+16=7+8+9+10+11=5+6+7+8+9+10=1+2+\\cdots+9$, exactly 5 ways, so the answer is $45$.",
+      "id": "MATHCOUNTS|Target|Number Theory|late#1795123137295#dcyjp9"
     }
   ],
   "MATHCOUNTS|Target|Combinatorics|early": [
@@ -6004,6 +6292,12 @@
       "answer": "846720",
       "solution": "First arrange the 7 consonants M, T, H, C, N, T, S, where the T's are identical: there are $\\dfrac{7!}{2!}=2520$ distinct arrangements. This creates 8 gaps (including the two ends) around the consonants where vowels can be inserted, one gap before, one after, and one between each pair of consonants. We must place the 3 distinct vowels A, O, U into 3 of these 8 gaps, at most one per gap, and order matters: this can be done in $8\\times7\\times6=336$ ways. Multiplying the independent choices gives $2520\\times336=846720$ total arrangements with no two vowels adjacent.",
       "id": "MATHCOUNTS|Target|Combinatorics|mid#1788016356438#g1c1b5"
+    },
+    {
+      "problem": "In a standard deck of 52 cards, each of the 13 ranks (Ace = 1, 2, 3, \\ldots, 10, Jack = 11, Queen = 12, King = 13) appears once in each of the 4 suits. How many 3-card hands consisting of three cards of distinct ranks have rank-sum divisible by 13?",
+      "answer": "1408",
+      "solution": "Three distinct ranks are chosen from $\\{1,2,\\ldots,13\\}$; since the minimum possible sum is $1+2+3=6$ and the maximum is $11+12+13=36$, the sum must be $13$ or $26$. Counting triples $a<b<c$ with $a+b+c=13$ by casework on $a$ gives $(1,2,10),(1,3,9),(1,4,8),(1,5,7),(2,3,8),(2,4,7),(2,5,6),(3,4,6)$ — 8 triples. Using the symmetry $r \\to 14-r$, which sends a triple summing to $S$ to one summing to $42-S$, the count for sum $26$ equals the count for sum $42-26=16$; direct casework on sum $16$ gives $14$ triples. So there are $8+14=22$ valid rank-triples. For each rank-triple, each of the 3 cards can independently be any of the 4 suits, giving $4^3=64$ hands per triple, for a total of $22\\times 64 = 1408$.",
+      "id": "MATHCOUNTS|Target|Combinatorics|mid#1795123174430#wzqb8s"
     }
   ],
   "MATHCOUNTS|Target|Combinatorics|late": [
@@ -6098,6 +6392,12 @@
       "answer": "7/27",
       "solution": "There are $6^3 = 216$ equally likely ordered outcomes for the three rolls. A non-decreasing sequence $a_1 \\le a_2 \\le a_3$ with each value from $1$ to $6$ corresponds exactly to choosing a multiset of size 3 from 6 possible values, since once the multiset of values is chosen there is exactly one way to arrange them in non-decreasing order. The number of such multisets is $\\binom{6+3-1}{3} = \\binom{8}{3} = 56$. So the probability is $\\frac{56}{216} = \\frac{7}{27}$.",
       "id": "MATHCOUNTS|Target|Probability|early#1788016387057#g9j25n"
+    },
+    {
+      "problem": "A class council has 10 members: 6 seniors and 4 juniors. A 3-person subcommittee is chosen at random from the 10 members to plan the spring dance. Given that at least one junior is on the subcommittee, what is the probability that exactly two juniors were chosen? Express your answer as a common fraction.",
+      "answer": "9/25",
+      "solution": "The total number of 3-person subcommittees from 10 members is $\\binom{10}{3}=120$. The number with no juniors (all seniors) is $\\binom{6}{3}=20$, so the number with at least one junior is $120-20=100$. The number with exactly two juniors and one senior is $\\binom{4}{2}\\binom{6}{1}=6\\cdot 6=36$. So the conditional probability is $\\frac{36}{100}=\\frac{9}{25}$.",
+      "id": "MATHCOUNTS|Target|Probability|early#1795123203054#06chqk"
     }
   ],
   "MATHCOUNTS|Target|Probability|mid": [
@@ -6136,6 +6436,18 @@
       "answer": "13/21",
       "solution": "The total number of ways to choose 4 socks from 10 is $\\binom{10}{4}=210$. To count outcomes with no matching pair, Mia must pick 4 different colors out of the 5 available colors, which can be done in $\\binom{5}{4}=5$ ways, and then for each of those 4 colors choose one of its 2 socks, giving $2^4=16$ ways. So the number of no-pair outcomes is $5\\times16=80$, giving $P(\\text{no pair})=\\frac{80}{210}=\\frac{8}{21}$. The probability of at least one matching pair is the complement: $1-\\frac{8}{21}=\\frac{13}{21}$.",
       "id": "MATHCOUNTS|Target|Probability|mid#1788016401090#nzasm3"
+    },
+    {
+      "problem": "A relay coach has 8 sprinters to choose from: 5 specialize in the 100-meter dash and 3 specialize in the 200-meter dash. For an upcoming 4x100 relay, the coach randomly selects 4 of the 8 sprinters and randomly assigns them to the four legs of the relay, so that every assignment of 4 sprinters to the 4 legs is equally likely. What is the probability that the sprinter running the first leg is a 100-meter specialist and the sprinter running the anchor (fourth) leg is a 200-meter specialist? Express your answer as a common fraction.",
+      "answer": "15/56",
+      "solution": "The probability that the first leg is run by a 100-meter specialist is $\\frac{5}{8}$, since 5 of the 8 sprinters specialize in the 100m. Given that, 7 sprinters remain, of whom 3 specialize in the 200m, so the probability the anchor leg is a 200m specialist is $\\frac{3}{7}$. The identities of legs 2 and 3 don't affect these two conditions, so the overall probability is $\\frac{5}{8}\\cdot\\frac{3}{7}=\\frac{15}{56}$. This matches a direct count: there are $8\\cdot7\\cdot6\\cdot5=1680$ ways to assign 4 of the 8 sprinters to the four legs in order, and $5\\cdot3\\cdot6\\cdot5=450$ favorable ways (5 choices for leg 1, 3 for leg 4, then $6\\cdot5$ for the remaining two legs), giving $\\frac{450}{1680}=\\frac{15}{56}$.",
+      "id": "MATHCOUNTS|Target|Probability|mid#1795123248660#sv986k"
+    },
+    {
+      "problem": "A 3 by 3 grid of unit-square tiles is colored using exactly three red tiles, three blue tiles, and three green tiles, one tile in each cell, with all $\\dbinom{9}{3,3,3}=1680$ distinct colorings equally likely. What is the probability that every row and every column of the grid contains one tile of each color? Express your answer as a common fraction.",
+      "answer": "1/140",
+      "solution": "The total number of colorings is $\\dfrac{9!}{3!3!3!}=1680$, since we are arranging 3 red, 3 blue, and 3 green tiles among 9 cells. A coloring satisfies the condition exactly when the grid forms a Latin square on the symbols R, G, B. The first row can be any of $3!=6$ permutations of the three colors, and for each choice of first row there are exactly 2 ways to fill in the remaining two rows so that every row and column has one of each color, giving $6\\times 2=12$ valid colorings. The probability is therefore $\\dfrac{12}{1680}=\\dfrac{1}{140}$.",
+      "id": "MATHCOUNTS|Target|Probability|mid#1795123261557#cb1kt6"
     }
   ],
   "MATHCOUNTS|Target|Probability|late": [
@@ -6180,6 +6492,12 @@
       "answer": "6/11",
       "solution": "Let $p$ be the probability Mia eventually wins. In one round, she wins outright with probability $\\frac{1}{2}$ (heads). Otherwise (tails, probability $\\frac{1}{2}$), she rolls the die: with probability $\\frac{1}{6}$ she gets a $1$ and restarts, facing the same probability $p$ of eventually winning, and with probability $\\frac{5}{6}$ she loses. This gives the equation $p = \\frac{1}{2} + \\frac{1}{2}\\cdot\\frac{1}{6}\\cdot p$, i.e. $p = \\frac{1}{2} + \\frac{p}{12}$. Multiplying both sides by $12$: $12p = 6 + p$, so $11p = 6$, giving $p = \\frac{6}{11}$.",
       "id": "MATHCOUNTS|Target|Probability|late#1788016428528#1bf4h7"
+    },
+    {
+      "problem": "A vending machine is loaded with 15 identical-looking snack packs: 6 chocolate chip cookie packs, 5 oatmeal cookie packs, and 4 fudge brownie packs, arranged in random order. Three friends each buy one snack pack, one after another, without replacement. Given that at least two of the three friends receive the same type of snack, what is the probability that all three friends receive the same type of snack? Express your answer as a common fraction.",
+      "answer": "34/335",
+      "solution": "The total number of ways to choose 3 of the 15 packs is $\\binom{15}{3}=455$. The number of ways all three are different types is $6\\cdot5\\cdot4=120$, so the number of ways at least two match is $455-120=335$. The number of ways all three match is $\\binom{6}{3}+\\binom{5}{3}+\\binom{4}{3}=20+10+4=34$. So the conditional probability is $\\dfrac{34}{335}$, which is already in lowest terms.",
+      "id": "MATHCOUNTS|Target|Probability|late#1795123294358#k2a4ns"
     }
   ],
   "MOEMS|E|Algebra|early": [
