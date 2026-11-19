@@ -312,6 +312,16 @@
     cursor: pointer;
   }
   .seg button:last-child { border-right: none; }
+  .seg button { white-space: nowrap; }
+  .seg { height: 38px; box-sizing: border-box; }
+  select { height: 38px; box-sizing: border-box; }
+  /* Contest picker gets its own row; Round / Division size to their content so
+     their labels are never squeezed or clipped. */
+  #levelSeg { min-width: 0; }
+  .field:has(> #levelSeg) { flex: 1 1 100%; }
+  #roundField, #divField { flex: 0 0 auto; }
+  #roundSeg button, #divSeg button { padding: 9px 14px; }
+  label { white-space: nowrap; }
   .seg button.on { background: var(--ink); color: var(--paper); }
   select {
     width: 100%;
@@ -998,8 +1008,8 @@
       b.classList.add('on');
       level = b.dataset.v;
       updateDiffLabels(level);
-      $('roundField').style.display = (level === 'MATHCOUNTS') ? 'flex' : 'none';
-      $('divField').style.display = (level === 'MOEMS') ? 'flex' : 'none';
+      $('roundField').style.display = (level === 'MATHCOUNTS') ? 'block' : 'none';
+      $('divField').style.display = (level === 'MOEMS') ? 'block' : 'none';
       syncRound();
       updateMcNote();
     });
@@ -1348,8 +1358,7 @@
     } catch (e) {}
     renderGuestNote();
     const v = $('verdict');
-    const time = $('timer').textContent;
-    v.textContent = (correct ? '✓ Correct — ' : '✗ Not quite — ') + answerLabel + '  ·  ' + time;
+    v.textContent = (correct ? '✓ Correct — ' : '✗ Not quite — ') + answerLabel;
     v.className = 'verdict show ' + (correct ? 'ok' : 'no');
     renderSolution(current.solution || '');
     updateLikeBtn();
