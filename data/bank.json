@@ -6518,6 +6518,24 @@
       "answer": "17",
       "solution": "Let the number be $n$. Tripling and subtracting $7$ gives $3n-7$. Adding $5$ then doubling gives $2(n+5)$. Setting these equal: $3n-7=2(n+5)$. Expand the right side: $3n-7=2n+10$. Subtract $2n$ from both sides: $n-7=10$, so $n=17$. Check: $3(17)-7=44$ and $2(17+5)=44$, confirming the answer.",
       "id": "MOEMS|E|Algebra|early#1794598387506#x22md0"
+    },
+    {
+      "problem": "Lily is 4 years older than her brother Sam. In 6 years, the sum of their ages will be 36. How old is Sam right now?",
+      "answer": "10",
+      "solution": "Let Sam's age now be $s$, so Lily's age now is $s+4$. In 6 years, Sam will be $s+6$ and Lily will be $s+4+6=s+10$. Their ages in 6 years add to 36: $(s+6)+(s+10)=36$. This simplifies to $2s+16=36$, so $2s=20$ and $s=10$. Checking: Sam is 10 now (16 in 6 years) and Lily is 14 now (20 in 6 years), and $16+20=36$, which matches.",
+      "id": "MOEMS|E|Algebra|early#1795228338921#02lykf"
+    },
+    {
+      "problem": "The Sunnyville Reading Club has new members and returning members. The number of returning members is 3 less than twice the number of new members. If the club has 33 members in all, how many new members are there?",
+      "answer": "12",
+      "solution": "Let $n$ be the number of new members. Then the number of returning members is $2n-3$. Since the total is 33, we have $n + (2n-3) = 33$. Combining like terms gives $3n - 3 = 33$, so $3n = 36$, and $n = 12$. Checking: returning members $= 2(12)-3 = 21$, and $12+21=33$, which matches the total.",
+      "id": "MOEMS|E|Algebra|early#1795228347758#s2x1xu"
+    },
+    {
+      "problem": "Maya's piggy bank contains only dimes and quarters. She has $3$ more quarters than dimes, and the total value of all her coins is $2.85 dollars. How many quarters does she have?",
+      "answer": "9",
+      "solution": "Let $d$ be the number of dimes, so the number of quarters is $d+3$. The total value in cents is $10d + 25(d+3) = 285$. Expanding gives $10d + 25d + 75 = 285$, so $35d + 75 = 285$, which means $35d = 210$ and $d = 6$. Since the number of quarters is $d+3$, Maya has $6+3 = 9$ quarters.",
+      "id": "MOEMS|E|Algebra|early#1795228375883#ygk5lm"
     }
   ],
   "MOEMS|E|Algebra|mid": [
@@ -6538,6 +6556,24 @@
       "answer": "22",
       "solution": "Work backward from the end. Before giving her friend stickers, let Mia have $x$ stickers. She gave away $\\frac{x}{2}+2$, leaving $\\frac{x}{2}-2=3$, so $\\frac{x}{2}=5$ and $x=10$. That means before giving her brother stickers, Mia had $y$ stickers, and after giving away $\\frac{y}{2}+1$ she was left with $10$: $\\frac{y}{2}-1=10$, so $\\frac{y}{2}=11$ and $y=22$. Check: from $22$, give brother $12$ (half plus 1), leaving $10$; give friend $7$ (half plus 2), leaving $3$ — correct. So Mia started with $22$ stickers.",
       "id": "MOEMS|E|Algebra|mid#1794598427160#qt7tpg"
+    },
+    {
+      "problem": "At the school carnival, Lily won three raffle tickets whose numbers are consecutive even numbers (for example, 4, 6, and 8 are three consecutive even numbers). She noticed that the sum of all three numbers on her tickets is 10 more than twice the largest number. What is the smallest number on her tickets?",
+      "answer": "12",
+      "solution": "Let the smallest ticket number be $n$, so the three consecutive even numbers are $n$, $n+2$, and $n+4$. Their sum is $3n+6$. The largest number is $n+4$, so twice the largest plus 10 is $2(n+4)+10=2n+18$. Setting the sum equal to this: $3n+6=2n+18$, which gives $n=12$. Checking: the tickets are $12, 14, 16$, whose sum is $42$, and twice the largest plus 10 is $2(16)+10=42$, which matches. So the smallest number is $12$.",
+      "id": "MOEMS|E|Algebra|mid#1795228393853#c2er9q"
+    },
+    {
+      "problem": "Mr. Lee's class sold raffle tickets every day from Monday through Friday. Each day after Monday, they sold exactly 4 more tickets than the day before. Over those 5 days, the class sold 100 tickets in all. How many tickets did they sell on Wednesday?",
+      "answer": "20",
+      "solution": "Let Monday's amount be $a$. The five days' sales are $a, a+4, a+8, a+12, a+16$, an arithmetic sequence with common difference $4$. Their sum is $5a+40=100$, so $a=12$. Since the days increase steadily, Wednesday (the middle day) equals the average of all five days' sales, which is $100/5=20$. Checking: $12+16+20+24+28=100$, confirming Wednesday's total is $20$.",
+      "id": "MOEMS|E|Algebra|mid#1795228412333#vkfe76"
+    },
+    {
+      "problem": "On a playground seesaw, one toy dinosaur balances exactly with 3 toy robots plus a 4-pound weight. Also, two toy dinosaurs (with nothing else on the other side) balance exactly with 10 toy robots. All toy robots weigh the same amount, and all toy dinosaurs weigh the same amount. How many pounds does one toy robot weigh?",
+      "answer": "2",
+      "solution": "From the first balance, one dinosaur weighs the same as 3 robots plus 4 pounds, so two dinosaurs weigh the same as 6 robots plus 8 pounds. The second balance says two dinosaurs also equal 10 robots, so $6$ robots $+ 8$ pounds $= 10$ robots. Subtracting $6$ robots from both sides gives $8$ pounds $= 4$ robots. Dividing both sides by 4, one robot weighs $8 \\div 4 = 2$ pounds. Checking: a dinosaur weighs $3(2)+4=10$ pounds, so two dinosaurs weigh $20$ pounds, which equals $10$ robots at $2$ pounds each ($20$ pounds) — it works.",
+      "id": "MOEMS|E|Algebra|mid#1795228447359#wpf1xs"
     }
   ],
   "MOEMS|E|Algebra|late": [
@@ -6558,6 +6594,24 @@
       "answer": "64",
       "solution": "From the first condition, after Ben gives away 6 marbles they are equal, so Ben originally has exactly 12 more marbles than Sofia (since moving 6 from Ben to Sofia closes a gap of 12). From the second condition, if Sofia gives 10 to Ben, Ben's new amount equals 3 times Sofia's new amount. Using Ben = Sofia + 12, after the trade Ben has (Sofia+12+10) and Sofia has (Sofia-10); setting Ben's new amount equal to 3 times Sofia's new amount gives Sofia+22 = 3(Sofia-10), so Sofia+22 = 3Sofia-30, giving 2Sofia = 52, so Sofia = 26 and Ben = 38. Check: Ben gives 6 -> both have 32 (equal); Sofia gives 10 -> Ben has 48, Sofia has 16, and 48 = 3×16, both conditions hold. Together they have 26+38 = 64 marbles.",
       "id": "MOEMS|E|Algebra|late#1794598516963#5h1xev"
+    },
+    {
+      "problem": "The Riverwood Chess Club has only 5th graders and 6th graders. Right now, the number of 5th graders to the number of 6th graders is in the ratio $3$ to $2$. Next week, $4$ new 6th graders join the club and no one leaves, so the ratio of 5th graders to 6th graders becomes $6$ to $5$. How many 5th graders are in the club right now?",
+      "answer": "24",
+      "solution": "Since the current ratio of 5th graders to 6th graders is $3$ to $2$, write the numbers as $3k$ and $2k$ for some whole number $k$. After $4$ new 6th graders join, the 6th grade count becomes $2k+4$, and the new ratio is $6$ to $5$, so $\\frac{3k}{2k+4}=\\frac{6}{5}$. Cross-multiplying gives $15k = 12k + 24$, so $3k = 24$ and $k = 8$. That means there are $3k = 24$ 5th graders, and $2k+4 = 20$ 6th graders after the new members join, and indeed $24:20$ simplifies to $6:5$, confirming the answer.",
+      "id": "MOEMS|E|Algebra|late#1795228468924#o4n9up"
+    },
+    {
+      "problem": "At Riverdale Library, Shelf A holds mystery books and Shelf B holds science books. Right now, the number of books on Shelf A compared to the number of books on Shelf B is in the ratio $3:1$. The librarian then moves $15$ books from Shelf A to Shelf B. After this move, the ratio of books on Shelf A to books on Shelf B becomes $3:2$. How many books are on the two shelves together?",
+      "answer": "100",
+      "solution": "Moving books between the shelves doesn't change the total number of books, so let the (constant) total be $T$. Before the move, Shelf A has $\\frac{3}{4}T$ books (since $3:1$ means $3$ of every $4$ parts). After the move, Shelf A has $\\frac{3}{5}T$ books (since $3:2$ means $3$ of every $5$ parts). The difference between these two amounts is exactly the $15$ books that were moved away, so $\\frac{3}{4}T - \\frac{3}{5}T = 15$. Since $\\frac{3}{4}-\\frac{3}{5}=\\frac{15}{20}-\\frac{12}{20}=\\frac{3}{20}$, we get $\\frac{3}{20}T=15$, so $T=100$. Checking: Shelf A starts with $75$, Shelf B with $25$; after moving $15$, they have $60$ and $40$, which is indeed a $3:2$ ratio.",
+      "id": "MOEMS|E|Algebra|late#1795228506068#9p2ing"
+    },
+    {
+      "problem": "At Sunnybrook Farm, the barn contains only chickens and cows (no other animals). Right now, the total number of chicken legs in the barn is exactly three times the total number of cow legs. If the farmer sold 2 of the cows and kept every chicken, the total number of chicken legs would then be exactly four times the total number of remaining cow legs. How many chickens are in the barn right now?",
+      "answer": "48",
+      "solution": "Let $c$ be the number of chickens and $w$ be the number of cows; chickens have 2 legs and cows have 4 legs. The first condition gives $2c = 3(4w) = 12w$, so $c = 6w$. After selling 2 cows there are $w-2$ cows, and the second condition gives $2c = 4\\cdot 4(w-2) = 16w - 32$. Since $2c = 12w$, setting $12w = 16w - 32$ gives $4w = 32$, so $w = 8$. Then $c = 6w = 48$, and checking: $2(48)=96=3(32)$ before selling, and after selling 2 cows, $96 = 4\\cdot 4(6) = 96$, confirming the answer.",
+      "id": "MOEMS|E|Algebra|late#1795228541864#jwlsrc"
     }
   ],
   "MOEMS|E|Geometry|early": [
@@ -6578,6 +6632,24 @@
       "answer": "30",
       "solution": "The original rectangle has perimeter $2(9+6)=30$ inches. When you cut a rectangular notch out of a corner, the two sides you shorten (by 4 and by 2 inches) lose a total of $4+2=6$ inches, but the cut creates two brand-new inside edges of exactly 4 inches and 2 inches, adding that same 6 inches back. So the total perimeter is unchanged. You can also check by tracing all six sides of the new shape: $5+2+4+4+9+6=30$. Either way, the perimeter of the remaining piece is $30$ inches.",
       "id": "MOEMS|E|Geometry|early#1794598564519#engxh0"
+    },
+    {
+      "problem": "Kiyomi is designing a triangular kite. The three angles inside the triangle are in the ratio $2:3:4$. What is the measure of the smallest angle of the kite?",
+      "answer": "40",
+      "solution": "The three angles of any triangle add up to $180$ degrees. Since the angles are in the ratio $2:3:4$, split $180$ into $2+3+4=9$ equal parts: $180 \\div 9 = 20$ degrees per part. The smallest angle corresponds to $2$ parts, so it measures $2 \\times 20 = 40$ degrees.",
+      "id": "MOEMS|E|Geometry|early#1795228559087#th348m"
+    },
+    {
+      "problem": "Mr. Alvarez is building a garden bed shaped like a plus sign. It is made from five identical square tiles: one tile in the center, and one tile attached to each of the center tile's four sides (up, down, left, right), so each outer tile shares one full edge with the center tile. Each square tile measures $2$ feet on a side. What is the perimeter, in feet, of the entire plus-shaped garden bed?",
+      "answer": "24",
+      "solution": "Each of the 5 square tiles has 4 sides, giving $5 \\times 4 = 20$ tile-sides in total. Every place where two tiles touch (the center tile touches each of the 4 outer tiles) hides 2 of those sides from the outer boundary, since each shared edge belongs to two tiles. There are 4 such shared edges, hiding $4 \\times 2 = 8$ sides, leaving $20 - 8 = 12$ unit edges on the outer boundary. Each unit edge is actually a side of a tile measuring $2$ feet, so the perimeter is $12 \\times 2 = 24$ feet.",
+      "id": "MOEMS|E|Geometry|early#1795228581645#k22vg6"
+    },
+    {
+      "problem": "Mr. Chen is building a staircase-shaped flower bed out of 1-foot square paving stones. He lays the stones in rows stacked directly on top of each other, with every row pushed flush against the left edge. The bottom row has 6 stones in a straight line. The row directly on top of it has 5 stones, the next row up has 4 stones, then 3, then 2, and the top row has just 1 stone. What is the perimeter, in feet, of the entire staircase shape formed by all the stones together?",
+      "answer": "24",
+      "solution": "Picture the smallest rectangle that would completely surround the staircase: it is 6 feet wide (the bottom row's length) and 6 feet tall (since there are 6 rows, each 1 foot tall). Every time the staircase steps inward on the top side, it loses exactly as much length as it gains on the right side going up, so the zig-zag outline uses exactly the same total horizontal and vertical distance as the bounding rectangle's edges. That means the staircase's perimeter equals the perimeter of that 6-by-6 rectangle. So the perimeter is $2\\times(6+6)=24$ feet.",
+      "id": "MOEMS|E|Geometry|early#1795228622056#h5bgky"
     }
   ],
   "MOEMS|E|Geometry|mid": [
@@ -6598,6 +6670,24 @@
       "answer": "21",
       "solution": "To use the fewest tiles, Mr. Diaz should use the largest square tile whose side length divides evenly into both $84$ and $36$, since the tile's side must fit a whole number of times along each wall. The greatest common divisor of $84$ and $36$ is $12$ (since $84 = 2^2\\cdot3\\cdot7$ and $36 = 2^2\\cdot3^2$, sharing $2^2\\cdot3=12$). So the largest possible tile is $12$ inches by $12$ inches. Along the $84$-inch side, $84\\div12 = 7$ tiles fit, and along the $36$-inch side, $36\\div12 = 3$ tiles fit. The total number of tiles is $7\\times3 = 21$.",
       "id": "MOEMS|E|Geometry|mid#1794598649766#2nxixs"
+    },
+    {
+      "problem": "Mr. Alvarez has a rectangular sheet of cardboard that measures $20$ inches by $14$ inches. From each of the four corners he cuts out a $3$-inch by $3$-inch square, and then folds up the four resulting flaps to form an open-top box. What is the volume of this box, in cubic inches?",
+      "answer": "336",
+      "solution": "Cutting a 3-inch square from each corner removes 3 inches from both ends of the length and both ends of the width. So the new length is $20 - 2(3) = 14$ inches and the new width is $14 - 2(3) = 8$ inches. When the flaps are folded up, each one forms a wall of height $3$ inches, so the box's height is $3$ inches. The volume is length times width times height: $14 \\times 8 \\times 3 = 336$ cubic inches.",
+      "id": "MOEMS|E|Geometry|mid#1795228644779#a5ko4b"
+    },
+    {
+      "problem": "Mr. Alvarez is building a rectangular chicken yard that will be attached to the back wall of his barn, so the wall forms one full side of the yard and he only needs to fence the other three sides: two equal widths and one length. He has exactly 40 feet of fencing, and he wants both the width and the length to be whole numbers of feet. What is the greatest possible area, in square feet, of the chicken yard?",
+      "answer": "200",
+      "solution": "If the width is $w$ feet, the fencing used is $2w$ for the two widths plus the length, so the length is $40-2w$ feet. The area is $w(40-2w)$ square feet, and both $w$ and $40-2w$ must be positive whole numbers, so $w$ can be $1,2,\\dots,19$. Checking nearby whole-number values shows the area rises then falls: $w=9$ gives length $22$ and area $198$; $w=10$ gives length $20$ and area $200$; $w=11$ gives length $18$ and area $198$. So the area peaks at $w=10$, giving the greatest possible area of $200$ square feet.",
+      "id": "MOEMS|E|Geometry|mid#1795228669391#6chk0c"
+    },
+    {
+      "problem": "Mrs. Nguyen is sewing a square quilt block. She starts with a large square of fabric and sews four identical right-triangle patches onto it, arranged pinwheel-style: going around the big square, each patch's longer leg lies along one full edge of the big square and its shorter leg lies along the next edge, so the patches cover the four corner regions and their four hypotenuses meet in the middle to outline a smaller square. Each right-triangle patch has legs measuring 3 inches and 4 inches. What is the area, in square inches, of the smaller square outlined in the middle?",
+      "answer": "25",
+      "solution": "Since each patch's two legs lie along two adjacent sides of the big square and together they span a full side, the big square's side length is $3+4=7$ inches, so its area is $7\\times7=49$ square inches. Each right-triangle patch has area $\\frac{1}{2}\\times3\\times4=6$ square inches, and there are four of them, covering $4\\times6=24$ square inches total. The small square in the middle is what's left after removing the four patches from the big square: $49-24=25$ square inches. So the area of the smaller square is $25$ square inches.",
+      "id": "MOEMS|E|Geometry|mid#1795228696908#eall7e"
     }
   ],
   "MOEMS|E|Geometry|late": [
@@ -6618,6 +6708,24 @@
       "answer": "12",
       "solution": "Going from corner to corner, the path crosses $9-1=8$ vertical grid lines and $6-1=5$ horizontal grid lines, which would normally send it into a new plot $8+5=13$ times. But since $\\gcd(9,6)=3$, the straight path actually passes through $3-1=2$ interior lattice points (at $(3,2)$ and $(6,4)$), where it crosses a vertical and a horizontal line at the very same instant, so each such moment only sends it into one new plot instead of two. So the number of genuinely new plots entered is $13-2=11$. Adding the starting plot itself gives $11+1=12$ unit plots that the path passes through.",
       "id": "MOEMS|E|Geometry|late#1794598762759#ajkq8a"
+    },
+    {
+      "problem": "Maya's rectangular vegetable garden is crossed by one straight path running east-west and another straight path running north-south, cutting the garden into four smaller rectangular plots arranged like a 2-by-2 grid: a northwest plot, a northeast plot, a southwest plot, and a southeast plot. The northwest plot has area $15$ square meters, the northeast plot has area $25$ square meters, and the southwest plot has area $21$ square meters. What is the area, in square meters, of the southeast plot?",
+      "answer": "35",
+      "solution": "The northwest and northeast plots share the same height (the north-south path splits the garden into two rows), so their areas have the same ratio as their widths; the same is true for the southwest and southeast plots. This means the ratio of widths (northwest-to-northeast) equals (southwest-to-southeast), which gives the relation $\\text{NW}\\times\\text{SE}=\\text{NE}\\times\\text{SW}$. Plugging in: $15\\times\\text{SE}=25\\times21=525$. So $\\text{SE}=525\\div15=35$. (Check: widths $3,5$ and heights $5,7$ give plots $15,25,21,35$ exactly.)",
+      "id": "MOEMS|E|Geometry|late#1795228740833#qgs8aw"
+    },
+    {
+      "problem": "Rectangle $ABCD$ is the floor of a dance hall, with vertices labeled in order around the rectangle. A lamp is fixed at point $S$ somewhere on the floor (not on any side). Straight lines are painted from $S$ to each of the four corners, splitting the floor into four triangles: $SAB$, $SBC$, $SCD$, and $SDA$. The triangle $SAB$ has area $14$ square meters, triangle $SBC$ has area $20$ square meters, and triangle $SCD$ has area $30$ square meters. Find the area, in square meters, of triangle $SDA$.",
+      "answer": "24",
+      "solution": "Since $AB$ and $CD$ are opposite sides of the rectangle, the distances from $S$ to these two sides add up to the full height of the rectangle, so triangles $SAB$ and $SCD$ together cover exactly half the rectangle's area: $14+30=44$. Likewise $BC$ and $DA$ are opposite sides, so triangles $SBC$ and $SDA$ together also cover exactly half the rectangle's area, meaning $SBC+SDA$ must equal the same total, $44$. Since $SBC=20$, we get $SDA=44-20=24$. So the area of triangle $SDA$ is $24$ square meters.",
+      "id": "MOEMS|E|Geometry|late#1795228774713#0v9yw5"
+    },
+    {
+      "problem": "Triangle $PQR$ is a triangular garden plot with area $72$ square meters. Point $S$ lies on side $QR$ so that $QS:SR = 1:3$, and point $T$ lies on side $PR$ so that $PT:TR = 2:1$. A straight path is built from $S$ to $T$, splitting the garden into triangle $RST$ (the small piece near corner $R$) and the four-sided region $PQST$. Find the area, in square meters, of region $PQST$.",
+      "answer": "54",
+      "solution": "Triangles $RSP$ and $RQP$ share vertex $P$ and have bases $RS$ and $RQ$ on the same line, so their areas are in the ratio $RS:RQ$. Since $QS:SR=1:3$, we get $RS:RQ=3:4$, so area $RSP = \\frac{3}{4}\\times 72 = 54$. Triangles $RST$ and $RSP$ share vertex $S$ and have bases $RT$ and $RP$ on the same line, so their areas are in the ratio $RT:RP$. Since $PT:TR=2:1$, we get $RT:RP=1:3$, so area $RST = \\frac{1}{3}\\times 54 = 18$. The remaining region $PQST$ has area $72-18=54$.",
+      "id": "MOEMS|E|Geometry|late#1795228830636#cx6z5v"
     }
   ],
   "MOEMS|E|Number Theory|early": [
@@ -6638,6 +6746,24 @@
       "answer": "26",
       "solution": "Since there are 2 left over in both cases, the number of scouts minus 2 must be divisible by both 6 and 8. The least common multiple of 6 and 8 is $24$, so the number of scouts is 2 more than a multiple of 24: $2, 26, 50, 74, \\dots$. The only value in that list between 20 and 50 is $26$. Checking: $26 \\div 6 = 4$ remainder $2$, and $26 \\div 8 = 3$ remainder $2$, so the troop has $26$ scouts.",
       "id": "MOEMS|E|Number Theory|early#1794598798268#mq317s"
+    },
+    {
+      "problem": "Locker number: Mr. Diaz is thinking of a locker number less than 100. The number has exactly 6 factors (counting 1 and the number itself), and it is divisible by 4. What is the smallest possible locker number?",
+      "answer": "12",
+      "solution": "A number with exactly 6 factors is either of the form $p^5$ (one prime) or $p^2 \\times q$ (two different primes), since the factor-count rule multiplies $(e_1+1)(e_2+1)\\cdots$ for the exponents. To be divisible by 4, the number needs at least $2^2$ in it, so the smallest option is $2^2 \\times q$ for the smallest odd prime $q=3$, giving $4\\times 3=12$. Checking $12$: its factors are $1,2,3,4,6,12$ — exactly 6 factors, and it's divisible by 4. Smaller multiples of 4 (namely 4 and 8) have only 3 and 4 factors respectively, so 12 is the smallest number that works.",
+      "id": "MOEMS|E|Number Theory|early#1795228859716#cv6k1v"
+    },
+    {
+      "problem": "A stamp collector has more than 100 but fewer than 200 stamps in her album. When she sorts them into groups of 9, there are 7 stamps left over. When she sorts the same stamps into groups of 13, there are 2 stamps left over. How many stamps does she have?",
+      "answer": "106",
+      "solution": "Numbers that leave remainder 7 when divided by 9 and are between 100 and 200 are $106, 115, 124, 133, \\dots, 196$ (each 9 more than the last). Check each against the second clue: dividing by 13 should leave remainder 2. Testing the first one, $106 = 13\\times 8 + 2$, which already works. Since 9 and 13 share no common factors, there is only one such number in any range of 117 consecutive integers, so $106$ is the only possibility in this range. Thus the collector has $106$ stamps.",
+      "id": "MOEMS|E|Number Theory|early#1795228877820#fzulmh"
+    },
+    {
+      "problem": "Maya has a collection of trading cards. She has more than 50 but fewer than 100 cards. When she tries to arrange them in rows of 3, she has 2 cards left over. When she tries rows of 4, she has 3 left over. When she tries rows of 5, she has 4 left over. How many trading cards does Maya have?",
+      "answer": "59",
+      "solution": "Notice that in each case the leftover is exactly one less than the row size: 2 is one less than 3, 3 is one less than 4, and 4 is one less than 5. This means that if Maya had one more card, that new total would divide evenly by 3, 4, and 5. So the number of cards plus 1 must be a common multiple of 3, 4, and 5, and the least common multiple of these is $60$. So the number of cards plus 1 could be 60, 120, 180, and so on, meaning the number of cards could be 59, 119, 179, and so on. Only 59 falls between 50 and 100, so Maya has $59$ cards.",
+      "id": "MOEMS|E|Number Theory|early#1795228895328#0rhm0o"
     }
   ],
   "MOEMS|E|Number Theory|mid": [
@@ -6658,6 +6784,24 @@
       "answer": "118",
       "solution": "Notice that in each case the leftover amount is exactly 2 less than the bundle size: $5-2=3$, $6-2=4$, $8-2=6$. This means if we had 2 more carrots, the total would divide evenly by 5, 6, and 8. So the number of carrots plus 2 must be a common multiple of 5, 6, and 8. The least common multiple of 5, 6, and 8 is $120$. Since the number of carrots is between 100 and 200, adding 2 gives a number between 102 and 202, and the only multiple of 120 in that range is 120 itself. So the number of carrots is $120-2=118$.",
       "id": "MOEMS|E|Number Theory|mid#1794598852529#ipexe2"
+    },
+    {
+      "problem": "The Hobby Club wants to pick a whole number of trading cards (more than $1$ and at most $100$) for a special display box. The number must have exactly $6$ different whole-number factors, must be a multiple of $3$, but must NOT be a multiple of $9$. How many whole numbers from $1$ to $100$ satisfy all three conditions?",
+      "answer": "2",
+      "solution": "A number has exactly $6$ factors if it fits one of these patterns: $p^5$ for a prime $p$, or $p^2\\times q$ for two different primes $p,q$. Listing all such numbers up to $100$ gives: $12, 18, 20, 28, 32, 44, 45, 50, 52, 63, 68, 75, 76, 92, 98, 99$. Now check which of these are multiples of $3$: $12, 18, 45, 63, 75, 99$. Among these, remove the ones that are also multiples of $9$ (that is, divisible by $9$): $18$ ($9\\times2$), $45$ ($9\\times5$), $63$ ($9\\times7$), and $99$ ($9\\times11$) are excluded. That leaves only $12$ and $75$. So there are $2$ numbers meeting all the requirements.",
+      "id": "MOEMS|E|Number Theory|mid#1795228932918#yjdf69"
+    },
+    {
+      "problem": "The Trading Card Club keeps its cards in a display case. The number of cards in the case is more than $50$ but less than $100$. That number is even, and it has exactly $6$ factors in all (counting $1$ and the number itself). Also, the digits of the number add up to $13$. How many cards are in the display case?",
+      "answer": "76",
+      "solution": "A number has exactly $6$ factors when it has the prime-factor pattern $p^2\\times q$ (two different primes), such as $4\\times13$ or $9\\times7$. Listing all numbers from $51$ to $99$ of this type gives $52, 63, 68, 75, 76, 92, 98, 99$ — you can check each has exactly $6$ factors (for example $76=1,2,4,19,38,76$). Keeping only the even ones leaves $52, 68, 76, 92, 98$. Adding digits: $5+2=7$, $6+8=14$, $7+6=13$, $9+2=11$, $9+8=17$ — only $76$ gives a digit sum of $13$. So the display case holds $76$ cards.",
+      "id": "MOEMS|E|Number Theory|mid#1795228963776#8xue7l"
+    },
+    {
+      "problem": "The Toy Barn numbers its storage bins from $1$ to $50$. A bin earns a gold sticker if its number has exactly $4$ positive whole-number divisors (counting $1$ and the number itself). For example, $10$ earns a sticker because its divisors are $1, 2, 5, 10$, but $12$ does not, since it has $6$ divisors. How many bins from $1$ to $50$ earn a gold sticker?",
+      "answer": "15",
+      "solution": "A number has exactly $4$ divisors only in two cases: it is the cube of a prime ($p^3$, with divisors $1,p,p^2,p^3$), or it is the product of two different primes ($p\\times q$, with divisors $1,p,q,pq$). The prime cubes under $50$ are $2^3=8$ and $3^3=27$ (since $5^3=125$ is too big). The products of two distinct primes under $50$ are $6,10,14,22,26,34,38,46$ (using $2$ with $3,5,7,11,13,17,19,23$), plus $15,21,33,39$ (using $3$ with $5,7,11,13$), plus $35$ (using $5\\times7$). Counting all of these: $2$ cubes plus $13$ products of two primes gives $15$ numbers total. So $15$ bins earn a gold sticker.",
+      "id": "MOEMS|E|Number Theory|mid#1795228987952#ihj6oo"
     }
   ],
   "MOEMS|E|Number Theory|late": [
@@ -6678,6 +6822,24 @@
       "answer": "15",
       "solution": "Red & blue blink together on multiples of $\\mathrm{lcm}(4,6)=12$: there are $180/12=15$ such seconds. All three blink together on multiples of $\\mathrm{lcm}(4,6,9)=36$: there are $180/36=5$ such seconds, so exactly-red-and-blue (not green) happens $15-5=10$ times. Red & green blink together on multiples of $\\mathrm{lcm}(4,9)=36$ — but that is exactly the same set as the all-three-together times (since 36 is also a multiple of 6), so red and green NEVER blink together without blue: $0$ times. Blue & green blink together on multiples of $\\mathrm{lcm}(6,9)=18$: there are $180/18=10$ such seconds, and of these the ones with red too are multiples of $\\mathrm{lcm}(18,4)=36$, giving 5, so exactly-blue-and-green occurs $10-5=5$ times. Adding the three cases: $10+0+5=15$.",
       "id": "MOEMS|E|Number Theory|late#1794972913573#8evykm"
+    },
+    {
+      "problem": "In a video game, a coin appears on every score that is a multiple of 8, and a gem appears on every score that is a multiple of 12. A power-up appears on every score that is a multiple of 18. For scores from 1 to 500 (inclusive), how many scores have both a coin and a gem appearing, but do NOT have a power-up appearing?",
+      "answer": "14",
+      "solution": "A coin and a gem both appear exactly on multiples of $\\text{lcm}(8,12)=24$. There are $\\lfloor 500/24 \\rfloor = 20$ such scores (since $24\\times20=480\\le 500$ but $24\\times21=504>500$). Among these, a power-up also appears when the score is a multiple of $\\text{lcm}(24,18)=72$. There are $\\lfloor 500/72 \\rfloor = 6$ such scores (since $72\\times6=432\\le500$ but $72\\times7=504>500$). So the scores with coin and gem but no power-up number $20-6=14$.",
+      "id": "MOEMS|E|Number Theory|late#1795229011690#n2siet"
+    },
+    {
+      "problem": "At the school fair, Mia buys a raffle ticket whose number is a two-digit number with two different nonzero digits. If you reverse the order of its digits, the new number is 27 greater than Mia's ticket number. Mia's ticket number is a multiple of 3 but not a multiple of 9. What is Mia's ticket number?",
+      "answer": "69",
+      "solution": "Let the ticket number have tens digit $t$ and units digit $u$, so the number is $10t+u$ and the reversed number is $10u+t$. Since the reversed number is 27 more, $(10u+t)-(10t+u)=9(u-t)=27$, so $u-t=3$. The digit sum is $t+u=2t+3$, and since the original number is a multiple of 3, this sum must be divisible by 3, which forces $t$ itself to be a multiple of 3 (since $2t\\equiv 0 \\pmod 3$ only when $t\\equiv 0 \\pmod 3$). The possible digits are $t=3$ (giving 36, whose digit sum 9 is divisible by 9, so it's excluded) or $t=6$ (giving 69, with digit sum 15, divisible by 3 but not 9). So Mia's ticket number is $69$.",
+      "id": "MOEMS|E|Number Theory|late#1795229042867#kgzntm"
+    },
+    {
+      "problem": "At the school fair, a vending machine sells mystery erasers for a two-digit number of cents. Clue 1: the tens digit is a prime number. Clue 2: the ones digit is a prime number. Clue 3: the price itself (the whole two-digit number) is a prime number. Clue 4: the price is less than 50 cents. Clue 5: if you add the tens digit and the ones digit together, that sum is also a prime number. What is the price, in cents, of the eraser?",
+      "answer": "23",
+      "solution": "The only prime digits are $2, 3, 5, 7$. Since the price is less than $50$, the tens digit must be $2$ or $3$ (it must be a prime digit less than $5$). Listing all two-digit numbers with tens digit $2$ or $3$ and ones digit from $\\{2,3,5,7\\}$ gives: $22,23,25,27,32,33,35,37$. Checking which of these are themselves prime numbers leaves only $23$ and $37$. Finally, checking the digit-sum condition: $2+3=5$ is prime, but $3+7=10$ is not prime, so the only number satisfying every clue is $23$.",
+      "id": "MOEMS|E|Number Theory|late#1795229065206#lg9fz0"
     }
   ],
   "MOEMS|E|Combinatorics|early": [
@@ -6698,6 +6860,24 @@
       "answer": "10",
       "solution": "First count cups with both scoops the same flavor: there are 4 flavors, so 4 such cups (vanilla-vanilla, chocolate-chocolate, strawberry-strawberry, mint-mint). Next count cups with two different flavors: choosing 2 flavors out of 4 where order doesn't matter gives $\\binom{4}{2}=6$ cups (vanilla-chocolate, vanilla-strawberry, vanilla-mint, chocolate-strawberry, chocolate-mint, strawberry-mint). Adding these two groups together, since they don't overlap, gives $4+6=10$ total different cups. So Mia can order 10 different 2-scoop cups.",
       "id": "MOEMS|E|Combinatorics|early#1794972965795#ey6hgz"
+    },
+    {
+      "problem": "A standard deck of 52 playing cards has 13 ranks (Ace through King), each rank appearing in 4 different suits. Marcus draws 2 cards from the deck to form a hand. How many different 2-card hands have both cards showing the same rank (for example, two 7s or two Kings)?",
+      "answer": "78",
+      "solution": "For a fixed rank, there are 4 cards of that rank (one per suit), so the number of ways to choose 2 of them is $\\binom{4}{2}=6$. There are 13 ranks total, and each rank gives a separate set of matching pairs, so multiply: $13 \\times 6 = 78$. Thus there are $78$ possible same-rank 2-card hands.",
+      "id": "MOEMS|E|Combinatorics|early#1795229075433#dox2h5"
+    },
+    {
+      "problem": "At the school fair, raffle tickets are numbered 1 through 60, with each number used exactly once. A ticket wins a prize if its number is a multiple of 3, a multiple of 5, or both. How many of the 60 tickets do NOT win a prize?",
+      "answer": "32",
+      "solution": "Count multiples of 3 from 1 to 60: there are $60 \\div 3 = 20$ of them. Count multiples of 5: there are $60 \\div 5 = 12$ of them. Numbers that are multiples of both 3 and 5 (multiples of 15) are counted twice, and there are $60 \\div 15 = 4$ of them. By inclusion-exclusion, the number of winning tickets is $20 + 12 - 4 = 28$. So the tickets that do NOT win are $60 - 28 = 32$.",
+      "id": "MOEMS|E|Combinatorics|early#1795229089605#o4jnik"
+    },
+    {
+      "problem": "Sam has 5 coins in his pocket: 2 identical pennies, 2 identical nickels, and 1 dime. He takes all 5 coins out and lines them up in a row on the table. Two arrangements are considered different if the sequence of coin types, read from left to right, is different (coins of the same type can't be told apart from each other). How many different arrangements of the 5 coins are possible?",
+      "answer": "30",
+      "solution": "If all 5 coins were totally different, there would be $5! = 120$ ways to line them up. But the 2 pennies look alike, so every arrangement has been counted $2!=2$ times too many for swapping the pennies; likewise the 2 nickels have been counted $2!=2$ times too many for swapping the nickels. So we divide: $\\frac{5!}{2!\\cdot 2!} = \\frac{120}{4} = 30$. The single dime doesn't need any adjustment since there's only one of it. So there are $30$ different arrangements.",
+      "id": "MOEMS|E|Combinatorics|early#1795229129555#v5la4x"
     }
   ],
   "MOEMS|E|Combinatorics|mid": [
@@ -6718,6 +6898,24 @@
       "answer": "8",
       "solution": "We need 3 different digits from 1 to 9, in increasing order $a<b<c$, with $a+b+c=15$. Checking each possible smallest digit $a$ and finding valid $b<c$ pairs that complete the sum: for $a=1$, pairs $(5,9),(6,8)$ work, giving $\\{1,5,9\\},\\{1,6,8\\}$; for $a=2$, pairs $(4,9),(5,8),(6,7)$ work; for $a=3$, pairs $(4,8),(5,7)$ work; for $a=4$, only $(5,6)$ works, giving $\\{4,5,6\\}$; for $a=5$ or higher, no valid pairs remain since $b$ must exceed $a$. Counting all the sets found: $2+3+2+1=8$ codes in total.",
       "id": "MOEMS|E|Combinatorics|mid#1794973027844#fwhq7y"
+    },
+    {
+      "problem": "At Lincoln Elementary, Ms. Patel is making a schedule for Monday morning: five different subjects - Math, Science, Art, Music, and Reading - will each be taught once, filling five class periods in a row from period 1 to period 5. The schedule must follow two rules: Math must be taught in the period immediately before Science (right before, with no other period in between), and Art must not be taught in period 1. How many different valid schedules for the five periods are possible?",
+      "answer": "18",
+      "solution": "Since Math must come immediately before Science, treat \"Math-Science\" as one combined block. Then we are really arranging 4 units - the Math-Science block, Art, Music, and Reading - into a sequence, which can be done in $4! = 24$ ways. Among these 24 arrangements, Art occupies the very first spot (making it period 1) in exactly $3! = 6$ of them, since the other 3 units can be arranged freely after it. These 6 are forbidden, so the valid schedules number $24 - 6 = 18$.",
+      "id": "MOEMS|E|Combinatorics|mid#1795229144493#iuospg"
+    },
+    {
+      "problem": "In Ms. Alvarez's class, 8 students are running for a 3-person Student Council, and all three seats are equal (no president or secretary, just three council members, so the order of selection doesn't matter). Two of the candidates, Liam and Zoe, had a big disagreement and refuse to serve on the council together. How many different 3-person councils can be formed so that Liam and Zoe are not both chosen?",
+      "answer": "50",
+      "solution": "First find the total number of 3-person councils from 8 students with no restriction: that's $\\binom{8}{3} = \\frac{8\\times7\\times6}{3\\times2\\times1} = 56$. Next count the councils that break the rule, where both Liam and Zoe are chosen together: that uses up 2 of the 3 spots, leaving 1 spot to fill from the remaining 6 students, giving $6$ such councils. Subtract the bad councils from the total: $56 - 6 = 50$. So there are $50$ valid councils.",
+      "id": "MOEMS|E|Combinatorics|mid#1795229157222#db0ki9"
+    },
+    {
+      "problem": "At the school sandwich bar, students build a lunch sandwich by picking exactly 3 different toppings from these 6 choices: lettuce, tomato, cheese, turkey, pickles, and onions. Today the cafeteria is low on pickles and onions, so no sandwich is allowed to use both pickles and onions together. How many different sets of 3 toppings are possible for a sandwich?",
+      "answer": "16",
+      "solution": "Without any restriction, the number of ways to choose 3 toppings out of 6 is $\\binom{6}{3}=20$. Now count the sandwiches that are NOT allowed: those containing both pickles and onions. If both of those are already chosen, the third topping can be any of the remaining 4 toppings (lettuce, tomato, cheese, turkey), giving 4 forbidden combinations. Subtracting these from the total: $20-4=16$. So there are $16$ allowed sets of 3 toppings.",
+      "id": "MOEMS|E|Combinatorics|mid#1795229182281#ysf4ru"
     }
   ],
   "MOEMS|E|Combinatorics|late": [
@@ -6738,6 +6936,24 @@
       "answer": "462",
       "solution": "Ignoring the rule, the number of ways to draw 3 different numbers in order from the 9 tickets is $9\\times8\\times7=504$, since there are 9 choices for the kite winner, 8 left for the yo-yo winner, and 7 left for the puzzle winner. Now count the forbidden outcomes, where both ticket 4 and ticket 9 are drawn: the third winning ticket can be any of the other 7 numbers, giving 7 choices, and then the three chosen tickets (4, 9, and the extra one) can be arranged among the three prizes in $3!=6$ ways, for $7\\times6=42$ forbidden outcomes. Subtracting, the number of allowed ways is $504-42=462$.",
       "id": "MOEMS|E|Combinatorics|late#1795111064801#nn3xun"
+    },
+    {
+      "problem": "A new board game has a circular track of 6 spaces, numbered 1 through 6 in order, with space 6 sitting right next to space 1 so the loop is complete. A red pawn, a blue pawn, and a green pawn must each be placed on their own space so that no two pawns sit on spaces that are next to each other on the circle. How many different ways can the three pawns be placed on the track?",
+      "answer": "12",
+      "solution": "For three spaces out of six arranged in a circle to have no two of them next to each other, the only possibility is to use every other space, since skipping fewer than one space anywhere would put two chosen spaces next to each other somewhere around the loop. This gives exactly two valid sets of spaces: $\\{1,3,5\\}$ and $\\{2,4,6\\}$ (checking all pairs in each confirms none are adjacent, including the wrap from 6 to 1). For each of these 2 sets of spaces, the red, blue, and green pawns can be arranged on the three chosen spaces in $3! = 6$ different ways. So the total number of ways is $2 \\times 6 = 12$.",
+      "id": "MOEMS|E|Combinatorics|late#1795229211815#3m5aoi"
+    },
+    {
+      "problem": "A school is building the daily schedule for one grade. There are five class periods in the day, numbered 1st through 5th, and five subjects, each used exactly once: Math, Science, Art, Music, and Gym. The schedule must follow all three rules: (1) the Math period must come at some point before the Science period (not necessarily right before it); (2) Art and Music may never be placed in two periods that are right next to each other; (3) Gym must be placed in either the very first period of the day or the very last period of the day. How many different full-day schedules satisfy all three rules?",
+      "answer": "12",
+      "solution": "Gym must sit in period 1 or period 5, giving 2 choices, and either way the other four subjects (Math, Science, Art, Music) fill the remaining four periods, which are still all next to each other in a row. Among the $4! = 24$ orderings of these four subjects, exactly half, or $12$, have Math before Science. Treating Art and Music as a glued block gives $2 \\times 3! = 12$ orderings where they are adjacent, and by symmetry half of those, $6$, also have Math before Science. So the orderings with Math before Science AND Art not adjacent to Music number $12 - 6 = 6$. Multiplying by the 2 choices for where Gym goes gives $6 \\times 2 = 12$ valid schedules.",
+      "id": "MOEMS|E|Combinatorics|late#1795229236317#h6n2ot"
+    },
+    {
+      "problem": "A school is building the specials rotation for one class: on six different days, Day 1 through Day 6, the class has Art, Music, Gym, Library, Computer, and Health, one subject per day, each subject used exactly once. The schedule must follow three rules: Gym is not taught on Day 1; Library is taught on the day immediately after Art; and Computer is taught on some day before Music (not necessarily right before). How many different full 6-day schedules are possible?",
+      "answer": "48",
+      "solution": "Since Library must come right after Art, glue them into one block \"Art-Library,\" so we are really arranging $5$ items: the block, Gym, Computer, Music, Health, giving $5! = 120$ orderings, each corresponding to exactly one 6-day schedule. For the rule \"Computer before Music,\" exactly half of all orderings work (swapping Computer and Music pairs up good and bad orderings), leaving $120/2 = 60$. Day 1 is occupied by Gym only when Gym is the very first of the $5$ items (if the block is first, it fills Days 1-2, not putting Gym on Day 1). By symmetry Gym is equally likely to sit in any of the $5$ positions among those $60$ orderings, so $60/5 = 12$ of them have Gym on Day 1, which are forbidden. That leaves $60 - 12 = 48$ valid schedules.",
+      "id": "MOEMS|E|Combinatorics|late#1795229266515#qr8hbk"
     }
   ],
   "MOEMS|E|Probability|early": [
@@ -6758,6 +6974,24 @@
       "answer": "7/12",
       "solution": "Count the total number of cookies: $3+5+4=12$. The number of cookies that are NOT vanilla is the chocolate plus strawberry cookies: $3+4=7$. So the probability of picking a non-vanilla cookie is $\\frac{7}{12}$. This fraction is already in simplest form since $7$ and $12$ share no common factors other than 1.",
       "id": "MOEMS|E|Probability|early#1794973172287#hna19o"
+    },
+    {
+      "problem": "At the Daisy Street Craft Club, three new members—Ravi, Suki, and Theo—each joined on a different Monday, but no one knows what day of the week each of them was actually born. Assume each person's birth day of the week (Sunday through Saturday) is equally likely to be any of the 7 days, chosen independently for each person. What is the probability that all three of them were born on different days of the week? Give your answer as a fraction in simplest form.",
+      "answer": "30/49",
+      "solution": "Ravi's birthday can be any day, so that happens with probability $1$. For Suki to differ from Ravi, there are $6$ allowed days out of $7$, giving probability $\\frac{6}{7}$. For Theo to differ from both Ravi and Suki, there are $5$ allowed days out of $7$, giving probability $\\frac{5}{7}$. Multiply the three probabilities: $1 \\times \\frac{6}{7} \\times \\frac{5}{7} = \\frac{30}{49}$. Since $\\gcd(30,49)=1$, this fraction is already in simplest form.",
+      "id": "MOEMS|E|Probability|early#1795229282323#n3ww5p"
+    },
+    {
+      "problem": "In the board game Treasure Trail, players move their piece by spinning a spinner once, then spinning it again, and moving forward by the sum of the two spins. The spinner is divided into four equal-sized sections labeled $1$, $2$, $3$, and $4$. On her turn, Mia spins the spinner twice. What is the probability that the sum of her two spins is exactly $5$?",
+      "answer": "1/4",
+      "solution": "Each spin can land on $1$, $2$, $3$, or $4$, so there are $4 \\times 4 = 16$ equally likely pairs of outcomes for the two spins. The pairs that add to $5$ are $(1,4)$, $(4,1)$, $(2,3)$, and $(3,2)$, which gives $4$ favorable outcomes. The probability is $\\frac{4}{16}$, which simplifies to $\\frac{1}{4}$.",
+      "id": "MOEMS|E|Probability|early#1795229298673#wnkxpq"
+    },
+    {
+      "problem": "Six students—Mia, Jake, Ana, Ben, Cleo, and Drew—line up for lunch in a random order, with all orders equally likely. What is the probability that Mia and Jake end up standing next to each other somewhere in the line?",
+      "answer": "1/3",
+      "solution": "There are $6! = 720$ equally likely orders for the six students. To count orders where Mia and Jake are adjacent, glue them together as one block, which can be arranged internally in $2$ ways (Mia-Jake or Jake-Mia). This block plus the other $4$ students makes $5$ items to arrange, giving $5! = 120$ arrangements, so there are $2 \\times 120 = 240$ favorable orders. The probability is $\\frac{240}{720} = \\frac{1}{3}$.",
+      "id": "MOEMS|E|Probability|early#1795229305590#b7rs28"
     }
   ],
   "MOEMS|E|Probability|mid": [
@@ -6778,6 +7012,24 @@
       "answer": "2/5",
       "solution": "A sum of two whole numbers is even only when both numbers are odd or both are even. Among the cards, the odd numbers are $1,3,5$ (three cards) and the even numbers are $2,4$ (two cards). The number of ways to choose 2 cards that are both odd is $\\binom{3}{2}=3$, and both even is $\\binom{2}{2}=1$, giving $3+1=4$ favorable pairs. The total number of ways to choose any 2 cards from 5 is $\\binom{5}{2}=10$. So the probability of an even sum is $4/10=2/5$.",
       "id": "MOEMS|E|Probability|mid#1794973219685#g9bcji"
+    },
+    {
+      "problem": "Dana has a mini deck made of just the cards Ace through 9 of spades (9 cards in all, each one different). She shuffles the 9 cards and lays them face down in a single row of 9 spots. What is the probability that the 9 and the 4 end up in two spots that are right next to each other in the row?",
+      "answer": "2/9",
+      "solution": "Since the deck is shuffled randomly, the two spots occupied by the 9 and the 4 are equally likely to be any of the possible pairs of spots among the 9 positions in the row. The number of ways to choose 2 spots out of 9 is $\\binom{9}{2}=36$, so there are 36 equally likely position-pairs for these two cards. Among the 9 spots in a row, the pairs of spots that are actually next to each other are (1,2),(2,3),(3,4),...,(8,9), which is 8 pairs. So the probability the 9 and 4 land in adjacent spots is $\\frac{8}{36}=\\frac{2}{9}$.",
+      "id": "MOEMS|E|Probability|mid#1795229329392#o083ew"
+    },
+    {
+      "problem": "In the board game \"Garden Quest,\" the Move Deck has 10 different cards: four cards show \"Move 1 space,\" three cards show \"Move 2 spaces,\" two cards show \"Move 3 spaces,\" and one card shows \"Move 5 spaces.\" On her turn, Maya draws two cards at random from the shuffled deck, without replacement, and moves her piece forward by the sum of the two numbers shown. What is the probability that Maya moves her piece forward at least 6 spaces on this turn? Express your answer as a fraction in lowest terms.",
+      "answer": "2/9",
+      "solution": "There are $10$ cards total, so the number of ways to draw $2$ of them is $\\binom{10}{2}=45$. List the card values: four 1's, three 2's, two 3's, and one 5. Pairs whose sum is at least 6 are: $1+5=6$ (giving $4\\times1=4$ ways), $2+5=7$ ($3\\times1=3$ ways), $3+3=6$ ($\\binom{2}{2}=1$ way), and $3+5=8$ ($2\\times1=2$ ways). Adding these gives $4+3+1+2=10$ favorable draws out of $45$ total. So the probability is $\\frac{10}{45}=\\frac{2}{9}$.",
+      "id": "MOEMS|E|Probability|mid#1795229351929#f87aqt"
+    },
+    {
+      "problem": "In the board game \"Treasure Trail,\" players spin a spinner to move their token along the path. The spinner is divided into 8 equal-size sectors: three sectors are labeled \"2\", two sectors are labeled \"3\", two sectors are labeled \"5\", and one sector is labeled \"Lose a Turn\" (which moves the token 0 spaces). Mia's token is sitting exactly 7 spaces behind the treasure chest, and she gets to spin the spinner twice in a row, moving her token the total number of spaces shown on both spins combined. What is the probability, as a fraction in simplest form, that after her two spins Mia's token lands exactly on the treasure chest?",
+      "answer": "3/16",
+      "solution": "The two spins must add up to exactly 7, using values from the set {0, 2, 2, 2, 3, 3, 5, 5}. Checking all possible sums, only a 2 paired with a 5 gives 7, since 0+7, 3+4, 3+3=6, and 5+5=10 don't work. The probability of spinning a 2 is $3/8$ and of spinning a 5 is $2/8=1/4$, so getting (2 then 5) has probability $\\frac{3}{8}\\times\\frac{1}{4}=\\frac{3}{32}$, and (5 then 2) also has probability $\\frac{3}{32}$. Adding these two cases gives $\\frac{3}{32}+\\frac{3}{32}=\\frac{6}{32}=\\frac{3}{16}$.",
+      "id": "MOEMS|E|Probability|mid#1795229382553#ateh5q"
     }
   ],
   "MOEMS|E|Probability|late": [
@@ -6798,6 +7050,24 @@
       "answer": "3/20",
       "solution": "Since the probability of red is $3/5$, the total number of buttons must be a multiple of 5 so that $3/5$ of it is a whole number; with fewer than 30 buttons, the possible totals are 5, 10, 15, 20, 25, giving red counts of 3, 6, 9, 12, 15. Only 15 (when the total is 25) is itself a multiple of 5, so there are 25 buttons total: 15 red and 10 blue. The probability the first draw is blue is $10/25$, and after removing one blue, the probability the second draw is blue is $9/24$. Multiplying gives $\\frac{10}{25}\\times\\frac{9}{24}=\\frac{90}{600}=\\frac{3}{20}$.",
       "id": "MOEMS|E|Probability|late#1794973275855#lbz197"
+    },
+    {
+      "problem": "Carlos has a coin purse containing only nickels and dimes, 15 coins in all. The total value of all his dimes is exactly three times the total value of all his nickels. Carlos reaches into the purse without looking and pulls out two coins at once (so neither coin is replaced before the second is chosen). What is the probability that the two coins he pulls out are one nickel and one dime, together worth 15 cents?",
+      "answer": "18/35",
+      "solution": "Let $n$ be the number of nickels and $d$ the number of dimes, so $n+d=15$. The nickels are worth $5n$ cents and the dimes $10d$ cents, and we're told $10d = 3(5n) = 15n$, so $2d = 3n$, meaning $n:d = 2:3$. Splitting 15 coins in ratio $2:3$ gives $n=6$ nickels and $d=9$ dimes (check: $9$ dimes are worth $90$ cents, $6$ nickels are worth $30$ cents, and $90 = 3\\times30$). The number of ways to pick any 2 coins from 15 is $\\binom{15}{2}=105$, and the number of ways to pick one nickel and one dime is $6\\times9=54$. So the probability is $\\frac{54}{105}=\\frac{18}{35}$.",
+      "id": "MOEMS|E|Probability|late#1795229406292#n3wh69"
+    },
+    {
+      "problem": "The Maple Street Drama Club has 8 members eligible for a new 3-person stage-crew committee: 5 are sixth-graders and 3 are seventh-graders. The sponsor writes all 8 names on identical slips of paper, mixes them in a hat, and draws 3 names at random (without replacement) to form the committee. What is the probability that the committee ends up with more seventh-graders than sixth-graders? Give your answer as a fraction in simplest form.",
+      "answer": "2/7",
+      "solution": "There are $\\binom{8}{3}=56$ equally likely ways to choose the 3-person committee. A committee of 3 can split between the grades as (sixth,seventh) = (3,0), (2,1), (1,2), or (0,3); 'more seventh-graders than sixth-graders' happens only for splits (1,2) and (0,3). For (1,2): choose 1 of the 5 sixth-graders and 2 of the 3 seventh-graders: $5\\times\\binom{3}{2}=5\\times3=15$ ways. For (0,3): choose all 3 seventh-graders: $\\binom{3}{3}=1$ way. That gives $15+1=16$ favorable committees out of 56 total, so the probability is $\\frac{16}{56}=\\frac{2}{7}$.",
+      "id": "MOEMS|E|Probability|late#1795229445687#lba9n2"
+    },
+    {
+      "problem": "The snack machine in the school lobby holds 7 bags behind one button, loaded in a random order: 3 bags of pretzels, 2 bags of popcorn, and 2 bags of trail mix. No two bags look alike once you know the order, but nobody can see what's coming next, and once a bag drops it is gone. Ana, Ben, and Mia each press the button once, one after another, so they get the 1st, 2nd, and 3rd bags in the lineup. What is the probability that the three students end up with three different kinds of snacks (one pretzel, one popcorn, one trail mix)? Give your answer as a fraction in lowest terms.",
+      "answer": "12/35",
+      "solution": "Since the 7 bags are arranged in a completely random order, the set of bags that end up first, second, and third is equally likely to be any of the possible groups of 3 bags chosen from the 7. There are $\\binom{7}{3}=35$ equally likely groups of 3 bags overall. A favorable group has exactly one pretzel bag (3 choices), one popcorn bag (2 choices), and one trail mix bag (2 choices), giving $3\\times2\\times2=12$ favorable groups. So the probability all three students get different snacks is $\\frac{12}{35}$, which is already in lowest terms.",
+      "id": "MOEMS|E|Probability|late#1795229481463#wmny02"
     }
   ],
   "MOEMS|M|Algebra|early": [
@@ -6818,6 +7088,24 @@
       "answer": "30",
       "solution": "Let an eraser cost $e$ cents, so a pencil costs $3e$ cents. Jamal's purchase costs $4(3e) + 2e = 14e$ cents, and this equals $140$ cents. Solving $14e = 140$ gives $e = 10$. So a pencil costs $3e = 30$ cents.",
       "id": "MOEMS|M|Algebra|early#1794973296781#zdwygq"
+    },
+    {
+      "problem": "At Riverside Middle School's spring concert, the music teacher asked her star violinist, Theo, how old he is. Theo replied: \"In 5 years, I will be three times as old as I was 7 years ago.\" How old is Theo now, in years?",
+      "answer": "13",
+      "solution": "Let $t$ be Theo's current age. \"In 5 years\" means $t+5$, and \"7 years ago\" means $t-7$. The statement becomes the equation $t+5 = 3(t-7)$. Expanding gives $t+5 = 3t-21$, so $26 = 2t$, which gives $t=13$. Check: in 5 years Theo is $18$, and 7 years ago he was $6$, and indeed $18 = 3\\times 6$.",
+      "id": "MOEMS|M|Algebra|early#1795229500322#jmsqpl"
+    },
+    {
+      "problem": "On Mr. Alvarez's farm, every animal is either a chicken or a goat. Counting heads, Mr. Alvarez counts 50 animals in all. Counting legs, he counts 140 legs in all (each chicken has 2 legs and each goat has 4 legs). How many goats are on the farm?",
+      "answer": "20",
+      "solution": "Let $c$ be the number of chickens and $g$ be the number of goats. From the heads, $c+g=50$. From the legs, $2c+4g=140$. Substituting $c=50-g$ into the legs equation gives $2(50-g)+4g=140$, which simplifies to $100+2g=140$, so $2g=40$ and $g=20$. Checking: 30 chickens and 20 goats give $30+20=50$ heads and $60+80=140$ legs, which matches.",
+      "id": "MOEMS|M|Algebra|early#1795229518408#ag6war"
+    },
+    {
+      "problem": "At the school fair, a balloon costs $1 more than twice the cost of a sticker. Lucy buys 2 stickers and 3 balloons, and she pays a total of $19. What is the cost of one balloon, in dollars?",
+      "answer": "5",
+      "solution": "Let the cost of a sticker be $c$ dollars. Then a balloon costs $2c+1$ dollars. Lucy's purchase gives the equation $2c + 3(2c+1) = 19$, which simplifies to $8c + 3 = 19$, so $8c = 16$ and $c = 2$. The cost of one balloon is $2c+1 = 2(2)+1 = 5$ dollars.",
+      "id": "MOEMS|M|Algebra|early#1795229526930#aiud22"
     }
   ],
   "MOEMS|M|Algebra|mid": [
@@ -6838,6 +7126,24 @@
       "answer": "7",
       "solution": "Let $n$ be the number of notebooks and $p$ the number of pens, so $2n+3p=29$ with $n,p\\ge 1$ and $n>p$. Since $2n=29-3p$ must be even, $3p$ must be odd, so $p$ must be odd. Testing the largest odd values of $p$: if $p=9$, $n=1$, but $1>9$ is false; if $p=7$, $n=4$, but $4>7$ is false; if $p=5$, $n=7$, and $7>5$ is true. So the largest valid $p$ is $5$, giving $n=7$. Checking: $2(7)+3(5)=14+15=29$. Thus Grace bought $7$ notebooks.",
       "id": "MOEMS|M|Algebra|mid#1794973359204#d5uo8c"
+    },
+    {
+      "problem": "Priya can paint a mural by herself in $8$ hours, and Diego can paint the same mural by himself in $12$ hours. They start painting together, but after some number of hours, Priya leaves to work on another project, and Diego finishes the rest of the mural alone. In total, the mural is completed exactly $6$ hours after they started. For how many hours did Priya work?",
+      "answer": "4",
+      "solution": "Priya's rate is $\\frac{1}{8}$ mural per hour and Diego's rate is $\\frac{1}{12}$ mural per hour, so together they paint $\\frac{1}{8}+\\frac{1}{12}=\\frac{5}{24}$ of the mural per hour. Let $t$ be the number of hours Priya works (which is also how long they work together); then Diego works alone for the remaining $6-t$ hours. The total work done must equal $1$ whole mural: $\\frac{5}{24}t+\\frac{1}{12}(6-t)=1$. Multiplying by $24$ gives $5t+2(6-t)=24$, so $5t+12-2t=24$, giving $3t=12$ and $t=4$. Checking: together they paint $\\frac{5}{24}\\cdot4=\\frac{5}{6}$ of the mural, leaving $\\frac{1}{6}$ for Diego, which takes him $\\frac{1/6}{1/12}=2$ more hours, for a total of $4+2=6$ hours, confirming the answer.",
+      "id": "MOEMS|M|Algebra|mid#1795229558287#pigzhy"
+    },
+    {
+      "problem": "Oliver had a collection of trading cards. He gave away two-thirds of his cards to his cousin, and then his friend gave him 15 more cards. The next day, Oliver traded away exactly half of all the cards he had at that point, leaving him with exactly 20 cards. How many trading cards did Oliver have before he gave any away?",
+      "answer": "75",
+      "solution": "Let $x$ be Oliver's starting number of cards. After giving away two-thirds, he has $\\frac{1}{3}x$ left. After receiving 15 more, he has $\\frac{1}{3}x+15$ cards. Trading away half of these leaves him with half of that amount, so $\\frac{1}{2}\\left(\\frac{1}{3}x+15\\right)=20$. Solving: $\\frac{1}{3}x+15=40$, so $\\frac{1}{3}x=25$, giving $x=75$. Checking: $75\\to$ gives away 50, leaves 25, plus 15 is 40, trades away 20, leaves 20 — correct.",
+      "id": "MOEMS|M|Algebra|mid#1795229579137#1llil0"
+    },
+    {
+      "problem": "In Mia's coin purse there are only nickels and quarters. The number of quarters is 3 more than twice the number of nickels. If the total value of all the coins in the purse is $4.05, how many nickels are in the purse?",
+      "answer": "6",
+      "solution": "Let $n$ be the number of nickels, so the number of quarters is $2n+3$. Each nickel is worth $5$ cents and each quarter is worth $25$ cents, so the total value in cents is $5n+25(2n+3)=405$. Expanding gives $5n+50n+75=405$, so $55n=330$, and $n=6$. Checking: $6$ nickels and $2(6)+3=15$ quarters give $30+375=405$ cents, which matches $4.05$.",
+      "id": "MOEMS|M|Algebra|mid#1795229606969#w38o4a"
     }
   ],
   "MOEMS|M|Algebra|late": [
@@ -6858,6 +7164,24 @@
       "answer": "13",
       "solution": "Let $M$ and $N$ be their current ages, with difference $d=M-N$. Mia's age equaled Noah's current age $d$ years ago, and at that time Noah was $N-d$ years old. The condition says $M+5=2(N-d)=2(N-(M-N))=4N-2M$, so $3M+5=4N$. Since $M+N=24$, substitute $N=24-M$: $3M+5=4(24-M)=96-4M$, giving $7M=91$, so $M=13$. Checking: $N=11$, $d=2$; two years ago Mia was $11=N$, and Noah was $9$; in 5 years Mia is $18=2\\times9$, confirming the solution.",
       "id": "MOEMS|M|Algebra|late#1794973497572#fp2xr1"
+    },
+    {
+      "problem": "At Ridgeview Middle School's book fair, the number of mystery books was to the number of science books in the ratio $3:5$. After the fair, 12 mystery books were sold, and the librarian donated exactly 20% of the science books to a classroom. The remaining mystery books to remaining science books are now in the ratio $1:2$. How many books (mystery and science combined) remain at the book fair?",
+      "answer": "72",
+      "solution": "Let the original numbers be $3x$ mystery books and $5x$ science books. After selling 12 mystery books, there are $3x-12$ left. Donating 20% of the science books leaves 80% of them, or $0.8(5x)=4x$. Since the new ratio is $1:2$, we need $2(3x-12)=4x$, giving $6x-24=4x$, so $2x=24$ and $x=12$. Then mystery books remaining $=3(12)-12=24$ and science books remaining $=4(12)=48$, so together there are $24+48=72$ books.",
+      "id": "MOEMS|M|Algebra|late#1795229638292#r5qd7r"
+    },
+    {
+      "problem": "At an arcade, Jordan collects prize tickets from a claw machine. Every time he visits the trade-in booth, the attendant first takes away exactly half of whatever tickets Jordan is holding, and then charges an extra fee of 3 tickets on top of that. Jordan visited the booth three separate times (using his full current ticket total each visit), and after the third visit he had exactly 5 tickets left. How many tickets did Jordan have before his first visit to the booth?",
+      "answer": "82",
+      "solution": "Work backward from the final amount, undoing each step: before the fee was taken, the attendant's actions turned some amount $x$ into $x/2-3$, so to reverse this we add 3 then double. After visit 3 Jordan had 5 tickets, so before visit 3 he had $(5+3)\\times2=16$. Before visit 2 he had $(16+3)\\times2=38$. Before visit 1 (the start) he had $(38+3)\\times2=82$. Checking forward: $82/2-3=38$, $38/2-3=16$, $16/2-3=5$, which matches, so Jordan started with $82$ tickets.",
+      "id": "MOEMS|M|Algebra|late#1795229710003#zmiggc"
+    },
+    {
+      "problem": "Jenna has a jar containing only nickels and dimes, worth $3.75 in total. If every nickel in the jar were replaced by a dime, and every dime were replaced by a nickel, the coins would be worth $4.50 in total. How many coins are in the jar?",
+      "answer": "55",
+      "solution": "Let $n$ be the number of nickels and $d$ be the number of dimes, so $5n+10d=375$ cents, which simplifies to $n+2d=75$. Swapping each coin type changes the value to $10n+5d=450$ cents; the increase from the original value is $(10n+5d)-(5n+10d)=5(n-d)=450-375=75$, so $n-d=15$. Substituting $n=d+15$ into $n+2d=75$ gives $3d+15=75$, so $d=20$ and $n=35$. The total number of coins is $n+d=35+20=55$.",
+      "id": "MOEMS|M|Algebra|late#1795229762470#soxm21"
     }
   ],
   "MOEMS|M|Geometry|early": [
@@ -6878,6 +7202,24 @@
       "answer": "8",
       "solution": "Let the height of the dock be $h$ feet, so the horizontal distance from the ramp's base to the wall is $h-2$ feet. By the Pythagorean theorem, $h^2+(h-2)^2=10^2$. Expanding gives $2h^2-4h+4=100$, so $h^2-2h-48=0$. Factoring, $(h-8)(h+6)=0$, and since $h$ must be positive, $h=8$. Checking: $8^2+6^2=64+36=100=10^2$, confirming the triangle works.",
       "id": "MOEMS|M|Geometry|early#1795111094856#wefe0x"
+    },
+    {
+      "problem": "For a field-day relay, Mr. Alvarez marks three cones on a playground that is laid out like a coordinate grid, with each unit representing 1 meter. He places the cones at the points $(0,0)$, $(10,0)$, and $(4,7)$. What is the area, in square meters, of the triangular region enclosed by the three cones?",
+      "answer": "35",
+      "solution": "The side connecting $(0,0)$ and $(10,0)$ lies flat along the x-axis, so it can serve as the base of the triangle, with length $10$ meters. The height is the perpendicular distance from the third cone at $(4,7)$ down to that base line (the x-axis), which is simply its $y$-coordinate, $7$ meters. Using the area formula for a triangle, $Area = \\frac{1}{2}\\times \\text{base} \\times \\text{height} = \\frac{1}{2}\\times 10 \\times 7$. This gives $\\frac{1}{2}\\times 70 = 35$ square meters.",
+      "id": "MOEMS|M|Geometry|early#1795229778920#ln3xs0"
+    },
+    {
+      "problem": "A rectangular community garden measures 20 feet by 14 feet. Inside it, a rectangular planting bed is centered with a gravel walking path of the same width running all the way around it on all four sides. If the planting bed has an area of 160 square feet, what is the width of the gravel path, in feet?",
+      "answer": "2",
+      "solution": "Let $w$ be the path width. Since the path surrounds the bed evenly, the bed's dimensions are $(20-2w)$ by $(14-2w)$. We need $(20-2w)(14-2w)=160$. Testing $w=2$: $(20-4)(14-4)=16\\times10=160$, which matches exactly. Checking $w=1$ gives $18\\times12=216$ (too big) and $w=3$ gives $14\\times8=112$ (too small), confirming $w=2$ is the unique valid answer. So the path width is $2$.",
+      "id": "MOEMS|M|Geometry|early#1795229800771#apekz7"
+    },
+    {
+      "problem": "Mia's backyard is shaped like a rectangle that is 6 meters long and 4 meters wide. Label the corners of the yard, in order going around, $A$, $B$, $C$, and $D$, so that side $AB$ is one of the 6-meter sides and side $BC$ is one of the 4-meter sides. Mia plants a triangular flower bed whose three corners are: corner $A$, the midpoint of side $BC$, and the midpoint of side $CD$. What is the area, in square meters, of the triangular flower bed?",
+      "answer": "9",
+      "solution": "Place the rectangle with $A=(0,0)$, $B=(6,0)$, $C=(6,4)$, $D=(0,4)$, so $E$ = midpoint of $BC$ = $(6,2)$ and $F$ = midpoint of $CD$ = $(3,4)$. The flower bed triangle $AEF$ is the rectangle with three corner right triangles cut off: triangle $ABE$ (legs $6$ and $2$, area $6$), triangle $ECF$ (legs $2$ and $3$, area $3$), and triangle $AFD$ (legs $4$ and $3$, area $6$). These three corner triangles total $6+3+6=15$ square meters. The whole rectangle has area $6\\times4=24$ square meters, so the flower bed's area is $24-15=9$ square meters.",
+      "id": "MOEMS|M|Geometry|early#1795229831434#k0hdmd"
     }
   ],
   "MOEMS|M|Geometry|mid": [
@@ -6898,6 +7240,24 @@
       "answer": "27/4",
       "solution": "Since $AB \\parallel DC$, triangles $QPB$ and $QCD$ are similar (vertical angles at $Q$ plus alternate interior angles from the parallel sides). Here $PB = AB - AP = 10 - 4 = 6$ and $DC = AB = 10$, so the similarity ratio is $PB:DC = 6:10 = 3:5$. The perpendicular distance between lines $AB$ and $DC$ equals $BC = 6$, and point $Q$ splits this distance in the ratio $3:5$, so the height from $Q$ down to line $AB$ is $6 \\cdot \\frac{3}{8} = \\frac{9}{4}$. Thus the area of triangle $PQB$ is $\\frac12 \\cdot PB \\cdot \\text{height} = \\frac12 \\cdot 6 \\cdot \\frac{9}{4} = \\frac{27}{4}$.",
       "id": "MOEMS|M|Geometry|mid#1794973644179#ijncuh"
+    },
+    {
+      "problem": "Rectangle $ABCD$ has vertices labeled in order around the rectangle, with $AB = 16$ and $BC = 9$. Point $E$ lies on side $BC$ with $BE = 6$, and point $F$ lies on side $CD$ with $CF = 4$. Segments $AE$ and $AF$ are drawn, splitting the rectangle into three regions: triangle $ABE$, quadrilateral $AECF$, and triangle $AFD$. What is the area of quadrilateral $AECF$?",
+      "answer": "42",
+      "solution": "The rectangle's total area is $AB \\times BC = 16 \\times 9 = 144$. Triangle $ABE$ has legs $AB = 16$ and $BE = 6$ meeting at the right angle $B$, so its area is $\\frac{1}{2}(16)(6) = 48$. Triangle $AFD$ has legs $AD = BC = 9$ and $DF = CD - CF = 16 - 4 = 12$ meeting at right angle $D$, so its area is $\\frac{1}{2}(9)(12) = 54$. Since the three regions together fill the rectangle, the quadrilateral's area is $144 - 48 - 54 = 42$.",
+      "id": "MOEMS|M|Geometry|mid#1795229851314#llb839"
+    },
+    {
+      "problem": "A square tile mural $ABCD$ has side length $12$ inches, with the corners labeled in order going around the square. A point $E$ is marked on side $BC$ so that $BE = 5$, and a point $F$ is marked on side $CD$ so that $DF = 4$. An artist paints triangle $AEF$ a different color from the rest of the mural. What is the area, in square inches, of the painted triangle $AEF$?",
+      "answer": "62",
+      "solution": "The whole square has area $12\\times12=144$. Triangle $ABE$ has legs $AB=12$ and $BE=5$ (right angle at $B$), so its area is $\\frac12(12)(5)=30$. Triangle $ADF$ has legs $AD=12$ and $DF=4$ (right angle at $D$), so its area is $\\frac12(12)(4)=24$. The leftover piece $AECF$ (everything except these two triangles) has area $144-30-24=90$, and it splits into triangle $AEF$ plus triangle $ECF$, where $EC=12-5=7$ and $CF=12-4=8$ give triangle $ECF$ area $\\frac12(7)(8)=28$. So triangle $AEF$ has area $90-28=62$.",
+      "id": "MOEMS|M|Geometry|mid#1795229909277#xa8spc"
+    },
+    {
+      "problem": "A square community garden $ABCD$ has side length $10$ meters, with the corners labeled in order going around the square. A stake is placed at point $M$, the midpoint of side $BC$, and another stake is placed at point $N$, the midpoint of side $CD$. A rope is stretched from corner $A$ to stake $M$, and another rope is stretched from corner $B$ to stake $N$. The two ropes cross at point $P$, which together with corners $A$ and $B$ forms a triangular flower bed. What is the area of triangle $ABP$, in square meters?",
+      "answer": "20",
+      "solution": "Place coordinates $A=(0,0)$, $B=(10,0)$, $C=(10,10)$, $D=(0,10)$, so $M=(10,5)$ and $N=(5,10)$. Line $AM$ has slope $5/10=1/2$, giving $y=\\frac{1}{2}x$. Line $BN$ has slope $(10-0)/(5-10)=-2$, giving $y=-2(x-10)=-2x+20$. Setting $\\frac{1}{2}x=-2x+20$ gives $\\frac{5}{2}x=20$, so $x=8$ and $y=4$, meaning $P=(8,4)$. Triangle $ABP$ has base $AB=10$ along the x-axis and height equal to $P$'s $y$-coordinate, $4$, so its area is $\\frac{1}{2}\\cdot 10\\cdot 4 = 20$.",
+      "id": "MOEMS|M|Geometry|mid#1795229938711#sh06ff"
     }
   ],
   "MOEMS|M|Geometry|late": [
@@ -6918,6 +7278,24 @@
       "answer": "9",
       "solution": "Since $AB \\parallel DC$, triangles $AEB$ and $CED$ are similar with ratio $AB:DC=6:10=3:5$, so their areas are in ratio $9:25$; write $[AEB]=9k$ and $[CED]=25k$. The similarity also gives $AE:EC=BE:ED=3:5$. Triangles $AED$ and $AEB$ share vertex $A$ and have bases $ED,EB$ on line $BD$ with $ED:EB=5:3$, so $[AED]=\\frac{5}{3}(9k)=15k$; likewise $[BEC]=15k$. The whole trapezoid's area is $9k+25k+15k+15k=64k$, and since this equals $64$, $k=1$. Thus the area of triangle $AEB$ is $9k=9$.",
       "id": "MOEMS|M|Geometry|late#1794973744384#3b8l73"
+    },
+    {
+      "problem": "A triangular flag $ABC$ has area $55$ square inches. Point $D$ lies on side $BC$ so that $BD:DC = 2:3$, and point $E$ lies on side $AC$ so that $AE:EC = 1:3$. Segments $AD$ and $BE$ cross at point $P$. Find the area, in square inches, of triangle $ABP$.",
+      "answer": "10",
+      "solution": "Use mass points: since $BD:DC=2:3$, give $B$ mass $3$ and $C$ mass $2$, so $D$ (on $BC$) has mass $5$. Since $AE:EC=1:3$, we need mass$(A)\\cdot AE=$mass$(C)\\cdot EC$, so mass$(A)=3\\cdot$mass$(C)=6$. On line $AD$, the masses at $A$ and $D$ are $6$ and $5$, so $P$ splits $AD$ with $AP:PD=5:6$, giving $AP/AD=5/11$. Also $BD/BC=2/5$, so area$(ABD)=\\frac{2}{5}\\cdot$area$(ABC)$. Then area$(ABP)=\\frac{AP}{AD}\\cdot$area$(ABD)=\\frac{5}{11}\\cdot\\frac{2}{5}\\cdot 55 = 10$.",
+      "id": "MOEMS|M|Geometry|late#1795229969723#uprhbm"
+    },
+    {
+      "problem": "A square community garden $ABCD$ has each side measuring 12 feet, with the corners labeled in order going around the square. A path is laid along segment $AN$, where $N$ is the midpoint of side $BC$, and another path is laid along segment $DM$, where $M$ is the midpoint of side $AB$. These two paths cross at a point $P$ inside the garden. Find the area, in square feet, of triangle $APD$.",
+      "answer": "144/5",
+      "solution": "Place the square with $A=(0,0)$, $B=(12,0)$, $C=(12,12)$, $D=(0,12)$, so $M=(6,0)$ and $N=(12,6)$. Line $AN$ has equation $y=\\frac{x}{2}$, and line $DM$ has equation $y=12-2x$. Setting them equal: $\\frac{x}{2}=12-2x$ gives $x=\\frac{24}{5}$, so $y=\\frac{12}{5}$, meaning $P=\\left(\\frac{24}{5},\\frac{12}{5}\\right)$. Triangle $APD$ has base $AD=12$ lying on the $y$-axis, and its height is the horizontal distance from $P$ to this axis, namely $\\frac{24}{5}$. So the area is $\\frac12 \\cdot 12 \\cdot \\frac{24}{5} = \\frac{144}{5}$.",
+      "id": "MOEMS|M|Geometry|late#1795230000666#dlvlct"
+    },
+    {
+      "problem": "Square $ABCD$ has side length $13$. Point $E$ lies on side $AB$ with $AE = 5$, point $F$ lies on side $BC$ with $BF = 5$, point $G$ lies on side $CD$ with $CG = 5$, and point $H$ lies on side $DA$ with $DH = 5$. Segments $EF$, $FG$, $GH$, and $HE$ are drawn, and together they form a smaller square inside $ABCD$. What is the area of square $EFGH$?",
+      "answer": "89",
+      "solution": "Rotating the big square $90^\\circ$ about its center sends $A\\to B\\to C\\to D\\to A$, and since $AE=BF=CG=DH=5$, that same rotation sends $E\\to F\\to G\\to H\\to E$, confirming $EFGH$ is a square. So it suffices to find the length of one side, say $EF$, using right triangle $EBF$, which has its right angle at $B$ (a corner of the big square). Since $AB=13$ and $AE=5$, we get $BE = 13-5 = 8$, and we're given $BF=5$. By the Pythagorean theorem, $EF^2 = BE^2+BF^2 = 8^2+5^2 = 64+25 = 89$. Since the area of a square equals the square of its side length, the area of $EFGH$ is $89$.",
+      "id": "MOEMS|M|Geometry|late#1795230020181#hp0pwm"
     }
   ],
   "MOEMS|M|Number Theory|early": [
@@ -6938,6 +7316,24 @@
       "answer": "61",
       "solution": "Since the remainder is 1 in each case, the number of cards minus 1 must be divisible by 3, 4, and 5. The least common multiple of 3, 4, and 5 is $60$, so the number of cards is of the form $60k+1$ for some whole number $k$. For $k=0$, the number is $1$; for $k=1$, the number is $61$; for $k=2$, the number is $121$, which is too big since it must be less than $100$. The greatest value under $100$ is therefore $61$. Checking: $61\\div 3=20$ remainder $1$, $61\\div 4=15$ remainder $1$, $61\\div 5=12$ remainder $1$, confirming the answer.",
       "id": "MOEMS|M|Number Theory|early#1794973770282#d1yii7"
+    },
+    {
+      "problem": "At a science fair, three blinking lights are set up on a table. Light A blinks every $4$ seconds, Light B blinks every $6$ seconds, and Light C blinks every $10$ seconds. All three lights blink together at the exact moment the display is turned on. After that, how many more times within the next $120$ seconds will all three lights blink at exactly the same moment?",
+      "answer": "2",
+      "solution": "The lights blink together again whenever the elapsed time is a common multiple of $4$, $6$, and $10$. Finding the least common multiple: $4=2^2$, $6=2\\cdot 3$, $10=2\\cdot 5$, so $\\text{lcm}=2^2\\cdot 3\\cdot 5=60$. So all three blink together every $60$ seconds after the start. Within the next $120$ seconds, this happens at $60$ seconds and at $120$ seconds, giving $2$ more simultaneous blinks.",
+      "id": "MOEMS|M|Number Theory|early#1795230030612#2hq9ki"
+    },
+    {
+      "problem": "For the school's spring carnival, Mr. Alvarez has two rolls of banner paper: one is $54$ inches long and the other is $90$ inches long. He wants to cut both rolls into pieces that are all the same length, with no paper left over, and he wants each piece to be as long as possible. How many pieces will he end up with in total?",
+      "answer": "8",
+      "solution": "The piece length must divide both $54$ and $90$ evenly, so the largest possible length is $\\gcd(54,90)$. Factoring, $54 = 2\\cdot3^3$ and $90 = 2\\cdot3^2\\cdot5$, so $\\gcd(54,90) = 2\\cdot3^2 = 18$. Cutting the $54$-inch roll into $18$-inch pieces gives $54/18 = 3$ pieces, and the $90$-inch roll gives $90/18 = 5$ pieces. In total that is $3 + 5 = 8$ pieces.",
+      "id": "MOEMS|M|Number Theory|early#1795230040749#0ay1oo"
+    },
+    {
+      "problem": "At Riverside Middle School, there are 40 lockers in a hallway, numbered 1 through 40, and all start out closed. A line of 40 students walks past the lockers one at a time. Student 1 opens every locker. Student 2 then goes to every 2nd locker (lockers 2, 4, 6, ...) and toggles it (opens it if closed, closes it if open). Student 3 goes to every 3rd locker (3, 6, 9, ...) and toggles it, and so on, with student $k$ toggling every $k$-th locker, until student 40 toggles only locker 40. After all 40 students have passed, how many lockers are open?",
+      "answer": "6",
+      "solution": "Locker $n$ gets toggled once for every divisor of $n$, since student $k$ toggles locker $n$ exactly when $k$ divides $n$. A locker ends up open only if it is toggled an odd number of times, so we need $n$ to have an odd number of divisors. Divisors normally pair up ($d$ and $n/d$), except when $n$ is a perfect square, where one divisor pairs with itself; so exactly the perfect squares have an odd number of divisors. The perfect squares from 1 to 40 are $1, 4, 9, 16, 25, 36$. That gives $6$ open lockers.",
+      "id": "MOEMS|M|Number Theory|early#1795230072571#fx5vaa"
     }
   ],
   "MOEMS|M|Number Theory|mid": [
@@ -6958,6 +7354,24 @@
       "answer": "119",
       "solution": "Notice that in each case the number of leftover people is exactly one less than the row size: 3 left over out of 4, 4 left over out of 5, 5 left over out of 6. That means if we add 1 to the total number of members $N$, the result $N+1$ divides evenly by 4, 5, and 6. So $N+1$ must be a common multiple of 4, 5, and 6, and the least common multiple of these numbers is $\\text{lcm}(4,5,6)=60$. We need $N+1$ to be a multiple of 60 with $N$ between 100 and 150, so $N+1$ must be between 101 and 151; the only multiple of 60 in that range is 120. Thus $N+1=120$, so $N=119$, and checking: $119\\div4$ leaves remainder 3, $119\\div5$ leaves remainder 4, $119\\div6$ leaves remainder 5, confirming the answer.",
       "id": "MOEMS|M|Number Theory|mid#1794973817595#7o3o62"
+    },
+    {
+      "problem": "The Riverside Chess Club assigns locker numbers to its members in order, starting at 1. The newest member receives the smallest locker number that satisfies two conditions: it is a multiple of 6, and it has exactly 10 positive whole-number factors (counting 1 and itself). What locker number does the newest member receive?",
+      "answer": "48",
+      "solution": "If a number's prime factorization is $p^a \\cdot q^b \\cdots$, then its total number of factors is $(a+1)(b+1)\\cdots$. We need this product to equal $10 = 10\\times1$ or $5\\times2$, so the number is either $p^9$ or $p^4q$ for primes $p,q$. The smallest numbers of these forms are $2^9=512$ and $2^4\\cdot3=48$ (using the larger exponent on the smaller prime keeps the number small). Checking multiples of 6 up to 48 ($6,12,18,24,30,36,42$) shows none of them have exactly 10 factors (they have 4, 6, 6, 8, 8, 9, and 8 factors respectively). Since $48=2^4\\cdot3$ has $(4+1)(1+1)=10$ factors and is divisible by 6, the newest member's locker number is $48$.",
+      "id": "MOEMS|M|Number Theory|mid#1795230096415#tlabvw"
+    },
+    {
+      "problem": "A craft store has three spools of ribbon, measuring $84$ cm, $126$ cm, and $210$ cm long. The store wants to cut all three ribbons into smaller pieces that are all the same length, with no ribbon left over from any spool, and the pieces as long as possible. Once this is done, how many ribbon pieces will there be in total?",
+      "answer": "10",
+      "solution": "To cut all three ribbons into equal pieces with none left over, the piece length must divide $84$, $126$, and $210$; to make the pieces as long as possible, we need the greatest common factor of these numbers. Factoring: $84=2^2\\cdot3\\cdot7$, $126=2\\cdot3^2\\cdot7$, $210=2\\cdot3\\cdot5\\cdot7$, so the common factors are $2$, $3$, and $7$, giving $\\gcd=2\\cdot3\\cdot7=42$. Cutting each ribbon into pieces of length $42$ cm gives $84/42=2$ pieces, $126/42=3$ pieces, and $210/42=5$ pieces. Adding these up: $2+3+5=10$ total pieces.",
+      "id": "MOEMS|M|Number Theory|mid#1795230112689#tvdfe9"
+    },
+    {
+      "problem": "A bakery baked a batch of cookies, and the total is between 200 and 300. When the baker packs the cookies into bags of 9 cookies each, there are 4 cookies left over. When she instead packs them into bags of 11 cookies each, there are 6 cookies left over. How many cookies did the baker bake?",
+      "answer": "292",
+      "solution": "A number leaving remainder 4 when divided by 9 can be written as $N=9k+4$. Plugging into the second condition, $9k+4\\equiv 6 \\pmod{11}$, so $9k\\equiv 2\\pmod{11}$. Since $9\\times 5=45\\equiv1\\pmod{11}$, the inverse of 9 is 5, giving $k\\equiv 10\\pmod{11}$. So $k=11m+10$, and $N=9(11m+10)+4=99m+94$. Testing $m=0,1,2,\\dots$, the only value of $N$ between 200 and 300 is $99(2)+94=292$. Checking: $292=32\\times9+4$ and $292=26\\times11+6$, so the baker baked $292$ cookies.",
+      "id": "MOEMS|M|Number Theory|mid#1795230126099#o0hakj"
     }
   ],
   "MOEMS|M|Number Theory|late": [
@@ -6978,6 +7392,24 @@
       "answer": "35",
       "solution": "We need a number $N<50$ with $N\\equiv 3 \\pmod 4$, $N\\equiv 5 \\pmod 6$, and $N\\equiv 0 \\pmod 7$. First combine the first two conditions: numbers that are $3\\pmod4$ are $3,7,11,15,19,23,\\dots$, and checking which are also $5\\pmod6$ shows $11$ works, so the combined condition is $N\\equiv 11 \\pmod{12}$ (since $\\mathrm{lcm}(4,6)=12$). Listing values: $11, 23, 35, 47$ — these are the candidates under 50. Among these, check which is divisible by 7: $11\\to4$, $23\\to2$, $35\\to0$ (divisible!), $47\\to5$. So $N=35$ satisfies all three conditions and is the only value under 50 that does. Thus the Math Club has $35$ members.",
       "id": "MOEMS|M|Number Theory|late#1794973890892#gubbpk"
+    },
+    {
+      "problem": "A baker has a tray of cupcakes, somewhere between 150 and 250 of them. When she packs them into boxes of 6, 1 cupcake is left over. When she packs them into boxes of 7, 2 are left over. When she packs them into boxes of 8, 3 are left over. If she instead packs all the cupcakes into boxes of 9, how many cupcakes are left over?",
+      "answer": "1",
+      "solution": "Notice that in each case the remainder is exactly 5 less than the box size: $6-1=5$, $7-2=5$, $8-3=5$. This means if we add 5 cupcakes to the tray, the new total would divide evenly by 6, 7, and 8, so it must be a multiple of $\\text{lcm}(6,7,8)=168$. So the number of cupcakes is $168k-5$ for some whole number $k$. Testing $k=1$ gives $163$, which fits between 150 and 250 (the next value, $331$, is too large). Dividing $163$ by 9 gives $9\\times18=162$ with remainder $1$, so the leftover count is $1$.",
+      "id": "MOEMS|M|Number Theory|late#1795230140647#w34be4"
+    },
+    {
+      "problem": "A hobby collector has a box of baseball cards, more than 200 but fewer than 270 of them. When he arranges them into stacks of 12 cards, 7 cards are left over. When he arranges them into stacks of 15 cards, 10 cards are left over. How many cards must he add to his collection so that the new total is a multiple of 11?",
+      "answer": "7",
+      "solution": "Notice that $12-7=5$ and $15-10=5$, the same deficit, so $N+5$ is divisible by both $12$ and $15$, meaning $N+5$ is a multiple of $\\text{lcm}(12,15)=60$. Since $200<N<270$, we need $205<N+5<275$, and the only multiple of $60$ in that range is $240$, giving $N=235$. Check: $235=12\\cdot19+7$ and $235=15\\cdot15+10$, so this works. The smallest multiple of $11$ at least $235$ is $11\\times22=242$, so he must add $242-235=7$ cards.",
+      "id": "MOEMS|M|Number Theory|late#1795230161431#6vyd52"
+    },
+    {
+      "problem": "A toy store has a bin of bouncy balls, more than 300 but fewer than 400 of them. When the balls are packed into bags of 9, there are 7 left over. When they are packed into bags of 11, there are 8 left over. What is the sum of the digits of the number of bouncy balls in the bin?",
+      "answer": "16",
+      "solution": "Let $N$ be the number of balls, so $N=9k+7$ for some whole number $k$. Since $N\\equiv 8 \\pmod{11}$, substituting gives $9k+7\\equiv 8 \\pmod{11}$, so $9k\\equiv 1 \\pmod{11}$. Since $9\\times 5=45\\equiv 1 \\pmod{11}$, the inverse of 9 mod 11 is 5, so $k\\equiv 5 \\pmod{11}$, meaning $k=11m+5$. Then $N=9(11m+5)+7=99m+52$; testing values, $m=3$ gives $N=349$, which is the only value between 300 and 400 satisfying both remainder conditions. Checking: $349=38\\times9+7$ and $349=31\\times11+8$, both correct, and the digit sum $3+4+9=16$.",
+      "id": "MOEMS|M|Number Theory|late#1795230173287#26a8sv"
     }
   ],
   "MOEMS|M|Combinatorics|early": [
@@ -6998,6 +7430,24 @@
       "answer": "13",
       "solution": "Let $a_n$ be the number of valid patterns for a row of $n$ lights. If the last light is OFF, the first $n-1$ lights can be any valid pattern of length $n-1$; if the last light is ON, the one before it must be OFF, so the first $n-2$ lights form any valid pattern of length $n-2$. This gives the recurrence $a_n=a_{n-1}+a_{n-2}$. Starting from $a_1=2$ (OFF or ON) and $a_2=3$ (OFF-OFF, OFF-ON, ON-OFF), we get $a_3=5$, $a_4=8$, and $a_5=13$. So there are $13$ valid patterns for five lights.",
       "id": "MOEMS|M|Combinatorics|early#1794973926567#vus83a"
+    },
+    {
+      "problem": "A vending machine in the school hallway only accepts nickels (5 cents) and dimes (10 cents) -- it has no slot for any other coin. A granola bar costs exactly 65 cents. Maya wants to pay using only nickels and dimes, using at least one nickel and at least one dime. How many different combinations of (number of nickels, number of dimes) will pay for the granola bar exactly, with no change due?",
+      "answer": "6",
+      "solution": "Let $n$ be the number of nickels and $d$ the number of dimes. The total value is $5n+10d=65$, which simplifies to $n+2d=13$. Since $n$ must be a positive whole number, $d$ can be any whole number from $1$ up to $6$ (because $d=7$ would make $n=13-14=-1$, which is not allowed). For each value $d=1,2,3,4,5,6$, there is exactly one matching value of $n$ (namely $11,9,7,5,3,1$), and all of these are positive. So there are $6$ valid combinations.",
+      "id": "MOEMS|M|Combinatorics|early#1795230211295#k6vtcj"
+    },
+    {
+      "problem": "Jenna takes the four Queens from a standard deck of cards (Queen of Hearts, Queen of Diamonds, Queen of Clubs, Queen of Spades) and lines them up in a row on a table. She wants to arrange them so that the two red Queens (Hearts and Diamonds) are not standing next to each other. In how many ways can she arrange the four Queens in a row to satisfy this condition?",
+      "answer": "12",
+      "solution": "There are $4! = 24$ ways to arrange the four Queens in a row with no restriction. To count the arrangements where the two red Queens ARE next to each other, glue them together as one block; this block plus the two black Queens gives $3! = 6$ orderings, and the two red Queens can switch places within the block in $2$ ways, giving $6 \\times 2 = 12$ arrangements. Subtracting these from the total: $24 - 12 = 12$ arrangements have the red Queens separated. So the answer is $12$.",
+      "id": "MOEMS|M|Combinatorics|early#1795230220350#5lpkjs"
+    },
+    {
+      "problem": "A row of 7 tiles will each be painted either red or blue. Exactly 3 of the tiles must be red, and no two red tiles may be next to each other. How many different colorings of the row are possible?",
+      "answer": "10",
+      "solution": "First place the 4 blue tiles in a row, which creates 5 possible gaps for red tiles: one gap before the first blue tile, one gap between each pair of consecutive blue tiles (3 gaps), and one gap after the last blue tile. To keep red tiles separated, each chosen gap can hold at most one red tile. We need to choose 3 of these 5 gaps to place a red tile, which can be done in $\\binom{5}{3}$ ways. Computing, $\\binom{5}{3} = 10$. So there are $10$ valid colorings.",
+      "id": "MOEMS|M|Combinatorics|early#1795230232920#5yy64q"
     }
   ],
   "MOEMS|M|Combinatorics|mid": [
@@ -7019,6 +7469,25 @@
       "solution": "We need the number of permutations of $1,2,3,4$ with no number in its original spot — this is the derangement count $D_4$. Using the recursion $D_n=(n-1)(D_{n-1}+D_{n-2})$ with $D_1=0$ and $D_2=1$, we get $D_3=2(1+0)=2$. Then $D_4=3(D_3+D_2)=3(2+1)=9$. So there are $9$ ways to hand out the cards so no friend gets their matching number.",
       "check": "ok",
       "id": "MOEMS|M|Combinatorics|mid#1794973985377#zia8j0"
+    },
+    {
+      "problem": "A game uses a spinner divided into four equal sectors labeled $1, 2, 3, 4$ and a fair six-sided die with faces labeled $1$ through $6$. A player spins the spinner once and rolls the die once, then adds the spinner's number to the die's number to get a sum. All $24$ spinner-die outcomes are equally likely. What is the probability that the sum is a prime number? Give your answer as a fraction in lowest terms.",
+      "answer": "11/24",
+      "solution": "The possible sums range from $1+1=2$ to $4+6=10$, so the primes to look for are $2,3,5,7$. For spinner value $1$: die values $1,2,4,6$ give sums $2,3,5,7$ — that's $4$ outcomes. For spinner value $2$: die values $1,3,5$ give sums $3,5,7$ — $3$ outcomes. For spinner value $3$: die values $2,4$ give sums $5,7$ — $2$ outcomes. For spinner value $4$: die values $1,3$ give sums $5,7$ — $2$ outcomes. Adding these cases gives $4+3+2+2=11$ favorable outcomes out of $24$ total, so the probability is $\\frac{11}{24}$.",
+      "id": "MOEMS|M|Combinatorics|mid#1795230259461#c5iim5"
+    },
+    {
+      "problem": "The Lincoln Middle School student council is electing three different officers from a group of 8 candidates: President, Vice President, and Treasurer. No person can hold more than one office. Two of the candidates, Priya and Omar, are a sibling pair, and school rules say siblings cannot both serve on the council at the same time. How many different ways can the three offices be filled under this rule?",
+      "answer": "300",
+      "solution": "Without any restriction, the number of ways to fill the 3 distinct offices from 8 candidates is $8\\times7\\times6=336$, since order matters (each office is different). Now count the arrangements where Priya and Omar BOTH serve: choose which 2 of the 3 offices they fill and assign them to those offices in $3\\times2=6$ ways, then fill the remaining office with any of the other 6 candidates, giving $6\\times6=36$ arrangements. Subtracting the forbidden cases from the total gives $336-36=300$ valid ways to fill the offices.",
+      "id": "MOEMS|M|Combinatorics|mid#1795230273081#nu7hlu"
+    },
+    {
+      "problem": "A middle school day has exactly 5 class periods, numbered 1 through 5, and each period gets one of 5 different subjects: Math, Science, English, History, and Gym (no subject repeats). The schedule must follow two rules: Math's period must come earlier in the day than Science's period, and Gym cannot be scheduled in period 1 or period 5. How many different schedules satisfy both rules?",
+      "answer": "36",
+      "solution": "Since Gym cannot be in period 1 or period 5, Gym must go in period 2, 3, or 4, giving $3$ choices for Gym's period. The remaining 4 periods must be filled with Math, Science, English, and History in some order, but Math must come before Science. Of the $4! = 24$ ways to arrange these 4 subjects, exactly half have Math before Science, giving $24/2 = 12$ valid orders. Multiplying the independent choices gives $3 \\times 12 = 36$ total schedules.",
+      "answer_check": "36",
+      "id": "MOEMS|M|Combinatorics|mid#1795230289407#1o0mvu"
     }
   ],
   "MOEMS|M|Combinatorics|late": [
@@ -7039,6 +7508,24 @@
       "answer": "36",
       "solution": "First count all colorings with no two adjacent lights sharing a color: light 1 has 3 choices, and each later light has 2 choices (any color but the one before it), giving $3\\cdot2\\cdot2\\cdot2\\cdot2=48$ total valid patterns. A palindrome pattern satisfies $a_5=a_1$ and $a_4=a_2$, so it is completely determined by $a_1,a_2,a_3$. The adjacency rule requires $a_1\\neq a_2$ and $a_2\\neq a_3$ (the remaining adjacency conditions, $a_3\\neq a_4$ and $a_4\\neq a_5$, just repeat these same two requirements), so the count of palindromic valid patterns is $3\\cdot2\\cdot2=12$. Subtracting the palindromes from all valid patterns gives the patterns that look different forwards and backwards: $48-12=36$. So there are 36 such color patterns.",
       "id": "MOEMS|M|Combinatorics|late#1794974076534#mlivjn"
+    },
+    {
+      "problem": "A digital lock has 5 buttons labeled 1, 2, 3, 4, 5. To set a code, you press all five buttons exactly once, in some order, so there are $5! = 120$ possible codes. The lock's manual warns that pressing buttons labeled 1 and 4 right after each other (in either order) causes a jam, and pressing buttons labeled 2 and 5 right after each other (in either order) also causes a jam. How many of the 120 possible codes avoid both kinds of jams?",
+      "answer": "48",
+      "solution": "There are $5!=120$ total codes. Glue 1 and 4 together as one block: this block plus the digits 2, 3, 5 gives $4!=24$ arrangements, times $2$ for the internal order of the block, so $48$ codes have 1 and 4 adjacent. Likewise $48$ codes have 2 and 5 adjacent. If both pairs are glued, we arrange two blocks and the digit 3, giving $3!=6$ arrangements, times $2\\times 2$ for the internal orders, so $24$ codes have both jams. By inclusion-exclusion, codes with at least one jam number $48+48-24=72$. So the valid, jam-free codes number $120-72=48$.",
+      "id": "MOEMS|M|Combinatorics|late#1795230360156#4r7iur"
+    },
+    {
+      "problem": "Mia pulls the four aces and the four kings out of a standard deck of 52 cards, giving her 8 different cards in all (each ace and each king counts as a separate, distinguishable card). She wants to lay all 8 cards in a row so that no ace is immediately next to another ace, and no king is immediately next to another king. In how many ways can she arrange the 8 cards in a row?",
+      "answer": "1152",
+      "solution": "Think of each card as either type $A$ (ace) or type $K$ (king); there are 4 of each type. Since there are equally many A's and K's among 8 slots, the only arrangements of types with no two equal types adjacent are the two fully alternating patterns $AKAKAKAK$ and $KAKAKAKA$ (any other pattern would force two of the same type together). For each of these 2 type-patterns, the 4 distinct aces can fill the 4 'A' slots in $4!=24$ ways, and the 4 distinct kings can fill the 4 'K' slots in $4!=24$ ways. So the total number of arrangements is $2 \\times 24 \\times 24 = 1152$.",
+      "id": "MOEMS|M|Combinatorics|late#1795230380053#8oe6h5"
+    },
+    {
+      "problem": "Seven friends each have a birthday on a different day of the week: one on Monday, one on Tuesday, one on Wednesday, one on Thursday, one on Friday, one on Saturday, and one on Sunday. A choir director wants to pick a group of exactly 3 of these friends to sing a trio, but refuses to pick two friends whose birthdays fall on consecutive days of the week. For this rule, Sunday and Monday also count as consecutive, since the week repeats. How many different groups of 3 friends can the director choose so that no two chosen friends have birthdays on consecutive days?",
+      "answer": "7",
+      "solution": "Think of the 7 days arranged in a circle, and split into cases based on whether Monday's friend is chosen. Case 1: Monday is chosen. Then Tuesday and Sunday are forbidden, leaving the 4 days Wednesday, Thursday, Friday, Saturday in a line, from which we must pick 2 more with no two adjacent; this can be done in $\\binom{4-2+1}{2}=\\binom{3}{2}=3$ ways. Case 2: Monday is not chosen. Then we must pick all 3 friends from the remaining 6 days Tuesday through Sunday, now arranged in a straight line (not circular, since Monday is gone), with no two adjacent, giving $\\binom{6-3+1}{3}=\\binom{4}{3}=4$ ways. Adding the cases gives $3+4=7$ total valid groups.",
+      "id": "MOEMS|M|Combinatorics|late#1795230424925#2twoh5"
     }
   ],
   "MOEMS|M|Probability|early": [
@@ -7059,6 +7546,24 @@
       "answer": "3/10",
       "solution": "There are 5 pencils total, 3 red and 2 blue. The probability the first pencil drawn is red is $3/5$. After removing one red pencil, 4 pencils remain, with 2 red, so the probability the second pencil is also red is $2/4=1/2$. Multiply these probabilities for independent sequential draws: $\\frac{3}{5}\\times\\frac{1}{2}=\\frac{3}{10}$. So the probability both pencils are red is $3/10$.",
       "id": "MOEMS|M|Probability|early#1794974101641#jde165"
+    },
+    {
+      "problem": "Mr. Diaz's class is picking two students at random to be co-captains of the Election Day setup crew. The class has 12 students: 7 are sixth graders and 5 are seventh graders. Their names are written on identical slips of paper and placed in a hat. One slip is drawn for the first co-captain, and then (without putting it back) a second slip is drawn for the second co-captain. What is the probability that both co-captains drawn are seventh graders? Give your answer as a fraction in simplest form.",
+      "answer": "5/33",
+      "solution": "The probability the first slip drawn is a seventh grader is $5/12$, since 5 of the 12 students are seventh graders. After removing that slip, 4 seventh graders remain out of 11 total students, so the probability the second slip is also a seventh grader is $4/11$. Multiplying these gives $\\frac{5}{12}\\times\\frac{4}{11} = \\frac{20}{132}$. Simplifying $\\frac{20}{132}$ by dividing numerator and denominator by 4 gives $\\frac{5}{33}$.",
+      "id": "MOEMS|M|Probability|early#1795230453305#npnu10"
+    },
+    {
+      "problem": "Each of the 8 letters in the word GEOMETRY is written on its own tile, and the 8 tiles are placed in a bag (note the letter E appears twice, so there are two separate E tiles). Lucy draws two tiles at random from the bag, one after the other, without putting the first tile back. What is the probability that both tiles she draws show vowels (A, E, I, O, or U)?",
+      "answer": "3/28",
+      "solution": "The word GEOMETRY has 8 letter tiles: G, E, O, M, E, T, R, Y. The vowels are E, O, and E, so there are 3 vowel tiles and 5 consonant tiles among the 8 total. The probability the first tile drawn is a vowel is $\\frac{3}{8}$. Given that, 2 vowels remain out of 7 tiles, so the probability the second tile is also a vowel is $\\frac{2}{7}$. Multiplying gives $\\frac{3}{8}\\times\\frac{2}{7}=\\frac{6}{56}=\\frac{3}{28}$.",
+      "id": "MOEMS|M|Probability|early#1795230462183#chxl0n"
+    },
+    {
+      "problem": "Lily has 6 letter tiles that spell the word PUZZLE, one letter per tile: P, U, Z, Z, L, E. She puts all 6 tiles in a bag, shakes it, and then pulls them out one at a time, lining them up in the order she draws them to form a row of 6 tiles. What is the probability that the first tile in the row and the last tile in the row are both the letter Z?",
+      "answer": "1/15",
+      "solution": "Think of the 6 tiles as 6 distinct physical pieces (even though two show the letter Z), being placed into a random order. The chance the first position is one of the two Z tiles is $2/6$. Given that happens, one Z tile remains among the 5 tiles left for the last spot, so the chance the last position is the other Z tile is $1/5$. Multiplying these gives the probability both ends are Z's: $\\frac{2}{6}\\times\\frac{1}{5}=\\frac{2}{30}=\\frac{1}{15}$. So the probability is $1/15$.",
+      "id": "MOEMS|M|Probability|early#1795230480384#bs40se"
     }
   ],
   "MOEMS|M|Probability|mid": [
@@ -7079,6 +7584,24 @@
       "answer": "11/15",
       "solution": "There are 6 beads total, so the number of ways to choose 2 of them is $\\binom{6}{2}=15$, all equally likely. Count the ways to get two beads of the SAME color: red-red is $\\binom{3}{2}=3$, blue-blue is $\\binom{2}{2}=1$, and yellow-yellow is impossible since there's only 1 yellow bead, giving $3+1+0=4$ same-color outcomes. So the number of different-color outcomes is $15-4=11$. The probability of drawing two different-colored beads is $\\frac{11}{15}$.",
       "id": "MOEMS|M|Probability|mid#1794974153097#7rjy6x"
+    },
+    {
+      "problem": "At the Westbrook Fall Fair, tickets numbered 1 through 30 are placed in a drum for a raffle, and one ticket is drawn at random. A ticket wins a consolation prize if its number is divisible by $3$ or by $4$, but not both. (For example, ticket $12$ is divisible by both $3$ and $4$, so it would NOT win a consolation prize.) What is the probability that the ticket drawn wins a consolation prize?",
+      "answer": "13/30",
+      "solution": "Count multiples of $3$ from $1$ to $30$: there are $10$ (namely $3,6,\\dots,30$). Count multiples of $4$: there are $7$ (namely $4,8,\\dots,28$). Numbers divisible by both $3$ and $4$ are divisible by $12$: these are $12$ and $24$, so there are $2$. Tickets divisible by $3$ only: $10-2=8$; tickets divisible by $4$ only: $7-2=5$. Total winning consolation tickets: $8+5=13$, out of $30$ total tickets, giving probability $13/30$.",
+      "id": "MOEMS|M|Probability|mid#1795230491407#d0ultm"
+    },
+    {
+      "problem": "Lincoln Middle School is forming a 3-member Student Council planning committee. Nine students applied: 2 sixth-graders, 3 seventh-graders, and 4 eighth-graders. The principal selects the 3 committee members at random from these 9 applicants, with every group of 3 equally likely to be chosen. What is the probability that the committee includes exactly one student from each grade?",
+      "answer": "2/7",
+      "solution": "The total number of ways to choose 3 students from 9 is $\\binom{9}{3}=84$. To get exactly one student from each grade, choose 1 of the 2 sixth-graders, 1 of the 3 seventh-graders, and 1 of the 4 eighth-graders, giving $2\\times 3\\times 4=24$ favorable committees. The probability is therefore $\\frac{24}{84}=\\frac{2}{7}$.",
+      "id": "MOEMS|M|Probability|mid#1795230505715#d3dtwb"
+    },
+    {
+      "problem": "The 7th grade is choosing a 3-person Spirit Committee from 6 volunteers: 4 students from Team Blue and 2 students from Team Red. All $\\binom{6}{3}=20$ possible committees are equally likely to be chosen. Once the 3-person committee is picked, one of its 3 members is chosen at random to be the Chairperson (each of the 3 equally likely). What is the probability that the Chairperson turns out to be a Team Red student?",
+      "answer": "1/3",
+      "solution": "For any one specific volunteer, the chance that volunteer lands on the committee is $\\binom{5}{2}/\\binom{6}{3}=10/20=1/2$, since the other 2 committee spots are filled from the remaining 5 people. If that volunteer is on the committee, the chance they become Chairperson is $1/3$. So the probability that a specific volunteer becomes Chairperson is $\\frac12\\cdot\\frac13=\\frac16$. By symmetry every one of the 6 volunteers has this same $1/6$ chance of ending up Chairperson, and there are 2 Team Red volunteers, so the probability the Chairperson is from Team Red is $2\\times\\frac16=\\frac13$.",
+      "id": "MOEMS|M|Probability|mid#1795230531770#689v25"
     }
   ],
   "MOEMS|M|Probability|late": [
@@ -7099,6 +7622,24 @@
       "answer": "3/8",
       "solution": "There are $4! = 24$ equally likely ways to hand out the four cards. Count the arrangements where at least one friend gets their own card, using inclusion-exclusion: choosing 1 friend to get their own card and arranging the rest freely gives $4\\cdot 3! = 24$ ways; choosing 2 fixed friends gives $\\binom{4}{2}\\cdot 2! = 12$ ways; choosing 3 fixed friends gives $\\binom{4}{3}\\cdot 1! = 4$ ways; choosing all 4 fixed gives $1$ way. By inclusion-exclusion, arrangements with at least one correct card $= 24 - 12 + 4 - 1 = 15$. So arrangements with no correct card (a derangement) $= 24 - 15 = 9$. The probability that nobody gets their own card is $9/24 = 3/8$.",
       "id": "MOEMS|M|Probability|late#1794974239855#yuac8k"
+    },
+    {
+      "problem": "For the Springville Carnival raffle, tickets numbered 1 through 18 are placed in a spinning drum. The emcee reaches in and draws two tickets at random, one after another, without putting the first one back. What is the probability that the sum of the two numbers drawn is a multiple of 4? Give your answer as a fraction in lowest terms.",
+      "answer": "4/17",
+      "solution": "Sort the numbers 1β€’18 by remainder when divided by 4: remainder 0 has {4,8,12,16} (4 numbers), remainder 1 has {1,5,9,13,17} (5 numbers), remainder 2 has {2,6,10,14,18} (5 numbers), remainder 3 has {3,7,11,15} (4 numbers). A sum is a multiple of 4 only if the remainders add to 0 or 4, so the pairs must both have remainder 0, both have remainder 2, or one have remainder 1 and the other remainder 3. Counting these: $\\binom{4}{2}=6$ pairs from remainder 0, $\\binom{5}{2}=10$ pairs from remainder 2, and $5\\times4=20$ cross pairs from remainders 1 and 3, giving $6+10+20=36$ favorable pairs. The total number of ways to draw two tickets from 18 is $\\binom{18}{2}=153$, so the probability is $36/153=4/17$.",
+      "id": "MOEMS|M|Probability|late#1795230552750#7tdcz3"
+    },
+    {
+      "problem": "In a board game, a path has squares numbered 0 (Start) through 9 (Finish). On each turn, a player spins a spinner with three equal-sized sections labeled 2, 3, and 4, and moves her token forward that many squares. A player wins only by landing exactly on square 9; if a spin would carry her past square 9, she does not move that turn (she stays where she is). Playing alone, what is the probability that the player lands on square 9 for the very first time on her third spin?",
+      "answer": "7/27",
+      "solution": "After two spins the token's position is at most $4+4=8$, so square 9 can never be reached before the third spin — meaning we just need the probability that the sum of three spins equals exactly 9. Using the spinner values $\\{2,3,4\\}$, there are $3^3=27$ equally likely spin sequences. Counting those with sum 9: the three distinct values $2,3,4$ in any order give $3!=6$ sequences, and $3,3,3$ gives 1 more sequence, for a total of $7$ favorable sequences. So the probability is $7/27$.",
+      "id": "MOEMS|M|Probability|late#1795230590527#7hx6xt"
+    },
+    {
+      "problem": "A vending machine column is loaded with 7 snack bags stacked in a random order from top to bottom: 3 bags of pretzels, 3 bags of popcorn, and 1 special bag of cookies. The machine always dispenses the bottom bag first, then works its way up one bag at a time, so the stacking order determines the exact order the bags come out. Every one of the $7!$ possible stacking orders is equally likely. Find the probability that, at the moment the cookies are dispensed, exactly 2 of the 3 pretzel bags have already come out (the popcorn bags may come out at any time and do not matter).",
+      "answer": "1/4",
+      "solution": "The popcorn bags are irrelevant to the question, so focus only on the cookie bag and the 3 pretzel bags -- 4 items total. In a uniformly random arrangement of all 7 bags, the relative order of any chosen subset of items is itself uniformly random over all possible orderings of that subset. So all $4!$ relative orders of {cookies, pretzel1, pretzel2, pretzel3} are equally likely, meaning the cookie bag is equally likely to occupy any of the 4 ranks (1st, 2nd, 3rd, or 4th) among these four items. We want the cookie bag to be dispensed 3rd among these four (so exactly 2 pretzels come out before it), which is exactly one of the 4 equally likely ranks. Therefore the probability is $\\frac{1}{4}$.",
+      "id": "MOEMS|M|Probability|late#1795230634129#9wgntg"
     }
   ]
 }
